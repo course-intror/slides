@@ -1,0 +1,159 @@
+---
+title: "Apresentações<br><br>"
+subtitle: "introR: introdução à linguagem R"
+author: "<br>[Maurício Vancine](https://mauriciovancine.github.io)"
+date: "10/14/2025"
+date-format: long
+format: 
+  revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+    chalkboard: true
+    logo: "https://www.r-project.org/logo/Rlogo.svg"
+    execute:
+      echo: true
+      eval: true
+      warning: false
+      message: false
+editor: source
+lang: pt-br
+---
+
+# 
+![](img/featured-hex.png){fig-align="center"}
+
+::: footer
+[intro-r](https://course-intror.github.io/)
+:::
+
+# 
+![](img/qr-code){fig-align="center"}
+
+::: footer
+[intro-r](https://github.com/course-intror)
+:::
+
+## Slides
+
+**Explicando os slides**
+
+<br><br><br>
+Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics) no slide
+
+![](img/slides.png){.absolute width=55% right=-100 top=140}
+
+::: footer
+[Este é um link no rodapé](https://github.com/mauriciovancine/workshop-r-landscapemetrics)
+:::
+
+## Maurício Vancine 
+
+::: columns
+::: {.column width="50%"}
+<center>
+<br>
+![](img/avatar.png)
+</center>
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+<br>
+
+- Ecólogo e Doutor em Ecologia
+- Pós-Doutorado em Ecologia Espacial (Prof. Mathias - Unicamp)
+- Ecologia Espacial
+- Modelagem Ecológica
+- Análise de Dados Ecológicos e Espaciais
+- Ecologia e Conservação de Anfíbios
+- *Open source* (R, QGIS, GNU/Linux)
+:::
+:::
+:::
+
+::: footer
+[mauriciovancine.github.io](https://mauriciovancine.github.io/)
+:::
+
+## Análises Ecológicas no R (2022)
+
+::::: columns
+::: {.column width="50%"}
+<br>
+<center>
+<img src="img/aer.jpeg" style="width:75%"/>
+</center>
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+<br>
+
+-   **15 capítulos**: linguagem R, tidyverse, questões em ecologia, análises univariadas, multivariadas e espaciais
+-   [bookdown](https://analises-ecologicas.com/)
+-   [PDF](https://canal6.com.br/livreacesso/livro/analises-ecologicas-no-r/)
+-   [Amazon](https://www.amazon.com.br/An%C3%A1lises-ecol%C3%B3gicas-Ferdo-Rodrigues-Silva/dp/857917564X/ref=sr_1_1?keywords=9788579175640&qid=1654379366&sr=8-1)
+-   [Code](https://github.com/paternogbc/livro_aer)
+-   [YouTube](https://www.youtube.com/channel/UCLSVSCnmvf2k6OoWZCnEO4w)
+:::
+:::
+:::::
+
+::: footer
+[Da Silva et al. (2022)](https://analises-ecologicas.com/)
+:::
+
+## Artigo da Mata Atlântica (2024)
+
+![](img/ms_ma.png){.absolute width=60% right=400 top=100}
+![](img/ms_af_graphic.png){.absolute width=40% right=550 top=360}
+![](img/ms_ma_fig.png){.absolute width=30% right=100 top=230}
+
+::: footer
+[Vancine et al. (2024)](https://doi.org/10.1016/j.biocon.2024.110499)
+:::
+
+## Quem são vocês?
+
+<br>
+
+1.  Nome
+2.  Formação
+3.  O que faz ou pensa em fazer da vida?
+4.  Conhece algo sobre ciência aberta, controle de versão, R ou tidyverse?
+5.  Como se sente em relação à disciplina?
+
+## Cronograma {.smaller}
+
+| Dia | Atividade                         | 
+|-----|-----------------------------------|
+| Dia 01| Boas-vindas e apresentações | 
+| Dia 01| Aula teórica 1: ciência aberta e controle de versão |
+| Dia 01| Aula prática 1: prática com git e repositórios no GitHub |
+| Dia 02| Aula teórica 2: introdução à programação em R (Base R)   |
+| Dia 02| Aula teórica 3: introdução à programação em R (tidyverse) |
+| Dia 03| Aula teórica 4: tópicos avançados em programação no R |
+| Dia 03| Aula prática 2: integração entre R e git/GitHub em trabalho científicos |
+| Dia 04| Projeto prático: desenvolvimento de uma análise ecológica reprodutível |
+| Dia 04| Projeto prático: apresentação dos projetos  |
+| Dia 04| Discussão: desafios da reprodutibilidade na ciência |
+| Dia 04| Encerramento da disciplina |
+
+## IMPORTANTE!!!
+
+**Estamos num espaço seguro e amigável**
+
+- Sintam-se à vontade para me interromper e tirar dúvidas
+
+<center>
+<img src="img/general_starwars_teamwork.png" style="width:50%"/>
+</center>
+
+::: footer
+[\@allison_horst](https://twitter.com/allison_horst)
+:::
+
+# Muito obrigado!
