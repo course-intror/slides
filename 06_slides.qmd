@@ -1,5 +1,5 @@
 ---
-title: "Reprodutibilidade em R e GitHub<br><br>"
+title: "Encerramento<br><br>"
 subtitle: "introR: introdução à linguagem R"
 author: "<br>[Maurício Vancine](https://mauriciovancine.github.io)"
 date: "10/14/2025"
@@ -21,10 +21,6 @@ format:
 editor: source
 lang: pt-br
 ---
-
-https://rdatatoolbox.github.io/
-https://rdatatoolbox.github.io/course-renv/#/
-https://rdatatoolbox.github.io/course-quarto/#/
 
 ## Muito obrigado!
 

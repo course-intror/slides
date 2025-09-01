@@ -1,5 +1,5 @@
 ---
-title: "Apresentações<br><br>"
+title: "Boas-vindas e apresentações<br><br>"
 subtitle: "introR: introdução à linguagem R"
 author: "<br>[Maurício Vancine](https://mauriciovancine.github.io)"
 date: "10/14/2025"
