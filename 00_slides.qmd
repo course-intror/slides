@@ -158,13 +158,13 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 | Dia 01| Aula prática 1: controle de versão |
 | Dia 02| Aula teórica 2: introdução à programação em R (Base R)   |
 | Dia 02| Aula teórica 3: introdução à programação em R (tidyverse) |
-| Dia 03| Aula teórica 4: tópicos avançados em programação no R |
-| Dia 03| Aula teórica 5: reprodutibilidade em R e GitHub |
+| Dia 02| Aula teórica 4: introdução à programação em R (visualização) |
+| Dia 03| Aula teórica 5: tópicos avançados em programação no R |
+| Dia 03| Aula teórica 6: reprodutibilidade em R e GitHub |
 | Dia 03| Aula prática 2: reprodutibilidade em R e GitHub |
 | Dia 04| Projeto prático: desenvolvimento de uma análise ecológica reprodutível |
 | Dia 04| Projeto prático: apresentação dos projetos  |
 | Dia 04| Discussão: ciência aberta e reprodutibilidade |
-| Dia 04| Encerramento |
 
 ## Projeto
 

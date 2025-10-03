@@ -2,7 +2,7 @@
 title: "Introdução à programação em R (Base R)"
 subtitle: "<br><br>introR: introdução à linguagem R"
 author: "[Maurício Vancine](https://mauriciovancine.github.io)"
-date: "10/14/2025"
+date: "10/15/2025"
 date-format: long
 format: 
   revealjs:
@@ -12,7 +12,7 @@ format:
     hash-type: number
     preview-links: false
     chalkboard: true
-    logo: "https://www.r-project.org/logo/Rlogo.svg"
+    logo: "img/featured-hex.png"
     execute:
       echo: true
       eval: true
@@ -24,8 +24,7 @@ lang: pt
 
 ## Conteúdo
 
-:::::::::::::: panel-tabset
-## 1. Linguagem R
+### 1. Linguagem R
 
 ::::::: columns
 :::: {.column width="50%"}
@@ -52,46 +51,6 @@ lang: pt
 :::
 ::::
 :::::::
-
-## 2. tidyverse
-
-::: nonincremental
--   tidyverse
--   readr, readxl e writexl
--   tibble
--   magrittr (pipe - %\>%)
--   tidyr
--   dplyr
-:::
-
-## 3. Visualização de dados
-
-::::::: columns
-:::: {.column width="50%"}
-::: nonincremental
--   Contextualização
--   Principais pacotes
--   Gramática dos gráficos
--   Principais tipos de gráficos
--   Histograma e Densidade
--   Gráfico de setores
--   Gráfico de barras
-:::
-::::
-
-:::: {.column width="50%"}
-::: nonincremental
--   Gráfico de caixas
--   Gráfico de dispersão
--   Gráfico pareado
--   Combinando gráficos
--   Gráficos animados
--   Gráficos interativos
--   Gráficos usando interface
-:::
-::::
-:::::::
-::::::::::::::
 
 ## Material
 
