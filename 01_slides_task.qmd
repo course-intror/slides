@@ -1,0 +1,28 @@
+---
+title: "Controle de versão com git, GitHub e RStudio"
+subtitle: "<br><br>introR: introdução à linguagem R"
+author: "<br>[Maurício Vancine](https://mauriciovancine.github.io/)"
+date: "10/14/2025"
+date-format: long
+format: 
+  revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+    chalkboard: true
+    logo: "https://git-scm.com/images/logos/downloads/Git-Logo-1788C.png"
+    execute:
+      echo: true
+      eval: true
+      warning: false
+      message: false
+editor: source
+lang: pt-br
+---
+
+## Conteúdo {.smaller}
+
+
+# Muito obrigado!

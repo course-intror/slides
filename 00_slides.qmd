@@ -12,7 +12,7 @@ format:
     hash-type: number
     preview-links: false
     chalkboard: true
-    logo: "https://www.r-project.org/logo/Rlogo.svg"
+    logo: "img/featured-hex.png"
     execute:
       echo: true
       eval: true
@@ -29,11 +29,14 @@ lang: pt-br
 [intro-r](https://course-intror.github.io/)
 :::
 
-# 
-![](img/qr-code){fig-align="center"}
+## Site
+
+**Explicando o site**
+
+![](img/featured-hex.png){fig-align="center"}
 
 ::: footer
-[intro-r](https://github.com/course-intror)
+[intro-r](https://course-intror.github.io/)
 :::
 
 ## Slides
@@ -116,6 +119,26 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 [Vancine et al. (2024)](https://doi.org/10.1016/j.biocon.2024.110499)
 :::
 
+## Artigo da Fragmentação (2025)
+
+![](img/ms_frag.png){.absolute width=60% right=440 top=100}
+![](img/ms_frag_map.webp){.absolute width=60% right=440 top=400}
+![](img/ms_frag_fig.webp){.absolute width=50% right=-100 top=120}
+
+::: footer
+[Goncalves-Souza et al. (2025)](https://doi.org/10.1038/s41586-025-08688-7)
+:::
+
+## Artigo da Fragmentação (2025)
+
+![](img/ms_frag.png){.absolute width=60% right=440 top=100}
+![](img/ms_frag_map.webp){.absolute width=60% right=440 top=400}
+![](img/ms_frag_fig2.webp){.absolute width=50% right=-100 top=120}
+
+::: footer
+[Goncalves-Souza et al. (2025)](https://doi.org/10.1038/s41586-025-08688-7)
+:::
+
 ## Quem são vocês?
 
 <br>
@@ -123,7 +146,7 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 1.  Nome
 2.  Formação
 3.  O que faz ou pensa em fazer da vida?
-4.  Conhece algo sobre ciência aberta, controle de versão, R ou tidyverse?
+4.  Conhece algo sobre ciência aberta, controle de versão, R, tidyverse ou programação?
 5.  Como se sente em relação à disciplina?
 
 ## Cronograma {.smaller}
@@ -131,16 +154,47 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 | Dia | Atividade                         | 
 |-----|-----------------------------------|
 | Dia 01| Boas-vindas e apresentações | 
-| Dia 01| Aula teórica 1: ciência aberta e controle de versão |
-| Dia 01| Aula prática 1: prática com git e repositórios no GitHub |
+| Dia 01| Aula teórica 1: controle de versão |
+| Dia 01| Aula prática 1: controle de versão |
 | Dia 02| Aula teórica 2: introdução à programação em R (Base R)   |
 | Dia 02| Aula teórica 3: introdução à programação em R (tidyverse) |
 | Dia 03| Aula teórica 4: tópicos avançados em programação no R |
-| Dia 03| Aula prática 2: integração entre R e git/GitHub em trabalho científicos |
+| Dia 03| Aula teórica 5: reprodutibilidade em R e GitHub |
+| Dia 03| Aula prática 2: reprodutibilidade em R e GitHub |
 | Dia 04| Projeto prático: desenvolvimento de uma análise ecológica reprodutível |
 | Dia 04| Projeto prático: apresentação dos projetos  |
-| Dia 04| Discussão: desafios da reprodutibilidade na ciência |
-| Dia 04| Encerramento da disciplina |
+| Dia 04| Discussão: ciência aberta e reprodutibilidade |
+| Dia 04| Encerramento |
+
+## Projeto
+
+![](img/featured-hex-atlanticr.png){fig-align="center"}
+
+::: footer
+[atlanticr](https://mauriciovancine.github.io/atlanticr/)
+:::
+
+## Projeto
+
+**ATLANTIC SERIES: Data on the richest Neotropical hotspot**
+
+- Data papers: publicação que apresenta, explica e disponibiliza um banco de dados
+- [ATLANTIC: Data Papers from a biodiversity hotspot](https://esajournals.onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)1939-9170.AtlanticPapers)
+
+![](img/atlantic-series.jpg){fig-align="center"}
+
+::: footer
+[Atlantic Series](https://github.com/LEEClab/Atlantic_series)
+:::
+
+## Projeto
+
+**atlantir**
+
+- Esses dados estão muito bagunçados
+- Gostaria de ajuda para organizar eles e pensar no pacote
+- Grupos, duplas ou individual
+- Baixar, organizar e formartar esses dados para uso no pacote
 
 ## IMPORTANTE!!!
 
@@ -156,4 +210,4 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 [\@allison_horst](https://twitter.com/allison_horst)
 :::
 
-# Muito obrigado!
+# Vamos lá!
