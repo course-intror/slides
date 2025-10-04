@@ -2,7 +2,7 @@
 title: "Encerramento<br><br>"
 subtitle: "introR: introdução à linguagem R"
 author: "<br>[Maurício Vancine](https://mauriciovancine.github.io)"
-date: "10/14/2025"
+date: "10/17/2025"
 date-format: long
 format: 
   revealjs:
@@ -12,7 +12,7 @@ format:
     hash-type: number
     preview-links: false
     chalkboard: true
-    logo: "https://www.r-project.org/logo/Rlogo.svg"
+    logo: "img/featured-hex.png"
     execute:
       echo: true
       eval: true

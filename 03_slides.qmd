@@ -2,7 +2,7 @@
 title: "Introdução à programação em R (tidyverse)"
 subtitle: "<br><br>introR: introdução à linguagem R"
 author: "[Maurício Vancine](https://mauriciovancine.github.io)"
-date: "10/14/2025"
+date: "10/15/2025"
 date-format: long
 format: 
   revealjs:
@@ -12,17 +12,17 @@ format:
     hash-type: number
     preview-links: false
     chalkboard: true
-    logo: "https://en.wikipedia.org/wiki/File:Tidyverse_hex_logo.svg"
+    logo: "img/featured-hex.png"
     execute:
       echo: true
-      eval: true
+      eval: false
       warning: false
       message: false
 editor: source
 lang: pt
 ---
 
-# 2. tidyverse
+# tidyverse
 
 # 
 
@@ -31,6 +31,23 @@ lang: pt
 ::: footer
 [\@allison_horst](https://twitter.com/allison_horst)
 :::
+
+## Conteúdo
+
+### tidyverse
+
+- Contextualização
+- tidyverse
+- here
+- readr, readxl e writexl
+- tibble
+- magrittr (pipe - %\>%)
+- tidyr
+- dplyr
+- stringr
+- forcats
+- lubridate
+- purrr
 
 ## Ciência de dados ambiental (*Environmental Data Science*)
 
@@ -1255,3399 +1272,1086 @@ penguins_sample <- penguins %>%
 penguins_sample
 ```
 
-# Dúvidas?
+# stringr
 
-# 3. Visualização de dados
+background-image: url(img/cheatsheet_stringr.png)
 
-# 
+## stringr
 
-<center><img src="img/plot_saurus.png" style="width:90%"/></center>
+- Pacote para a manipulação de strings ou caracteres
+- Exemplos: Correspondência de padrões, retirar e acrescentar espaços em branco, mudar maiúsculas e minúsculas
+- Pode ser utilizado em conjunto com o pacote `dplyr` para manejar colunas
+- Para funções mais específicas, recomenda-se usar o pacote [stringi](https://stringi.gagolewski.com/)
 
-::: footer
-[Matejka & Fitzmaurice (2017)](https://www.autodeskresearch.com/publications/samestats)
-:::
+## stringr
 
-## Script
+Comprimento
 
-Abram o script
-
-<br><br><br><br>
-
-`03_script_r_introduction.R`
-
-# Contextualização
-
-## Contextualização
-
-::: incremental
--   Melhor forma de apresentar, sintetizar, discutir e interpretar seus dados
-
--   Necessário em quase todas as análises estatísticas
-
--   Necessário em quase todas as publicações, trabalhos de consultoria, TCC, dissertação, tese, etc.
-
--   Existem vários tipos de gráficos para representar os padrões em seus dados para diferentes tipos de finalidades
-
--   De forma simplificada, os gráficos são representações dos nossos dados tabulares
-:::
-
-## Como mentir com estatística?
-
-![](img/cover_mentir_estatistica.jpg){.absolute width="270" height="400" right="800" top="200"} ![](img/como_mentir_est.png){.absolute width="850" height="450" right="-100" top="150"}
-
-::: footer
-[Heff (2016)](https://www.intrinseca.com.br/livro/624/), [Como MENTIR com ESTATÍSTICA](https://youtu.be/r6d-RBDlc5I)
-:::
-
-# Principais pacotes
-
-## Principais pacotes {.smaller}
-
-<br>
-
-::: incremental
--   [graphics](http://search.r-project.org/R/library/graphics/html/00Index.html): simples e útil para visualizações rápidas
-
--   [ggplot2](https://ggplot2.tidyverse.org/): integrado ao tidyverse, possui uma sintaxe própria baseada na gramática de gráficos por camadas (*layers*)
-
--   [ggplot2 extentions](https://exts.ggplot2.tidyverse.org/): conjunto de pacotes com diversas expansões ao pacote [ggplot2](https://ggplot2.tidyverse.org/). Exemplos: [GGally](https://ggobi.github.io/ggally/), [gganimate](https://gganimate.com/) e [esquisse](https://dreamrs.github.io/esquisse/)
-
--   [visdat](https://docs.ropensci.org/visdat/): visualizações preliminares de conjuntos de dados para identificar problemas
-
--   [ggpubr](https://rpkgs.datanovia.com/ggpubr/): fornece funções simplificadas para criar gráficos para publicação
-
--   [cowplot](https://wilkelab.org/cowplot/): permite combinar vários gráficos
-
--   [patchwork](https://patchwork.data-imaginist.com/): permite combinar vários gráficos
-
--   [plotly](https://plotly.com/r/): cria gráficos interativos usando JavaScript (*plotly.js*)
-:::
-
-# 
-
-<center><img src="img/package_palmerpenguins.png" style="width:50%"/></center>
-
-::: footer
-[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
-:::
-
-## palmerpenguins
-
-```{r eval=FALSE}
-# instalar 
-install.packages("palmerpenguins")
-
-# carregar
-library(palmerpenguins)
-
-# ajuda dos dados
-?penguins
-?penguins_raw
+```{r}
+# comprimento
+stringr::str_length(string = "penguins")
 ```
 
-```{r echo=FALSE}
-library(palmerpenguins)
+--
+
+## Substituir
+
+```{r}
+# substituir
+stringr::str_replace(string = "penguins", pattern = "i", replacement = "y")
 ```
 
-<center><img src="img/culmen_depth.png" style="width:50%"/></center>
+--
 
-::: footer
-[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
-:::
+## Separar
 
-# 
-
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
-
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
-
-## graphics {.smaller}
-
--   Default do R e mais simples
-
--   Pode ser utilizado para objetos de diversas classes
-
--   Funções:
-
-<br>
-
-::::: columns
-::: {.column width="30%"}
-`plot()`<br> `hist()`<br> `barplot()`<br> `boxplot()`<br> `abline()`<br> `points()`<br> `lines()`<br> `polygon()`<br>
-:::
-
-::: {.column width="70%"}
-```{r warning=FALSE, message=FALSE, fig.align="center"}
-# graphics
-plot(flipper_length_mm ~ body_mass_g, data = penguins)
+```{r}
+# separar
+stringr::str_split(string = "p-e-n-g-u-i-n-s", pattern = "-", simplify = TRUE)
 ```
-:::
-:::::
 
-# 
+---
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+# 9. stringr
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
+## Extrair pela posição
 
-## ggplot2 {.smaller}
-
--   Integrado ao `tidyverse`, possui uma sintaxe própria de camadas (*layers*)
-
--   Necessita de funções específicas para objetos de classes diferentes
-
--   Funções:
-
-::::: columns
-::: {.column width="30%"}
-`ggplot() +`<br> `aes() +`<br> `geom_() +`<br> `facet_() +`<br> `stats_() +`<br> `coord_() +`<br> `theme_()`<br>
-:::
-
-::: {.column width="70%"}
-```{r warning=FALSE, message=FALSE, fig.align="center"}
-# ggplot2
-library(ggplot2)
-ggplot(data = penguins) + aes(x = body_mass_g, y = flipper_length_mm) + geom_point()
+```{r}
+# extrair pela posicao
+stringr::str_sub(string = "penguins", end = 3)
 ```
-:::
-:::::
 
-# 
+--
 
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
+## Extrair por padrão
 
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
-
-## ggpubr {.smaller}
-
--   Funções para criar e personalizar plots para publicações baseadas no [ggplot2](https://ggplot2.tidyverse.org/)
-
--   Necessita de funções específicas para gerar gráficos específicos
-
--   Funções:
-
-::::: columns
-::: {.column width="30%"}
-`gghistogram()`<br> `ggdensity()`<br> `ggboxplot()`<br> `ggviolin()`<br> `ggbarplot()`<br> `ggscatter()`<br>
-:::
-
-::: {.column width="70%"}
-```{r warning=FALSE, message=FALSE, fig.align="center"}
-# ggpubr
-library(ggpubr)
-ggscatter(penguins, x = "body_mass_g", y = "flipper_length_mm")
+```{r}
+# extrair por padrao
+stringr::str_extract(string = "penguins", pattern = "p")
 ```
-:::
-:::::
 
-# Gramática dos gráficos
+---
+
+# 9. stringr
+
+## Inserir espacos em branco
+
+```{r}
+# inserir espaco em branco - esquerda
+stringr::str_pad(string = "penguins", width = 10, side = "left")
+
+# inserir espaco em branco - direita
+stringr::str_pad(string = "penguins", width = 10, side = "right")
+
+# inserir espaco em branco - ambos
+stringr::str_pad(string = "penguins", width = 10, side = "both")
+```
+
+---
+
+# 9. stringr
+
+## Remover espaços em branco
+
+```{r}
+# remover espacos em branco - esquerda
+stringr::str_trim(string = " penguins ", side = "left")
+
+# remover espacos em branco - direta
+stringr::str_trim(string = " penguins ", side = "right")
+
+# remover espacos em branco - ambos
+stringr::str_trim(string = " penguins ", side = "both")
+```
+
+---
+
+# 9. stringr
+
+## Alterar minúsculas e maiúsculas
+
+```{r}
+# minusculas
+stringr::str_to_lower(string = "Penguins")
+
+# maiusculas
+stringr::str_to_upper(string = "penguins")
+
+# primeiro caracter maiusculo da primeira palavra
+stringr::str_to_sentence(string = "palmer penGuins")
+
+# primeiro caracter maiusculo de cada palavra
+stringr::str_to_title(string = "palmer penGuins")
+```
+
+---
+
+# 9. stringr
+
+## Ordenar
+
+```{r}
+# ordenar - crescente
+stringr::str_sort(x = letters)
+
+# ordenar - decrescente
+stringr::str_sort(x = letters, dec = TRUE)
+```
+
+---
+
+# 9. stringr
+
+## Alterar valores das colunas
+
+```{r}
+# alterar valores das colunas
+penguins_stringr_valores <- penguins %>% 
+  dplyr::mutate(species = stringr::str_to_lower(species))
+```
+
+--
+
+## Alterar nome das colunas
+
+```{r}
+# alterar nome das colunas
+penguins_stringr_nomes <- penguins %>% 
+  dplyr::rename_with(stringr::str_to_title)
+```
+
+---
+
+class: clear
+background-image: url(img/package_forcats.png)
+background-size: 400px
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[forcats](https://forcats.tidyverse.org/)
+
+---
+
+background-image: url(img/cheatsheet_forcats.png)
+background-size: 600px
+background-position: 50% 50%
+
+# 10. forcats
+
+## Factors with forcats Cheatsheet
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Factors with forcats Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf)
+
+---
+
+# 10. forcats
 
 ## Descrição
 
-Wilkinson (2005) *Grammar of Graphics*: representação gráfica dos dados a partir de atributos estéticos (do inglês *aesthetic*)
+### Conjunto de ferramentas úteis para facilitar a manipulação de fatores e seus níveis
 
-![](img/cover_grammar_graphics.jpg){.absolute width="200" height="300" right="830" top="300"} ![](img/ggplot2_structure.png){.absolute width="750" height="450" right="0" top="200"}
+--
 
-::: footer
-[Wilkinson (2005)](https://www.springer.com/gp/book/9780387245447)
-:::
+### Exemplos: mudar a ordem dos níveis, mudar os valores dos níveis, adicionar e remover níveis, combinar múltiplos níveis
 
-## Camadas (*layers*)
+--
 
-<center><img src="img/plot_ggplot.gif" style="width:100%"/></center>
+### Pode ser utilizado em conjunto com o pacote `dplyr` para manejar colunas
 
-::: footer
-[Think About the Grammar of Graphics When Improving Your Graphs](https://medium.com/tdebeus/think-about-the-grammar-of-graphics-when-improving-your-graphs-18e3744d8d18)
-:::
+---
 
-## ggplot2
+# 10. forcats
 
-Wickham (2008) criou o pacote `ggplot2`, onde "gg" representa a contração de *Grammar of Graphics*
+## Converter dados de string para fator
 
-![](img/cover_ggplot2.jpg){.absolute width="200" height="300" right="830" top="300"} ![](img/ggplot2_gramatica.png){.absolute width="750" height="450" right="0" top="200"}
+```{r}
+# converter dados de string para fator
+forcats::as_factor(penguins_raw$Species) %>% head()
+```
 
-::: footer
-[Wickham (2008)](https://ggplot2-book.org/)
-:::
+--
 
-# Principais tipos de gráficos
+## Mudar o nome dos níveis
 
-## Elementos de um gráfico
+```{r}
+# mudar o nome dos niveis
+forcats::fct_recode(penguins$species, a = "Adelie", c = "Chinstrap", g = "Gentoo") %>% head()
+```
 
-Representações das colunas (eixos) e linhas (elementos)
+---
 
-<center><img src="img/plot_data_table_scatterplot.png" style="width:90%"/></center>
+# 10. forcats
 
-## Tipos de variáveis
+## Inverter os níveis
 
-![](img/plot_variables.png){.absolute width="500" height="250" right="300" top="100"}
+```{r}
+# inverter os niveis
+forcats::fct_rev(penguins$species) %>% head()
+```
 
-![](img/nominal_ordinal_binary.png){.absolute width="500" height="350" right="550" top="350"}
+--
 
-![](img/continuous_discrete_inv.png){.absolute width="500" height="350" right="50" top="350"}
+## Especificar a ordem dos níveis
 
-::: footer
-[Matthiopoulos (2011)](http://greenmaths.st-andrews.ac.uk/), [\@allison_horst](https://twitter.com/allison_horst)
-:::
+```{r}
+# especificar a ordem dos niveis
+forcats::fct_relevel(penguins$species, "Chinstrap", "Gentoo", "Adelie") %>% head()
+```
 
-## Tipos de variáveis e tipos gráficos
+---
+
+# 10. forcats
+
+## Níveis pela ordem em que aparecem
+
+```{r}
+# niveis pela ordem em que aparecem
+forcats::fct_inorder(penguins$species) %>% head()
+```
+
+## Ordem (decrescente) de frequência
+
+```{r}
+# ordem (decrescente) de frequecia
+forcats::fct_infreq(penguins$species) %>% head()
+```
+
+---
+
+# 10. forcats
+
+## Agregação de níveis raros em um nível
+
+```{r}
+# agregacao de niveis raros em um nivel
+forcats::fct_lump(penguins$species) %>% head()
+```
+
+--
+
+## Transformar várias colunas em fator
+
+```{r}
+# transformar varias colunas em fator
+penguins_raw_multi_factor <- penguins_raw %>% 
+  dplyr::mutate(across(where(is.character), forcats::as_factor))
+```
+
+---
+
+class: clear
+background-image: url(img/package_lubridate.png)
+background-size: 400px
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[lubridate](https://lubridate.tidyverse.org/)
+
+---
+
+background-image: url(img/cheatsheet_lubridate.png)
+background-size: 550px
+background-position: 50% 50%
+
+# 11. lubridate
+
+## Dates and Times Cheatsheet
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Dates and Times Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf)
+
+---
+
+background-image: url(img/lubridate_allison.png)
+background-size: 400px
+background-position: 50% 90%
+
+# 11. lubridate
+
+## Pacote à parte do tidyverse
+
+### Carregar sempre que for utilizar
+
+```{r}
+# carregar
+library(lubridate)
+```
+
+<br><br><br><br><br><br><br><br><br><br>
+[@allison_horst](https://twitter.com/allison_horst)
+
+---
+
+# 11. lubridate
+
+## Descrição
+
+### Conjunto de funções para a manipulação de dados de data e horário
+
+--
+
+### A manipulação desses dados não é intuitiva e muda dependendo do tipo de objeto de data e horário
+
+--
+
+### O formato desses dados deve levar em consideração Fusos horários, anos bissextos, horários de verão, etc.
+
+--
+
+### Exemplos: transformações de data/horário, componentes, arredondamentos, durações, períodos, intervalos, etc.
+
+---
+
+background-image: url(img/mhs_package.png)
+background-size: 200px
+background-position: 85% 90%
+
+# 11. lubridate
+
+## Tipos de dados
+
+- **Data**: tempo em dias, meses e anos `<date>`
+- **Horário**: tempo dentro de um dia `<time>`
+- **Data-horário**: tempo em um instante (data mais tempo) `<dttm>`
+
+### Para trabalhar exclusivamente com horários, podemos utilizar o pacote [hms](https://hms.tidyverse.org/)
+
+### Algumas letras possuem significados temporais, sendo abreviações de diferentes períodos em inglês: 
 
 <br>
+- **y**ear (ano), **m**onth (mês) 
 
-<center><img src="img/ggplot_data_from_viz.png" style="width:85%"/></center>
+- **w**eak (semana), **d**ay (dia) 
 
-::: footer
-[from Data to Viz](https://www.data-to-viz.com/)
-:::
+- **h**our (hora), **m**inute (minuto) e **s**econd (segundo)
 
-## Tipos de variáveis e tipos gráficos
+---
 
-<center><img src="img/r_charts_suggests.png" style="width:100%"/></center>
+# 11. lubridate
 
-## R CHARTS
+## Data e horários atuais
 
-<center><img src="img/rcharts-featured.png" style="width:100%"/></center>
-
-::: footer
-[R CHARTShttps://r-charts.com/](https://r-charts.com/)
-:::
-
-# Histograma (*Histogram*)
-
-## Histograma (*Histogram*)
-
--   Representa dados de uma coluna
-
--   Dados do tipo discreto ou contínuo
-
--   Distribuição de frequência ou densidade
-
-![](img/plot_histogram.png){.absolute width="350" height="350" right="550" top="310"}
-
-![](img/plot_density.png){.absolute width="350" height="350" right="100" top="310"}
-
-::: footer
-[histogram](https://www.data-to-viz.com/graph/histogram.html), [density](https://www.data-to-viz.com/graph/density.html)
-:::
-
-## Histograma (*Histogram*)
-
-<br>
-
-<center><img src="img/hist_fig1.gif" style="width:80%"/></center>
-
-. . .
-
-<br>
-
-<center><img src="img/hist_fig2.gif" style="width:80%"/></center>
-
-::: footer
-[Intro to Histograms](https://plotly.com/chart-studio-help/histogram/)
-:::
-
-## Histograma (*Histogram*)
-
-<center><img src="img/hist_fig3.gif" style="width:55%"/></center>
-
-::: footer
-[Intro to Histograms](https://plotly.com/chart-studio-help/histogram/)
-:::
-
-## Densidade (*Density*)
-
-<br><br>
-
-<center><img src="img/hist_fig5.jpg" style="width:100%"/></center>
-
-::: footer
-[Intro to Histograms](https://plotly.com/chart-studio-help/histogram/)
-:::
-
-## Densidade (*Density*)
-
-![](img/hist_fig6.gif){.absolute width="550" height="350" right="550" top="250"}
-
-. . .
-
-![](img/hist_fig7.gif){.absolute width="560" height="340" right="-50" top="265"}
-
-::: footer
-[Intro to Histograms](https://plotly.com/chart-studio-help/histogram/)
-:::
-
-# 
-
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
-
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
-
-## Histograma (*Histogram*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-hist(penguins$flipper_length_mm)
-```
-:::
+# extrair a data nesse instante
+lubridate::today()
 
-::: {.column width="50%"}
+# extrair a data e tempo nesse instante
+lubridate::now()
+```
+
+---
+
+# 11. lubridate
+
+## Existem três maneiras de criar um dado de data/horário
+
+### 1. De um string ou caracter
+
+### 2. De componentes individuais de data e horário
+
+### 3. De um objeto de data/horário existente
+
+
+---
+
+# 11. lubridate
+
+## **1. String ou caracter **
+
+### Os dados de data/horário geralmente estão no formato de strings
+
+### Podemos transformar os dados especificando a ordem dos seus componentes usando as letras `y` (ano), `m` (mês) e `d` (dia)
+
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-hist(penguins$flipper_length_mm)
+# strings e numeros para datas
+lubridate::dmy("03-03-2021")
 ```
-:::
-:::::
 
-## Histograma (*Histogram*)
+---
 
-**graphics**
+# 11. lubridate
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray")
-```
-:::
+## **1. String ou caracter **
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray")
-```
-:::
-:::::
-
-## Histograma (*Histogram*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins")
-```
-:::
-:::::
-
-## Histograma (*Histogram*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência")
-```
-:::
-:::::
-
-## Histograma (*Histogram*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência",
-     br = 50)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência",
-     br = 50)
-```
-:::
-:::::
-
-## Histograma (*Histogram*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mar = c(5, 5, 5, 5))
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência",
-     br = 50,
-     cex.main = 2,
-     cex.lab = 2, 
-     cex.axis = 1.5)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-par(mar = c(5, 5, 5, 5))
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência",
-     br = 50,
-     cex.main = 2,
-     cex.lab = 2, 
-     cex.axis = 1.5)
-```
-:::
-:::::
-
-## Densidade (*Density*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mar = c(5, 5, 5, 5))
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Densidade",
-     br = 50,
-     cex.main = 2,
-     cex.lab = 2, 
-     cex.axis = 1.5,
-     prob = TRUE)
-lines(density(na.omit(penguins$flipper_length_mm)))
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-par(mar = c(5, 5, 5, 5))
-hist(penguins$flipper_length_mm,
-     col = "gray50",
-     border = "gray",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Densidade",
-     br = 50,
-     cex.main = 2,
-     cex.lab = 2, 
-     cex.axis = 1.5,
-     prob = TRUE)
-lines(density(na.omit(penguins$flipper_length_mm)))
-```
-:::
-:::::
-
-## Densidade (*Density*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mar = c(5, 5, 5, 5))
-plot(density(na.omit(penguins$flipper_length_mm)),
-     col = "gray50",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Densidade",
-     cex.main = 2,
-     cex.lab = 2, 
-     cex.axis = 1.5)
-polygon(density(na.omit(penguins$flipper_length_mm)), 
-        col = "gray50")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-par(mar = c(5, 5, 5, 5))
-plot(density(na.omit(penguins$flipper_length_mm)),
-     col = "gray50",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Densidade",
-     cex.main = 2,
-     cex.lab = 2, 
-     cex.axis = 1.5)
-polygon(density(na.omit(penguins$flipper_length_mm)), 
-        col = "gray50")
-```
-:::
-:::::
-
-## Densidade (*Density*)
-
-**Exportar**
+### Essas funções também aceitam números sem aspas, além funcionarem em outros diversos formatos
 
 ```{r eval=FALSE}
-png("../data/plot_densidade.png"), wi = 15, he = 15, un = "cm", res = 300)
+# strings e numeros para datas
+lubridate::dmy("03-Mar-2021")
+lubridate::dmy(03032021)
+lubridate::dmy("03032021")
+lubridate::dmy("03/03/2021")
+lubridate::dmy("03.03.2021")
 ```
 
-<br>
+---
 
-. . .
+# 11. lubridate
 
-```{r eval = FALSE}
-par(mar = c(5, 5, 5, 5))
-plot(density(na.omit(penguins$flipper_length_mm)),
-     col = "gray50",
-     main = "Comprimento da nadadeira dos penguins",
-     xlab = "Comprimento da nadadeira (mm)",
-     ylab = "Frequência",
-     cex.main = 2,  cex.lab = 2, cex.axis = 1.5)
-polygon(density(na.omit(penguins$flipper_length_mm)), col = "gray50")
-```
+## **1. String ou caracter **
 
-<br>
-
-. . .
+### Especificar horários e Fusos horários
 
 ```{r eval=FALSE}
-dev.off()
+# especificar horarios e fuso horario
+lubridate::dmy_h("03-03-2021 13")
+lubridate::dmy_hm("03-03-2021 13:32")
+lubridate::dmy_hms("03-03-2021 13:32:01")
+lubridate::dmy_hms("03-03-2021 13:32:01", tz = "America/Sao_Paulo")
 ```
 
-# 
+---
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+# 11. lubridate
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
+## **2. Componentes individuais de data e horário**
 
-## Histograma (*Histogram*)
-
-**ggplot2**
-
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins)
+# dados com componentes individuais
+dados <- tibble::tibble(
+  ano = c(2021, 2021, 2021),
+  mes = c(1, 2, 3),
+  dia = c(12, 20, 31),
+  hora = c(2, 14, 18), 
+  minuto = c(2, 44, 55))
+dados
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins)
-```
-:::
-:::::
+---
 
-## Histograma (*Histogram*)
+# 11. lubridate
 
-**ggplot2**
+## **2. Componentes individuais de data e horário**
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins, aes(x = flipper_length_mm))
+# dados com componentes individuais
+dados %>% 
+  dplyr::mutate(data = lubridate::make_datetime(ano, mes, dia, hora, minuto))
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, aes(x = flipper_length_mm))
-```
-:::
-:::::
+---
 
-## Histograma (*Histogram*)
+# 11. lubridate
 
-**ggplot2**
+## **3. Objeto de data/horário existente**
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram()
-```
-:::
+# data para data-horario
+lubridate::as_datetime(today())
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram()
+# data-horario para data
+lubridate::as_date(now())
 ```
-:::
-:::::
 
-## Histograma (*Histogram*)
+---
 
-**ggplot2**
+# 11. lubridate
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins,  aes(x = flipper_length_mm)) +
-  geom_histogram(color = "black", fill = "cyan4", bins = 10)
-```
-:::
+## Funções para acessar e definir componentes individuais de datas e horários
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins,  aes(x = flipper_length_mm)) +
-  geom_histogram(color = "black", fill = "cyan4", bins = 10)
-```
-:::
-:::::
+- `year()`: acessa o ano
+- `month()`: acessa o mês
+- `day()`: acessa o dia
+- `yday()`: acessa o dia do ano
+- `mday()`: acessa o dia do mês
+- `wday()`: acessa o dia da semana
+- `hour()`: acessa as horas
+- `minute()`: acessa os minutos
+- `second()`: acessa os segundos
 
-## Histograma (*Histogram*)
+---
 
-**ggplot2**
+# 11. lubridate
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram(color = "black", fill = "cyan4", 
-                 bins = 10, alpha = .5) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
+## Funções para acessar e definir componentes individuais de datas e horários
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram(color = "black", fill = "cyan4", 
-                 bins = 10, alpha = .5) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
+```{r eval=FALSE}
+# extrair
+lubridate::year(now())
+lubridate::month(now())
+lubridate::month(now(), label = TRUE)
+lubridate::day(now())
+lubridate::wday(now())
+lubridate::wday(now(), label = TRUE)
+lubridate::second(now())
 ```
-:::
-:::::
 
-## Histograma (*Histogram*)
+---
 
-**ggplot2**
+# 11. lubridate
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(bins = 10, alpha = .5) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
+## Inclusam de informações de datas e horários.
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(bins = 10, alpha = .5) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
-
-## Histograma (*Histogram*)
+# data
+data <- dmy_hms("04-03-2021 01:04:56")
 
-**ggplot2**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(bins = 10, alpha = .5, position = "dodge") +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
+# incluir
+lubridate::year(data) <- 2020
+lubridate::month(data) <- 01
+lubridate::hour(data) <- 13
 ```
-:::
-
-::: {.column width="50%"}
+--
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(bins = 10, alpha = .5, position = "dodge") +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
+# incluir varios valores
+update(data, year = 2020, month = 1, mday = 1, hour = 1)
 ```
-:::
-:::::
-
-## Histograma (*Histogram*)
-
-**ggplot2**
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(alpha = .5, position = "identity") +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
+---
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(alpha = .5, position = "identity") +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
+# 11. lubridate
 
-## Histograma (*Histogram*)
+## Operações com datas
 
-**ggplot2**
+### Muitas vezes precisamos fazer operações com datas, como subtração, adição e divisão. Para tanto, é preciso entender três classes importantes que representam intervalos de tempo
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram() +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  facet_wrap(~ species, ncol = 2, scale = "free_y") +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
+### **1. Durações**: representam um número exato de segundos
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram() +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  facet_wrap(~ species, ncol = 2, scale = "free_y") +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
+### **2. Períodos**: representam unidades humanas como semanas e meses
 
-## Histograma (*Histogram*)
+### **3. Intervalos**: representam um ponto inicial e final
 
-**ggplot2**
+---
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram() +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  facet_grid(species ~ .) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
+# 11. lubridate
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram() +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  facet_grid(species ~ .) +
-  labs(title = "Comprimento da nadadeira dos penguins",
-       fill = "Espécies",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Frequência") +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
+## **1. Durações**
 
-## Densidade (*Density*)
+###Registram o intervalo de tempo em segundos, com alguma unidade de tempo maior entre parênteses
 
-**ggplot2**
+### Funções
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins) +
-  aes(x = flipper_length_mm) +
-  geom_density(color = "black", fill = "cyan4", alpha = .5) + 
-  labs(title = "Comprimento da nadadeira dos penguins",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Densidade") +
-  theme_bw(base_size = 20)
-```
-:::
+- `duration()`: cria data em duração
+- `as.duration()`: converte datas em duração
+- `dyears()`: duração de anos
+- `dmonths()`: duração de meses
+- `dweeks()`: duração de semanas
+- `ddays()`: duração de dias
+- `dhours()`: duração de horas
+- `dminutes()`: duração de minutos
+- `dseconds()`: duração de segundos
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins) +
-  aes(x = flipper_length_mm) +
-  geom_density(color = "black", fill = "cyan4", alpha = .5) + 
-  labs(title = "Comprimento da nadadeira dos penguins",
-       x = "Comprimento da nadadeira (mm)", 
-       y = "Densidade") +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
+---
 
-## Densidade (*Density*)
+# 11. lubridate
 
-**ggplot2**
+## **1. Durações**
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  labs(x = "Comprimento da nadadeira (mm)", 
-       y = "Densidade", 
-       fill = "Espécie") +
-  theme_bw(base_size = 20)
-```
-:::
+### Subtração de datas e conversão para duração
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggplot(data = penguins, 
-       aes(x = flipper_length_mm, fill = species)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  labs(x = "Comprimento da nadadeira (mm)", 
-       y = "Densidade", 
-       fill = "Espécie") +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
-
-## Densidade (*Density*)
-
-**ggplot2**
+# subtracao de datas
+tempo_estudando_r <- lubridate::today() - lubridate::dmy("30-11-2011")
 
-```{r}
-#| eval: false
-ggplot_densidade <- ggplot(data = penguins, 
-                           aes(x = flipper_length_mm, fill = species)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = c("darkorange", "darkorchid", "cyan4")) +
-  labs(x = "Comprimento da nadadeira (mm)", 
-       y = "Densidade", 
-       fill = "Espécie") +
-  theme_bw(base_size = 20)
-
-ggsave(filename = "density_ggplot2.png", 
-       plot = ggplot_densidade, wi = 20, he = 15, un = "cm", dpi = 300)
+# conversao para duracao
+tempo_estudando_r_dur <- lubridate::as.duration(tempo_estudando_r)
 ```
-
-# 
 
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
+---
 
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
+# 11. lubridate
 
-## Histograma (*Histogram*)
+## **1. Durações**
 
-**ggpubr**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-gghistogram(data = penguins, 
-            x = "flipper_length_mm",
-            add = "median",
-            color = "species",
-            fill = "species",
-            palette = c("darkorange", "darkorchid", "cyan4"),
-            xlab = "Comprimento da nadadeira (mm)",
-            ylab = "Frequência")
-```
-:::
+### Criando durações
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-gghistogram(data = penguins, 
-            x = "flipper_length_mm",
-            add = "median",
-            color = "species",
-            fill = "species",
-            palette = c("darkorange", "darkorchid", "cyan4"),
-            xlab = "Comprimento da nadadeira (mm)",
-            ylab = "Frequência")
+# criando duracoes
+lubridate::duration(90, "seconds")
+lubridate::duration(1.5, "minutes")
+lubridate::duration(1, "days")
 ```
-:::
-:::::
-
-## Densidade (*Density*)
 
-**ggpubr**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggdensity(data = penguins, 
-          x = "flipper_length_mm",
-          add = "median",
-          color = "species",
-          fill = "species",
-          palette = c("darkorange", "darkorchid", "cyan4"),
-          xlab = "Comprimento da nadadeira (mm)",
-          ylab = "Densidade")
-```
-:::
+---
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-ggdensity(data = penguins, 
-          x = "flipper_length_mm",
-          add = "median",
-          color = "species",
-          fill = "species",
-          palette = c("darkorange", "darkorchid", "cyan4"),
-          xlab = "Comprimento da nadadeira (mm)",
-          ylab = "Densidade")
-```
-:::
-:::::
+# 11. lubridate
 
-## Histograma (*Histogram*)
+## **1. Durações**
 
-**ggpubr**
+### Transformação das durações
 
-```{r}
-#| eval: false
-ggpubr_densidade <- ggdensity(data = penguins,
-                              x = "flipper_length_mm",
-                              add = "median",
-                              color = "species",
-                              fill = "species",
-                              palette = c("darkorange", "darkorchid", "cyan4"),
-                              xlab = "Comprimento da nadadeira (mm)",
-                              ylab = "Densidade")
-
-ggsave(filename = "densidade_ggpubr.png", 
-       plot = ggpubr_densidade, wi = 20, he = 15, un = "cm", dpi = 300)
+```{r eval=FALSE}
+# transformacao da duracao
+lubridate::dseconds(100)
+lubridate::dminutes(100)
+lubridate::dhours(100)
+lubridate::ddays(100)
+lubridate::dweeks(100)
+lubridate::dyears(100)
 ```
 
-# Gráfico de setores <br> (*Pie chart*)
+---
 
-## Gráfico de setores (*Pie chart*)
+# 11. lubridate
 
--   Representa dados de uma coluna
+## **1. Durações**
 
--   Dados do tipo categórico
+### Operações com durações
 
--   Proporção ou porcentagem de dados categóricos
-
-![](img/plot_pie.png){.absolute width="350" height="350" right="360" top="310"}
-
-::: footer
-[pie](https://www.data-to-viz.com/caveat/pie.html)
-:::
-
-# 
-
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
-
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
-
-## Gráfico de setores (*Pie chart*)
-
-**graphic**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mar = c(0, 1, 0, 1))
-pie(c(280, 60, 20),
-    c("Sky", 
-      "Sunny side of pyramid", 
-      "Shady side of pyramid"),
-    col = c("#0292D8", 
-            "#F7EA39", 
-            "#C4B632"),
-    init.angle = -50, border = NA)
-```
-:::
-
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-par(mar = c(0, 1, 0, 1))
-pie(c(280, 60, 20),
-    c("Sky", "Sunny side of pyramid", "Shady side of pyramid"),
-    col = c("#0292D8", "#F7EA39", "#C4B632"),
-    init.angle = -50, border = NA)
-```
-:::
-:::::
+# somando duracoes a datas
+lubridate::today() + lubridate::ddays(1)
 
-## Gráfico de setores (*Pie chart*)
+# subtraindo duracoes de datas
+lubridate::today() - lubridate::dyears(1)
 
-```{r}
-# calculo da proporcao
-penguins_prop <- penguins %>%
-  dplyr::count(species) %>% 
-  dplyr::mutate(prop = round(n/sum(n), 4)*100)
-penguins_prop
+# multiplicando duracoes
+2 * dyears(2)
 ```
 
-## Gráfico de setores (*Pie chart*)
+---
 
-**graphic**
+# 11. lubridate
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mar = c(5, 5, 5, 5))
-pie(penguins_prop$prop,
-    labels = paste(penguins_prop$prop, "%"), 
-    main = "Espécies",
-    col = c("darkorange", "darkorchid", "cyan4"))
-legend("topright", legend = penguins_prop$species, 
-       fill = c("darkorange", "darkorchid", "cyan4"))
-```
-:::
+## **2. Períodos**
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_prop <- penguins %>%
-  dplyr::count(species) %>% 
-  dplyr::mutate(prop = round(n/sum(n), 4)*100)
-
-par(mar = c(5, 5, 5, 5))
-pie(penguins_prop$prop,
-    labels = paste(penguins_prop$prop, "%"), 
-    main = "Espécies",
-    col = c("darkorange", "darkorchid", "cyan4"))
-legend("topright", legend = penguins_prop$species, 
-       fill = c("darkorange", "darkorchid", "cyan4"))
-```
-:::
-:::::
+### São extensões de tempo não fixados em segundos como as durações, mas flexíveis, como dias, semanas, meses ou anos
 
-# 
+### Funções
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+- `period()`: cria data em período
+- `as.period()`: converte datas em período
+- `seconds()`: período em segundos
+- `minutes()`: período em minutos
+- `hours()`: período em horas
+- `days()`: período em dias
+- `weeks()`: período em semanas
+- `months()`: período em meses
+- `years()`: período em anos
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
+---
 
-## Gráfico de setores (*Pie chart*)
+# 11. lubridate
 
-**ggplot2**
+## **2. Períodos**
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins_prop, 
-       aes(x = "", y = prop, fill = species)) + 
-  geom_bar(stat = "identity", color = "white") +
-  coord_polar("y", start = 0) +
-  geom_text(aes(label = paste0(prop, "%")), color = "white", 
-            position = position_stack(vjust = .5), size = 8) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_void() +
-  labs(fill = "Espécie")
-```
-:::
+### Criando períodos
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_prop <- penguins %>%
-  dplyr::count(species) %>% 
-  dplyr::mutate(prop = round(n/sum(n), 4)*100)
-
-ggplot(data = penguins_prop, 
-       aes(x = "", y = prop, fill = species)) + 
-  geom_bar(stat = "identity", color = "white") +
-  coord_polar("y", start = 0) +
-  geom_text(aes(label = paste0(prop, "%")), color = "white", 
-            position = position_stack(vjust = .5), size = 8) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_void() +
-  labs(fill = "Espécie")
+# criando periodos
+period(c(90, 5), c("second", "minute"))
+period(c(3, 1, 2, 13, 1), c("second", "minute", "hour", "day", "week"))
 ```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
 
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
+---
 
-## Gráfico de setores (*Pie chart*)
+# 11. lubridate
 
-**ggpubr**
+## **2. Períodos**
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggpie(penguins_prop,
-      "prop", 
-      label = "prop",
-      lab.pos = "in", 
-      lab.font = c(8, "white"),
-      fill = "species", 
-      color = "white",
-      palette = c("darkorange", "purple", "cyan4"))
-```
-:::
+### Transformações de períodos
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_prop <- penguins %>%
-  dplyr::count(species) %>% 
-  dplyr::mutate(prop = round(n/sum(n), 4)*100)
-
-ggpie(penguins_prop,
-      "prop", 
-      label = "prop",
-      lab.pos = "in", 
-      lab.font = c(8, "white"),
-      fill = "species", 
-      color = "white",
-      palette = c("darkorange", "purple", "cyan4"))
+```{r eval=FALSE}
+# transformacao de periodos
+lubridate::seconds(100)
+lubridate::minutes(100)
+lubridate::hours(100)
+lubridate::days(100)
+lubridate::weeks(100)
+lubridate::years(100)
 ```
-:::
-:::::
-
-# Gráfico de setores (*Donut chart*)
-
-## Gráfico de setores (*Donut chart*)
-
--   Representa dados de uma coluna
-
--   Dados do tipo categórico
-
--   Proporção ou porcentagem de dados categóricos
 
-![](img/plot_donut.png){.absolute width="350" height="350" right="360" top="310"}
+---
 
-::: footer
-[donut](https://r-graph-gallery.com/doughnut-plot)
-:::
+# 11. lubridate
 
-# 
+## **2. Períodos**
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+### Operações com os períodos
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
-
-## Gráfico de setores (*Donut chart*)
-
-**ggplot**
-
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins_prop, aes(x = 2, y = prop, fill = species)) +
-  geom_bar(stat = "identity") +
-  coord_polar(theta = "y", start = 0) +
-  geom_text(aes(label = paste0(prop, "%")), color = "white",
-            position = position_stack(vjust = .5), size = 5) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  xlim(0, 2.5) +
-  theme_void() +
-  theme(legend.position = c(.5, .5),
-        legend.title = element_text(size = 20),
-        legend.text = element_text(size = 15)) +
-  labs(fill = "Espécie")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-penguins_prop <- penguins %>%
-  dplyr::count(species) %>% 
-  dplyr::mutate(prop = round(n/sum(n), 4)*100)
-
-ggplot(data = penguins_prop, aes(x = 2, y = prop, fill = species)) +
-  geom_bar(stat = "identity") +
-  coord_polar(theta = "y", start = 0) +
-  geom_text(aes(label = paste0(prop, "%")), color = "white",
-            position = position_stack(vjust = .5), size = 5) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  xlim(0, 2.5) +
-  theme_void() +
-  theme(legend.position = c(.5, .5),
-        legend.title = element_text(size = 20),
-        legend.text = element_text(size = 15)) +
-  labs(fill = "Espécie")
-```
-:::
-:::::
+# somando datas
+lubridate::today() + lubridate::weeks(10)
 
-# 
+# subtraindo datas
+lubridate::today() - lubridate::weeks(10)
 
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
-
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
-
-## Gráfico de setores (*Donut chart*)
-
-**ggpubr**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggdonutchart(penguins_prop,
-             "prop", 
-             label = "prop",
-             lab.pos = "in", 
-             lab.font = c(7, "white"),
-             fill = "species", 
-             color = "white",
-             palette = c("darkorange", "purple", "cyan4"))
+# criando datas recorrentes
+lubridate::today() + lubridate::weeks(0:10)
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_prop <- penguins %>%
-  dplyr::count(species) %>% 
-  dplyr::mutate(prop = round(n/sum(n), 4)*100)
-
-ggdonutchart(penguins_prop,
-             "prop", 
-             label = "prop",
-             lab.pos = "in", 
-             lab.font = c(7, "white"),
-             fill = "species", 
-             color = "white",
-             palette = c("darkorange", "purple", "cyan4"))
-```
-:::
-:::::
+---
 
-# Gráfico de barras <br> (*Bar plot*)
+# 11. lubridate
 
-## Gráfico de barras (*Bar plot*)
+## **3. Intervalos**
 
--   Representa dados de duas colunas
+### Períodos de tempo limitados por duas datas, possuindo uma duração com um ponto de partida, que o faz preciso para determinar uma duração
 
--   Dados do tipo categóricos: X = categórico e Y = categórico
+### Funções
 
--   Resume dados de contagens para uma coluna
+- `interval()`: cria data em intervalo
+- `%--%: cria data em intervalo
+- `as.interval()`: converte datas em intervalo
+- `int_start()`: acessa ou atribui data inicial de um intervalo
+- `int_end()`: acessa ou atribui data final de um intervalo
+- `int_length()`: comprimento de um intervalo em segundos
+- `int_flip()`: inverte a ordem da data de início e da data de término em um intervalo
+- `int_shift()`: desloca as datas de início e término de um intervalo
+- `int_aligns()`: testa se dois intervalos compartilham um ponto final
+- `int_standardize()`: garante que todos os intervalos sejam positivos
+- `int_diff()`: retorna os intervalos que ocorrem entre os elementos de data/horário
+- `int_overlaps()`: testa se dois intervalos se sobrepõem
+- `%within%: testa se o primeiro intervalo está contido no segundo
 
-![](img/plot_barplot.png){.absolute width="350" height="350" right="360" top="310"}
+---
 
-::: footer
-[barplot](https://www.data-to-viz.com/graph/barplot.html)
-:::
+# 11. lubridate
 
-## Gráfico de barras (*Bar plot*)
+## **3. Intervalos**
 
-**Tabela de Frequência**
+### Criando intervalos
 
 ```{r}
-# numero de individuos coletados
-penguins_count <- penguins %>%
-  dplyr::count(species)
-penguins_count
-```
-
-# 
-
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
+# criando duas datas - inicio de estudos do R e nascimento do meu filho
+r_inicio <- lubridate::dmy("30-11-2011")
+filho_nascimento <- lubridate::dmy("26-09-2013")
+r_hoje <- lubridate::today()
 
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
-
-## Gráfico de barras (*Bar plot*)
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-barplot(n ~ species,
-        data = penguins_count, 
-        col = c("darkorange", "purple", "cyan4"),
-        main = "Número de indivíduos coletados por espécie",
-        xlab = "Espécies",
-        ylab = "Frequência absoluta",
-        cex.main = 1.5,
-        cex.lab = 1.3,
-        cex.axis = 1.2)
-```
-:::
+# criando intervalos - interval
+r_intervalo <- lubridate::interval(r_inicio, r_hoje)
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_count <- penguins %>%
-  dplyr::count(species)
-
-barplot(n ~ species,
-        data = penguins_count, 
-        col = c("darkorange", "purple", "cyan4"),
-        main = "Número de indivíduos coletados por espécie",
-        xlab = "Espécies",
-        ylab = "Frequência absoluta",
-        cex.main = 1.5,
-        cex.lab = 1.3,
-        cex.axis = 1.2)
+# criando intervalos - interval %--%
+filho_intervalo <- filho_nascimento %--% lubridate::today()
 ```
-:::
-:::::
 
-# 
+---
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+# 11. lubridate
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
+## **3. Intervalos**
 
-## Gráfico de barras (*Bar plot*)
+### Operaçõpes com intervalos
 
-**ggplot2**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins_count, 
-       aes(x = species, y = n, fill = species)) +
-  geom_bar(stat = "identity") +
-  geom_label(aes(label = n), fill = "white", size = 10) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  theme(legend.position = "none") +
-  labs(x = "Espécie", 
-       y = "Número de indivíduos", 
-       fill = "Espécie")
+```{r eval=FALSE}
+# operacooes com intervalos
+lubridate::int_start(r_intervalo)
+lubridate::int_end(r_intervalo)
+lubridate::int_length(r_intervalo)
+lubridate::int_flip(r_intervalo)
+lubridate::int_shift(r_intervalo, duration(days = 30))
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_count <- penguins %>%
-  dplyr::count(species)
-
-ggplot(data = penguins_count, 
-       aes(x = species, y = n, fill = species)) +
-  geom_bar(stat = "identity") +
-  geom_label(aes(label = n), fill = "white", size = 10) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  theme(legend.position = "none") +
-  labs(x = "Espécie", 
-       y = "Número de indivíduos", 
-       fill = "Espécie")
-```
-:::
-:::::
+---
 
-## Gráfico de barras (*Bar plot*)
+# 11. lubridate
 
-**ggplot2**
+## **3. Intervalos**
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins_count, 
-       aes(x = species, y = n, fill = species)) +
-  geom_bar(stat = "identity") +
-  geom_label(aes(label = n), fill = "white", size = 10) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  coord_flip() +
-  theme_bw(base_size = 15) +
-  theme(legend.position = "none") +
-  labs(x = "Espécie", 
-       y = "Número de indivíduos", 
-       fill = "Espécie")
-```
-:::
+### Sobreposição entre dois intervalos
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_count <- penguins %>%
-  dplyr::count(species)
-
-ggplot(data = penguins_count, 
-       aes(x = species, y = n, fill = species)) +
-  geom_bar(stat = "identity") +
-  geom_label(aes(label = n), fill = "white",size = 10) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  coord_flip() +
-  theme_bw(base_size = 15) +
-  theme(legend.position = "none") +
-  labs(x = "Espécie", 
-       y = "Número de indivíduos", 
-       fill = "Espécie")
-```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
+# verificar sobreposicao - int_overlaps
+lubridate::int_overlaps(r_intervalo, filho_intervalo)
 
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
-
-## Gráfico de barras (*Bar plot*)
-
-**ggpubr**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggbarplot(penguins_count,
-          x = "species",
-          y = "n", 
-          fill = "species", 
-          color = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          label = TRUE, 
-          lab.pos = "in", 
-          lab.col = "white",
-          lab.size = 8,
-          main = "Número de indivíduos coletados por espécie",
-          xlab = "Espécies",
-          ylab = "Frequência absoluta",
-          legend = "none")
+# verificar se intervalo esta contido
+r_intervalo %within% filho_intervalo
+filho_intervalo %within% r_intervalo
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_count <- penguins %>%
-  dplyr::count(species)
-
-ggbarplot(penguins_count,
-          x = "species",
-          y = "n", 
-          fill = "species", 
-          color = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          label = TRUE, 
-          lab.pos = "in", 
-          lab.col = "white",
-          lab.size = 8,
-          main = "Número de indivíduos coletados por espécie",
-          xlab = "Espécies",
-          ylab = "Frequência absoluta",
-          legend = "none")
-```
-:::
-:::::
+---
 
-## Gráfico de barras (*Bar plot*)
+# 11. lubridate
 
-**ggpubr**
+## **3. Intervalos**
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggbarplot(penguins_count,
-          x = "species",
-          y = "n", 
-          fill = "species", 
-          color = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          label = TRUE, 
-          lab.pos = "out", 
-          lab.col = "black",
-          lab.size = 8,
-          main = "Número de indivíduos coletados por espécie",
-          xlab = "Espécies",
-          ylab = "Frequência absoluta",
-          legend = "none",
-          orientation = "horiz")
-```
-:::
+### Calcular quantos períodos existem dentro de um intervalo
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins_count <- penguins %>%
-  dplyr::count(species)
-
-ggbarplot(penguins_count,
-          x = "species",
-          y = "n", 
-          fill = "species", 
-          color = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          label = TRUE, 
-          lab.pos = "out", 
-          lab.col = "black",
-          lab.size = 8,
-          main = "Número de indivíduos coletados por espécie",
-          xlab = "Espécies",
-          ylab = "Frequência absoluta",
-          legend = "none",
-          orientation = "horiz")
-```
-:::
-:::::
-
-# Gráfico de caixas <br> (*Box plot*)
-
-## Gráfico de caixas (*Box plot*)
-
--   Representa dados de duas colunas
-
--   Dados do tipo categóricos: X = categórico e Y = contínuo
-
--   Resume informações de medidas contínuas para dois ou mais fatores categóricos
-
-![](img/plot_boxplot.png){.absolute width="350" height="350" right="360" top="310"}
-
-::: footer
-[boxplot](https://www.data-to-viz.com/caveat/boxplot.html)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
--   Intervalo inter-quartil (*interquartile range* - IQR)
-
--   Limite inferior e limite superipor (1.5 x IQR)
-
--   Valores exteriores (*outliers*)
-
-![](img/plot_boxplot1.png){.absolute width="500" height="280" right="520" top="350"} ![](img/plot_boxplot2.png){.absolute width="430" height="430" right="50" top="250"}
-
-::: footer
-[Understanding Boxplots](https://www.kdnuggets.com/2019/11/understanding-boxplots.html)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
-<br>
-
-<center><img src="img/boxplotfig1.gif" style="width:80%"/></center>
-
-. . .
+# periodos dentro de um intervalo - anos
+r_intervalo / lubridate::years()
+r_intervalo %/% lubridate::years()
 
-<center><img src="img/boxplotfig2.gif" style="width:80%"/></center>
-
-::: footer
-[Intro to Box Plots](https://plotly.com/chart-studio-help/what-is-a-box-plot/)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
-<br>
-
-<center><img src="img/boxplotfig3.gif" style="width:80%"/></center>
-
-. . .
-
-<center><img src="img/boxplotfig4.gif" style="width:80%"/></center>
-
-::: footer
-[Intro to Box Plots](https://plotly.com/chart-studio-help/what-is-a-box-plot/)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
-<br>
-
-<center><img src="img/boxplotfig5.gif" style="width:80%"/></center>
-
-. . .
-
-![](img/boxplotfig7.gif){.absolute width="1000" height="350" right="-190" top="340"}
-
-::: footer
-[Intro to Box Plots](https://plotly.com/chart-studio-help/what-is-a-box-plot/)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
-<br><br><br>
-
-<center><img src="img/boxplotfig6.gif" style="width:100%"/></center>
-
-::: footer
-[Intro to Box Plots](https://plotly.com/chart-studio-help/what-is-a-box-plot/)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
-<br>
-
-<center><img src="img/boxplotfig8.gif" style="width:60%"/></center>
-
-::: footer
-[Intro to Box Plots](https://plotly.com/chart-studio-help/what-is-a-box-plot/)
-:::
-
-## Gráfico de caixas (*Box plot*)
-
-<br>
-
-<center><img src="img/boxplotfig9.gif" style="width:80%"/></center>
-
-::: footer
-[Intro to Box Plots](https://plotly.com/chart-studio-help/what-is-a-box-plot/)
-:::
-
-# 
+# periodos dentro de um intervalo - dias e semandas
+filho_intervalo / lubridate::days()
+filho_intervalo / lubridate::weeks()
+```
 
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
+---
 
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
+# 11. lubridate
 
-## Gráfico de caixas (*Box plot*)
+## **3. Intervalos**
 
-**graphics**
+### Transformações dos dados para períodos
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-boxplot(flipper_length_mm ~ as.factor(species),
-        data = penguins,
-        col = c("darkorange", "purple", "cyan4"),
-        border = "black",
-        main = "Espécies por amostragens",
-        xlab = "Espécies",
-        ylab = "Comprimento da nadadeira (mm)",
-        cex.main = 1.5,
-        cex.lab = 1.3,
-        cex.axis = 1.2)
-```
-:::
+# tempo total estudando R
+lubridate::as.period(r_intervalo)
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-boxplot(flipper_length_mm ~ as.factor(species),
-        data = penguins,
-        col = c("darkorange", "purple", "cyan4"),
-        border = "black",
-        main = "Espécies por amostragens",
-        xlab = "Espécies",
-        ylab = "Comprimento da nadadeira (mm)",
-        cex.main = 1.5,
-        cex.lab = 1.3,
-        cex.axis = 1.2)
+# idade do meu filho
+lubridate::as.period(filho_intervalo)
 ```
-:::
-:::::
 
-# 
+---
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+background-image: url(img/lubridate_fusos01.png), url(img/lubridate_fusos02.png)
+background-size: 600px, 500px
+background-position: 5% 75%, 90% 75%
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
+# 11. lubridate
 
-## Gráfico de caixas (*Box plot*)
+## Fusos horários
 
-**ggplot2**
+### Tendem a ser um **fator complicador** quando precisamos analisar informações **instantâneas de tempo (horário)** de outras partes do planeta, ou mesmo fazer conversões dos horários
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(width = .3, 
-               show.legend = FALSE) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Species", y = "Flipper length (mm)")
-```
-:::
+<br><br><br><br><br><br><br><br><br><br>
+[Fuso horário, como funciona](https://ipemsp.wordpress.com/2020/09/30/fuso-horario-como-funciona/), [Paradigma dos fusos horários e suas ocasionalidades](https://medium.com/@plowzzer/paradigma-dos-fusos-hor%C3%A1rios-997a3eb29039)
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot(data = penguins, 
-       aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(width = .3, 
-               show.legend = FALSE) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Species", y = "Flipper length (mm)")
-```
-:::
-:::::
+---
 
-## Gráfico de caixas (*Box plot*)
+# 11. lubridate
 
-**ggplot2**
+## Fusos horários
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(width = .3, 
-               show.legend = FALSE) +
-  geom_jitter(alpha = .5, 
-              show.legend = FALSE, 
-              position = position_jitter(width = .1, seed = 0)) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Species", y = "Flipper length (mm)")
-```
-:::
+### Descobrir o fuso horário que o R está considerando
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot(data = penguins, 
-       aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(width = .3, 
-               show.legend = FALSE) +
-  geom_jitter(alpha = .5, 
-              show.legend = FALSE, 
-              position = position_jitter(width = .1, seed = 0)) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Species", y = "Flipper length (mm)")
+# fuso horario no r
+Sys.timezone()
 ```
-:::
-:::::
-
-## Gráfico de caixas (*Violin plot*)
 
-**ggplot2**
+### Listagem dos nomes dos fusos horários
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_violin(width = .3, 
-              show.legend = FALSE) +
-  geom_jitter(alpha = .5, 
-              show.legend = FALSE, 
-              position = position_jitter(width = .1, seed = 0)) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(title = "Pontos com jitter", x = "Species", y = "Flipper length (mm)")
+# verificar os fusos horarios
+length(OlsonNames())
+head(OlsonNames())
 ```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot(data = penguins, 
-       aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_violin(width = .3, 
-              show.legend = FALSE) +
-  geom_jitter(alpha = .5, 
-              show.legend = FALSE, 
-              position = position_jitter(width = .1, seed = 0)) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(title = "Pontos com jitter", x = "Species", y = "Flipper length (mm)")
-```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
-
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
-
-## Gráfico de caixas (*Box plot*)
 
-**ggpubr**
+---
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggboxplot(data = penguins, 
-          x = "species", 
-          y = "flipper_length_mm",
-          add = "jitter", 
-          shape = "species",
-          fill = "species",
-          color = "black",
-          palette = c("darkorange", "purple", "cyan4"),
-          xlab = "Comprimento da nadadeira (mm)",
-          ylab = "Frequência absoluta",
-          legend = "none")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggboxplot(data = penguins, 
-          x = "species", 
-          y = "flipper_length_mm",
-          add = "jitter", 
-          shape = "species",
-          fill = "species",
-          color = "black",
-          palette = c("darkorange", "purple", "cyan4"),
-          xlab = "Comprimento da nadadeira (mm)",
-          ylab = "Frequência absoluta",
-          legend = "none")
-```
-:::
-:::::
+# 11. lubridate
 
-## Gráfico de caixas (*Violin plot*)
+## Fusos horários
 
-**ggpubr**
+### Perguntar que horas são em outra parte do globo ou fazer as conversões
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggviolin(data = penguins, 
-         x = "species", 
-         y = "flipper_length_mm",
-         add = "jitter", 
-         shape = "species",
-         fill = "species",
-         color = "black",
-         palette = c("darkorange", "purple", "cyan4"),
-         xlab = "Comprimento da nadadeira (mm)",
-         ylab = "Frequência absoluta",
-         legend = "none")
-```
-:::
+# que horas sao em...
+lubridate::with_tz(lubridate::now(), tzone = "America/Sao_Paulo")
+lubridate::with_tz(lubridate::now(), tzone = "GMT")
+lubridate::with_tz(lubridate::now(), tzone = "Europe/Berlin")
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggviolin(data = penguins, 
-         x = "species", 
-         y = "flipper_length_mm",
-         add = "jitter", 
-         shape = "species",
-         fill = "species",
-         color = "black",
-         palette = c("darkorange", "purple", "cyan4"),
-         xlab = "Comprimento da nadadeira (mm)",
-         ylab = "Frequência absoluta",
-         legend = "none")
+# alterar o fuso sem mudar a hora
+lubridate::force_tz(lubridate::now(), tzone = "GMT")
 ```
-:::
-:::::
 
-# Gráfico de dispersão (*Scatter plot*)
+---
 
-## Gráfico de dispersão (*Scatter plot*)
+class: clear
+background-image: url(img/package_purrr.png)
+background-size: 400px
 
--   Representa dados de duas colunas
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[purrr](https://purrr.tidyverse.org/)
 
--   Dados do tipo categóricos: X = contínuo e Y = contínuo
+---
 
--   Plota a relação entre duas variáveis contínuas
+background-image: url(img/cheatsheet_purrr.png)
+background-size: 600px
+background-position: 50% 50%
 
-![](img/plot_scatter.png){.absolute width="350" height="350" right="360" top="310"}
+# 12. purrr
 
-::: footer
-[scatterplot](https://www.data-to-viz.com/graph/scatter.html)
-:::
+## Apply functions with purrr Cheatsheet
 
-# 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Apply functions with purrr Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf)
 
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
+---
 
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
+background-image: url(img/purrr_cats.jpeg)
+background-size: 400px
+background-position: 50% 85%
 
-## Gráfico de dispersão (*Scatter plot*)
+# 12. purrr
 
-**graphics**
+## Descrição
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mar = c(5, 5, 1, 1))
-plot(bill_depth_mm ~ bill_length_mm,
-     data = penguins,
-     pch = 20,
-     cex = 1.5,
-     xlab = "Comprimento do bico (mm)", 
-     ylab = "Profundidade do bico (mm)",
-     cex.lab = 1.5,
-     cex.axis = 1.3,
-     bty = "l")
-```
-:::
+### Implementa a **Programação Funcional no R**, fornecendo um conjunto completo e consistente de ferramentas para trabalhar com funções e vetores
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-par(mar = c(5, 5, 1, 1))
-plot(bill_depth_mm ~ bill_length_mm,
-     data = penguins,
-     pch = 20,
-     cex = 1.5,
-     xlab = "Comprimento do bico (mm)", 
-     ylab = "Profundidade do bico (mm)",
-     cex.lab = 1.5,
-     cex.axis = 1.3,
-     bty = "l")
-```
-:::
-:::::
+--
 
-# 
+### Permite substituir muitos *loops* for por um código mais sucinto e fácil de ler
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+---
 
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
+# 12. purrr
 
-## Gráfico de dispersão (*Scatter plot*)
+## *Loop*
 
-**ggplot2**
+## Um loop for pode ser entendido como uma iteração: um bloco de códigos é repetido mudando um contador de uma lista de possibilidades
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = bill_length_mm, 
-           y = bill_depth_mm,
-           color = species,
-           shape = species)) +
-  geom_point(size = 3, alpha = .8) +
-  scale_shape_manual(values = c(19, 15, 17)) +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies")
+# loop for
+for(i in 1:10){
+  print(i)
+}
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot(data = penguins, 
-       aes(x = bill_length_mm, 
-           y = bill_depth_mm,
-           color = species,
-           shape = species)) +
-  geom_point(size = 3, alpha = .8) +
-  scale_shape_manual(values = c(19, 15, 17)) +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies")
-```
-:::
-:::::
+---
 
-## Gráfico de dispersão (*Scatter plot*)
+# 12. purrr
 
-**ggplot2**
+## Programação funcional
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-ggplot(data = penguins, 
-       aes(x = bill_length_mm, 
-           y = bill_depth_mm,
-           color = species,
-           shape = species)) +
-  geom_point(size = 3, alpha = .8) +
-  geom_smooth(method = "lm", se = FALSE) +
-  scale_shape_manual(values = c(19, 15, 17)) +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies")
+# loop for com map
+purrr::map(.x = 1:10, .f = print)
 ```
-:::
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot(data = penguins, 
-       aes(x = bill_length_mm, 
-           y = bill_depth_mm,
-           color = species,
-           shape = species)) +
-  geom_point(size = 3, alpha = .8) +
-  geom_smooth(method = "lm", se = FALSE) +
-  scale_shape_manual(values = c(19, 15, 17)) +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies")
-```
-:::
-:::::
+---
 
-## Gráfico de dispersão (*Scatter plot*) {.smaller}
+background-image: url(img/purrr_map.png)
+background-size: 600px
+background-position: 85% 80%
 
-Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing
+# 12. purrr
 
-**Justin Matejka, George Fitzmaurice**
+## Estrutura
 
-<center><img src="img/gif_data_dino_statistics.gif" style="width:100%"/></center>
+### `map(.x, .f)`
+### `.x`: uma vetor, lista ou data frame
+### `.f`: uma função
 
-::: footer
-[Matejka & Fitzmaurice (2017)](https://www.autodeskresearch.com/publications/samestats)
-:::
+---
 
-## Gráfico de dispersão (*Scatter plot*)
+# 12. purrr
 
-**ggplot2**
+### Exemplo: aplicar a função `sum()` para somar os valores de vários elementos de uma lista
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
-# package
-library(datasauRus)
-
-# data + plot
-datasaurus_dozen %>% 
-  dplyr::filter(dataset == "dino") %>% 
-  ggplot() +
-  aes(x = x, y = y) +
-  geom_point(colour = "black", fill = "black", 
-             size = 5, alpha = .75, pch = 21) +
-  theme_bw(base_size = 20)
-```
-:::
+# lista
+x <- list(1:5, c(4, 5, 7), c(1, 1, 1), c(2, 2, 2, 2, 2))
 
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-# package
-library(datasauRus)
-
-# data + plot
-datasaurus_dozen %>% 
-  dplyr::filter(dataset == "dino") %>% 
-  ggplot() +
-  aes(x = x, y = y) +
-  geom_point(colour = "black", fill = "black", 
-             size = 5, alpha = .75, pch = 21) +
-  theme_bw(base_size = 20)
+# funcao map
+purrr::map(x, sum)
 ```
-:::
-:::::
-
-## Gráfico de dispersão (*Scatter plot*)
 
-**ggplot2**
+---
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-datasaurus_dozen %>% 
-  ggplot() +
-  aes(x = x, y = y) +
-  geom_point(colour = "black", fill = "black", 
-             size = 1, alpha = .75, pch = 21) +
-  facet_wrap(~dataset) +
-  theme_bw(base_size = 20)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-datasaurus_dozen %>% 
-  ggplot() +
-  aes(x = x, y = y) +
-  geom_point(colour = "black", fill = "black", 
-             size = 1, alpha = .75, pch = 21) +
-  facet_wrap(~dataset) +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
+# 12. purrr
 
-# 
+## Tipos de retorno
 
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
+### Diferentes funções retornam diferentes estruturas de dados
 
-::: footer
-[ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-:::
+- `map()`: retorna uma lista
+- `map_chr()`: retorna um vetor de strings
+- `map_dbl()`: retorna um vetor numérico (double)
+- `map_int()`: retorna um vetor numérico (integer)
+- `map_lgl()`: retorna um vetor lógico
+- `map_dfr()`: retorna um data frame (por linhas)
+- `map_dfc()`: retorna um data frame (por colunas)
 
-## Gráfico de dispersão (*Scatter plot*)
+---
 
-**ggpubr**
+# 12. purrr
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggscatter(data = penguins,
-          x = "flipper_length_mm", 
-          y = "bill_depth_mm",
-          color = "species",
-          fill = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          shape = "species", 
-          size = 5,
-          xlab = "Comprimento do bico (mm)", 
-          ylab = "Profundidade do bico (mm)")
-```
-:::
+## Tipos de retorno
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggscatter(data = penguins,
-          x = "flipper_length_mm", 
-          y = "bill_depth_mm",
-          color = "species",
-          fill = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          shape = "species", 
-          size = 5,
-          xlab = "Comprimento do bico (mm)", 
-          ylab = "Profundidade do bico (mm)")
+# variacoes da funcao map
+purrr::map_dbl(x, sum)
+purrr::map_chr(x, paste, collapse = " ")
 ```
-:::
-:::::
 
-## Gráfico de dispersão (*Scatter plot*)
+---
 
-**ggpubr**
+# 12. purrr
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggscatter(data = penguins,
-          x = "flipper_length_mm", 
-          y = "bill_depth_mm",
-          color = "species",
-          fill = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          shape = "species", 
-          size = 5,
-          xlab = "Comprimento do bico (mm)", 
-          ylab = "Profundidade do bico (mm)",
-          ellipse = TRUE, 
-          mean.point = TRUE)
-```
-:::
+## Duas ou mais listas em paralelo
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggscatter(data = penguins,
-          x = "flipper_length_mm", 
-          y = "bill_depth_mm",
-          color = "species",
-          fill = "species",
-          palette = c("darkorange", "purple", "cyan4"),
-          shape = "species", 
-          size = 5,
-          xlab = "Comprimento do bico (mm)", 
-          ylab = "Profundidade do bico (mm)",
-          ellipse = TRUE, 
-          mean.point = TRUE)
-```
-:::
-:::::
-
-## Gráfico de dispersão (*Scatter plot*)
+# listas
+x <- list(3, 5, 0, 1)
+y <- list(3, 5, 0, 1)
+z <- list(3, 5, 0, 1)
 
-**ggpubr**
+# map2* duas litas
+purrr::map2_dbl(x, y, prod)
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggscatter(data = datasaurus_dozen %>% 
-            dplyr::filter(dataset == "dino"),
-          x = "x", 
-          y = "y",
-          size = 5,
-          xlab = "X", 
-          ylab = "Y")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggscatter(data = datasaurus_dozen %>% 
-            dplyr::filter(dataset == "dino"),
-          x = "x", 
-          y = "y",
-          size = 5,
-          xlab = "X", 
-          ylab = "Y")
+# pmap muitas listas
+purrr::pmap_dbl(list(x, y, z), prod)
 ```
-:::
-:::::
 
-## Gráfico de dispersão (*Scatter plot*)
+---
 
-**ggpubr**
+# 12. purrr
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggscatter(data = datasaurus_dozen,
-          x = "x", 
-          y = "y",
-          size = 1,
-          xlab = "X", 
-          ylab = "Y",
-          facet.by = "dataset")
-```
-:::
+## Implementar rotinas de manipulação e análise de dados
 
-::: {.column width="50%"}
 ```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggscatter(data = datasaurus_dozen,
-          x = "x", 
-          y = "y",
-          size = 1,
-          xlab = "X", 
-          ylab = "Y",
-          facet.by = "dataset")
+# resumo dos dados
+penguins %>% 
+  dplyr::select(where(is.numeric)) %>% 
+  tidyr::drop_na() %>% 
+  purrr::map_dbl(mean)
 ```
-:::
-:::::
-
-# Gráfico pareado <br> (*Pairs plot*)
-
-## Gráfico pareado (*Pairs plot*)
-
--   Representa dados de duas colunas
-
--   Dados do tipo categóricos: X = contínuo e Y = contínuo
-
--   Plota a relação entre duas variáveis contínuas, mas para várias colunas
-
-![](img/plot_correlogram.png){.absolute width="350" height="350" right="360" top="310"}
-
-::: footer
-[correlogram](https://www.data-to-viz.com/#correlogram)
-:::
-
-# 
-
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
 
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
+---
 
-## Gráfico pareado (*Pairs plot*)
+# 12. purrr
 
-**graphics**
+## Implementar rotinas de manipulação e análise de dados
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
-#| eval: false
+# analise dos dados
 penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>%
-  pairs(pch = 20,
-        upper.panel = NULL)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>%
-  pairs(pch = 20,
-        upper.panel = NULL)
-```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
-
-::: footer
-[GGally](http://ggobi.github.io/ggally/)
-:::
-
-## Gráfico pareado (*Pairs plot*)
-
-**GGally**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("GGally")
-library(GGally)
-
-penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>%
-  ggpairs() +
-  theme_bw(base_size = 20)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-# pacote
-# install.packages("GGally")
-library(GGally)
-
-penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>%
-  ggpairs() +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
-
-## Gráfico pareado (*Pairs plot*)
-
-**GGally**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-
-penguins %>%
-  dplyr::select(species, sex, body_mass_g, ends_with("_mm")) %>%
-  GGally::ggpairs(aes(color = species)) +
-  scale_colour_manual(values = c("darkorange", "purple", "cyan4")) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 20)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-penguins %>%
-  dplyr::select(species, sex, body_mass_g, ends_with("_mm")) %>%
-  GGally::ggpairs(aes(color = species)) +
-  scale_colour_manual(values = c("darkorange", "purple", "cyan4")) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 20)
-```
-:::
-:::::
-
-## Gráfico pareado (*Pairs plot*)
-
-**psych**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("psych")
-library(psych)
-
-penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>%
-  pairs.panels(pch = 20, 
-               ellipses = FALSE, 
-               density = FALSE, 
-               stars = TRUE, 
-               hist.col = "gray",
-               digits = 2,
-               rug = FALSE,
-               breaks = 10,
-               ci = TRUE)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-# pacote
-# install.packages("psych")
-library(psych)
-
-penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>%
-  pairs.panels(pch = 20, 
-               ellipses = FALSE, 
-               density = FALSE, 
-               stars = TRUE, 
-               hist.col = "gray",
-               digits = 2,
-               rug = FALSE,
-               breaks = 10,
-               ci = TRUE)
-```
-:::
-:::::
-
-# Combinando gráficos
-
-## Descrição {.smaller}
-
--   Muitas vezes precisamos **combinar gráficos** para representar nossos dados
-
--   Essa tarefa pode ser realizada depois da criação dos gráficos em aplicativos como [Inkskape](https://inkscape.org/pt-br/) ou [GIMP](https://www.gimp.org/)
-
--   Outras vezes, podemos usar códigos e pacotes do R para fazer essa tarefa
-
-<center><img src="img/patchwork_graphics.png" style="width:50%"/></center>
-
-::: footer
-[patchwork](https://patchwork.data-imaginist.com/)
-:::
-
-# 
-
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
-
-::: footer
-[graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
-:::
-
-## Combinando gráficos
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mfrow = c(1, 2))
-
-boxplot(flipper_length_mm ~ as.factor(species),
-        data = penguins,
-        col = c("darkorange", "purple", "cyan4"),
-        main = "Espécies por amostragens",
-        xlab = "Espécies",
-        ylab = "Comprimento da nadadeira (mm)",
-        cex.main = 1.5, cex.lab = 1.3, cex.axis = 1.2)
-
-plot(bill_depth_mm ~ bill_length_mm,
-     data = penguins,
-     pch = 20,
-     cex = 1.5,
-     main = "Comprimento e profundidade do bico", 
-     xlab = "Comprimento do bico (mm)", 
-     ylab = "Profundidade do bico (mm)",
-     cex.lab = 1.5, cex.axis = 1.3)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-par(mfrow = c(1, 2))
-
-boxplot(flipper_length_mm ~ as.factor(species),
-        data = penguins,
-        col = c("darkorange", "purple", "cyan4"),
-        main = "Espécies por amostragens",
-        xlab = "Espécies",
-        ylab = "Comprimento da nadadeira (mm)",
-        cex.main = 1.5, cex.lab = 1.3, cex.axis = 1.2)
-
-plot(bill_depth_mm ~ bill_length_mm,
-     data = penguins,
-     pch = 20,
-     cex = 1.5,
-     main = "Comprimento e profundidade do bico", 
-     xlab = "Comprimento do bico (mm)", 
-     ylab = "Profundidade do bico (mm)",
-     cex.lab = 1.5, cex.axis = 1.3)
-```
-:::
-:::::
-
-## Combinando gráficos
-
-**graphics**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-par(mfrow = c(2, 1))
-
-boxplot(flipper_length_mm ~ as.factor(species),
-        data = penguins,
-        col = c("darkorange", "purple", "cyan4"),
-        main = "Espécies por amostragens",
-        xlab = "Espécies",
-        ylab = "Comprimento da nadadeira (mm)",
-        cex.main = 1.5, cex.lab = 1.3, cex.axis = 1.2)
-
-plot(bill_depth_mm ~ bill_length_mm,
-     data = penguins,
-     pch = 20,
-     cex = 1.5,
-     main = "Comprimento e profundidade do bico", 
-     xlab = "Comprimento do bico (mm)", 
-     ylab = "Profundidade do bico (mm)",
-     cex.lab = 1.5, cex.axis = 1.3)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-par(mfrow = c(2, 1))
-
-boxplot(flipper_length_mm ~ as.factor(species),
-        data = penguins,
-        col = c("darkorange", "purple", "cyan4"),
-        main = "Espécies por amostragens",
-        xlab = "Espécies",
-        ylab = "Comprimento da nadadeira (mm)",
-        cex.main = 1.5, cex.lab = 1.3, cex.axis = 1.2)
-
-plot(bill_depth_mm ~ bill_length_mm,
-     data = penguins,
-     pch = 20,
-     cex = 1.5,
-     main = "Comprimento e profundidade do bico", 
-     xlab = "Comprimento do bico (mm)", 
-     ylab = "Profundidade do bico (mm)",
-     cex.lab = 1.5, cex.axis = 1.3)
-```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
-
-::: footer
-[ggplot2](https://ggplot2.tidyverse.org/)
-:::
-
-## Combinando gráficos
-
-**ggplot2**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot_boxplot <- ggplot(data = penguins, 
-                         aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(width = .3, 
-               show.legend = FALSE) +
-  geom_jitter(alpha = .5, 
-              show.legend = FALSE, 
-              position = position_jitter(width = .1, seed = 0)) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Species", y = "Flipper length (mm)")
-ggplot_boxplot
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot_boxplot <- ggplot(data = penguins, 
-                         aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(width = .3, 
-               show.legend = FALSE) +
-  geom_jitter(alpha = .5, 
-              show.legend = FALSE, 
-              position = position_jitter(width = .1, seed = 0)) +
-  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Species", y = "Flipper length (mm)")
-ggplot_boxplot
-```
-:::
-:::::
-
-## Combinando gráficos
-
-**ggplot2**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot_scatterplot <- ggplot(data = penguins, 
-                             aes(x = bill_length_mm, 
-                                 y = bill_depth_mm,
-                                 color = species,
-                                 shape = species)) +
-  geom_point(size = 3, alpha = .8) +
-  scale_shape_manual(values = c(19, 15, 17)) +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies")
-ggplot_scatterplot
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot_scatterplot <- ggplot(data = penguins, 
-                             aes(x = bill_length_mm, 
-                                 y = bill_depth_mm,
-                                 color = species,
-                                 shape = species)) +
-  geom_point(size = 3, alpha = .8) +
-  scale_shape_manual(values = c(19, 15, 17)) +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies")
-ggplot_scatterplot
-```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_cowplot.png" style="width:50%"/></center>
-
-::: footer
-[cowplot](https://wilkelab.org/cowplot/)
-:::
-
-## Combinando gráficos
-
-**cowplot**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("cowplot")
-library(cowplot)
-
-# combinacao horizontal
-plot_grid(ggplot_boxplot, ggplot_scatterplot, 
-          align = "h", rel_widths = c(1, 1.5),
-          labels = "AUTO")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-# pacote
-# install.packages("cowplot")
-library(cowplot)
-
-# combinacao horizontal
-plot_grid(ggplot_boxplot, ggplot_scatterplot, 
-          align = "h", rel_widths = c(1, 1.5),
-          labels = "AUTO")
-```
-:::
-:::::
-
-## Combinando gráficos
-
-**cowplot**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# combinacao vertical
-plot_grid(ggplot_boxplot, ggplot_scatterplot, 
-          ncol = 1, align = "v", 
-          labels = "AUTO")
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-# combinacao vertical
-plot_grid(ggplot_boxplot, ggplot_scatterplot, 
-          ncol = 1, align = "v", 
-          labels = "AUTO")
-```
-:::
-:::::
-
-# 
-
-<center><img src="img/package_patchwork.png" style="width:50%"/></center>
-
-::: footer
-[patchwork](https://patchwork.data-imaginist.com/)
-:::
-
-## Combinando gráficos
-
-**patchwork**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("patchwork")
-library(patchwork)
-
-# combinacao horizontal
-ggplot_boxplot + ggplot_scatterplot
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-# pacote
-# install.packages("patchwork")
-library(patchwork)
-
-# combinacao horizontal
-ggplot_boxplot + ggplot_scatterplot
-```
-:::
-:::::
-
-## Combinando gráficos
-
-**patchwork**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-ggplot_boxplot / ggplot_scatterplot
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| fig-height: 10
-#| echo: false
-#| fig-weight: 15
-
-ggplot_boxplot / ggplot_scatterplot
-```
-:::
-:::::
-
-# Gráficos animados
-
-# 
-
-<center><img src="img/package_gganimate.png" style="width:50%"/></center>
-
-::: footer
-[gganimate](https://gganimate.com/)
-:::
-
-## Gráficos animados
-
-**gganimate**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("gganimate")
-library(gganimate)
-
-plot_animate <- ggplot(data = penguins,
-                       aes(x = bill_length_mm, 
-                           y = bill_depth_mm, 
-                           color = species)) +
-  geom_point() +
-  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-  theme_bw(base_size = 15) +
-  labs(x = "Comprimento do bico (mm)", 
-       y = "Profundidade do bico (mm)", 
-       color = "Espécies", shape = "Espécies") +
-  labs(title = "{closest_state}") +
-  transition_states(species) +
-  enter_grow() + 
-  exit_fade()
-plot_animate
-```
-:::
-
-::: {.column width="50%"}
-<br>
-
-<center><img src="img/plot_animate.gif" style="width:100%"/></center>
-:::
-:::::
-
-## Gráficos animados
-
-**gganimate**
-
-```{r}
-#| eval: false
-gganimate::anim_save(filename = "plot_animate.gif",
-                     animation = plot_animate, wi = 700, he = 500, un = "px")
+  dplyr::group_split(island, species) %>% 
+  purrr::map(~ lm(bill_depth_mm ~ bill_length_mm, data = .x)) %>% 
+  purrr::map(summary) %>% 
+  purrr::map("r.squared")
 ```
 
-<br>
+---
 
-<center><img src="img/plot_animate.gif" style="width:55%"/></center>
+background-image: url(img/general_curso_r.png), url(img/person_jenny_bryan.jpeg)
+background-size: 400px, 300px
+background-position: 10% 70%, 90% 80%
 
-# Gráficos interativos
+# 12. purrr
 
-# 
+## Material
 
-<center><img src="img/package_plotly.png" style="width:70%"/></center>
+### [Webinar de purrr avançado](https://youtu.be/vb1lD9_AFcU) - Curso-R
 
-::: footer
-[plotly](https://plotly.com/r/)
-:::
+### [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) - Jennifer (Jenny) Bryan
 
-## Gráficos interativos
+---
 
-**plotly**
+class: clear
+background-image: url(img/package_furrr.png)
+background-size: 400px
 
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("plotly")
-library(plotly)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[furrr](https://furrr.futureverse.org/)
 
-plot_ly(data = penguins,
-        x = ~bill_length_mm, 
-        y = ~bill_depth_mm, 
-        type = "scatter",
-        color = ~species,
-        colors = c("darkorange", "purple", "cyan4")) %>% 
-  layout(xaxis = list(title = "Comprimento do bico (mm)"),
-         yaxis = list(title = "Profundidade do bico (mm)"))
+---
+
+background-image: url(img/processor01.png), url(img/processor02.png)
+background-size: 500px, 400px
+background-position: 15% 65%, 85% 75%
+
+# 12. furrr
+
+## Programação funcional paralelizada
+
+### Faz o mapeamento em paralelo utilizando os *cores* do processador
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Quick Intro to Parallel Computing in R](https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html)
+
+# furrr
+
+## Programação funcional paralelizada
+
+Número de *cores* do seu computador
+
+```{r eval=FALSE}
+# carregar
+library(parallel)
+
+# numero de cores
+parallel::detectCores()
 ```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| echo: false
-
-# pacote
-# install.packages("plotly")
-library(plotly)
-
-plot_ly(data = penguins,
-        x = ~bill_length_mm, 
-        y = ~bill_depth_mm, 
-        type = "scatter",
-        color = ~species,
-        colors = c("darkorange", "purple", "cyan4")) %>% 
-  layout(xaxis = list(title = "Comprimento do bico (mm)"),
-         yaxis = list(title = "Profundidade do bico (mm)"))
-```
-:::
-:::::
-
-## Gráficos interativos
-
-**plotly**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-plot_ly(data = penguins,
-        x = ~bill_length_mm, 
-        y = ~bill_depth_mm, 
-        z = ~body_mass_g,
-        type = "scatter3d",
-        color = ~species,
-        colors = c("darkorange", "purple", "cyan4")) %>% 
-  layout(scene = list(xaxis = list(title = "Comprimento do bico (mm)"),
-                      yaxis = list(title = "Profundidade do bico (mm)"),
-                      zaxis = list(title = "Massa (g)")))
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| echo: false
-
-plot_ly(data = penguins,
-        x = ~bill_length_mm, 
-        y = ~bill_depth_mm, 
-        z = ~body_mass_g,
-        type = "scatter3d",
-        color = ~species,
-        colors = c("darkorange", "purple", "cyan4")) %>% 
-  layout(scene = list(xaxis = list(title = "Comprimento do bico (mm)"),
-                      yaxis = list(title = "Profundidade do bico (mm)"),
-                      zaxis = list(title = "Massa (g)")))
-```
-:::
-:::::
-
-## Gráficos interativos
-
-**plotly**
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-#| eval: false
-plot_penguins_scatter_int <- ggplotly(
-  ggplot(data = penguins, 
-         aes(x = bill_length_mm, 
-             y = bill_depth_mm,
-             color = species,
-             shape = species)) +
-    geom_point(size = 3, alpha = .8) +
-    geom_smooth(method = "lm", se = FALSE) +
-    scale_shape_manual(values = c(19, 15, 17)) +
-    scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-    theme_bw(base_size = 15) +
-    labs(x = "Comprimento do bico (mm)", 
-         y = "Profundidade do bico (mm)", 
-         color = "Espécies", shape = "Espécies"))
-plot_penguins_scatter_int
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| echo: false
-
-plot_penguins_scatter_int <- ggplotly(
-  ggplot(data = penguins, 
-         aes(x = bill_length_mm, 
-             y = bill_depth_mm,
-             color = species,
-             shape = species)) +
-    geom_point(size = 3, alpha = .8) +
-    geom_smooth(method = "lm", se = FALSE) +
-    scale_shape_manual(values = c(19, 15, 17)) +
-    scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
-    theme_bw(base_size = 15) +
-    labs(x = "Comprimento do bico (mm)", 
-         y = "Profundidade do bico (mm)", 
-         color = "Espécies", shape = "Espécies"))
-plot_penguins_scatter_int
-```
-:::
-:::::
-
-## Gráficos interativos
-
-**plotly**
-
-```{r}
-#| eval: false
-
-# pacote
-# install.packages("htmlwidgets")
-library(htmlwidgets)
-
-# export
-htmlwidgets::saveWidget(widget = plot_penguins_scatter_int, 
-                        file = "plot_penguins_scatter_int.html")
-```
-
-# Gráficos usando interface
-
-# 
-
-<center><img src="img/package_esquisse.png" style="width:60%"/></center>
-
-::: footer
-[esquisse](https://dreamrs.github.io/esquisse/)
-:::
-
-## Gráficos usando interface
-
-**esquisse**
-
-::::: columns
-::: {.column width="40%"}
-```{r}
-#| eval: false
-# pacote
-# install.packages("esquisse")
-library(esquisse)
-
-# iniciar
-esquisse::esquisser(na.omit(palmerpenguins::penguins))
-```
-:::
-
-::: {.column width="60%"}
-<center><img src="img/esquisse.gif" style="width:100%"/></center>
-:::
-:::::
-
-# Dúvidas?
-
-# Material de estudo
-
-## Livros
-
--   [ggplot2 (2016)](https://ggplot2.tidyverse.org/)
-
--   [R Graphics Cookbook (2018)](http://www.cookbook-r.com/Graphs/)
-
--   [R for Data Science (2017)](https://r4ds.had.co.nz/)
-
--   [Data Visualization with R (2018)](https://rkabacoff.github.io/datavis/)
-
--   [Fundamentals of Data Visualization (2019)](https://serialmentor.com/dataviz/)
-
--   [Interactive web-based data visualization with R, plotly, and shiny (2019)](https://plotly-r.com/)
-
-## Sites
-
--   [ggplot2: Reference](https://ggplot2.tidyverse.org/reference/)
-
--   [R Graph Gallery](https://www.r-graph-gallery.com/)
-
--   [from Data to Viz](https://www.data-to-viz.com/)
-
--   [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
-
--   [plotly](https://plotly.com)
-
--   [Statistical tools for high-throughput data analysis (STHDA)](http://www.sthda.com/english/)
-
-# Muito obrigado!

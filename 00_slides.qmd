@@ -159,7 +159,7 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 | Dia 02| Aula teórica 2: introdução à programação em R (Base R)   |
 | Dia 02| Aula teórica 3: introdução à programação em R (tidyverse) |
 | Dia 02| Aula teórica 4: introdução à programação em R (visualização) |
-| Dia 03| Aula teórica 5: tópicos avançados em programação no R |
+| Dia 03| Aula teórica 5: tópicos avançados em programação em R |
 | Dia 03| Aula teórica 6: reprodutibilidade em R e GitHub |
 | Dia 03| Aula prática 2: reprodutibilidade em R e GitHub |
 | Dia 04| Projeto prático: desenvolvimento de uma análise ecológica reprodutível |
@@ -189,7 +189,7 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 
 ## Projeto
 
-**atlantir**
+**atlanticr**
 
 - Esses dados estão muito bagunçados
 - Gostaria de ajuda para organizar eles e pensar no pacote
@@ -208,6 +208,33 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 
 ::: footer
 [\@allison_horst](https://twitter.com/allison_horst)
+:::
+
+## Diretório da disciplina
+
+**Escolham um diretório (pasta) e criem esses diretórios:**
+
+:::: columns
+::: {.column width="30%"}
+<br>
+![](img/open-folder.png)
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 120%;"}
+<br>
+course-intror\
+|---- 00_plano_ensino\
+|---- 01_slides\
+|---- 02_scripts\
+|---- 03_dados\
+|---- 04_projetos\
+:::
+:::
+:::::
+
+::: footer
+[FlatIcon](https://www.flaticon.com/free-icon/open-folder_8406407)
 :::
 
 # Vamos lá!

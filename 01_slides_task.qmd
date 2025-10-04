@@ -1,5 +1,5 @@
 ---
-title: "Controle de versão com git, GitHub e RStudio"
+title: "Controle de versão com git, GitHub e RStudio - Tarefas"
 subtitle: "<br><br>introR: introdução à linguagem R"
 author: "<br>[Maurício Vancine](https://mauriciovancine.github.io/)"
 date: "10/14/2025"
@@ -12,7 +12,7 @@ format:
     hash-type: number
     preview-links: false
     chalkboard: true
-    logo: "https://git-scm.com/images/logos/downloads/Git-Logo-1788C.png"
+    logo: "img/featured-hex.png"
     execute:
       echo: true
       eval: true
@@ -22,7 +22,39 @@ editor: source
 lang: pt-br
 ---
 
-## Conteúdo {.smaller}
+## Prática 1
 
+- Criar um repositório no seu GitHub chamado "teste"
 
-# Muito obrigado!
+## Prática 2
+
+- Clonar esse repositório no seu computador usando o RStudio
+
+## Prática 3
+
+- Adicionar um script chamado "script.R" com algum código 
+
+## Prática 4
+
+- Fazer um controle de versão usando o terminal:
+
+```{r eval=FALSE}
+git add -Av
+git commit -m 'add um script'
+git push
+```
+
+## Prática 5
+
+- Fazer alguma alteração neste script e fazer o controle de versão usando a aba fo git do RStudio:
+
+![](img/rstudio_git_pane02.png){fig-align='center'}
+
+## Prática 6
+
+- Criar uma ramificação chamada "branch-1"
+
+## Prática 7
+
+- Adicionar um script chamado "script2.R" com algum código 
+

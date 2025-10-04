@@ -22,63 +22,57 @@ editor: source
 lang: pt
 ---
 
-## Conteúdo
+# Linguagem R
 
-### 1. Linguagem R
+# 
+
+<center><img src="img/r_logo.svg" style="width:70%"/></center>
+
+::: footer
+[r-project](https://www.r-project.org/)
+:::
+
+## Conteúdo {.smaller}
+
+### Linguagem R
 
 ::::::: columns
 :::: {.column width="50%"}
 ::: nonincremental
--   Linguagem R
--   RStudio
--   Console
--   Script
--   Operadores
--   Objetos
--   Funções
+-  Linguagem R
+-  RStudio
+-  Console
+-  Scripts
+-  Operadores
+-  Objetos
+-  Funções
+-  Pacotes
+-  Ajuda
+-  Ambiente
+-  Citações
+-  Principais erros
 :::
 ::::
 
 :::: {.column width="50%"}
 ::: nonincremental
--   Ajuda
--   Ambiente
--   Pacotes
--   Citações
--   Principais erros
--   Material de estudo
--   Extra: estrutura dos objetos
+-  Atributos dos objetos
+-  Manejo de dados unidimensionais
+-  Manejo de dados multidimensionais
+-  Valores faltantes e especiais
+-  Diretório de trabalho
+-  Importar dados
+-  Conferência de dados importados
+-  Exportar dados
 :::
 ::::
 :::::::
-
-## Material
-
-Todo o material está disponível no [GitHub](https://github.com/mauriciovancine/workshop-r-introduction)
-
-<center><img src="img/github.png" style="width:50%"/></center>
-
-::: footer
-[GitHub](https://github.com/mauriciovancine/workshop-r-introduction)
-:::
-
-## IMPORTANTE!!!
-
-**Estamos num espaço seguro e amigável**
-
-Sintam-se à vontade para me interromper e tirar dúvidas
-
-<center><img src="img/general_starwars_teamwork.png" style="width:50%"/></center>
-
-::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
-:::
 
 # Mas por que aprender a linguagem R? Inglês não basta?!
 
 # Minha história com o R
 
-## Aprendizado
+## Aprendizado {.smaller}
 
 **Início**
 
@@ -86,33 +80,40 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 
 **Aprofundamento**
 
--   2012-2013: Estudei R sozinho por muito tempo, acreditem eu não entendia nada desse negócio...
--   2013-2015: Iniciação científica com Modelos de Distribuição de Espécies e Ecologia da Paisagem (Fapesp)
--   2015: Assistente de Pesquisa no LEEC (Prof. Miltinho)
+- 2012-2013: Estudei R sozinho por muito tempo...
+- 2013-2015: Iniciação científica com SDM e Ecologia da Paisagem (Fapesp)
+- 2015: Assistente de Pesquisa no LEEC (Prof. Miltinho)
+- 2016-2018: Mestrado em SDM
+- 2020-2024: Doutorado em métricas de paisagem
+- 2025-2027: Pós-Doutorado em ecologia espacial
 
 ## Ensino {.smaller}
 
--   2015: Minicurso de R na SEE
--   2016: Minicurso de R na SEE
--   2019: Minicurso de R na SEE
--   2019: Minicurso de R na SEBio
--   2019: Curso de SDM no R na Congresso Brasileiro de Herpetologia
--   2021: Curso de SDM no R no Mastozóologos Organizados em uma Conferência Online (MOCÓ)
--   2021: Minicurso de R na SEE
--   2022: Minicurso de R na SEE
+- 2015: Minicurso de R na SEE
+- 2016: Minicurso de R na SEE
+- 2019: Minicurso de R na SEE
+- 2019: Minicurso de R na SEBio
+- 2019: Curso de SDM no R na Congresso Brasileiro de Herpetologia
+- 2021: Curso de SDM no R no Mastozóologos Organizados em uma Conferência Online
+- 2021: Minicurso de R na SEE
+- 2022: Minicurso de R na SEE
+- 2024: Minicurso de padrões espaciais da biodiversidade no R na São Paulo School of Advanced Science (SPSAS)
+- 2024: Minicurso métricas de paisagem no R no Simpósio Brasileirao de Síntese Ecológica
+Maria (UFSM)
 
 ## Disciplinas {.smaller}
 
--   2015: Ecologia Quantitativa (Monitor voluntário)
--   2016: Modelagem de Nicho Ecológico: teoria e prática (Unesp)
--   2016: Modelagem de Nicho Ecológico: teoria e prática (Unicamp)
--   2017: Modelagem de Nicho Ecológico: teoria e prática (Unesp)
--   2017: Ecologia Quantitativa (Estágio docência)
--   2018: Modelos Estatísticos em Ecologia (Unesp)
--   2019: Introdução ao Geoprocessamento para Etnobiologia e Conservação da Biodiversidade (UFRPE)
--   2020: Modelos Estatísticos em Ecologia (Unesp)
--   2020: Introdução ao uso de dados geoespaciais no R (Unesp)
--   2021: Introdução ao uso de dados geoespaciais no R (Unesp)
+- 2015: Ecologia Quantitativa (Unesp) (Monitor voluntário)
+- 2016-2017: Modelagem de Nicho Ecológico: teoria e prática (Unesp e Unicamp)
+- 2017: Ecologia Quantitativa (Unesp) (Estágio docência)
+- 2018: Modelos Estatísticos em Ecologia (Unesp)
+- 2019: Geoprocessamento para Etnobiologia e Conservação da Biodiversidade (UFRPE)
+- 2020: Modelos Estatísticos em Ecologia (Unesp)
+- 2020-2021: Dados geoespaciais no R (Unesp)
+- 2023: Modelos Estatísticos em Ecologia (Unesp) (Professor convidado)
+- 2023: Ecologia Quantitativa (Unesp) (Professor convidado)
+- 2024-2025: NT265_NE441_2025 - Disciplina de R (Unicamp)
+- 2025: introR (UFPB)
 
 ## Análises Ecológicas no R (2022)
 
@@ -140,7 +141,35 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 [Da Silva et al. (2022)](https://analises-ecologicas.com/)
 :::
 
-## Consultorias
+## Ensino de R no Brazil (2025-2026)
+
+::: {style="font-size: 70%;"}
+**Oecologia Australis - Special Issue**\
+*Teaching Ecology: Challenges and Possibilities*
+:::
+
+**THE CHALLENGES AND NUANCES OF TEACHING THE R PROGRAMMING LANGUAGE TO ECOLOGISTS**
+
+::: {style="font-size: 55%;"}
+Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Victor Casagrande Souza, Felipe Alvarez Silva Nunes, Ana Julia Oliveira Silva, Beatriz Milz, Cristina A. Kita, Marco A. R. Mello, Renata L. Muylaert
+:::
+
+::: {style="font-size: 70%;"}
+- R como ferramenta essencial na Ecologia
+- Desafios no ensino para estudantes de Biologia e Ecologia
+- Importância da infraestrutura e fundamentos antes do aprendizado
+- Dificuldades com conceitos abstratos e interpretação de resultados
+- Impactos da COVID-19 e da IA no ensino
+- Formação de profissionais com fortes habilidades analíticas
+:::
+
+::: footer
+[Oecologia Australis - Teaching Ecology: Challenges and Possibilities](https://revistas.ufrj.br/index.php/oa/TeachEcology)
+:::
+
+## Consultorias {.smaller}
+
+<br>
 
 **2018-2019: Aquaflora/Lactec - Curitiba, PR, Brasil**
 
@@ -159,22 +188,24 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 ## Resumindo
 
 ::: incremental
--   Saber R não me tornou um **Ecólogo**, esse conhecimento vem da nossa formação (aulas, cursos, discussões, leituras, INTERAÇÕES, etc.)
+- Aprendi muita coisa sozinho e ensinando
 
--   Entretanto, saber R me tornou um **Ecólogo mais preparado**, i.e., com mais ferramentas para poder **pensar operacionalmente** nos problemas: eu sabia a **teoria** e tinha o **conhecimento prático** para aplicar soluções
+- Sou brasileiro e não desisto nunca...
 
--   Sou grato às **Semanas de Estudos da Ecologia** da Unesp pela oportunidade de ensinar R. Ensinar me fez um **profissional** e **professor** muito melhor
+- Saber R não me tornou um **Ecólogo**, esse conhecimento vem da nossa formação (aulas, cursos, discussões, leituras, INTERAÇÕES, etc.)
+
+- Entretanto, saber R me tornou um **Ecólogo mais preparado**, i.e., com mais ferramentas para poder **pensar operacionalmente** nos problemas: eu sabia a **teoria** e tinha o **conhecimento prático** para aplicar soluções
 :::
 
 ## Mas não foi fácil... E ainda não é...
 
 <center><img src="img/general_code_meme.jpg" style="width:100%"/></center>
 
-# 1. Linguagem R
+# Linguagem R
 
 ## Definição
 
-O R é uma **linguagem de programação livre** (*open source*), direcionada à **manipulação, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos**
+O R é uma **linguagem de programação livre** (*open source*), direcionada à **manejo, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos**
 
 <center><img src="img/r_logo.svg" style="width:40%"/></center>
 
@@ -251,7 +282,7 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 
 ## Aplicações {.smaller}
 
-**Manipulação, visualização e análise de dados**
+**Manejo, visualização e análise de dados**
 
 -   Estatísticas univariadas e multivariadas
 -   Análises de dados ecológicos
@@ -366,21 +397,22 @@ Mudanças na empresa RStudio...
 -   Cada projeto possui seu diretório, documentos e workspace
 -   Permite controle de versão (git e GitHub)
 
-<br>
-
-<center><img src="img/rstudio_project_logo.png" style="width:25%"/></center>
-
-::: footer
-[RStudio](https://www.rstudio.com/)
-:::
-
-## Conferindo os computadores
-
-<center><img src="img/general_hard_soft_bg.png" style="width:80%"/></center>
+![](img/rproject01.png){.absolute width="450" height="400" right="500" top="300"}
+![](img/rproject02.png){.absolute width="450" height="400" right="0" top="300"}
 
 ::: footer
-[Café com Código](https://www.instagram.com/cafecomcodigo/?hl=pt)
+[Foundations of data analysis with R](https://thegraphcourses.org/courses/r-foundations-beta/topics/rstudio-projects/)
 :::
+
+# 
+
+<center><img src="img/code.png" style="width:45%"/></center>
+
+## Projeto R (.Rproj)
+
+Abram o RStudio e criem um projeto dentro de "course-intror"
+
+<center><img src="img/proj_rmd.gif" style="width:100%"/></center>
 
 # Console
 
@@ -393,10 +425,6 @@ O console é onde a linguagem R instalada é carregada para executar os códigos
 ::: footer
 [RStudio](https://www.rstudio.com/)
 :::
-
-# 
-
-<center><img src="img/code.png" style="width:45%"/></center>
 
 ## Console
 
@@ -462,14 +490,15 @@ Onde os códigos são escritos e salvos no formato .R
 
 **Salvar um script**
 
--   Diretório: `~/workshop-r-introduction/`
+-   Diretório: `~/02_scripts/`
 
 00_plano_ensino\
 01_slides\
 **02_scripts**\
-03_dados
+03_dados\
+04_projetos
 
--   Nome: `01_script_r_intro.R`
+-   Nome: `01_script_intror.R`
 
 ## Script
 
@@ -496,15 +525,28 @@ Onde os códigos são escritos e salvos no formato .R
 
 ```{r}
 #' ----
-#' titulo: Linguagem R para manipulação e visualização de dados
-#' autor: seu nome
-#' data: 10-11-2022
+#' titulo: introR: introdução à linguagem R
+#' autor: seu nome (escreva seu nome)
+#' data: 14-10-2024
 #' ----
 ```
 
-# 
+## Script
 
-<center><img src="img/general_comment_gandalf.jpg" style="width:50%"/></center>
+**Seções nos comentários (---)**
+
+- Ajudam a separar e organizar o script
+- Dois tipos:
+
+1. Longos (`Ctrl + Shfit + R`)
+2. Curtos (ao menos 4 `-`)
+```{r}
+# longos -----------------------------------------------------------------
+
+## curtos ----
+```
+
+Acesso: Outline (`Ctrl + Shfit + O`)
 
 # Operadores
 
@@ -561,7 +603,7 @@ Onde os códigos são escritos e salvos no formato .R
 
 ## Objetos
 
-Palavras que atribuímos (guardamos) dados possibilitando sua manipulação
+Palavras que atribuímos (guardamos) dados possibilitando sua manejo
 
 -   Atribuição (\<-)
 
@@ -948,7 +990,54 @@ Duas fontes
 nrow(available.packages())
 ```
 
-<center><img src="img/r_number_packages.png" style="width:35%"/></center>
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-align: "center"
+
+library(rvest)
+library(stringr)
+library(lubridate)
+library(tidyverse)
+
+cran_link <- function(...) {
+  file.path("https://cran.rstudio.com/src/contrib", ...)
+}
+
+pkgs <- read_html(cran_link()) %>% 
+  html_text() %>% 
+  tibble(text = unlist(str_split(., pattern = "\n"))) %>% 
+  select(text) %>% 
+  slice(-(1:2)) %>% 
+  as.matrix() %>% 
+  str_trim() %>% 
+  as_tibble() %>% 
+  filter(str_detect(string = value, pattern = ".tar.gz")) %>% 
+  mutate(name = str_split(string = value, pattern = ".tar.gz", simplify = TRUE)[, 1],
+         date = str_trim(str_split(string = value, pattern = ".tar.gz", simplify = TRUE)[, 2])) %>% 
+  mutate(date = as_date(str_split(string = date, pattern = " ", simplify = TRUE)[, 1])) %>% 
+  select(name, date)
+
+pkgs_data <- pkgs %>%
+  group_by(date = floor_date(date, unit = "month")) %>%
+  summarise(NewPackages = n()) %>%
+  ungroup() %>%
+  mutate(TotalPackages = cumsum(NewPackages))
+
+ggplot(data = pkgs_data, aes(date, TotalPackages)) +
+  geom_line(size = 2, color = "midnightblue") +
+  geom_hline(yintercept = pkgs_data[nrow(pkgs_data), ]$TotalPackages, lty = 2) +
+  annotate("text", x = as_date("2015-01-01"), y = pkgs_data[nrow(pkgs_data), ]$TotalPackages + 1000, 
+           label = pkgs_data[nrow(pkgs_data), ]$TotalPackages, size = 10) +
+  labs(x = NULL, y = "Número de pacotes disponíveis",
+       title = "Quantos pacotes estão disponíveis no CRAN?",
+       subtitle = "Todos os pacotes já criados") +
+  theme_minimal() +
+  theme(title = element_text(size = 25),
+        axis.title = element_text(size = 20),
+        axis.text = element_text(size = 15))
+```
 
 ::: footer
 [CRAN](https://cran.r-project.org/), [Scraping CRAN with rvest](https://www.r-bloggers.com/2017/03/scraping-cran-with-rvest/)
@@ -1109,12 +1198,12 @@ Parênteses
 
 ```{r error=TRUE}
 sum(1, 2
-```
-
-Aspas
-
-```{r error=TRUE}
-"string
+    ```
+    
+    Aspas
+    
+    ```{r error=TRUE}
+    "string
 ```
 
 ## Principais erros
@@ -1189,26 +1278,6 @@ colSums(dune)
 [\@allison_horst](https://twitter.com/allison_horst)
 :::
 
-# Material de estudo
-
-## Material de estudo
-
--   [Análises Ecológicas no R (2022)](https://analises-ecologicas.com/)
-
--   [Introdução à Linguagem R: seus fundamentos e sua prática (2022)](https://pedropark99.github.io/Introducao_R/)
-
--   [Ciência de Dados com R: introdução (2018)](https://cdr.ibpad.com.br/index.html)
-
--   [Ciência de Dados em R (2021)](https://livro.curso-r.com/)
-
--   [R for Data Science (2017)](https://r4ds.had.co.nz/)
-
--   [Statistical Inference via Data Science (2019)](https://moderndive.com)
-
--   [RLadies](https://rladies.org/)
-
--   [RLadies Brazil](https://rladies.org/brazil-rladies/)
-
 # Dúvidas?
 
 ## Script
@@ -1217,7 +1286,15 @@ Abram o script e instalem todos os pacotes que usaremos nas próximas aulas
 
 <br><br><br><br>
 
-`00_script_r_introduction.R`
+`00_script_intror.R`
+
+## Script
+
+Abram o script para seguir a aula
+
+<br><br><br><br>
+
+`02_script_intror.R`
 
 # Atributos de objetos
 
@@ -1246,6 +1323,34 @@ complex
 
 character <- "a"
 character
+```
+:::
+:::::
+
+## Modo dos objetos (*mode*)
+
+Verificar e mudar a natureza dos modos dos objetos
+
+::::: columns
+::: {.column width="50%"}
+![](img/modes.png)
+:::
+
+::: {.column width="50%"}
+```{r eval=FALSE}
+## verificar o modo dos objetos
+is.logical()
+is.numeric()
+is.integer()
+is.complex()
+is.character()
+
+## conversoes entre modos
+as.logical()
+as.numeric()
+as.integer()
+as.complex()
+as.character()
 ```
 :::
 :::::
@@ -1290,6 +1395,36 @@ sample(1:60, 6)
 
 ## Estrutura dos objetos (*class*) {.smaller}
 
+**Factor**
+
+Sequência de valores que representam uma variável categórica (níveis)
+
+::::: columns
+::: {.column width="50%"}
+<br><br> ![](img/r_data_structures_general.png)
+:::
+
+::: {.column width="50%"}
+```{r}
+# factor nominal
+ftc_nom <- factor(
+  x = sample(c("f", "p"), size = 20, rep = TRUE),
+  levels = c("f", "p"))
+ftc_nom
+levels(ftc_nom)
+
+# factor ordinal
+ftc_ord <- factor(
+  x = sample(c("b", "a"), size = 20, rep = TRUE),
+  levels = c("b", "a"), ordered = TRUE)
+ftc_ord
+levels(ftc_ord)
+```
+:::
+:::::
+
+## Estrutura dos objetos (*class*) {.smaller}
+
 **Matrix**
 
 Representa os dados no formato de tabela, com linhas (locais) e colunas (variáveis)
@@ -1303,7 +1438,8 @@ Representa os dados no formato de tabela, com linhas (locais) e colunas (variáv
 ```{r}
 # dispor uma sequencia
 ve <- 1:9
-ma_col <- matrix(data = ve, nrow = 3, ncol = 3, byrow = FALSE)
+ma_col <- matrix(data = ve, nrow = 3, 
+                 ncol = 3, byrow = FALSE)
 ma_col
 
 # combinar vetores
@@ -1396,4 +1532,1044 @@ df
 :::
 :::::
 
-# Muito obrigado!
+# Manejo de dados (1D)
+
+## Vetor e Fator
+
+**1. Indexação []**: acessa elementos de vetores e fatores
+
+```{r}
+# indexacao []
+
+# fixar a amostragem - a amostragem apos isso sera igual
+set.seed(42)
+
+# amostrar 10 elementos de uma sequencia
+ve <- sample(x = seq(0, 2, .05), size = 10)
+ve
+```
+
+## Vetor e Fator
+
+**1. Indexação []**: acessa elementos de vetores e fatores
+
+Selecionar elementos
+```{r}
+# seleciona o quinto elemento
+ve[5]
+```
+
+<br>
+
+```{r}
+# seleciona os elementos de 1 a 5
+ve[1:5] 
+```
+
+<br>
+
+```{r}
+# seleciona os elementos 1 e 10 e atribui
+ve_sel <- ve[c(1, 10)]
+ve_sel
+```
+
+## Vetor e Fator
+
+**1. Indexação []**: acessa elementos de vetores e fatores
+
+Retirar elementos
+```{r}
+# retira o decimo elemento
+ve[-10]
+```
+
+<br>
+
+```{r}
+# retira os elementos 2 a 9
+ve[-(2:9)]
+```
+
+<br>
+
+```{r}
+# retira os elementos 5 e 10 e atribui
+ve_sub <- ve[-c(5, 10)]
+ve_sub
+```
+
+## Vetor e Fator
+
+**2. Seleção condicional**: selecionar elementos por condições 
+
+```{r}
+# dois vetores
+foo <- 42
+bar <- 23
+```
+
+<br>
+
+```{r eval=FALSE}
+# operadores relacionais - saidas booleanas (TRUE ou FALSE)
+foo == bar # igualdade
+foo != bar # diferenca 
+foo > bar # maior
+foo >= bar # maior ou igual
+foo < bar # menor
+foo <= bar # menor ou igual
+```
+
+## Vetor e Fator
+
+**2. Seleção condicional**: selecionar elementos por condições 
+
+```{r}
+# quais valores sao maiores que 1?
+ve > 1
+```
+
+<br>
+
+```{r}
+# valores acima de 1
+ve[ve > 1] 
+```
+
+<br>
+
+```{r}
+# atribuir valores maiores que 1
+ve_maior1 <- ve[ve > 1]
+ve_maior1
+```
+
+## Vetor e Fator
+
+**3. Funções de manejo**: `max()`, `min()`, `range()`, `length()`, `sort()` e `round()`
+
+```{r}
+# maximo
+max(ve)
+```
+
+<br>
+
+```{r}
+# minimo
+min(ve)
+```
+
+## Vetor e Fator
+
+**3. Funções de manejo**: `max()`, `min()`, `range()`, `length()`, `sort()` e `round()`
+
+```{r}
+# amplitude
+range(ve)
+```
+
+<br>
+
+```{r}
+# comprimento
+length(ve)
+```
+
+## Vetor e Fator
+
+**3. Funções de manejo**: `max()`, `min()`, `range()`, `length()`, `sort()` e `round()`
+
+```{r}
+# ordenar crescente
+sort(ve)
+```
+
+<br>
+
+```{r}
+# ordenar decrescente
+sort(ve, dec = TRUE)
+```
+
+## Vetor e Fator
+
+**3. Funções de manejo**: `max()`, `min()`, `range()`, `length()`, `sort()` e `round()`
+
+```{r}
+# arredondamento
+ve
+```
+
+<br>
+
+```{r}
+# arredondamento
+round(ve, digits = 1)
+```
+
+<br>
+
+```{r}
+# arredondamento
+round(ve, digits = 0)
+```
+
+## Vetor e Fator
+
+**3. Funções de manejo**: `any()`, `all()` e `which()`
+
+```{r}
+# algum?
+any(ve > 1)
+```
+
+<br>
+
+```{r}
+# todos?
+all(ve > 1)
+```
+
+<br>
+
+```{r}
+# qual(is)?
+which(ve > 1)
+```
+
+## Vetor e Fator
+
+**3. Funções de manejo**: `subset()` e `ifelse()`
+
+```{r}
+# subconjunto
+subset(ve, ve > 1)
+```
+
+<br>
+
+```{r}
+# condicao para uma operacao
+ifelse(ve > 1, 1, 0)
+```
+
+## Listas
+
+**1. Indexação []**: acessa elementos de listas
+
+```{r}
+## indexacao []
+# lista
+li <- list(elem1 = 1, elem2 = 2, elem3 = 3)
+li
+```
+
+## Listas
+
+**1. Indexação []**: acessa elementos de listas
+
+Selecionar elementos
+```{r}
+# acessar o primeiro elemento
+li[1]
+```
+
+<br>
+
+```{r}
+# acessar o primeiro e o terceiro elementos e atribuir
+li2 <- li[c(1, 3)]
+li2
+```
+
+## Listas
+
+**1. Indexação []**: acessa elementos de listas
+
+Retirar elementos
+
+```{r}
+# retirar o primeiro elemento
+li[-1]
+```
+
+<br>
+
+```{r}
+# retirar o segundo elemento e atribuir
+li_13 <- li[-2]
+li_13
+```
+
+## Listas
+
+**2. Indexação [[]]**: acessa valores dos elementos de listas
+
+Retirar elementos
+```{r}
+# valor do primeiro elemento
+li[[1]]
+```
+
+<br>
+
+```{r}
+# valor do segundo elemento e atribuir
+li2_val <- li[[2]]
+li2_val
+```
+
+## Listas
+
+**3. Indexação $**: acessa elementos pelo nome
+
+Selecionar elementos pelo nome
+
+```{r}
+# acessar o primeiro elemento
+li$elem1
+```
+
+<br>
+
+```{r}
+# acessar o primeiro e o terceiro elementos e atribuir
+li1 <- li$elem1
+li1
+```
+
+## Listas
+
+**4. Funções**: `length()` e `names()`
+
+```{r}
+# comprimento
+length(li)
+```
+
+<br>
+
+```{r}
+# names
+names(li)
+```
+
+## Listas
+
+**4. Funções**: `length()` e `names()`
+
+```{r}
+# renomear
+names(li) <- paste0("elemento0", 1:3)
+li
+```
+
+# Manejo de dados (2D ou nD)
+
+## Matrizes, Arrays e Data Frames
+
+**1. Indexação []**: acessa elementos de matrizes, arrays e data frames
+
+```{r}
+# matriz
+ma <- matrix(1:12, 4, 3)
+ma 
+```
+
+## Matrizes, Arrays e Data Frames
+
+**1. Indexação []**: acessa elementos de matrizes, arrays e data frames
+
+![](img/code_df_manipulation01.png){fig-align="center"}
+
+## Matrizes, Arrays e Data Frames
+
+**1. Indexação []**: acessa elementos de matrizes, arrays e data frames
+
+```{r}
+# linha 3
+ma[3, ]
+```
+
+<br>
+
+```{r}
+# coluna 2
+ma[, 2] 
+```
+
+<br>
+
+```{r}
+# elemento da linha 1 e coluna 2
+ma[1, 2] 
+```
+
+<br>
+
+```{r}
+# elementos da linha 1 e coluna 1 e 2
+ma[1, 1:2] 
+```
+
+## Matrizes, Arrays e Data Frames
+
+**1. Indexação []**: acessa elementos de matrizes, arrays e data frames
+
+```{r}
+# elementos da linha 1 e coluna 1 e 3
+ma[1, c(1, 3)] 
+```
+
+<br>
+
+```{r}
+# elementos da linha 1 e coluna 1 e 3 e atribuir
+ma_sel <- ma[1, c(1, 3)]
+ma_sel
+```
+
+## Matrizes, Arrays e Data Frames
+
+**1. Indexação []**: acessa elementos de matrizes, arrays e data frames
+
+<center><img src="img/code_df_manipulation02.png" style="width:80%"/></center>
+
+## Data Frames
+
+**2. Indexação $**: acessa elementos de data frames
+
+```{r}
+# criar tres vetores
+sp <- paste("sp", 1:10, sep = "")
+abu <- 1:10
+flo <- factor(rep(c("campo", "floresta"), each = 5))
+```
+
+<br>
+
+```{r}
+# data frame
+df <- data.frame(sp, abu, flo)
+df
+```
+
+## Data Frames
+
+**2. Indexação $**: acessa colunas de data frames
+
+```{r}
+# $ funciona apenas para data frame 
+df$sp 
+```
+
+<br>
+
+```{r}
+df$abu
+```
+
+<br>
+
+```{r}
+df$flo
+```
+
+## Data Frames
+
+**2. Indexação $**: acessa colunas de data frames pelo nome
+
+```{r}
+# funcoes para uma coluna indexada por $
+length(df$abu)
+max(df$abu)
+min(df$abu)
+range(df$abu)
+```
+
+## Data Frames
+
+**3. Indexação $ e mudanças de colunas**: acessa e modifica colunas em data frames
+
+```{r}
+# modo
+mode(df$abu)
+```
+
+<br>
+
+```{r}
+# converter colunas para caracter
+df$abu <- as.character(df$abu)
+```
+
+<br>
+
+```{r}
+# modo
+df$abu
+mode(df$abu)
+```
+
+## Data Frames
+
+**3. Indexação $ e mudanças de colunas**: acessa e modifica colunas em data frames
+
+```{r}
+# converter colunas para numerico
+df$abu <- as.numeric(df$abu)
+```
+
+<br>
+
+```{r}
+# modo
+df$abu
+mode(df$abu)
+```
+
+## Data Frames
+
+**4. Indexação $ e adicionar colunas**: acessa e adiciona colunas em data frames
+
+```{r}
+# adicionar coluna
+set.seed(42)
+df$abu2 <- sample(0:1, nrow(df), rep = TRUE)
+```
+
+<br>
+
+```{r}
+df$abu2
+```
+
+<br>
+
+```{r}
+df
+```
+
+## Data Frames
+
+**5. Seleção condicional**: filtro de linhas
+
+Selecionar linhas = filtro da planilha eletrônica
+
+```{r}
+# selecionar linhas de uma matriz ou data frame 
+df[df$abu > 4, ]
+```
+
+## Data Frames
+
+**5. Seleção condicional**: filtro de linhas
+
+Selecionar linhas = filtro da planilha eletrônica
+
+```{r}
+# selecionar linhas de uma matriz ou data frame 
+df[df$abu2 == 0, ]
+```
+
+## Data Frames
+
+**5. Seleção condicional**: filtro de linhas
+
+Selecionar linhas = filtro da planilha eletrônica
+
+```{r}
+# selecionar linhas de uma matriz ou data frame 
+df[df$flo == "floresta", ]
+```
+
+## Matrizes, Arrays e Data Frames
+
+**6. Funções de conferência e manejo**
+
+<br>
+
+::: {style="font-size: 70%;"}
+`head()`: primeiras 6 linhas\
+`tail()`: últimas 6 linhas\
+`nrow()`: número de linhas\
+`ncol()`: número de colunas\
+`dim()`: número de linhas e de colunas\
+`rownames()`: nomes das linhas (locais)\
+`colnames()`: nomes das colunas (variáveis)\
+`str()`: classes de cada coluna (estrutura)\
+`summary()`: resumo dos valores de cada coluna\
+`rowSums()`: soma das linhas (horizontal)\
+`colSums()`: soma das colunas (vertical)\
+`rowMeans()`: média das linhas (horizontal)\
+`colMeans()`: média das colunas (vertical)
+:::
+
+# Valores faltantes e especiais
+
+## Valores faltantes e especiais
+
+São **valores reservados** que representam *dados faltantes*, *indefinições matemáticas*, *infinitos* e *objetos nulos*
+
+<br>
+
+**1. NA (Not Available)**\
+**2. NaN (Not a Number)**\
+**3. Inf (Infinito)**\
+**4. NULL**
+
+## Valores faltantes e especiais
+
+**1. NA (Not Available)**
+
+- Significa dado faltante/indisponível
+- **NA** deve ser maiúsculo
+
+```{r}
+# na - not available
+foo_na <- NA
+foo_na
+```
+
+## Valores faltantes e especiais
+
+**1. NA (Not Available)**
+
+Criar um data frame com NA
+
+```{r}
+# data frame
+df <- data.frame(var1 = c(1, 4, 2, NA), var2 = c(1, 4, 5, 2))
+df
+```
+
+## Valores faltantes e especiais
+
+**1. NA (Not Available)**
+
+Função para verificar a **presença/ausência** de NA's
+
+```{r}
+# possui nas?
+is.na(df)
+```
+
+Função para verificar a **presença de algum** NA's
+
+```{r}
+# algum é na?
+any(is.na(df))
+```
+
+## Valores faltantes e especiais
+
+**1. NA (Not Available)**
+
+Vamos retirar as linhas que possuem NA's
+
+```{r}
+# retirar linhas com na
+df_sem_na <- na.omit(df)
+df_sem_na
+```
+
+<br>
+
+```{r}
+# numero de linhas com e sem na
+nrow(df)
+nrow(df_sem_na)
+```
+
+## Valores faltantes e especiais
+
+**1. NA (Not Available)**
+
+Vamos substituir os NA's por 0
+
+```{r}
+# substituir na por 0
+df[is.na(df)] <- 0
+df
+```
+
+## Valores faltantes e especiais
+
+**2. NaN (Not a Number)**
+
+Representa indefinições matemáticas como 0/0 e log(-1)
+
+```{r}
+# nan - not a number
+0/0
+
+# nan - not a number
+log(-1)
+```
+
+## Valores faltantes e especiais
+
+**2. NaN (Not a Number)**
+
+Um **NaN** é um **NA**, mas o **NA** não é um **NaN**
+
+```{r}
+# criar um vetor
+ve <- c(1, 2, 3, NA, NaN)
+ve
+```
+
+<br>
+
+```{r}
+# verificar a presenca de na
+is.na(ve)
+```
+
+<br>
+
+```{r}
+# verificar a presenca de nan
+is.nan(ve)
+```
+
+## Valores faltantes e especiais
+
+**3. Inf (Infinito)**
+
+É um número muito grande ou um limite matemático, e.g., 10^310 e 1/0
+
+```{r}
+# limite matematico
+1/0
+
+# numero muito grande
+10^310
+```
+
+## Valores faltantes e especiais
+
+**4. NULL**
+
+Representa um objeto nulo
+
+Útil para preenchimento de laços e outras aplicações de programação
+
+```{r}
+# objeto nulo
+nulo <- NULL
+nulo
+```
+
+# Diretório de trabalho
+
+## Diretório de trabalho
+
+Endereço da pasta onde o R irá **importar e exportar** os dados
+
+- **Atalho**: `ctrl + shift + H`
+- **Windows: inverter as barras (\\ por /)!**
+
+```{r eval=FALSE}
+# definir o diretorio de trabalho
+setwd("/home/mude/data/github/course-intror/data")
+```
+
+<br>
+
+```{r eval=FALSE}
+# verificar o diretorio
+getwd()
+```
+
+<br>
+
+```{r eval=FALSE}
+# listar os arquivos
+dir()
+```
+
+# Vamos trabalhar com dados reais?
+
+#
+
+<center><img src="img/general_real_data.jpg" style="width:60%"/></center>
+
+## Importar dados
+
+Ler uma planilha eletrônica (.csv)
+
+```{r eval=FALSE}
+# ler uma planilha eletronica (.csv)
+read.csv("ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+```
+
+```{r echo=FALSE}
+read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+```
+
+## Importar dados
+
+Ler e atribuir uma planilha eletrônica (.csv) a um objeto
+
+```{r echo=FALSE}
+da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+```
+
+```{r eval=FALSE}
+# ler e atribuir uma planilha eletronica (.csv) a um objeto
+da <- read.csv("ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+```
+
+```{r eval=FALSE}
+# ver os dados
+da
+```
+
+<br>
+
+```{r}
+# conferir a classe
+class(da)
+```
+
+# IMPORTANTE: uma tabela importada para o R sempre será um **data frame**!
+
+## Importar dados
+
+Ler e atribuir uma planilha simples (.txt) a um objeto
+
+```{r eval=FALSE}
+# ler e atribuir uma planilha simples (.txt) a um objeto
+da <- read.table("ATLANTIC_AMPHIBIANS_sites.txt", header = TRUE, sep = "\t")
+da
+```
+
+```{r echo=FALSE}
+da
+```
+
+## Importar dados
+
+Ler e atribuir uma planilha eletrônica (.xlsx) a um objeto
+
+Pacote **openxlsx**
+```{r eval=FALSE}
+# pacote openxlsx
+# install.packages("openxlsx")
+library(openxlsx)
+```
+
+<br>
+
+```{r eval=FALSE}
+# ler e atribuir uma planilha eletrônica (.xlsx) a um objeto
+da <- openxlsx::read.xlsx("ATLANTIC_AMPHIBIANS_sites.xlsx", sheet = 1, encoding = "latin1")
+da
+```
+
+```{r echo=FALSE}
+da
+```
+
+# Conferência de dados importados
+
+## Conferência de dados importados
+
+Conjunto de funções para conferir os dados
+
+<br>
+
+**Funções de conferência**
+
+::: {style="font-size: 80%;"}
+`head()`: primeiras 6 linhas<br>
+`tail()`: últimas 6 linhas<br>
+`nrow()`: número de linhas<br>
+`ncol()`: número de colunas<br>
+`dim()`: número de linhas e de colunas<br>
+`rownames()`: nomes das linhas (locais)<br>
+`colnames()`: nomes das colunas (variáveis)<br>
+`str()`: classes de cada coluna (estrutura)<br>
+`summary()`: resumo dos valores de cada coluna
+:::
+
+## Conferência de dados importados
+
+`head()`: mostra as primeiras 6 linhas
+
+```{r include=FALSE}
+# ler e atribuir uma planilha eletronica (.csv) a um objeto
+da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+```
+
+<br>
+
+```{r}
+# primeiras linhas
+head(da)
+```
+
+## Conferência de dados importados
+
+`head()`: mostra as primeiras 10 linhas
+
+```{r}
+# primeiras linhas
+head(da, 10)
+```
+
+## Conferência de dados importados
+
+`tail()`: mostra as últimas 6 linhas
+
+```{r}
+# ultimas linhas
+tail(da)
+```
+
+## Conferência de dados importados
+
+`nrow()`: mostra o número de linhas
+
+```{r}
+# numero de linhas
+nrow(da)
+```
+
+`ncol()`: mostra o número de colunas
+
+```{r}
+# numero de colunas
+ncol(da)
+```
+
+`dim()`: mostra o número de linhas e de colunas
+
+```{r}
+# numero de linhas e de colunas
+dim(da)
+```
+
+## Conferência de dados importados
+
+`rownames()`: mostra os nomes das linhas (locais)
+
+```{r}
+# nome das linhas
+rownames(da)
+```
+
+## Conferência de dados importados
+
+`colnames()`: mostra os nomes das colunas (variáveis)
+
+```{r}
+# nome das colunas
+colnames(da)
+```
+
+## Conferência de dados importados
+
+`str()`: mostra as classes de cada coluna (estrutura)
+
+```{r}
+# estrutura dos dados
+str(da)
+```
+
+## Conferência de dados importados
+
+`summary()`: mostra um resumo dos valores de cada coluna
+
+```{r}
+# resumo dos dados
+summary(da)
+```
+
+## Conferência de dados importados
+
+Verificar a presença de NAs
+
+```{r}
+# algum nas?
+any(is.na(da))
+```
+
+<br>
+
+```{r}
+# quais sao nas?
+which(is.na(da))
+```
+
+## Conferência de dados importados
+
+Retirar os NAs
+
+```{r}
+# omitir as linhas com nas e atribuir 
+da_na <- na.omit(da)
+```
+
+<br>
+
+```{r}
+# numero de linhas do dado total
+nrow(da)
+```
+
+<br>
+
+```{r}
+# numero de linhas do dado sem nas
+nrow(da_na)
+```
+
+## Conferência de dados importados
+
+Subset das linhas
+
+```{r}
+# subset das linhas com amostragens em sao paulo
+da_sp <- da[da$state == "São Paulo", ]
+da_sp
+```
+
+# Exportar dados
+
+## Exportar dados
+
+Exportar uma tabela de dados na pasta do diretório
+
+1. csv (*Comma Separated Values*)
+
+```{r eval=FALSE}
+# exportar csv
+write.csv(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.csv", 
+          row.names = FALSE, quote = FALSE)
+```
+
+2. txt (*Text File*)
+
+```{r eval=FALSE}
+# exportar txt
+write.table(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.txt", 
+            row.names = FALSE, quote = FALSE)
+```
+
+## Exportar dados
+
+Exportar uma tabela de dados na pasta do diretório
+
+3. xlsx (*Excel Spreadsheet XML*)
+
+```{r, eval = FALSE, warning = FALSE}
+# exportar xlsx
+openxlsx::write.xlsx(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx", 
+                     row.names = FALSE, quote = FALSE)
+```
+
+# Bora para tidyverse!
