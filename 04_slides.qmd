@@ -99,29 +99,53 @@ Abram o script
 
 ## Principais pacotes {.smaller}
 
-<br>
-
 ::: incremental
 -   [graphics](http://search.r-project.org/R/library/graphics/html/00Index.html): simples e útil para visualizações rápidas
+
+- [lattice](https://lattice.r-forge.r-project.org/): integração a modelos estatísticos
 
 -   [ggplot2](https://ggplot2.tidyverse.org/): integrado ao tidyverse, possui uma sintaxe própria baseada na gramática de gráficos por camadas (*layers*)
 
 -   [ggplot2 extentions](https://exts.ggplot2.tidyverse.org/): conjunto de pacotes com diversas expansões ao pacote [ggplot2](https://ggplot2.tidyverse.org/). Exemplos: [GGally](https://ggobi.github.io/ggally/), [gganimate](https://gganimate.com/) e [esquisse](https://dreamrs.github.io/esquisse/)
 
--   [visdat](https://docs.ropensci.org/visdat/): visualizações preliminares de conjuntos de dados para identificar problemas
+- [ggdist](https://mjskay.github.io/ggdist): visualizar distribuições e incertezas
+
+-   [visdat](https://docs.ropensci.org/visdat/), [corrplot](https://github.com/taiyun/corrplot) e [DataExplorer](https://boxuancui.github.io/DataExplorer/): visualizações preliminares de conjuntos de dados
 
 -   [ggpubr](https://rpkgs.datanovia.com/ggpubr/): fornece funções simplificadas para criar gráficos para publicação
 
--   [cowplot](https://wilkelab.org/cowplot/): permite combinar vários gráficos
+- [ggstatsplot](https://indrajeetpatil.github.io/ggstatsplot): gráficos com detalhes de testes estatísticos
 
--   [patchwork](https://patchwork.data-imaginist.com/): permite combinar vários gráficos
+-   [cowplot](https://wilkelab.org/cowplot/) e [patchwork](https://patchwork.data-imaginist.com/): permite combinar vários gráficos
 
--   [plotly](https://plotly.com/r/): cria gráficos interativos usando JavaScript (*plotly.js*)
+- [plotly](https://plotly.com/r/): gráficos interativos usando JavaScript (*plotly.js*)
+
+- [echarts4r](https://echarts4r.john-coene.com): gráficos interativos dentro do Shiny
 :::
+
+## Pacotes apresentados
+
+<br>
+
+- [graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
+
+- [ggplot2](https://ggplot2.tidyverse.org/)
+
+- [GGally](https://ggobi.github.io/ggally/)
+
+- [gganimate](https://gganimate.com/)
+
+- [esquisse](https://dreamrs.github.io/esquisse/)
+
+- [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
+
+- [plotly](https://plotly.com/r/)
 
 # 
 
-<center><img src="img/package_palmerpenguins.png" style="width:50%"/></center>
+<center>
+<img src="img/package_palmerpenguins.png" style="width:50%"/>
+</center>
 
 ::: footer
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
@@ -145,7 +169,9 @@ library(palmerpenguins)
 library(palmerpenguins)
 ```
 
-<center><img src="img/culmen_depth.png" style="width:50%"/></center>
+<center>
+<img src="img/culmen_depth.png" style="width:50%"/>
+</center>
 
 ::: footer
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
@@ -153,7 +179,9 @@ library(palmerpenguins)
 
 # 
 
-<center><img src="img/package_graphics.png" style="width:50%"/></center>
+<center>
+<img src="img/package_graphics.png" style="width:50%"/>
+</center>
 
 ::: footer
 [graphics](http://search.r-project.org/R/library/graphics/html/00Index.html)
@@ -184,7 +212,9 @@ plot(flipper_length_mm ~ body_mass_g, data = penguins)
 
 # 
 
-<center><img src="img/package_ggplot2.png" style="width:50%"/></center>
+<center>
+<img src="img/package_ggplot2.png" style="width:50%"/>
+</center>
 
 ::: footer
 [ggplot2](https://ggplot2.tidyverse.org/)
@@ -256,7 +286,9 @@ Wilkinson (2005) *Grammar of Graphics*: representação gráfica dos dados a par
 
 ## Camadas (*layers*)
 
-<center><img src="img/plot_ggplot.gif" style="width:100%"/></center>
+<center>
+<img src="img/plot_ggplot.gif" style="width:100%"/>
+</center>
 
 ::: footer
 [Think About the Grammar of Graphics When Improving Your Graphs](https://medium.com/tdebeus/think-about-the-grammar-of-graphics-when-improving-your-graphs-18e3744d8d18)
@@ -289,7 +321,8 @@ Representações das colunas (eixos) e linhas (elementos)
 ![](img/continuous_discrete_inv.png){.absolute width="500" height="350" right="50" top="350"}
 
 ::: footer
-[Matthiopoulos (2011)](http://greenmaths.st-andrews.ac.uk/), [\@allison_horst](https://twitter.com/allison_horst)
+[Matthiopoulos (2011)](http://greenmaths.st-andrews.ac.uk/), 
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
 ## Tipos de variáveis e tipos gráficos
@@ -1408,6 +1441,8 @@ ggpie(penguins_prop,
 :::
 :::::
 
+# Polêmica 1!!!
+
 # Gráfico de setores (*Donut chart*)
 
 ## Gráfico de setores (*Donut chart*)
@@ -1692,7 +1727,7 @@ penguins_count <- penguins %>%
 ggplot(data = penguins_count, 
        aes(x = species, y = n, fill = species)) +
   geom_bar(stat = "identity") +
-  geom_label(aes(label = n), fill = "white",size = 10) +
+  geom_label(aes(label = n), fill = "white", size = 10) +
   scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
   coord_flip() +
   theme_bw(base_size = 15) +
@@ -1814,6 +1849,148 @@ ggbarplot(penguins_count,
           ylab = "Frequência absoluta",
           legend = "none",
           orientation = "horiz")
+```
+:::
+:::::
+
+# Polêmica 2!!!
+
+## Gráfico de barras (*Bar plot*)
+
+**Gráfico dinamite (*Dynamite plot*)**
+
+![](img/dynamite_plot01.png){.absolute width="600" height="500" right="600" top="180"}
+
+![](img/dynamite_plot02.png){.absolute width="800" height="550" right="-200" top="140"}
+
+:::footer
+[Gráficos dinamite: usá-los ou não, eis a questão](https://fernandafperes.com.br/blog/graficos-dinamite/)
+:::
+
+## Gráfico de barras (*Bar plot*)
+
+**Gráfico dinamite (*Dynamite plot*) - alternativas**
+
+![](img/dynamite_plot03.png){.absolute width="600" height="500" right="600" top="180"}
+![](img/dynamite_plot04.png){.absolute width="350" height="250" right="250" top="180"}
+![](img/dynamite_plot06.png){.absolute width="350" height="250" right="-120" top="180"}
+![](img/dynamite_plot07.png){.absolute width="350" height="250" right="250" top="450"}
+![](img/dynamite_plot08.png){.absolute width="350" height="250" right="-120" top="450"}
+
+## Gráfico de barras (*Bar plot*)
+
+**Gráfico dinamite (*Dynamite plot*)** - **ggplot2**
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+
+penguins_flipper_length_mn_sd <- penguins %>%
+  dplyr::group_by(species) %>% 
+  dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
+                   sd = sd(flipper_length_mm, na.rm = TRUE))
+penguins_flipper_length_mn_sd
+
+ggplot(data = penguins, 
+       aes(x = species, y = flipper_length_mm, fill = species)) +
+  stat_summary(fun = mean,
+               geom = "col",
+               color = "black",
+               show.legend = FALSE) +
+  stat_summary(fun.data = mean_se,
+               geom = "errorbar",
+               width = 0.15,
+               linewidth = 0.8) +
+  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
+  theme_bw(base_size = 15) +
+  labs(x = "Species", y = "Flipper length (mm)")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-height: 10
+#| echo: false
+#| fig-weight: 15
+
+penguins_flipper_length_mn_sd <- penguins %>%
+  dplyr::group_by(species) %>% 
+  dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
+                   sd = sd(flipper_length_mm, na.rm = TRUE))
+penguins_flipper_length_mn_sd
+
+ggplot(data = penguins, 
+       aes(x = species, y = flipper_length_mm, fill = species)) +
+  stat_summary(fun = mean,
+               geom = "col",
+               color = "black",
+               show.legend = FALSE) +
+  stat_summary(fun.data = mean_se,
+               geom = "errorbar",
+               width = 0.15,
+               linewidth = 0.8) +
+  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
+  theme_bw(base_size = 15) +
+  labs(x = "Species", y = "Flipper length (mm)")
+```
+:::
+:::::
+
+## Gráfico de barras (*Bar plot*)
+
+**Gráfico dinamite (*Dynamite plot*)** - **ggpubr**
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+
+penguins_flipper_length_mn_sd <- penguins %>%
+  dplyr::group_by(species) %>% 
+  dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
+                   sd = sd(flipper_length_mm, na.rm = TRUE))
+penguins_flipper_length_mn_sd
+
+ggbarplot(penguins,
+          x = "species",
+          y = "flipper_length_mm",
+          fill = "species",
+          color = "gray30",              
+          palette = c("darkorange", "purple", "cyan4"),
+          add = "mean_se",
+          add.params = list(size = 1),
+          main = "Tamanho médio da barbatana por espécie (desvio padrão)",
+          xlab = "Espécies",
+          ylab = "Frequência absoluta",
+          legend = "none")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-height: 10
+#| echo: false
+#| fig-weight: 15
+
+penguins_flipper_length_mn_sd <- penguins %>%
+  dplyr::group_by(species) %>% 
+  dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
+                   sd = sd(flipper_length_mm, na.rm = TRUE))
+penguins_flipper_length_mn_sd
+
+ggbarplot(penguins,
+          x = "species",
+          y = "flipper_length_mm",
+          fill = "species",
+          color = "gray30",              
+          palette = c("darkorange", "purple", "cyan4"),
+          add = "mean_se",
+          add.params = list(size = 1),
+          main = "Tamanho médio da barbatana por espécie (desvio padrão)",
+          xlab = "Espécies",
+          ylab = "Frequência absoluta",
+          legend = "none")
 ```
 :::
 :::::
@@ -2187,6 +2364,16 @@ ggviolin(data = penguins,
 ```
 :::
 :::::
+
+## Gráfico de caixas (*Rain plot*)
+
+**ggdist**
+
+<center><img src="img/rainplot-penguins.png" style="width:70%"/></center>
+
+::: footer
+[Visualizing Distributions with Raincloud Plots (and How to Create Them with ggplot2)](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/)
+:::
 
 # Gráfico de dispersão (*Scatter plot*)
 
@@ -3415,35 +3602,3 @@ esquisse::esquisser(na.omit(palmerpenguins::penguins))
 :::::
 
 # Dúvidas?
-
-# Material de estudo
-
-## Livros
-
--   [ggplot2 (2016)](https://ggplot2.tidyverse.org/)
-
--   [R Graphics Cookbook (2018)](http://www.cookbook-r.com/Graphs/)
-
--   [R for Data Science (2017)](https://r4ds.had.co.nz/)
-
--   [Data Visualization with R (2018)](https://rkabacoff.github.io/datavis/)
-
--   [Fundamentals of Data Visualization (2019)](https://serialmentor.com/dataviz/)
-
--   [Interactive web-based data visualization with R, plotly, and shiny (2019)](https://plotly-r.com/)
-
-## Sites
-
--   [ggplot2: Reference](https://ggplot2.tidyverse.org/reference/)
-
--   [R Graph Gallery](https://www.r-graph-gallery.com/)
-
--   [from Data to Viz](https://www.data-to-viz.com/)
-
--   [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
-
--   [plotly](https://plotly.com)
-
--   [Statistical tools for high-throughput data analysis (STHDA)](http://www.sthda.com/english/)
-
-# Muito obrigado!

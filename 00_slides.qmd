@@ -207,7 +207,7 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 </center>
 
 ::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
 ## Diretório da disciplina

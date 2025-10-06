@@ -22,31 +22,26 @@ editor: source
 lang: pt-br
 ---
 
-https://rdatatoolbox.github.io/
-https://rdatatoolbox.github.io/course-renv/#/
-https://rdatatoolbox.github.io/course-quarto/#/
+## Prática 1
 
-## Muito obrigado!
+- Crie um ambiente virtual do R com o pacote `renv`
 
-::: columns
-::: {.column width="50%"}
-**Agradecimentos**:
+## Prática 2
 
-- [Beatriz Milz](https://beatrizmilz.com/)
+- Crie um ambiente virtual do R com o pacote `renv`
 
-![](img/fapesp.png){.absolute width=40% right=650 top=350}
-:::
+## Prática 3
 
-::: {.column width="50%"}
-**Contato**:
+- Crie um ambiente virtual do R com o pacote `renv`
 
-[mauricio.vancine@gmail.com]()
-[mauriciovancine.github.io](https://mauriciovancine.github.io)
+## Prática 4
 
-![](img/gif_frogs.gif){.absolute width=40% right=90 top=260}
-:::
-:::
+- Crie um ambiente virtual do R com o pacote `renv`
 
-:::footer
-Slides por [Maurício Vancine](https://mauriciovancine.github.io), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-git-github-rstudio).
-:::
+## Prática 5
+
+- Crie um ambiente virtual do R com o pacote `renv`
+
+## Prática 6
+
+- Crie um ambiente virtual do R com o pacote `renv`

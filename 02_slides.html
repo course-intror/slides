@@ -1868,7 +1868,7 @@ Scorautu Trifprat Trifrepe Vicilath Bracruta Callcusp
 <div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href=""></a><span class="co"># amostrar</span></span>
 <span id="cb134-2"><a href=""></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span>, <span class="dv">6</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  6 53 39 24 40 43</code></pre>
+<pre><code>[1]  1 36 44 48 24 46</code></pre>
 </div>
 </div>
 </div></div>
@@ -1888,7 +1888,7 @@ Scorautu Trifprat Trifrepe Vicilath Bracruta Callcusp
 <span id="cb136-4"><a href=""></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"p"</span>))</span>
 <span id="cb136-5"><a href=""></a>ftc_nom</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] p p f f f f p f f p p p p p p f f p p p
+<pre><code> [1] p p f p p p f f p p f p f p f p p f f f
 Levels: f p</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href=""></a><span class="fu">levels</span>(ftc_nom)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1901,7 +1901,7 @@ Levels: f p</code></pre>
 <span id="cb140-4"><a href=""></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"a"</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb140-5"><a href=""></a>ftc_ord</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] a b a a b a a b b b b a b a b b a a b a
+<pre><code> [1] a a b b a b a b a b b b b a a b b b a b
 Levels: b &lt; a</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href=""></a><span class="fu">levels</span>(ftc_ord)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1970,23 +1970,23 @@ vec_2    4    5    6</code></pre>
 <pre><code>, , 1
 
      [,1] [,2] [,3]
-[1,]    1    1    1
-[2,]    1    0    0
-[3,]    0    1    0
+[1,]    0    0    1
+[2,]    0    0    1
+[3,]    0    0    1
 
 , , 2
 
      [,1] [,2] [,3]
-[1,]    0    1    0
-[2,]    1    0    1
-[3,]    0    0    1
+[1,]    1    0    1
+[2,]    1    0    0
+[3,]    0    1    1
 
 , , 3
 
      [,1] [,2] [,3]
-[1,]    1    1    1
-[2,]    1    1    1
-[3,]    0    0    1</code></pre>
+[1,]    0    0    1
+[2,]    1    0    0
+[3,]    1    0    1</code></pre>
 </div>
 </div>
 </div></div>
@@ -2007,7 +2007,7 @@ vec_2    4    5    6</code></pre>
 <span id="cb152-5"><a href=""></a>li</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
- [1] 1 1 0 1 0 1 1 0 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 1 1 1
+ [1] 0 0 0 0 0 0 1 1 1 1 1 0 0 0 1 1 0 1 0 1 1 0 0 0 1 0 1
 
 [[2]]
       [,1] [,2] [,3]
@@ -2057,8 +2057,8 @@ vec_2    4    5    6
 <div class="cell-output cell-output-stdout">
 <pre><code>  especies abundancia vegetacao
 1      sp1          8       flo
-2      sp2          6       cer
-3      sp3          9      past</code></pre>
+2      sp2          9       cer
+3      sp3          7      past</code></pre>
 </div>
 </div>
 </div></div>
@@ -3004,15 +3004,13 @@ Levels: campo floresta</code></pre>
 <div class="sourceCode cell-code" id="cb318"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb318-1"><a href=""></a><span class="co"># definir o diretorio de trabalho</span></span>
 <span id="cb318-2"><a href=""></a><span class="fu">setwd</span>(<span class="st">"/home/mude/data/github/course-intror/data"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
+<p><strong>Conferir diretório</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb319"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb319-1"><a href=""></a><span class="co"># verificar o diretorio</span></span>
-<span id="cb319-2"><a href=""></a><span class="fu">getwd</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb320"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb320-1"><a href=""></a><span class="co"># listar os arquivos</span></span>
-<span id="cb320-2"><a href=""></a><span class="fu">dir</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb319"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb319-1"><a href=""></a><span class="co"># conferir diretorio</span></span>
+<span id="cb319-2"><a href=""></a><span class="fu">getwd</span>()</span>
+<span id="cb319-3"><a href=""></a></span>
+<span id="cb319-4"><a href=""></a><span class="co"># listar arquivos</span></span>
+<span id="cb319-5"><a href=""></a><span class="fu">dir</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section class="title-slide slide level1 center">
@@ -3031,8 +3029,8 @@ Levels: campo floresta</code></pre>
 <h2>Importar dados</h2>
 <p>Ler uma planilha eletrônica (.csv)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb321"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb321-1"><a href=""></a><span class="co"># ler uma planilha eletronica (.csv)</span></span>
-<span id="cb321-2"><a href=""></a><span class="fu">read.csv</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.csv"</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb320"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb320-1"><a href=""></a><span class="co"># ler uma planilha eletronica (.csv)</span></span>
+<span id="cb320-2"><a href=""></a><span class="fu">read.csv</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.csv"</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -12355,17 +12353,17 @@ Levels: campo floresta</code></pre>
 <h2>Importar dados</h2>
 <p>Ler e atribuir uma planilha eletrônica (.csv) a um objeto</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb323"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb323-1"><a href=""></a><span class="co"># ler e atribuir uma planilha eletronica (.csv) a um objeto</span></span>
-<span id="cb323-2"><a href=""></a>da <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.csv"</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb322"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb322-1"><a href=""></a><span class="co"># ler e atribuir uma planilha eletronica (.csv) a um objeto</span></span>
+<span id="cb322-2"><a href=""></a>da <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.csv"</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb324"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb324-1"><a href=""></a><span class="co"># ver os dados</span></span>
-<span id="cb324-2"><a href=""></a>da</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb323"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb323-1"><a href=""></a><span class="co"># ver os dados</span></span>
+<span id="cb323-2"><a href=""></a>da</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb325"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb325-1"><a href=""></a><span class="co"># conferir a classe</span></span>
-<span id="cb325-2"><a href=""></a><span class="fu">class</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb324"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb324-1"><a href=""></a><span class="co"># conferir a classe</span></span>
+<span id="cb324-2"><a href=""></a><span class="fu">class</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.frame"</code></pre>
 </div>
@@ -12380,9 +12378,9 @@ Levels: campo floresta</code></pre>
 <h2>Importar dados</h2>
 <p>Ler e atribuir uma planilha simples (.txt) a um objeto</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb327"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb327-1"><a href=""></a><span class="co"># ler e atribuir uma planilha simples (.txt) a um objeto</span></span>
-<span id="cb327-2"><a href=""></a>da <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb327-3"><a href=""></a>da</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb326"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb326-1"><a href=""></a><span class="co"># ler e atribuir uma planilha simples (.txt) a um objeto</span></span>
+<span id="cb326-2"><a href=""></a>da <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb326-3"><a href=""></a>da</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -21706,15 +21704,15 @@ Levels: campo floresta</code></pre>
 <p>Ler e atribuir uma planilha eletrônica (.xlsx) a um objeto</p>
 <p>Pacote <strong>openxlsx</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb329"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb329-1"><a href=""></a><span class="co"># pacote openxlsx</span></span>
-<span id="cb329-2"><a href=""></a><span class="co"># install.packages("openxlsx")</span></span>
-<span id="cb329-3"><a href=""></a><span class="fu">library</span>(openxlsx)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb328"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb328-1"><a href=""></a><span class="co"># pacote openxlsx</span></span>
+<span id="cb328-2"><a href=""></a><span class="co"># install.packages("openxlsx")</span></span>
+<span id="cb328-3"><a href=""></a><span class="fu">library</span>(openxlsx)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb330"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb330-1"><a href=""></a><span class="co"># ler e atribuir uma planilha eletrônica (.xlsx) a um objeto</span></span>
-<span id="cb330-2"><a href=""></a>da <span class="ot">&lt;-</span> openxlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>)</span>
-<span id="cb330-3"><a href=""></a>da</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb329"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb329-1"><a href=""></a><span class="co"># ler e atribuir uma planilha eletrônica (.xlsx) a um objeto</span></span>
+<span id="cb329-2"><a href=""></a>da <span class="ot">&lt;-</span> openxlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>)</span>
+<span id="cb329-3"><a href=""></a>da</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -31052,8 +31050,8 @@ Levels: campo floresta</code></pre>
 <p><code>head()</code>: mostra as primeiras 6 linhas</p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb332"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb332-1"><a href=""></a><span class="co"># primeiras linhas</span></span>
-<span id="cb332-2"><a href=""></a><span class="fu">head</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb331"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb331-1"><a href=""></a><span class="co"># primeiras linhas</span></span>
+<span id="cb331-2"><a href=""></a><span class="fu">head</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       id reference_number species_number record sampled_habitat active_methods
 1 amp1001             1001             19     ab           fo,ll             as
@@ -31097,8 +31095,8 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>head()</code>: mostra as primeiras 10 linhas</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb334"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb334-1"><a href=""></a><span class="co"># primeiras linhas</span></span>
-<span id="cb334-2"><a href=""></a><span class="fu">head</span>(da, <span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb333"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb333-1"><a href=""></a><span class="co"># primeiras linhas</span></span>
+<span id="cb333-2"><a href=""></a><span class="fu">head</span>(da, <span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        id reference_number species_number record sampled_habitat
 1  amp1001             1001             19     ab           fo,ll
@@ -31173,8 +31171,8 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>tail()</code>: mostra as últimas 6 linhas</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb336"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb336-1"><a href=""></a><span class="co"># ultimas linhas</span></span>
-<span id="cb336-2"><a href=""></a><span class="fu">tail</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb335"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb335-1"><a href=""></a><span class="co"># ultimas linhas</span></span>
+<span id="cb335-2"><a href=""></a><span class="fu">tail</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          id reference_number species_number record sampled_habitat
 1158 amp2158             1389              3     co            &lt;NA&gt;
@@ -31225,24 +31223,24 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>nrow()</code>: mostra o número de linhas</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb338"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb338-1"><a href=""></a><span class="co"># numero de linhas</span></span>
-<span id="cb338-2"><a href=""></a><span class="fu">nrow</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb337"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb337-1"><a href=""></a><span class="co"># numero de linhas</span></span>
+<span id="cb337-2"><a href=""></a><span class="fu">nrow</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1163</code></pre>
 </div>
 </div>
 <p><code>ncol()</code>: mostra o número de colunas</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb340"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb340-1"><a href=""></a><span class="co"># numero de colunas</span></span>
-<span id="cb340-2"><a href=""></a><span class="fu">ncol</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb339"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb339-1"><a href=""></a><span class="co"># numero de colunas</span></span>
+<span id="cb339-2"><a href=""></a><span class="fu">ncol</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
 </div>
 <p><code>dim()</code>: mostra o número de linhas e de colunas</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb342"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb342-1"><a href=""></a><span class="co"># numero de linhas e de colunas</span></span>
-<span id="cb342-2"><a href=""></a><span class="fu">dim</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb341"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb341-1"><a href=""></a><span class="co"># numero de linhas e de colunas</span></span>
+<span id="cb341-2"><a href=""></a><span class="fu">dim</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1163   25</code></pre>
 </div>
@@ -31252,8 +31250,8 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>rownames()</code>: mostra os nomes das linhas (locais)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb344"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb344-1"><a href=""></a><span class="co"># nome das linhas</span></span>
-<span id="cb344-2"><a href=""></a><span class="fu">rownames</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb343"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb343-1"><a href=""></a><span class="co"># nome das linhas</span></span>
+<span id="cb343-2"><a href=""></a><span class="fu">rownames</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1] "1"    "2"    "3"    "4"    "5"    "6"    "7"    "8"    "9"    "10"  
   [11] "11"   "12"   "13"   "14"   "15"   "16"   "17"   "18"   "19"   "20"  
@@ -31379,8 +31377,8 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>colnames()</code>: mostra os nomes das colunas (variáveis)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb346"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb346-1"><a href=""></a><span class="co"># nome das colunas</span></span>
-<span id="cb346-2"><a href=""></a><span class="fu">colnames</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb345"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb345-1"><a href=""></a><span class="co"># nome das colunas</span></span>
+<span id="cb345-2"><a href=""></a><span class="fu">colnames</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "id"                    "reference_number"      "species_number"       
  [4] "record"                "sampled_habitat"       "active_methods"       
@@ -31398,8 +31396,8 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>str()</code>: mostra as classes de cada coluna (estrutura)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb348"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb348-1"><a href=""></a><span class="co"># estrutura dos dados</span></span>
-<span id="cb348-2"><a href=""></a><span class="fu">str</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb347"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb347-1"><a href=""></a><span class="co"># estrutura dos dados</span></span>
+<span id="cb347-2"><a href=""></a><span class="fu">str</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   1163 obs. of  25 variables:
  $ id                   : chr  "amp1001" "amp1002" "amp1003" "amp1004" ...
@@ -31434,8 +31432,8 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p><code>summary()</code>: mostra um resumo dos valores de cada coluna</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb350"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb350-1"><a href=""></a><span class="co"># resumo dos dados</span></span>
-<span id="cb350-2"><a href=""></a><span class="fu">summary</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb349"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb349-1"><a href=""></a><span class="co"># resumo dos dados</span></span>
+<span id="cb349-2"><a href=""></a><span class="fu">summary</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id            reference_number species_number     record         
  Length:1163        Min.   :1001     Min.   : 1.00   Length:1163       
@@ -31500,16 +31498,16 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p>Verificar a presença de NAs</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb352"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb352-1"><a href=""></a><span class="co"># algum nas?</span></span>
-<span id="cb352-2"><a href=""></a><span class="fu">any</span>(<span class="fu">is.na</span>(da))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb351"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb351-1"><a href=""></a><span class="co"># algum nas?</span></span>
+<span id="cb351-2"><a href=""></a><span class="fu">any</span>(<span class="fu">is.na</span>(da))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb354"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb354-1"><a href=""></a><span class="co"># quais sao nas?</span></span>
-<span id="cb354-2"><a href=""></a><span class="fu">which</span>(<span class="fu">is.na</span>(da))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb353"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb353-1"><a href=""></a><span class="co"># quais sao nas?</span></span>
+<span id="cb353-2"><a href=""></a><span class="fu">which</span>(<span class="fu">is.na</span>(da))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1]  4685  4686  4687  4688  4689  4690  4691  4692  4693  4711  4744  4749
   [13]  4751  4780  4781  4782  4783  4784  4785  4786  4787  4788  4789  4790
@@ -31772,21 +31770,21 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p>Retirar os NAs</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb356"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb356-1"><a href=""></a><span class="co"># omitir as linhas com nas e atribuir </span></span>
-<span id="cb356-2"><a href=""></a>da_na <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb355"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb355-1"><a href=""></a><span class="co"># omitir as linhas com nas e atribuir </span></span>
+<span id="cb355-2"><a href=""></a>da_na <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb357"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb357-1"><a href=""></a><span class="co"># numero de linhas do dado total</span></span>
-<span id="cb357-2"><a href=""></a><span class="fu">nrow</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb356"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb356-1"><a href=""></a><span class="co"># numero de linhas do dado total</span></span>
+<span id="cb356-2"><a href=""></a><span class="fu">nrow</span>(da)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1163</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb359"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb359-1"><a href=""></a><span class="co"># numero de linhas do dado sem nas</span></span>
-<span id="cb359-2"><a href=""></a><span class="fu">nrow</span>(da_na)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb358"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb358-1"><a href=""></a><span class="co"># numero de linhas do dado sem nas</span></span>
+<span id="cb358-2"><a href=""></a><span class="fu">nrow</span>(da_na)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 40</code></pre>
 </div>
@@ -31796,9 +31794,9 @@ Levels: campo floresta</code></pre>
 <h2>Conferência de dados importados</h2>
 <p>Subset das linhas</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb361"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb361-1"><a href=""></a><span class="co"># subset das linhas com amostragens em sao paulo</span></span>
-<span id="cb361-2"><a href=""></a>da_sp <span class="ot">&lt;-</span> da[da<span class="sc">$</span>state <span class="sc">==</span> <span class="st">"São Paulo"</span>, ]</span>
-<span id="cb361-3"><a href=""></a>da_sp</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb360"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb360-1"><a href=""></a><span class="co"># subset das linhas com amostragens em sao paulo</span></span>
+<span id="cb360-2"><a href=""></a>da_sp <span class="ot">&lt;-</span> da[da<span class="sc">$</span>state <span class="sc">==</span> <span class="st">"São Paulo"</span>, ]</span>
+<span id="cb360-3"><a href=""></a>da_sp</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] id                    reference_number      species_number       
  [4] record                sampled_habitat       active_methods       
@@ -31825,17 +31823,17 @@ Levels: campo floresta</code></pre>
 <li>csv (<em>Comma Separated Values</em>)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb363"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb363-1"><a href=""></a><span class="co"># exportar csv</span></span>
-<span id="cb363-2"><a href=""></a><span class="fu">write.csv</span>(da_sp, <span class="st">"ATLANTIC_AMPHIBIAN_sites_sao_paulo.csv"</span>, </span>
-<span id="cb363-3"><a href=""></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb362"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb362-1"><a href=""></a><span class="co"># exportar csv</span></span>
+<span id="cb362-2"><a href=""></a><span class="fu">write.csv</span>(da_sp, <span class="st">"ATLANTIC_AMPHIBIAN_sites_sao_paulo.csv"</span>, </span>
+<span id="cb362-3"><a href=""></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>txt (<em>Text File</em>)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb364"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb364-1"><a href=""></a><span class="co"># exportar txt</span></span>
-<span id="cb364-2"><a href=""></a><span class="fu">write.table</span>(da_sp, <span class="st">"ATLANTIC_AMPHIBIAN_sites_sao_paulo.txt"</span>, </span>
-<span id="cb364-3"><a href=""></a>            <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb363"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb363-1"><a href=""></a><span class="co"># exportar txt</span></span>
+<span id="cb363-2"><a href=""></a><span class="fu">write.table</span>(da_sp, <span class="st">"ATLANTIC_AMPHIBIAN_sites_sao_paulo.txt"</span>, </span>
+<span id="cb363-3"><a href=""></a>            <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -31845,11 +31843,16 @@ Levels: campo floresta</code></pre>
 <li>xlsx (<em>Excel Spreadsheet XML</em>)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb365"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb365-1"><a href=""></a><span class="co"># exportar xlsx</span></span>
-<span id="cb365-2"><a href=""></a>openxlsx<span class="sc">::</span><span class="fu">write.xlsx</span>(da_sp, <span class="st">"ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx"</span>, </span>
-<span id="cb365-3"><a href=""></a>                     <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb364"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb364-1"><a href=""></a><span class="co"># exportar xlsx</span></span>
+<span id="cb364-2"><a href=""></a>openxlsx<span class="sc">::</span><span class="fu">write.xlsx</span>(da_sp, <span class="st">"ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx"</span>, </span>
+<span id="cb364-3"><a href=""></a>                     <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
+<section class="title-slide slide level1 center">
+<h1>Dúvidas?</h1>
+
+</section>
+
 <section class="title-slide slide level1 center">
 <h1>Bora para tidyverse!</h1>
 

@@ -26,7 +26,9 @@ lang: pt
 
 # 
 
-<center><img src="img/r_logo.svg" style="width:70%"/></center>
+<center>
+<img src="img/r_logo.svg" style="width:70%"/>
+</center>
 
 ::: footer
 [r-project](https://www.r-project.org/)
@@ -119,7 +121,9 @@ Maria (UFSM)
 
 ::::: columns
 ::: {.column width="40%"}
-<center><img src="img/aer.jpeg" href="https://analises-ecologicas.com/" style="width:90%"/></center>
+<center>
+<img src="img/aer.jpeg" href="https://analises-ecologicas.com/" style="width:90%"/>
+</center>
 :::
 
 ::: {.column width="60%"}
@@ -199,7 +203,9 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 
 ## Mas não foi fácil... E ainda não é...
 
-<center><img src="img/general_code_meme.jpg" style="width:100%"/></center>
+<center>
+<img src="img/general_code_meme.jpg" style="width:100%"/>
+</center>
 
 # Linguagem R
 
@@ -207,7 +213,9 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 
 O R é uma **linguagem de programação livre** (*open source*), direcionada à **manejo, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos**
 
-<center><img src="img/r_logo.svg" style="width:40%"/></center>
+<center>
+<img src="img/r_logo.svg" style="width:40%"/>
+</center>
 
 ::: footer
 [R](https://www.r-project.org/)
@@ -265,13 +273,17 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 ::::::: columns
 :::: {.column width="50%"}
 ::: nonincremental
-<center><img src="img/r_history.png" style="width:75%"/></center>
+<center>
+<img src="img/r_history.png" style="width:75%"/>
+</center>
 :::
 ::::
 
 :::: {.column width="50%"}
 ::: nonincremental
-<center><img src="img/r_history_plot.png" style="width:100%"/></center>
+<center>
+<img src="img/r_history_plot.png" style="width:100%"/>
+</center>
 :::
 ::::
 :::::::
@@ -311,7 +323,9 @@ Ambiente de Desenvolvimento Integrado (*Integrated Development Environment*)
 
 <br><br>
 
-<center><img src="img/rstudio_logo.svg" style="width:80%"/></center>
+<center>
+<img src="img/rstudio_logo.svg" style="width:80%"/>
+</center>
 
 ::: footer
 [RStudio](https://posit.co/downloads/)
@@ -331,7 +345,9 @@ Ambiente de Desenvolvimento Integrado (*Integrated Development Environment*)
 
 Mudanças na empresa RStudio...
 
-<center><img src="img/posit.png" style="width:85%"/></center>
+<center>
+<img src="img/posit.png" style="width:85%"/>
+</center>
 
 ::: footer
 [posit](https://posit.co/)
@@ -339,7 +355,9 @@ Mudanças na empresa RStudio...
 
 ## Interface
 
-<center><img src="img/rstudio.png" style="width:100%"/></center>
+<center>
+<img src="img/rstudio.png" style="width:100%"/>
+</center>
 
 ::: footer
 [RStudio](https://www.rstudio.com/)
@@ -406,13 +424,17 @@ Mudanças na empresa RStudio...
 
 # 
 
-<center><img src="img/code.png" style="width:45%"/></center>
+<center>
+<img src="img/code.png" style="width:45%"/>
+</center>
 
 ## Projeto R (.Rproj)
 
 Abram o RStudio e criem um projeto dentro de "course-intror"
 
-<center><img src="img/proj_rmd.gif" style="width:100%"/></center>
+<center>
+<img src="img/proj_rmd.gif" style="width:100%"/>
+</center>
 
 # Console
 
@@ -420,7 +442,9 @@ Abram o RStudio e criem um projeto dentro de "course-intror"
 
 O console é onde a linguagem R instalada é carregada para executar os códigos
 
-<center><img src="img/rstudio_script.png" style="width:55%"/></center>
+<center>
+<img src="img/rstudio_script.png" style="width:55%"/>
+</center>
 
 ::: footer
 [RStudio](https://www.rstudio.com/)
@@ -458,7 +482,9 @@ Onde os códigos são escritos e salvos no formato .R
 
 -   Atalho: `ctrl + shift + N`
 
-<center><img src="img/rstudio_script.jpg" style="width:80%"/></center>
+<center>
+<img src="img/rstudio_script.jpg" style="width:80%"/>
+</center>
 
 ## Script
 
@@ -484,7 +510,9 @@ Onde os códigos são escritos e salvos no formato .R
 
 -   Atalho: `ctrl + S`
 
-<center><img src="img/rstudio_script.png" style="width:50%"/></center>
+<center>
+<img src="img/rstudio_script.png" style="width:50%"/>
+</center>
 
 ## Script
 
@@ -624,7 +652,9 @@ eco <- 10
 
 # 
 
-<center><img src="img/gif_where.gif" style="width:100%"/></center>
+<center>
+<img src="img/gif_where.gif" style="width:100%"/>
+</center>
 
 ## Objetos
 
@@ -684,7 +714,9 @@ for <- 1
 
 Os objetos podem ser visualizados no painel *Environment*
 
-<center><img src="img/rstudio_script.png" style="width:50%"/></center>
+<center>
+<img src="img/rstudio_script.png" style="width:50%"/>
+</center>
 
 ## Objetos
 
@@ -1275,7 +1307,7 @@ colSums(dune)
 <center><img src="img/code_coding_cases.png" style="width:70%"/></center>
 
 ::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
 # Dúvidas?
@@ -2277,17 +2309,13 @@ Endereço da pasta onde o R irá **importar e exportar** os dados
 setwd("/home/mude/data/github/course-intror/data")
 ```
 
-<br>
+**Conferir diretório**
 
 ```{r eval=FALSE}
-# verificar o diretorio
+# conferir diretorio
 getwd()
-```
 
-<br>
-
-```{r eval=FALSE}
-# listar os arquivos
+# listar arquivos
 dir()
 ```
 
@@ -2295,7 +2323,9 @@ dir()
 
 #
 
-<center><img src="img/general_real_data.jpg" style="width:60%"/></center>
+<center>
+<img src="img/general_real_data.jpg" style="width:60%"/>
+</center>
 
 ## Importar dados
 
@@ -2571,5 +2601,7 @@ Exportar uma tabela de dados na pasta do diretório
 openxlsx::write.xlsx(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx", 
                      row.names = FALSE, quote = FALSE)
 ```
+
+# Dúvidas?
 
 # Bora para tidyverse!

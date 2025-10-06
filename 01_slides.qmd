@@ -85,16 +85,6 @@ lang: pt-br
 ![](img/rstudio_logo.svg){.absolute width=35% right=50 top=300}
 ![](img/git_logo.png){.absolute width=30% right=100 top=470}
 
-## 1. Conferindo os computadores
-
-**gitKraken**
-
-![](img/gitkraken-logo.png){fig-align='center'}
-
-::: footer
-[gitKraken](https://www.gitkraken.com/)
-:::
-
 # 2. Controle de versão
 
 # 
@@ -682,7 +672,7 @@ $ git clone git@github.com:mauriciovancine/teste.git
 
 ## 9. Iniciando remotamente
 
-3.1 Criar um **Projeto R** com controle de versão
+Criar um **Projeto R** com controle de versão
 
 `File > New Project > Version Control`
 
@@ -690,7 +680,7 @@ $ git clone git@github.com:mauriciovancine/teste.git
 
 ## 9. Iniciando remotamente
 
-3.2 Escolher **clonar repositório** do GitHub
+Escolher **clonar repositório** do GitHub
 
 `Git`
 
@@ -698,7 +688,7 @@ $ git clone git@github.com:mauriciovancine/teste.git
 
 ## 9. Iniciando remotamente
 
-3.3 Preencher com dados do repositório do **GitHub**
+Preencher com dados do repositório do **GitHub**
 
 `Repository URL` 
 
@@ -706,7 +696,7 @@ $ git clone git@github.com:mauriciovancine/teste.git
 
 ## 9. Iniciando remotamente
 
-3.4 Preencher:
+Preencher:
 
 ::: {style="font-size: 80%;"}
 - Repository URL: `git@github.com:mauriciovancine/teste.git`
@@ -1779,7 +1769,7 @@ $ git diff 5a164d5 50c520f --stat
 
 ## 15. Ramificações
 
-`git branch`: listar as branchs e verificar a branch de edição (`*`)
+`git branch`: listar as branches e verificar a branch de edição (`*`)
 
 ::: {style="font-size: 90%;"}
 - Em 2020, adotou-se `main` para a **branch principal** para adotar uma linguagem mais **inclusiva, clara e alinhada** com os padrões de desenvolvimento
@@ -1830,7 +1820,7 @@ $ git switch branch-1
 
 ## 15. Ramificações
 
-`git branch`: lista os branchs e verifica a branch de edição
+`git branch`: lista os branches e verifica a branch de edição
 
 ```{r eval=FALSE}
 $ git branch
@@ -1853,7 +1843,7 @@ $ git switch -c branch-2
 
 ## 15. Ramificações
 
-`git branch`: lista os branchs e verifica a branch de edição
+`git branch`: lista os branches e verifica a branch de edição
 
 ```{r eval=FALSE}
 $ git branch
@@ -1941,13 +1931,13 @@ $ git switch main
 
 ## 15. Ramificações
 
-`git merge`: mescla as branchs em uma única branch
+`git merge`: mescla as branches em uma única branch
 
 ![](img/git_merge.png){fig-align='center'}
 
 ## 15. Ramificações
 
-`git merge`: mescla as branchs em uma única branch
+`git merge`: mescla as branches em uma única branch
 
 ```{r eval=FALSE}
 $ git merge branch-2
@@ -1962,7 +1952,7 @@ $ git merge branch-2
 
 ## 15. Ramificações
 
-`git merge`: mescla as branchs em uma única branch
+`git merge`: mescla as branches em uma única branch
 
 ```{r eval=FALSE}
 git log --oneline
@@ -2467,6 +2457,26 @@ Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrup
 
 ![](img/rstudio_git_pane09.png){fig-align='center'}
 
+## 19. Interface Gráfica
+
+**gitKraken**
+
+![](img/gitkraken-logo.png){fig-align='center'}
+
+::: footer
+[gitKraken](https://www.gitkraken.com/)
+:::
+
+## 19. Interface Gráfica
+
+**Sublime Merge**
+
+![](img/sublime-merge-logo.png){fig-align='center'}
+
+::: footer
+[Sublime Merge](https://www.sublimemerge.com)
+:::
+
 # Últimas palavras
 
 #
@@ -2503,35 +2513,6 @@ devtools::install_github("r-lib/usethis")
 
 ## 20. Mais informações
 
-**Livros**
-
-- [Pro Git](https://git-scm.com/book/en/v2) - Scott Chacon e Ben Straub
-- [Beginning Git and GitHub](https://www.amazon.com.br/Beginning-Git-GitHub-Comprehensive-Management/dp/1484253124) - Mariot Tsitoara
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) - Jenny Bryan
-- [Zen do R](https://curso-r.github.io/zen-do-r/index.html) - Caio Lente + Curso-R
-
-## 20. Mais informações
-
-**Material**
-
-- [Primeiros passos utilizando o Git e GitHub no RStudio](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019) - Beatriz Milz
-- [Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html) - Beatriz Milz
-- [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
-- [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
-- [GitFichas - Jéssica Temporal](https://gitfichas.com/)
-- [Controle de versão](https://gabrielnakamura.github.io/USP_reproducibility_BIE5798/basics_git.html) - Gabriel Nakamura
-
-## 20. Mais informações
-
-**Material**
-
-- [Oh Shit, Git!?!](https://ohshitgit.com/pt_BR) - Katie Sylor-Miller
-- [Dangit, Git!?!](https://dangitgit.com/pt_BR) - Katie Sylor-Miller
-- [Version Control with GitHub](https://www.neonscience.org/resources/learning-hub/tutorials/version-control-github)
-- [Git Cheat Sheet – 50 Git Commands You Should Know](https://www.freecodecamp.org/news/git-cheat-sheet/)
-
-## 20. Mais informações
-
 **Curso de Git - Bóson Treinamentos**
 
 <p align="center">
@@ -2557,4 +2538,4 @@ devtools::install_github("r-lib/usethis")
 </iframe>
 </p>
 
-# Muito obrigado!
+# Bora praticar!

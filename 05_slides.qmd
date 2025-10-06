@@ -31,8 +31,7 @@ penguins_sem_na <- na.omit(penguins)
 
 ::: panel-tabset
 ## Explorar dados
-- Dados brutos
-- Observações e variáveis
+- Análise exploratória de dados
 - Tabelas de frequência
 - Frequência absoluta e relativa
 - Função: `table`
@@ -50,56 +49,13 @@ penguins_sem_na <- na.omit(penguins)
 - Funções externas: `source`
 :::
 
-## Para apresentar os próximos conceitos e funções, vamos usar dados de pinguins
+## palmerpenguins
+
+Para apresentar os próximos conceitos e funções, vamos usar dados de pinguins
 
 <center>
 <img src="img/package_palmerpenguins.png" style="width:35%"/>
 </center>
-
-::: footer
-[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
-:::
-
-## palmerpenguins {.smaller}
-
--   Dados de medidas de pinguins chamados `palmerpenguins`
-
--   Dados coletados e disponibilizados pela [Dra. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) e pela [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), membro da [Long Term Ecological Research Network](https://lternet.edu/)
-
--   Dois conjuntos de dados:
-
--   `penguins_raw` (dados brutos)
-
--   `penguins` (versão simplificada)
-
-![](img/lter_penguins.png){.absolute width="700" height="400" right="-50" top="300"}
-
-::: footer
-[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
-:::
-
-## palmerpenguins
-
-```{r eval=FALSE}
-# instalar 
-install.packages("palmerpenguins")
-
-# carregar
-library(palmerpenguins)
-
-# ajuda dos dados
-?penguins
-?penguins_raw
-
-# remover nas
-penguins_sem_na <- na.omit(penguins)
-```
-
-```{r echo=FALSE}
-library(palmerpenguins)
-```
-
-![](img/culmen_depth.png){.absolute width="430" height="300" right="-30" top="425"}
 
 ::: footer
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
@@ -1182,5 +1138,3 @@ res_multi
 ```
 
 # Dúvidas?
-
-# Muito obrigado!

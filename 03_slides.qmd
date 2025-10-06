@@ -15,7 +15,7 @@ format:
     logo: "img/featured-hex.png"
     execute:
       echo: true
-      eval: false
+      eval: true
       warning: false
       message: false
 editor: source
@@ -26,16 +26,21 @@ lang: pt
 
 # 
 
-<center><img src="img/general_data_science_r4ds.png" style="width:100%"/></center>
+<center>
+<img src="img/general_data_science_r4ds.png" style="width:100%"/>
+</center>
 
 ::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
 ## Conteúdo
 
 ### tidyverse
 
+::::::: columns
+:::: {.column width="50%"}
+::: nonincremental
 - Contextualização
 - tidyverse
 - here
@@ -44,14 +49,24 @@ lang: pt
 - magrittr (pipe - %\>%)
 - tidyr
 - dplyr
+:::
+::::
+
+:::: {.column width="50%"}
+::: nonincremental
 - stringr
 - forcats
 - lubridate
 - purrr
+:::
+::::
+:::::::
 
 ## Ciência de dados ambiental (*Environmental Data Science*)
 
-<center><img src="img/EnvDataSci.png" style="width:50%"/></center>
+<center>
+<img src="img/EnvDataSci.png" style="width:50%"/>
+</center>
 
 ::: footer
 [Introduction to Environmental Data Science](https://bookdown.org/igisc/EnvDataSci/)
@@ -61,7 +76,9 @@ lang: pt
 
 <br>
 
-<center><img src="img/ecoinformatics_diagram.png" style="width:50%"/></center>
+<center>
+<img src="img/ecoinformatics_diagram.png" style="width:50%"/>
+</center>
 
 ::: footer
 [Ecoinformatics Initiative](http://www.uwyo.edu/wygisc/our_research/ongoing_research/ecoinformatics_initiative.html), [Michener & Jones (2012)](https://doi.org/10.1016/j.tree.2011.11.016), [Lin et al. (2020)](https://doi.org/10.22920/PNIE.2020.1.1.9)
@@ -69,7 +86,9 @@ lang: pt
 
 ## Ciência de dados para ecólogos <br> (*Data Science for Ecologists*)
 
-<center><img src="img/data_science_eco.png" style="width:70%"/></center>
+<center>
+<img src="img/data_science_eco.png" style="width:70%"/>
+</center>
 
 ::: footer
 [Data Science for Ecologists and Environmental Scientists](https://ourcodingclub.github.io/course)
@@ -79,7 +98,9 @@ lang: pt
 
 <br>
 
-<center><img src="img/environmental_data science_cut.png" style="width:50%"/></center>
+<center>
+<img src="img/environmental_data science_cut.png" style="width:50%"/>
+</center>
 
 ::: footer
 [Environmental Data Science](https://www.cambridge.org/core/journals/environmental-data-science)
@@ -87,22 +108,98 @@ lang: pt
 
 # Legal, mas ainda está distante...
 
+# Big Data em Ecologia
+
+## Big Data em Ecologia
+
+**Mudança de paradigma**
+
+<center>
+<img src="img/bigdata01.png" style="width:100%"/>
+</center>
+
+:::footer
+[McCleery et al. (2023)](https://doi.org/10.1016/j.tree.2023.05.010)
+:::
+
+## Big Data em Ecologia
+
+**Quantidade de dados**
+
+<center>
+<img src="img/bigdata02.jpg" style="width:90%"/>
+</center>
+
+:::footer
+[Farley et al. (2018)](https://academic.oup.com/bioscience/article/68/8/563/5049569)
+:::
+
+## Data papers
+
+<center>
+<img src="img/data_papers.png" style="width:100%"/>
+</center>
+
+:::footer
+[Atlantic series](https://github.com/LEEClab/Atlantic_series), [Brazil series](https://github.com/LEEClab/BRAZIL_SERIES), [Neotropical series](https://github.com/LEEClab/Neotropical_Series)
+:::
+
+## iEcology
+
+![](img/iecology01.jpg){.absolute width=600 height=500 right=520 top=150}
+![](img/iecology02.jpg){.absolute width=600 height=550 right=-120 top=100}
+
+:::footer
+[Jarić et al. (2020)](https://doi.org/10.1016/j.tree.2020.03.003)
+:::
+
 ## Monitoramento automatizado
 
-<br>
+![](img/auto_sampling02.webp){.absolute width=1200 height=500 right=0 top=150}
 
-<center><img src="img/auto_sampling02.webp" style="width:100%"/></center>
-
-::: footer
+:::footer
 [Besson et al. (2022)](https://doi.org/10.1111/ele.14123)
 :::
 
 ## Monitoramento automatizado
 
-![](img/auto_sampling01.webp){.absolute width="600" height="450" right="450" top="150"} ![](img/auto_sampling03.jpg){.absolute width="400" height="550" right="0" top="100"}
+![](img/auto_sampling01.webp){.absolute width=700 height=500 right=450 top=125}
+![](img/auto_sampling03.jpg){.absolute width=400 height=550 right=0 top=100}
 
-::: footer
+:::footer
 [Besson et al. (2022)](https://doi.org/10.1111/ele.14123)
+:::
+
+# Machine Learning em Ecologia
+
+## Machine Learning em Ecologia
+
+<center>
+<img src="img/machine_learning01.webp" style="width:90%"/>
+</center>
+
+:::footer
+[Pichler & Hartig (2023)](https://doi.org/10.1111/2041-210X.14061)
+:::
+
+## Machine Learning em Ecologia
+
+<center>
+<img src="img/machine_learning02.webp" style="width:80%"/>
+</center>
+
+:::footer
+[Pichler & Hartig (2023)](https://doi.org/10.1111/2041-210X.14061)
+:::
+
+## Machine Learning em Ecologia
+
+<center>
+<img src="img/machine_learning03.webp" style="width:70%"/>
+</center>
+
+:::footer
+[Pichler & Hartig (2023)](https://doi.org/10.1111/2041-210X.14061)
 :::
 
 ## Script
@@ -111,7 +208,7 @@ Abram o script
 
 <br><br><br><br>
 
-`02_script_r_introduction.R`
+`03_script_r_introduction.R`
 
 # tidyverse
 
@@ -134,7 +231,9 @@ Abram o script
 
 <br><br>
 
-<center><img src="img/general_data_science.png" style="width:100%"/></center>
+<center>
+<img src="img/general_data_science.png" style="width:100%"/>
+</center>
 
 ::: footer
 [Wickham & Grolemund (2017)](https://r4ds.had.co.nz/)
@@ -142,7 +241,9 @@ Abram o script
 
 ## Pacotes
 
-<center><img src="img/tidyverse_flowchart.png" style="width:90%"/></center>
+<center>
+<img src="img/tidyverse_flowchart.png" style="width:90%"/>
+</center>
 
 ## Artigos {.smaller}
 
@@ -150,7 +251,9 @@ Abram o script
 
 -   Wickham, Hadley, et al. "Welcome to the Tidyverse." Journal of Open Source Software 4.43 (2019): 1686.
 
-<center><img src="img/tidyverse_papers.png" style="width:45%"/></center>
+<center>
+<img src="img/tidyverse_papers.png" style="width:45%"/>
+</center>
 
 ::: footer
 [Wickham (2014)](https://www.jstatsoft.org/article/view/v059i10), [Wickham et al. (2019)](https://joss.theoj.org/papers/10.21105/joss.01686)
@@ -158,7 +261,9 @@ Abram o script
 
 ## Livro
 
-<center><img src="img/cover_data_science_r.png" style="width:35%"/></center>
+<center>
+<img src="img/cover_data_science_r.png" style="width:35%"/>
+</center>
 
 ::: footer
 [Wickham & Grolemund (2017)](https://r4ds.had.co.nz/)
@@ -168,7 +273,9 @@ Abram o script
 
 <br>
 
-<center><img src="img/tidyverse_site.png" style="width:100%"/></center>
+<center>
+<img src="img/tidyverse_site.png" style="width:100%"/>
+</center>
 
 ::: footer
 [tidyverse](https://www.tidyverse.org/)
@@ -176,7 +283,9 @@ Abram o script
 
 # 
 
-<center><img src="img/package_tidyverse.png" style="width:50%"/></center>
+<center>
+<img src="img/package_tidyverse.png" style="width:50%"/>
+</center>
 
 ::: footer
 [tidyverse](https://tidyverse.tidyverse.org/)
@@ -275,14 +384,14 @@ Caminho no computador para importar e exportar dados
 
 **Definir diretório**
 
-```{r}
+```{r eval=FALSE}
 # definir diretorio
-setwd("/home/mude/data/github/mauriciovancine/workshop-r-introduction/01_slides")
+setwd("/home/mude/data/github/course-intror/data")
 ```
 
 **Conferir diretório**
 
-```{r}
+```{r eval=FALSE}
 # conferir diretorio
 getwd()
 
@@ -304,9 +413,14 @@ ATLANTIC AMPHIBIANS: a dataset of amphibian communities from the Atlantic Forest
 
 **Formato .csv**
 
-```{r}
-# importar csv
-si <- readr::read_csv("../data/ATLANTIC_AMPHIBIANS_sites.csv")
+```{r eval=FALSE}
+# ler uma planilha eletronica (.csv)
+si <- readr::read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
+si
+```
+
+```{r echo=FALSE}
+si <- readr::read_csv("data/ATLANTIC_AMPHIBIANS_sites.csv")
 si
 ```
 
@@ -314,9 +428,15 @@ si
 
 **Formato .txt**
 
-```{r}
+```{r eval=FALSE}
 # importar txt
-si <- readr::read_tsv("../data/ATLANTIC_AMPHIBIANS_sites.txt")
+si <- readr::read_tsv("ATLANTIC_AMPHIBIANS_sites.txt")
+si
+```
+
+```{r echo=FALSE}
+# importar txt
+si <- readr::read_tsv("data/ATLANTIC_AMPHIBIANS_sites.txt")
 si
 ```
 
@@ -362,9 +482,15 @@ library("writexl")
 
 **Formato .xlsx**
 
-```{r}
+```{r eval=FALSE}
 # importar xlsx
-si <- readxl::read_excel("../data/ATLANTIC_AMPHIBIANS_sites.xlsx")
+si <- readxl::read_excel("ATLANTIC_AMPHIBIANS_sites.xlsx")
+si
+```
+
+```{r echo=FALSE}
+# importar xlsx
+si <- readxl::read_excel("data/ATLANTIC_AMPHIBIANS_sites.xlsx")
 si
 ```
 
@@ -529,7 +655,7 @@ ve <- sample(0:60, 6) %>%
 ve  
 ```
 
-## Exercício 01
+## Exercício
 
 Reescreva cada uma das operações utilizando pipes `%>%`
 
@@ -543,7 +669,7 @@ Reescreva cada uma das operações utilizando pipes `%>%`
 countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30", font_size = "2em", play_sound = TRUE)
 ```
 
-## Exercício 01
+## Exercício
 
 **Solução**
 
@@ -556,7 +682,7 @@ log10(cumsum(1:100))
   log10()
 ```
 
-## Exercício 01
+## Exercício
 
 **Solução**
 
@@ -570,7 +696,7 @@ rnorm(100) %>%
   sum()
 ```
 
-## Exercício 01
+## Exercício
 
 **Solução**
 
@@ -684,7 +810,7 @@ tibble::glimpse(penguins_raw)
 <center><img src="img/tidyr_data02.jpg" style="width:100%"/></center>
 
 ::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
 ## unite
@@ -736,81 +862,6 @@ penguins_raw_colunas_na <- tidyr::drop_na(data = penguins_raw,
 head(penguins_raw_colunas_na[, "Comments"])
 ```
 
-# Exercícios
-
-## Exercício 02
-
-Use os dados `penguins_raw`
-
-Faça a união das colunas `studyName` e `Individual ID` na coluna `StudyInd`
-
-Separe as colunas por `-`
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 02
-
-**Solução**
-
-```{r}
-# exercicio 02
-penguins_raw_uni_ind <- penguins_raw %>% 
-  tidyr::unite(col = "StudyInd",
-               c(studyName, `Individual ID`), 
-               sep = " - ",
-               remove = FALSE)
-head(penguins_raw_uni_ind[, c("studyName", "Individual ID", "StudyInd")])
-```
-
-## Exercício 03
-
-Use os dados `penguins_raw`
-
-Separe as informações de ano, mês e dia da coluna `Date Egg`
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 03
-
-**Solução**
-
-```{r}
-# exercicio 03
-penguins_raw_sep_data <- penguins_raw %>% 
-  tidyr::separate(col = `Date Egg`, 
-                  into = c("Year", "Month", "Day"), 
-                  sep = "-",
-                  remove = FALSE)
-head(penguins_raw_sep_data[, c("Date Egg", "Year", "Month", "Day")])
-```
-
-## Exercício 04
-
-Use os dados `penguins_raw`
-
-Remova as linhas que possuem `NA` na coluna `Body`
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 04
-
-**Solução**
-
-```{r}
-# exercicio 04
-penguins_raw_drop_na_body <- penguins_raw %>% 
-  tidyr::drop_na(`Body Mass (g)`)
-head(penguins_raw_drop_na_body)
-```
-
-# Dúvidas?
-
 # 
 
 <center><img src="img/package_dplyr.png" style="width:50%"/></center>
@@ -861,7 +912,7 @@ Gramática simples que contém funções verbais para a manipulação de dados
 `group_by()`: agrupa linhas pelos valores das colunas\
 `summarise()`: resume os dados através de funções considerando valores das colunas
 
-## Sintaxe
+## Sintaxe {.smaller}
 
 -   O `tibble` é sempre o primeiro argumento das funções verbais
 
@@ -1162,119 +1213,46 @@ penguins_summarise <- penguins %>%
 penguins_summarise
 ```
 
-# Exercícios
+## `bind_rows()` e `bind_cols()`
 
-## Exercício 05 {.smaller}
-
-Use os dados `penguins`
-
-Adicione essas novas colunas:
-
--   `bill_length_mm_log10`
--   `bill_depth_mm_log10`
--   `flipper_length_mm_log10`
--   `body_mass_g_log10`
-
-Que são a operação `log10()` das colunas:
-
--   `bill_length_mm_log10`
--   `bill_depth_mm_log10`
--   `flipper_length_mm_log10`
--   `body_mass_g_log10`
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 05
-
-**Solução**
+Combina dados por linhas ou por colunas
 
 ```{r}
-# exercicio 05
-penguins_log <- penguins %>% 
-  dplyr::mutate(bill_length_mm_log10 = log10(bill_length_mm), 
-                bill_depth_mm_log10 = log10(bill_depth_mm), 
-                flipper_length_mm_log10 = log10(flipper_length_mm), 
-                body_mass_g_log10 = log10(body_mass_g))
-penguins_log
+# selecionar as linhas para dois tibbles
+penguins_01 <- dplyr::slice(penguins, 1:5)
+head(penguins_01)
+
+penguins_02 <- dplyr::slice(penguins, 51:55)
+head(penguins_02)
 ```
 
-## Exercício 06
+## `bind_rows()` e `bind_cols()`
 
-Use os dados `penguins`
-
-Ordene as linhas de forma decrescente pela coluna `body_mass_g`
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 06
-
-**Solução**
+Combina dados por linhas
 
 ```{r}
-# exercicio 06
-penguins_arrange <- penguins %>% 
-  dplyr::arrange(-body_mass_g)
-penguins_arrange
+# combinar as linhas
+penguins_bind_rows <- dplyr::bind_rows(penguins_01, penguins_02, .id = "id")
+head(penguins_bind_rows)
 ```
 
-## Exercício 07
+## `bind_rows()` e `bind_cols()`
 
-Usando os dados `penguins`
-
-Filtre as linhas com valores de:
-
--   `bill_length_mm` maior que 50 mm
--   `bill_depth_mm` menor que 20 mm
--   `flipper_length_mm` maior que 220 mm
--   `body_mass_g` menor que 5500 g
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 07
-
-**Solução**
+Combina dados por colunas
 
 ```{r}
-# exercicio 07
-penguins_filter <- penguins %>% 
-  dplyr::filter(bill_length_mm > 50, 
-                bill_depth_mm < 20, 
-                flipper_length_mm > 220, 
-                body_mass_g < 5500)
-penguins_filter
+## combinar as colunas
+penguins_bind_cols <- dplyr::bind_cols(penguins_01, penguins_02, .name_repair = "unique")
+head(penguins_bind_cols)
 ```
 
-## Exercício 08
+# 
 
-Use os dados `penguins`
+<center><img src="img/package_stringr.png" style="width:50%"/></center>
 
-Amostre aleatoriamente 70% das linhas com `body_mass_g` menor que 5000 g
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30")
-```
-
-## Exercício 08
-
-**Solução**
-
-```{r}
-# exercicio 08
-penguins_sample <- penguins %>% 
-  dplyr::filter(body_mass_g < 5000) %>% 
-  dplyr::slice_sample(prop = .7)
-penguins_sample
-```
-
-# stringr
-
-background-image: url(img/cheatsheet_stringr.png)
+::: footer
+[stringr](https://stringr.tidyverse.org/)
+:::
 
 ## stringr
 
@@ -1292,49 +1270,39 @@ Comprimento
 stringr::str_length(string = "penguins")
 ```
 
---
-
-## Substituir
+Substituir
 
 ```{r}
 # substituir
 stringr::str_replace(string = "penguins", pattern = "i", replacement = "y")
 ```
 
---
-
-## Separar
+Separar
 
 ```{r}
 # separar
 stringr::str_split(string = "p-e-n-g-u-i-n-s", pattern = "-", simplify = TRUE)
 ```
 
----
+## stringr
 
-# 9. stringr
-
-## Extrair pela posição
+Extrair pela posição
 
 ```{r}
 # extrair pela posicao
 stringr::str_sub(string = "penguins", end = 3)
 ```
 
---
-
-## Extrair por padrão
+Extrair por padrão
 
 ```{r}
 # extrair por padrao
 stringr::str_extract(string = "penguins", pattern = "p")
 ```
 
----
+## stringr
 
-# 9. stringr
-
-## Inserir espacos em branco
+Inserir espacos em branco
 
 ```{r}
 # inserir espaco em branco - esquerda
@@ -1347,11 +1315,9 @@ stringr::str_pad(string = "penguins", width = 10, side = "right")
 stringr::str_pad(string = "penguins", width = 10, side = "both")
 ```
 
----
+## stringr
 
-# 9. stringr
-
-## Remover espaços em branco
+Remover espaços em branco
 
 ```{r}
 # remover espacos em branco - esquerda
@@ -1364,11 +1330,9 @@ stringr::str_trim(string = " penguins ", side = "right")
 stringr::str_trim(string = " penguins ", side = "both")
 ```
 
----
+## stringr
 
-# 9. stringr
-
-## Alterar minúsculas e maiúsculas
+Alterar minúsculas e maiúsculas
 
 ```{r}
 # minusculas
@@ -1384,11 +1348,9 @@ stringr::str_to_sentence(string = "palmer penGuins")
 stringr::str_to_title(string = "palmer penGuins")
 ```
 
----
+## stringr
 
-# 9. stringr
-
-## Ordenar
+Ordenar
 
 ```{r}
 # ordenar - crescente
@@ -1398,11 +1360,9 @@ stringr::str_sort(x = letters)
 stringr::str_sort(x = letters, dec = TRUE)
 ```
 
----
+## stringr
 
-# 9. stringr
-
-## Alterar valores das colunas
+Alterar valores das colunas
 
 ```{r}
 # alterar valores das colunas
@@ -1410,9 +1370,7 @@ penguins_stringr_valores <- penguins %>%
   dplyr::mutate(species = stringr::str_to_lower(species))
 ```
 
---
-
-## Alterar nome das colunas
+Alterar nome das colunas
 
 ```{r}
 # alterar nome das colunas
@@ -1420,116 +1378,78 @@ penguins_stringr_nomes <- penguins %>%
   dplyr::rename_with(stringr::str_to_title)
 ```
 
----
+#
 
-class: clear
-background-image: url(img/package_forcats.png)
-background-size: 400px
+<center><img src="img/package_forcats.png" style="width:50%"/></center>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+::: footer
 [forcats](https://forcats.tidyverse.org/)
-
----
-
-background-image: url(img/cheatsheet_forcats.png)
-background-size: 600px
-background-position: 50% 50%
-
-# 10. forcats
-
-## Factors with forcats Cheatsheet
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Factors with forcats Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf)
-
----
-
-# 10. forcats
+:::
 
 ## Descrição
 
-### Conjunto de ferramentas úteis para facilitar a manipulação de fatores e seus níveis
+- Conjunto de ferramentas úteis para facilitar a manipulação de fatores e seus níveis
+- Exemplos: mudar a ordem dos níveis, mudar os valores dos níveis, adicionar e remover níveis, combinar múltiplos níveis
+- Pode ser utilizado em conjunto com o pacote `dplyr` para manejar colunas
 
---
+## forcats
 
-### Exemplos: mudar a ordem dos níveis, mudar os valores dos níveis, adicionar e remover níveis, combinar múltiplos níveis
-
---
-
-### Pode ser utilizado em conjunto com o pacote `dplyr` para manejar colunas
-
----
-
-# 10. forcats
-
-## Converter dados de string para fator
+Converter dados de `string` para `factor`
 
 ```{r}
-# converter dados de string para fator
+# converter dados de string para factor
 forcats::as_factor(penguins_raw$Species) %>% head()
 ```
 
---
-
-## Mudar o nome dos níveis
+Mudar o nome dos níveis
 
 ```{r}
 # mudar o nome dos niveis
 forcats::fct_recode(penguins$species, a = "Adelie", c = "Chinstrap", g = "Gentoo") %>% head()
 ```
 
----
+## forcats
 
-# 10. forcats
-
-## Inverter os níveis
+Inverter os níveis
 
 ```{r}
 # inverter os niveis
 forcats::fct_rev(penguins$species) %>% head()
 ```
 
---
-
-## Especificar a ordem dos níveis
+Especificar a ordem dos níveis
 
 ```{r}
 # especificar a ordem dos niveis
 forcats::fct_relevel(penguins$species, "Chinstrap", "Gentoo", "Adelie") %>% head()
 ```
 
----
+## forcats
 
-# 10. forcats
-
-## Níveis pela ordem em que aparecem
+Níveis pela ordem em que aparecem
 
 ```{r}
 # niveis pela ordem em que aparecem
 forcats::fct_inorder(penguins$species) %>% head()
 ```
 
-## Ordem (decrescente) de frequência
+Ordem (decrescente) de frequência
 
 ```{r}
 # ordem (decrescente) de frequecia
 forcats::fct_infreq(penguins$species) %>% head()
 ```
 
----
+## forcats
 
-# 10. forcats
-
-## Agregação de níveis raros em um nível
+Agregação de níveis raros em um nível
 
 ```{r}
 # agregacao de niveis raros em um nivel
 forcats::fct_lump(penguins$species) %>% head()
 ```
 
---
-
-## Transformar várias colunas em fator
+Transformar várias colunas em fator
 
 ```{r}
 # transformar varias colunas em fator
@@ -1537,142 +1457,109 @@ penguins_raw_multi_factor <- penguins_raw %>%
   dplyr::mutate(across(where(is.character), forcats::as_factor))
 ```
 
----
+# 
 
-class: clear
-background-image: url(img/package_lubridate.png)
-background-size: 400px
+<center><img src="img/package_lubridate.png" style="width:50%"/></center>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+::: footer
 [lubridate](https://lubridate.tidyverse.org/)
+:::
 
----
+# 
 
-background-image: url(img/cheatsheet_lubridate.png)
-background-size: 550px
-background-position: 50% 50%
+<center>
+<img src="img/lubridate_allison.png" style="width:70%"/>
+</center>
 
-# 11. lubridate
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
 
-## Dates and Times Cheatsheet
+## lubridate
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Dates and Times Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf)
-
----
-
-background-image: url(img/lubridate_allison.png)
-background-size: 400px
-background-position: 50% 90%
-
-# 11. lubridate
-
-## Pacote à parte do tidyverse
-
-### Carregar sempre que for utilizar
+- Pacote à parte do tidyverse
+- Carregar sempre que for utilizar
 
 ```{r}
 # carregar
 library(lubridate)
 ```
 
-<br><br><br><br><br><br><br><br><br><br>
-[@allison_horst](https://twitter.com/allison_horst)
-
----
-
-# 11. lubridate
-
 ## Descrição
 
-### Conjunto de funções para a manipulação de dados de data e horário
+- Conjunto de funções para a manipulação de dados de data e horário
+- A manipulação desses dados não é intuitiva e muda dependendo do tipo de objeto de data e horário
+- O formato desses dados deve levar em consideração Fusos horários, anos bissextos, horários de verão, etc.
+- Exemplos: transformações de data/horário, componentes, arredondamentos, durações, períodos, intervalos, etc.
 
---
+## lubridate
 
-### A manipulação desses dados não é intuitiva e muda dependendo do tipo de objeto de data e horário
-
---
-
-### O formato desses dados deve levar em consideração Fusos horários, anos bissextos, horários de verão, etc.
-
---
-
-### Exemplos: transformações de data/horário, componentes, arredondamentos, durações, períodos, intervalos, etc.
-
----
-
-background-image: url(img/mhs_package.png)
-background-size: 200px
-background-position: 85% 90%
-
-# 11. lubridate
-
-## Tipos de dados
+Tipos de dados
 
 - **Data**: tempo em dias, meses e anos `<date>`
 - **Horário**: tempo dentro de um dia `<time>`
 - **Data-horário**: tempo em um instante (data mais tempo) `<dttm>`
 
-### Para trabalhar exclusivamente com horários, podemos utilizar o pacote [hms](https://hms.tidyverse.org/)
+- Para trabalhar exclusivamente com horários, podemos utilizar o pacote 
 
-### Algumas letras possuem significados temporais, sendo abreviações de diferentes períodos em inglês: 
+::: footer
+[hms](https://hms.tidyverse.org/)
+:::
+
+
+## lubridate
+
+Algumas letras possuem significados temporais, sendo abreviações de diferentes períodos em inglês: 
 
 <br>
+
 - **y**ear (ano), **m**onth (mês) 
 
 - **w**eak (semana), **d**ay (dia) 
 
 - **h**our (hora), **m**inute (minuto) e **s**econd (segundo)
 
----
+## lubridate
 
-# 11. lubridate
-
-## Data e horários atuais
+Data e horários atuais
 
 ```{r}
 # extrair a data nesse instante
 lubridate::today()
+```
 
+<br>
+
+```{r}
 # extrair a data e tempo nesse instante
 lubridate::now()
 ```
 
----
+## lubridate
 
-# 11. lubridate
+Existem três maneiras de criar um dado de data/horário
 
-## Existem três maneiras de criar um dado de data/horário
+1. De um string ou caracter
+1. De componentes individuais de data e horário
+1. De um objeto de data/horário existente
 
-### 1. De um string ou caracter
+## lubridate
 
-### 2. De componentes individuais de data e horário
+**1. String ou caracter **
 
-### 3. De um objeto de data/horário existente
-
-
----
-
-# 11. lubridate
-
-## **1. String ou caracter **
-
-### Os dados de data/horário geralmente estão no formato de strings
-
-### Podemos transformar os dados especificando a ordem dos seus componentes usando as letras `y` (ano), `m` (mês) e `d` (dia)
+- Os dados de data/horário geralmente estão no formato de strings
+- Podemos transformar os dados especificando a ordem dos seus componentes usando as letras `y` (ano), `m` (mês) e `d` (dia)
 
 ```{r}
 # strings e numeros para datas
 lubridate::dmy("03-03-2021")
 ```
 
----
+## lubridate
 
-# 11. lubridate
+**1. String ou caracter **
 
-## **1. String ou caracter **
-
-### Essas funções também aceitam números sem aspas, além funcionarem em outros diversos formatos
+Essas funções também aceitam números sem aspas, além funcionarem em outros diversos formatos
 
 ```{r eval=FALSE}
 # strings e numeros para datas
@@ -1683,13 +1570,11 @@ lubridate::dmy("03/03/2021")
 lubridate::dmy("03.03.2021")
 ```
 
----
+## lubridate
 
-# 11. lubridate
+**1. String ou caracter **
 
-## **1. String ou caracter **
-
-### Especificar horários e Fusos horários
+Especificar horários e Fusos horários
 
 ```{r eval=FALSE}
 # especificar horarios e fuso horario
@@ -1699,11 +1584,9 @@ lubridate::dmy_hms("03-03-2021 13:32:01")
 lubridate::dmy_hms("03-03-2021 13:32:01", tz = "America/Sao_Paulo")
 ```
 
----
+## lubridate
 
-# 11. lubridate
-
-## **2. Componentes individuais de data e horário**
+**2. Componentes individuais de data e horário**
 
 ```{r}
 # dados com componentes individuais
@@ -1716,11 +1599,9 @@ dados <- tibble::tibble(
 dados
 ```
 
----
+## lubridate
 
-# 11. lubridate
-
-## **2. Componentes individuais de data e horário**
+**2. Componentes individuais de data e horário**
 
 ```{r}
 # dados com componentes individuais
@@ -1728,11 +1609,9 @@ dados %>%
   dplyr::mutate(data = lubridate::make_datetime(ano, mes, dia, hora, minuto))
 ```
 
----
+## lubridate
 
-# 11. lubridate
-
-## **3. Objeto de data/horário existente**
+**3. Objeto de data/horário existente**
 
 ```{r}
 # data para data-horario
@@ -1742,11 +1621,9 @@ lubridate::as_datetime(today())
 lubridate::as_date(now())
 ```
 
----
+## lubridate
 
-# 11. lubridate
-
-## Funções para acessar e definir componentes individuais de datas e horários
+Funções para acessar e definir componentes individuais de datas e horários
 
 - `year()`: acessa o ano
 - `month()`: acessa o mês
@@ -1758,11 +1635,9 @@ lubridate::as_date(now())
 - `minute()`: acessa os minutos
 - `second()`: acessa os segundos
 
----
+## lubridate
 
-# 11. lubridate
-
-## Funções para acessar e definir componentes individuais de datas e horários
+Funções para acessar e definir componentes individuais de datas e horários
 
 ```{r eval=FALSE}
 # extrair
@@ -1775,11 +1650,9 @@ lubridate::wday(now(), label = TRUE)
 lubridate::second(now())
 ```
 
----
+## lubridate
 
-# 11. lubridate
-
-## Inclusam de informações de datas e horários.
+Inclusão de informações de datas e horários
 
 ```{r}
 # data
@@ -1790,397 +1663,34 @@ lubridate::year(data) <- 2020
 lubridate::month(data) <- 01
 lubridate::hour(data) <- 13
 ```
---
+
+<br>
+
 ```{r}
 # incluir varios valores
 update(data, year = 2020, month = 1, mday = 1, hour = 1)
 ```
 
----
+# 
 
-# 11. lubridate
+<center><img src="img/package_purrr.png" style="width:50%"/></center>
 
-## Operações com datas
-
-### Muitas vezes precisamos fazer operações com datas, como subtração, adição e divisão. Para tanto, é preciso entender três classes importantes que representam intervalos de tempo
-
-### **1. Durações**: representam um número exato de segundos
-
-### **2. Períodos**: representam unidades humanas como semanas e meses
-
-### **3. Intervalos**: representam um ponto inicial e final
-
----
-
-# 11. lubridate
-
-## **1. Durações**
-
-###Registram o intervalo de tempo em segundos, com alguma unidade de tempo maior entre parênteses
-
-### Funções
-
-- `duration()`: cria data em duração
-- `as.duration()`: converte datas em duração
-- `dyears()`: duração de anos
-- `dmonths()`: duração de meses
-- `dweeks()`: duração de semanas
-- `ddays()`: duração de dias
-- `dhours()`: duração de horas
-- `dminutes()`: duração de minutos
-- `dseconds()`: duração de segundos
-
----
-
-# 11. lubridate
-
-## **1. Durações**
-
-### Subtração de datas e conversão para duração
-
-```{r}
-# subtracao de datas
-tempo_estudando_r <- lubridate::today() - lubridate::dmy("30-11-2011")
-
-# conversao para duracao
-tempo_estudando_r_dur <- lubridate::as.duration(tempo_estudando_r)
-```
-
----
-
-# 11. lubridate
-
-## **1. Durações**
-
-### Criando durações
-
-```{r}
-# criando duracoes
-lubridate::duration(90, "seconds")
-lubridate::duration(1.5, "minutes")
-lubridate::duration(1, "days")
-```
-
----
-
-# 11. lubridate
-
-## **1. Durações**
-
-### Transformação das durações
-
-```{r eval=FALSE}
-# transformacao da duracao
-lubridate::dseconds(100)
-lubridate::dminutes(100)
-lubridate::dhours(100)
-lubridate::ddays(100)
-lubridate::dweeks(100)
-lubridate::dyears(100)
-```
-
----
-
-# 11. lubridate
-
-## **1. Durações**
-
-### Operações com durações
-
-```{r}
-# somando duracoes a datas
-lubridate::today() + lubridate::ddays(1)
-
-# subtraindo duracoes de datas
-lubridate::today() - lubridate::dyears(1)
-
-# multiplicando duracoes
-2 * dyears(2)
-```
-
----
-
-# 11. lubridate
-
-## **2. Períodos**
-
-### São extensões de tempo não fixados em segundos como as durações, mas flexíveis, como dias, semanas, meses ou anos
-
-### Funções
-
-- `period()`: cria data em período
-- `as.period()`: converte datas em período
-- `seconds()`: período em segundos
-- `minutes()`: período em minutos
-- `hours()`: período em horas
-- `days()`: período em dias
-- `weeks()`: período em semanas
-- `months()`: período em meses
-- `years()`: período em anos
-
----
-
-# 11. lubridate
-
-## **2. Períodos**
-
-### Criando períodos
-
-```{r}
-# criando periodos
-period(c(90, 5), c("second", "minute"))
-period(c(3, 1, 2, 13, 1), c("second", "minute", "hour", "day", "week"))
-```
-
----
-
-# 11. lubridate
-
-## **2. Períodos**
-
-### Transformações de períodos
-
-```{r eval=FALSE}
-# transformacao de periodos
-lubridate::seconds(100)
-lubridate::minutes(100)
-lubridate::hours(100)
-lubridate::days(100)
-lubridate::weeks(100)
-lubridate::years(100)
-```
-
----
-
-# 11. lubridate
-
-## **2. Períodos**
-
-### Operações com os períodos
-
-```{r}
-# somando datas
-lubridate::today() + lubridate::weeks(10)
-
-# subtraindo datas
-lubridate::today() - lubridate::weeks(10)
-
-# criando datas recorrentes
-lubridate::today() + lubridate::weeks(0:10)
-```
-
----
-
-# 11. lubridate
-
-## **3. Intervalos**
-
-### Períodos de tempo limitados por duas datas, possuindo uma duração com um ponto de partida, que o faz preciso para determinar uma duração
-
-### Funções
-
-- `interval()`: cria data em intervalo
-- `%--%: cria data em intervalo
-- `as.interval()`: converte datas em intervalo
-- `int_start()`: acessa ou atribui data inicial de um intervalo
-- `int_end()`: acessa ou atribui data final de um intervalo
-- `int_length()`: comprimento de um intervalo em segundos
-- `int_flip()`: inverte a ordem da data de início e da data de término em um intervalo
-- `int_shift()`: desloca as datas de início e término de um intervalo
-- `int_aligns()`: testa se dois intervalos compartilham um ponto final
-- `int_standardize()`: garante que todos os intervalos sejam positivos
-- `int_diff()`: retorna os intervalos que ocorrem entre os elementos de data/horário
-- `int_overlaps()`: testa se dois intervalos se sobrepõem
-- `%within%: testa se o primeiro intervalo está contido no segundo
-
----
-
-# 11. lubridate
-
-## **3. Intervalos**
-
-### Criando intervalos
-
-```{r}
-# criando duas datas - inicio de estudos do R e nascimento do meu filho
-r_inicio <- lubridate::dmy("30-11-2011")
-filho_nascimento <- lubridate::dmy("26-09-2013")
-r_hoje <- lubridate::today()
-
-# criando intervalos - interval
-r_intervalo <- lubridate::interval(r_inicio, r_hoje)
-
-# criando intervalos - interval %--%
-filho_intervalo <- filho_nascimento %--% lubridate::today()
-```
-
----
-
-# 11. lubridate
-
-## **3. Intervalos**
-
-### Operaçõpes com intervalos
-
-```{r eval=FALSE}
-# operacooes com intervalos
-lubridate::int_start(r_intervalo)
-lubridate::int_end(r_intervalo)
-lubridate::int_length(r_intervalo)
-lubridate::int_flip(r_intervalo)
-lubridate::int_shift(r_intervalo, duration(days = 30))
-```
-
----
-
-# 11. lubridate
-
-## **3. Intervalos**
-
-### Sobreposição entre dois intervalos
-
-```{r}
-# verificar sobreposicao - int_overlaps
-lubridate::int_overlaps(r_intervalo, filho_intervalo)
-
-# verificar se intervalo esta contido
-r_intervalo %within% filho_intervalo
-filho_intervalo %within% r_intervalo
-```
-
----
-
-# 11. lubridate
-
-## **3. Intervalos**
-
-### Calcular quantos períodos existem dentro de um intervalo
-
-```{r}
-# periodos dentro de um intervalo - anos
-r_intervalo / lubridate::years()
-r_intervalo %/% lubridate::years()
-
-# periodos dentro de um intervalo - dias e semandas
-filho_intervalo / lubridate::days()
-filho_intervalo / lubridate::weeks()
-```
-
----
-
-# 11. lubridate
-
-## **3. Intervalos**
-
-### Transformações dos dados para períodos
-
-```{r}
-# tempo total estudando R
-lubridate::as.period(r_intervalo)
-
-# idade do meu filho
-lubridate::as.period(filho_intervalo)
-```
-
----
-
-background-image: url(img/lubridate_fusos01.png), url(img/lubridate_fusos02.png)
-background-size: 600px, 500px
-background-position: 5% 75%, 90% 75%
-
-# 11. lubridate
-
-## Fusos horários
-
-### Tendem a ser um **fator complicador** quando precisamos analisar informações **instantâneas de tempo (horário)** de outras partes do planeta, ou mesmo fazer conversões dos horários
-
-<br><br><br><br><br><br><br><br><br><br>
-[Fuso horário, como funciona](https://ipemsp.wordpress.com/2020/09/30/fuso-horario-como-funciona/), [Paradigma dos fusos horários e suas ocasionalidades](https://medium.com/@plowzzer/paradigma-dos-fusos-hor%C3%A1rios-997a3eb29039)
-
----
-
-# 11. lubridate
-
-## Fusos horários
-
-### Descobrir o fuso horário que o R está considerando
-
-```{r}
-# fuso horario no r
-Sys.timezone()
-```
-
-### Listagem dos nomes dos fusos horários
-
-```{r}
-# verificar os fusos horarios
-length(OlsonNames())
-head(OlsonNames())
-```
-
----
-
-# 11. lubridate
-
-## Fusos horários
-
-### Perguntar que horas são em outra parte do globo ou fazer as conversões
-
-```{r}
-# que horas sao em...
-lubridate::with_tz(lubridate::now(), tzone = "America/Sao_Paulo")
-lubridate::with_tz(lubridate::now(), tzone = "GMT")
-lubridate::with_tz(lubridate::now(), tzone = "Europe/Berlin")
-
-# alterar o fuso sem mudar a hora
-lubridate::force_tz(lubridate::now(), tzone = "GMT")
-```
-
----
-
-class: clear
-background-image: url(img/package_purrr.png)
-background-size: 400px
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+::: footer
 [purrr](https://purrr.tidyverse.org/)
-
----
-
-background-image: url(img/cheatsheet_purrr.png)
-background-size: 600px
-background-position: 50% 50%
-
-# 12. purrr
-
-## Apply functions with purrr Cheatsheet
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Apply functions with purrr Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf)
-
----
-
-background-image: url(img/purrr_cats.jpeg)
-background-size: 400px
-background-position: 50% 85%
-
-# 12. purrr
+:::
 
 ## Descrição
 
-### Implementa a **Programação Funcional no R**, fornecendo um conjunto completo e consistente de ferramentas para trabalhar com funções e vetores
+- Implementa a **Programação Funcional no R**, fornecendo um conjunto completo e consistente de ferramentas para trabalhar com funções e vetores
+- Permite substituir muitos *loops for* por um código mais curto
 
---
+<center><img src="img/purrr_cats.jpeg" style="width:40%"/></center>
 
-### Permite substituir muitos *loops* for por um código mais sucinto e fácil de ler
+## purrr
 
----
+*Loop*
 
-# 12. purrr
-
-## *Loop*
-
-## Um loop for pode ser entendido como uma iteração: um bloco de códigos é repetido mudando um contador de uma lista de possibilidades
+Um *loop for* é uma iteração: um bloco de código é repetido mudando um contador de uma lista
 
 ```{r}
 # loop for
@@ -2189,36 +1699,28 @@ for(i in 1:10){
 }
 ```
 
----
+## purrr
 
-# 12. purrr
-
-## Programação funcional
+**Programação funcional**
 
 ```{r}
 # loop for com map
 purrr::map(.x = 1:10, .f = print)
 ```
 
----
+## purrr
 
-background-image: url(img/purrr_map.png)
-background-size: 600px
-background-position: 85% 80%
+**Estrutura**
 
-# 12. purrr
+- `map(.x, .f)`
+- `.x`: uma vetor, lista ou data frame
+- `.f`: uma função
 
-## Estrutura
+<center><img src="img/purrr_map.png" style="width:45%"/></center>
 
-### `map(.x, .f)`
-### `.x`: uma vetor, lista ou data frame
-### `.f`: uma função
+## purrr
 
----
-
-# 12. purrr
-
-### Exemplo: aplicar a função `sum()` para somar os valores de vários elementos de uma lista
+Exemplo: aplicar a função `sum()` para somar os valores de vários elementos de uma lista
 
 ```{r}
 # lista
@@ -2228,13 +1730,11 @@ x <- list(1:5, c(4, 5, 7), c(1, 1, 1), c(2, 2, 2, 2, 2))
 purrr::map(x, sum)
 ```
 
----
+## purrr
 
-# 12. purrr
+**Tipos de retorno**
 
-## Tipos de retorno
-
-### Diferentes funções retornam diferentes estruturas de dados
+Diferentes funções retornam diferentes estruturas de dados
 
 - `map()`: retorna uma lista
 - `map_chr()`: retorna um vetor de strings
@@ -2244,11 +1744,9 @@ purrr::map(x, sum)
 - `map_dfr()`: retorna um data frame (por linhas)
 - `map_dfc()`: retorna um data frame (por colunas)
 
----
+## purrr
 
-# 12. purrr
-
-## Tipos de retorno
+**Tipos de retorno**
 
 ```{r}
 # variacoes da funcao map
@@ -2256,11 +1754,9 @@ purrr::map_dbl(x, sum)
 purrr::map_chr(x, paste, collapse = " ")
 ```
 
----
+## purrr
 
-# 12. purrr
-
-## Duas ou mais listas em paralelo
+**Duas ou mais listas em paralelo**
 
 ```{r}
 # listas
@@ -2275,11 +1771,9 @@ purrr::map2_dbl(x, y, prod)
 purrr::pmap_dbl(list(x, y, z), prod)
 ```
 
----
+## purrr
 
-# 12. purrr
-
-## Implementar rotinas de manipulação e análise de dados
+Implementar rotinas de manipulação e análise de dados
 
 ```{r}
 # resumo dos dados
@@ -2289,11 +1783,9 @@ penguins %>%
   purrr::map_dbl(mean)
 ```
 
----
+## purrr
 
-# 12. purrr
-
-## Implementar rotinas de manipulação e análise de dados
+Implementar rotinas de manipulação e análise de dados
 
 ```{r}
 # analise dos dados
@@ -2304,54 +1796,54 @@ penguins %>%
   purrr::map("r.squared")
 ```
 
----
+## purrr
 
-background-image: url(img/general_curso_r.png), url(img/person_jenny_bryan.jpeg)
-background-size: 400px, 300px
-background-position: 10% 70%, 90% 80%
+**Material**
 
-# 12. purrr
+- [Webinar de purrr avançado](https://youtu.be/vb1lD9_AFcU) - Curso-R
+- [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) - Jennifer (Jenny) Bryan
 
-## Material
+<center><img src="img/general_curso_r.png" style="width:60%"/></center>
 
-### [Webinar de purrr avançado](https://youtu.be/vb1lD9_AFcU) - Curso-R
+## purrr
 
-### [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) - Jennifer (Jenny) Bryan
+**furrr: programação funcional paralelizada**
 
----
+Faz o mapeamento em paralelo utilizando os *cores* do processador
 
-class: clear
-background-image: url(img/package_furrr.png)
-background-size: 400px
+<center><img src="img/package_furrr.png" style="width:35%"/></center>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+::: footer
 [furrr](https://furrr.futureverse.org/)
+:::
 
----
+## purrr
 
-background-image: url(img/processor01.png), url(img/processor02.png)
-background-size: 500px, 400px
-background-position: 15% 65%, 85% 75%
-
-# 12. furrr
-
-## Programação funcional paralelizada
-
-### Faz o mapeamento em paralelo utilizando os *cores* do processador
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Quick Intro to Parallel Computing in R](https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html)
-
-# furrr
-
-## Programação funcional paralelizada
+**furrr: programação funcional paralelizada**
 
 Número de *cores* do seu computador
 
-```{r eval=FALSE}
+```{r}
 # carregar
 library(parallel)
 
 # numero de cores
 parallel::detectCores()
 ```
+
+![](img/core01.png){.absolute width=400 height=250 right=500 top=410}
+![](img/core02.png){.absolute width=250 height=250 right=200 top=410}
+
+::: footer
+[Quick Intro to Parallel Computing in R](https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html)
+:::
+
+
+::: footer
+[Quick Intro to Parallel Computing in R](https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html)
+:::
+
+
+# Dúvidas?
+
+# Bora para gráficos!
