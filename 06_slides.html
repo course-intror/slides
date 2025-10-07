@@ -6,8 +6,8 @@
 <script src="06_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="06_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="06_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="06_slides_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.33">
+<link href="06_slides_files/libs/quarto-html/quarto-syntax-highlighting-c6982bbdd90c704a9b15aa23d87ad911.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.2">
 
   <meta name="author" content=" Maurício Vancine">
   <title>Reprodutibilidade em R e GitHub </title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="06_slides_files/libs/revealjs/dist/theme/quarto-a0fad2ac012f0552d5ba52dbbe81fd60.css">
+  <link rel="stylesheet" href="06_slides_files/libs/revealjs/dist/theme/quarto-a7b54263231cec6bd3b4a6e8c0bdd44b.css">
   <link href="06_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="06_slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="06_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -213,7 +213,7 @@
 <ul>
 <li>Reprodutibilidade</li>
 <li>Ambiente reprodutível: <code>renv</code></li>
-<li>Documentos reprodutíveis: <code>Quarto</code></li>
+<li>Documentos dinâmicos: <code>Quarto</code></li>
 <li><code>Quarto</code> e GitHub</li>
 <li>Web applications (apps): <code>Shiny</code></li>
 </ul>
@@ -297,8 +297,8 @@
 <li><em>Pacote</em>: coleção de funções, documentação, dados e testes</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># bibliotecas</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">.libPaths</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># bibliotecas</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">.libPaths</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/home/mude/R/x86_64-pc-linux-gnu-library/4.5"
 [2] "/usr/local/lib/R/site-library"               
@@ -307,12 +307,12 @@
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># pacotes</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">find.package</span>(<span class="st">"base"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># pacotes</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">find.package</span>(<span class="st">"base"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/usr/lib/R/library/base"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">find.package</span>(<span class="st">"renv"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">find.package</span>(<span class="st">"renv"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/home/mude/R/x86_64-pc-linux-gnu-library/4.5/renv"</code></pre>
 </div>
@@ -337,8 +337,8 @@
 <li>Armazena versões dos pacotes em <code>renv.lock</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
-<span id="cb7-2"><a href=""></a><span class="fu">library</span>(renv)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb7-2"><a href=""></a><span class="fu">library</span>(renv)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <center>
 <img src="img/package_renv.svg" style="width:20%">
@@ -478,7 +478,7 @@
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Inicializar ambiente renv</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Inicializar ambiente renv</span></span>
 <span id="cb9-2"><a href=""></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
 <span id="cb9-3"><a href=""></a></span>
 <span id="cb9-4"><a href=""></a><span class="co"># Verificar o estado atual dos pacotes</span></span>
@@ -491,7 +491,7 @@
 <span id="cb9-11"><a href=""></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span>
 <span id="cb9-12"><a href=""></a></span>
 <span id="cb9-13"><a href=""></a><span class="co"># Restaurar ambiente em outra máquina</span></span>
-<span id="cb9-14"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-14"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:40%;">
 <center>
@@ -511,8 +511,8 @@
 <li>Todos os pacotes no arquivo <code>renv.lock</code> serão instalados na biblioteca do projeto</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># Restaurar ambiente em outra máquina</span></span>
-<span id="cb10-2"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># Restaurar ambiente em outra máquina</span></span>
+<span id="cb10-2"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -600,16 +600,83 @@
 </section>
 <section class="slide level2">
 <h2>Quarto</h2>
-<p><strong>Multiplas saídas</strong></p>
-<div style="font-size: 70%;">
+<p><strong>Descrição</strong></p>
+<div style="font-size: 80%;">
 <ul>
 <li>Fornece uma estrutura para ciência de dados, combinando <strong>código, resultados e texto</strong></li>
 <li>Documentos são totalmente <strong>reproduzíveis</strong>, automatizando a inclusão das últimas versões dos resultados e análises</li>
-<li>Múltiplos formatos de <strong>saída</strong>: páginas web, PDFs, Word, sites, livros, ae mais</li>
+<li><code>Quarto</code> é a nova geração do R Markdown</li>
 </ul>
 </div>
 <center>
-<img src="img/knitr-formats.png" style="width:80%">
+<img src="img/quarto_logo.png" style="width:60%">
+</center>
+<div class="footer">
+<p><a href="https://quarto.org/">Quarto</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Software</strong></p>
+<div style="font-size: 70%;">
+<ul>
+<li>Software novo que não depende do R (instalado com o RStudio)</li>
+<li>Interface de linha de comando - <em>Command Line Interface (CLI)</em></li>
+<li>Podemos usar o <code>Quarto</code> no terminal</li>
+</ul>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">quarto</span> help</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Usage:   quarto
+Version: 1.9.2 
+
+Description:
+
+  Quarto CLI
+
+Options:
+
+  -h, --help     - Show this help.                            
+  -V, --version  - Show the version number for this program.  
+
+Commands:
+
+  render     [input] [args...]     - Render files or projects to various document types.                 
+  preview    [file] [args...]      - Render and preview a document or website project.                   
+  serve      [input]               - Serve a Shiny interactive document.                                 
+  create     [type] [commands...]  - Create a Quarto project or extension                                
+  use        &lt;type&gt; [target]       - Automate document or project setup tasks.                           
+  add        &lt;extension&gt;           - Add an extension to this folder or project                          
+  update     [target...]           - Updates an extension or global dependency.                          
+  remove     [target...]           - Removes an extension.                                               
+  convert    &lt;input&gt;               - Convert documents to alternate representations.                     
+  pandoc     [args...]             - Run the version of Pandoc embedded within Quarto.                   
+  typst      [args...]             - Run the version of Typst embedded within Quarto.                    
+  run        [script] [args...]    - Run a TypeScript, R, Python, or Lua script.                         
+  list       &lt;type&gt;                - Lists an extension or global dependency.                            
+  install    [target...]           - Installs a global dependency (TinyTex or Chromium).                 
+  uninstall  [tool]                - Removes an extension.                                               
+  tools                            - Display the status of Quarto installed dependencies                 
+  publish    [provider] [path]     - Publish a document or project to a provider.                        
+  check      [target]              - Verify correct functioning of Quarto installation.                  
+  call                             - Access functions of Quarto subsystems such as its rendering engines.
+  help       [command]             - Show this help or the help of a sub-command.                        </code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Multiplas saídas</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Múltiplos formatos de <strong>saída</strong>: páginas web, PDFs, Word, sites, livros e mais</li>
+</ul>
+</div>
+<br>
+<center>
+<img src="img/knitr-formats.png" style="width:100%">
 </center>
 <div class="footer">
 <p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
@@ -628,6 +695,9 @@
 <center>
 <img src="img/lab_notebook.jpg" style="width:40%">
 </center>
+<div class="footer">
+<p><a href="https://pt.wikipedia.org/wiki/Caderno_de_laborat%C3%B3rio">Caderno de laboratório</a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>Quarto</h2>
@@ -645,24 +715,392 @@
 <p><strong>Funcionamento</strong></p>
 <p><br></p>
 <center>
-<img src="img/horst_qmd_render_schema.png" style="width:100%">
+<img src="img/rmd-knitr.png" style="width:100%">
 </center>
 <div class="footer">
 <p>Artwork by <a href="https://x.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Projeto <code>Quarto</code></strong></p>
+<center>
+<img src="img/quarto_proj.png" style="width:85%">
+</center>
+<div class="footer">
+<p><a href="https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo">E aí, vamos falar de Quarto?</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd)</strong></p>
+<center>
+<img src="img/quarto-newfile.png" style="width:90%">
+</center>
+<div class="footer">
+<p><a href="https://beatrizmilz.github.io/202211-quarto-amostra-IME-USP/slide-quarto.html#/title-slide">Conhecendo o Quarto: a nova geração do RMarkdown</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd)</strong></p>
+<center>
+<img src="img/quarto-new-doc.png" style="width:55%">
+</center>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Source editor</strong></p>
+<center>
+<img src="img/quarto-source.png" style="width:80%">
+</center>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Visual editor</strong></p>
+<center>
+<img src="img/quarto-visual.png" style="width:80%">
+</center>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Renderizar</strong></p>
+<center>
+<img src="img/quarto-render01.png" style="width:80%"> <img src="img/quarto-render02.png" style="width:55%">
+</center>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a>, <a href="https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo">E aí, vamos falar de Quarto?</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Anatomia</strong></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br><br><br> <img src="img/quarto-anatomia.png" style="width:100%"></p>
+</div><div class="column" style="width:60%;">
+<div style="font-size: 70%;">
+<p><br><br></p>
+<ul>
+<li>YAML (<em>Yet Another Markup Language</em>): cabeçalho (início do <code>.qmd</code>) onde são inseridas as configurações do documento (formatação, data, título, autor etc.), delimitado por <code>---</code> e <code>---</code></li>
+<li>Texto: usa markdown como sua sintaxe de documento principal</li>
+<li>Códigos (<em>chunks</em>): blocos de códigos onde se insere códigos em R, Python, Julia e outros, delimitado por <code>```{r}</code> e <code>```</code></li>
+</ul>
+</div>
+</div></div>
+<div class="footer">
+<p><a href="https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo">E aí, vamos falar de Quarto?</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Anatomia</strong></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br><br><br> <img src="img/quarto-anatomia.png" style="width:100%"></p>
+</div><div class="column" style="width:60%;">
+<div style="font-size: 60%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="|1-6|8-15|17-29|"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="ex">---</span></span>
+<span id="cb13-2"><a href=""></a><span class="ex">title:</span> <span class="st">"Hello, Penguins"</span></span>
+<span id="cb13-3"><a href=""></a><span class="ex">format:</span> html</span>
+<span id="cb13-4"><a href=""></a><span class="ex">execute:</span></span>
+<span id="cb13-5"><a href=""></a>  <span class="ex">echo:</span> false</span>
+<span id="cb13-6"><a href=""></a><span class="ex">---</span></span>
+<span id="cb13-7"><a href=""></a></span>
+<span id="cb13-8"><a href=""></a><span class="co">## Meet the penguins</span></span>
+<span id="cb13-9"><a href=""></a></span>
+<span id="cb13-10"><a href=""></a><span class="ex">The</span> __penguins__ data contains size measurements for </span>
+<span id="cb13-11"><a href=""></a><span class="ex">penguins</span> from three islands in the Palmer Archipelago, </span>
+<span id="cb13-12"><a href=""></a><span class="ex">Antarctica.</span></span>
+<span id="cb13-13"><a href=""></a></span>
+<span id="cb13-14"><a href=""></a><span class="ex">The</span> _three_ species of penguins have quite distinct </span>
+<span id="cb13-15"><a href=""></a><span class="ex">distributions</span> of physical dimensions <span class="er">(</span><span class="ex">@fig-penguins</span><span class="kw">)</span><span class="bu">.</span></span>
+<span id="cb13-16"><a href=""></a></span>
+<span id="cb13-17"><a href=""></a><span class="co"># ```{r}</span></span>
+<span id="cb13-18"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
+<span id="cb13-19"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
+<span id="cb13-20"><a href=""></a><span class="co">#| warning: false</span></span>
+<span id="cb13-21"><a href=""></a><span class="ex">library</span><span class="er">(</span><span class="ex">tidyverse,</span> quietly = TRUE<span class="kw">)</span></span>
+<span id="cb13-22"><a href=""></a><span class="ex">library</span><span class="er">(</span><span class="ex">palmerpenguins</span><span class="kw">)</span></span>
+<span id="cb13-23"><a href=""></a><span class="ex">penguins</span> <span class="kw">|</span><span class="op">&gt;</span></span>
+<span id="cb13-24"><a href=""></a>  <span class="ex">ggplot</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">x</span> = flipper_length_mm, y = bill_length_mm<span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb13-25"><a href=""></a>  <span class="ex">geom_point</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">color</span> = species<span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb13-26"><a href=""></a>  <span class="ex">scale_color_manual</span><span class="er">(</span></span>
+<span id="cb13-27"><a href=""></a>    <span class="ex">values</span> = c<span class="er">(</span><span class="st">"darkorange"</span><span class="ex">,</span> <span class="st">"purple"</span>, <span class="st">"cyan4"</span><span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb13-28"><a href=""></a>  <span class="fu">theme_minimal()</span></span>
+<span id="cb13-29"><a href=""></a><span class="co"># ```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div></div>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a>, <a href="https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo">E aí, vamos falar de Quarto?</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Anatomia</strong></p>
+<p><br></p>
+<div class="columns">
+<div class="column center" style="width:55%;">
+<div style="font-size: 55%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="ex">---</span></span>
+<span id="cb14-2"><a href=""></a><span class="ex">title:</span> <span class="st">"Hello, Penguins"</span></span>
+<span id="cb14-3"><a href=""></a><span class="ex">format:</span> html</span>
+<span id="cb14-4"><a href=""></a><span class="ex">execute:</span></span>
+<span id="cb14-5"><a href=""></a>  <span class="ex">echo:</span> false</span>
+<span id="cb14-6"><a href=""></a><span class="ex">---</span></span>
+<span id="cb14-7"><a href=""></a></span>
+<span id="cb14-8"><a href=""></a><span class="co">## Meet the penguins</span></span>
+<span id="cb14-9"><a href=""></a></span>
+<span id="cb14-10"><a href=""></a><span class="ex">The</span> __penguins__ data contains size measurements for </span>
+<span id="cb14-11"><a href=""></a><span class="ex">penguins</span> from three islands in the Palmer Archipelago, </span>
+<span id="cb14-12"><a href=""></a><span class="ex">Antarctica.</span></span>
+<span id="cb14-13"><a href=""></a></span>
+<span id="cb14-14"><a href=""></a><span class="ex">The</span> _three_ species of penguins have quite distinct </span>
+<span id="cb14-15"><a href=""></a><span class="ex">distributions</span> of physical dimensions <span class="er">(</span><span class="ex">@fig-penguins</span><span class="kw">)</span><span class="bu">.</span></span>
+<span id="cb14-16"><a href=""></a></span>
+<span id="cb14-17"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
+<span id="cb14-18"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
+<span id="cb14-19"><a href=""></a><span class="co">#| warning: false</span></span>
+<span id="cb14-20"><a href=""></a><span class="ex">library</span><span class="er">(</span><span class="ex">tidyverse,</span> quietly = TRUE<span class="kw">)</span></span>
+<span id="cb14-21"><a href=""></a><span class="ex">library</span><span class="er">(</span><span class="ex">palmerpenguins</span><span class="kw">)</span></span>
+<span id="cb14-22"><a href=""></a><span class="ex">penguins</span> <span class="kw">|</span><span class="op">&gt;</span></span>
+<span id="cb14-23"><a href=""></a>  <span class="ex">ggplot</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">x</span> = flipper_length_mm, y = bill_length_mm<span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb14-24"><a href=""></a>  <span class="ex">geom_point</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">color</span> = species<span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb14-25"><a href=""></a>  <span class="ex">scale_color_manual</span><span class="er">(</span></span>
+<span id="cb14-26"><a href=""></a>    <span class="ex">values</span> = c<span class="er">(</span><span class="st">"darkorange"</span><span class="ex">,</span> <span class="st">"purple"</span>, <span class="st">"cyan4"</span><span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb14-27"><a href=""></a>  <span class="fu">theme_minimal()</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div><div class="column center" style="width:45%;">
+<p><img data-src="img/penguins_render.png"></p>
+</div></div>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - YAML - Formato</strong></p>
+<div style="font-size: 60%;">
+<p>HTML</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="ex">---</span></span>
+<span id="cb15-2"><a href=""></a><span class="ex">title:</span> <span class="st">"Título"</span></span>
+<span id="cb15-3"><a href=""></a><span class="ex">format:</span> html</span>
+<span id="cb15-4"><a href=""></a><span class="ex">editor:</span> visual</span>
+<span id="cb15-5"><a href=""></a><span class="ex">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Word</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb16-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
+<span id="cb16-3"><a href=""></a>format<span class="sc">:</span> docx</span>
+<span id="cb16-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
+<span id="cb16-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>PDF</p>
+<blockquote>
+<p>Precisa instalar um pacote LaTeX</p>
+</blockquote>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb17-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
+<span id="cb17-3"><a href=""></a>format<span class="sc">:</span> pdf</span>
+<span id="cb17-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
+<span id="cb17-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://beatrizmilz.github.io/202211-quarto-amostra-IME-USP/slide-quarto.html#/title-slide">Conhecendo o Quarto: a nova geração do RMarkdown</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Texto - markdown</strong></p>
+<div style="font-size: 90%;">
+<ul>
+<li><p><code>Markdown</code> é um formato de texto simples projetado para ser fácil de escrever e, ainda mais importante, fácil de ler</p></li>
+<li><p><code>Quarto</code> é baseado no <code>Pandoc</code> e usa sua variação de <code>markdown</code> como sintaxe de documento</p></li>
+</ul>
+</div>
+<center>
+<img src="img/markdown-mark.svg" style="width:30%">
+</center>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Texto - markdown</strong></p>
+<div class="columns">
+<div class="column">
+<div style="font-size: 70%;">
+<p><br></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="co">### Text formatting</span></span>
+<span id="cb18-2"><a href=""></a><span class="ex">*italic*</span> <span class="pp">**</span>bold<span class="pp">**</span> ~~strikeout~~ <span class="kw">`</span><span class="ex">code</span><span class="kw">`</span></span>
+<span id="cb18-3"><a href=""></a><span class="ex">superscript^2^</span> subscript~2~</span>
+<span id="cb18-4"><a href=""></a><span class="ex">[underline]{.underline}</span> [small caps]{.smallcaps}</span>
+<span id="cb18-5"><a href=""></a></span>
+<span id="cb18-6"><a href=""></a><span class="co">### Lists</span></span>
+<span id="cb18-7"><a href=""></a><span class="ex">-</span>   Bulleted list item 1</span>
+<span id="cb18-8"><a href=""></a><span class="ex">-</span>   Item 2</span>
+<span id="cb18-9"><a href=""></a>    <span class="ex">-</span>   Item 2a</span>
+<span id="cb18-10"><a href=""></a>    <span class="ex">-</span>   Item 2b</span>
+<span id="cb18-11"><a href=""></a><span class="ex">1.</span>  Numbered list item 1</span>
+<span id="cb18-12"><a href=""></a><span class="ex">2.</span>  Item 2.</span>
+<span id="cb18-13"><a href=""></a></span>
+<span id="cb18-14"><a href=""></a><span class="co">### Equations</span></span>
+<span id="cb18-15"><a href=""></a><span class="ex">inline</span> math: <span class="va">$E</span> = mc^{2}$</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div><div class="column">
+<div style="font-size: 50%;">
+<p><br></p>
+<h3>Text formatting</h3>
+<p><em>italic</em> <strong>bold</strong> <del>strikeout</del> <code>code</code></p>
+<p>superscript<sup>2</sup> subscript<sub>2</sub></p>
+<p><u>underline</u> <span class="smallcaps">small caps</span></p>
+<h3>Lists</h3>
+<ul>
+<li>Bulleted list item 1</li>
+<li>Item 2
+<ul>
+<li>Item 2a</li>
+<li>Item 2b</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>Numbered list item 1</li>
+<li>Item 2.</li>
+</ol>
+<h3>Equations</h3>
+<p>inline math: <span class="math inline">\(E = mc^{2}\)</span></p>
+</div>
+</div></div>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Código - chunk</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 60%;">
+<p><br><br></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="ex">The</span> _three_ species of penguins have quite distinct </span>
+<span id="cb19-2"><a href=""></a><span class="ex">distributions</span> of physical dimensions <span class="er">(</span><span class="ex">@fig-penguins</span><span class="kw">)</span><span class="bu">.</span></span>
+<span id="cb19-3"><a href=""></a></span>
+<span id="cb19-4"><a href=""></a><span class="kw">````</span>{r}</span>
+<span id="cb19-5"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
+<span id="cb19-6"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
+<span id="cb19-7"><a href=""></a><span class="co">#| warning: false</span></span>
+<span id="cb19-8"><a href=""></a><span class="ex">library</span><span class="er">(</span><span class="ex">tidyverse,</span> quietly = TRUE<span class="kw">)</span></span>
+<span id="cb19-9"><a href=""></a><span class="ex">library</span><span class="er">(</span><span class="ex">palmerpenguins</span><span class="kw">)</span></span>
+<span id="cb19-10"><a href=""></a><span class="ex">penguins</span> <span class="kw">|</span><span class="op">&gt;</span></span>
+<span id="cb19-11"><a href=""></a>  <span class="ex">ggplot</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">x</span> = flipper_length_mm, y = bill_length_mm<span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb19-12"><a href=""></a>  <span class="ex">geom_point</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">color</span> = species<span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb19-13"><a href=""></a>  <span class="ex">scale_color_manual</span><span class="er">(</span></span>
+<span id="cb19-14"><a href=""></a>    <span class="ex">values</span> = c<span class="er">(</span><span class="st">"darkorange"</span><span class="ex">,</span> <span class="st">"purple"</span>, <span class="st">"cyan4"</span><span class="kw">))</span> <span class="ex">+</span></span>
+<span id="cb19-15"><a href=""></a>  <span class="fu">theme_minimal()</span></span>
+<span id="cb19-16"><a href=""></a><span class="kw">````</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/penguins_render.png"></p>
+</div></div>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Código - chunk</strong></p>
+<center>
+<img src="img/rstudio-inline-output.png" style="width:80%">
+</center>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Galeria</strong></p>
+<br>
+<center>
+<img src="img/quarto-galeria.png" style="width:100%">
+</center>
+<div class="footer">
+<p><a href="https://quarto.org/docs/gallery/">Quarto - Gallery</a></p>
 </div>
 </section>
 <section class="slide level2">
 <h2>Quarto</h2>
 <p><strong><code>Quarto</code> e GitHub</strong></p>
+<div style="font-size: 70%;">
+<p>Podemos hospedar gratuitamente as saídas do <code>Quarto</code> de forma on-line no GitHub</p>
+<blockquote>
+<p>Repositório &gt; Settings &gt; Pages &gt; GitHub Pages</p>
+</blockquote>
+</div>
+<center>
+<img src="img/quarto-github.png" style="width:90%">
+</center>
+<div class="footer">
+<p><a href="https://github.com/course-intror/course-intror.github.io/settings/pages">GitHub pages</a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>Shiny</h2>
+<p><strong>Descrição</strong></p>
+<div style="font-size: 70%;">
 <ul>
-<li>Dashboards: <code>shiny</code></li>
+<li>Framework do R para criar <strong>aplicações web interativas</strong></li>
+<li>Permite <strong>construir</strong> dashboards, painéis de visualização, e ferramentas analíticas</li>
+<li>Totalmente <strong>integrado ao R</strong> (sem necessidade de HTML/CSS/JS)</li>
 </ul>
-<p>https://rdatatoolbox.github.io/course-quarto/#/</p>
-
+</div>
+<center>
+<img src="img/shiny.png" style="width:30%">
+</center>
+<div class="footer">
+<p><a href="https://shiny.posit.co/">Shiny</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Shiny</h2>
+<p><strong>Exemplo</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Disponibilização de <strong>redes de interação planta-dispersor</strong> na Mata Atlântica</li>
+</ul>
+</div>
+<center>
+<img src="img/afnetworks.png" style="width:40%">
+</center>
+<div class="footer">
+<p><a href="https://lddiv.shinyapps.io/shiny-atlantic-forest-networks">afnetworks</a></p>
+</div>
 </section></section>
+<section class="title-slide slide level1 center">
+<h1>Muito obrigado!</h1>
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/featured-hex.png" class="slide-logo"></p>
@@ -855,7 +1293,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -967,13 +1405,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

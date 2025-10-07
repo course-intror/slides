@@ -227,11 +227,12 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 
 <br>
 
-**Versões**
+**Versões de Progração Orientada a Objetos**
 
--   Old S (1976-1987)
--   New S (1988-1997)
--   S4 (1998)
+- Old S (1976-1987)
+- New S (1988-1997)
+- S4 (1998)
+- R6 (2014)
 
 **IDE (*Integrated Development Environment*)**
 
@@ -265,6 +266,7 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 ![](img/person_gentleman_ihaka.jpg){.absolute width="550" height="400" right="-50" top="200"}
 
 ::: footer
+[Ihaka & Gentleman (1996)](https://doi.org/10.2307/1390807),
 [Wickham (2013)](http://vita.had.co.nz/papers/r-s.pdf)
 :::
 

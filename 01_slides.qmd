@@ -448,7 +448,7 @@ Salvem ou recuperem essas informações!
 Chave SSH
 
 ::: {style="font-size: 80%;"}
-1. Create SSA key (ED25519)
+1. Create SSH key (ED25519)
 1. View public key
 1. Copiar: Ctrl + C
 :::

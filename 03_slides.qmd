@@ -262,11 +262,25 @@ Abram o script
 ## Livro
 
 <center>
-<img src="img/cover_data_science_r.png" style="width:35%"/>
+<img src="img/cover_data_science_r.jpg" style="width:40%"/>
 </center>
 
 ::: footer
-[Wickham & Grolemund (2017)](https://r4ds.had.co.nz/)
+[Wickham et al. (2023)](https://r4ds.had.co.nz/)
+:::
+
+## Livro
+
+**Tradução para o português**
+
+[R para Ciência de Dados (2ª edição)](https://pt.r4ds.hadley.nz/)
+
+<center>
+<img src="img/cover_data_science_r.jpg" style="width:33%"/>
+</center>
+
+::: footer
+[Wickham et al. (2023)](https://r4ds.had.co.nz/)
 :::
 
 ## Site
