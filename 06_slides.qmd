@@ -24,6 +24,8 @@ lang: pt-br
 
 ## Conteúdo
 
+<br>
+
 - Reprodutibilidade
 - Ambiente reprodutível: `renv`
 - Documentos dinâmicos: `Quarto`
@@ -361,6 +363,7 @@ Artwork by [@allison_horst](https://x.com/allison_horst)
 [Quarto](https://quarto-dev.github.io/quarto-r)
 :::
 
+
 ## Quarto
 
 **Descrição**
@@ -371,13 +374,13 @@ Artwork by [@allison_horst](https://x.com/allison_horst)
 - `Quarto` é a nova geração do R Markdown
 :::
 
-<center>
-<img src="img/quarto_logo.png" style="width:60%"/>
-</center>
+![](img/r_markdown_output_formats.png){.absolute width="400" height="400" right="0" top="300"} 
+![](img/quarto.png){.absolute width="550" height="130" right="500" top="480"}
 
 ::: footer
-[Quarto](https://quarto.org/)
+[R Markdown](https://rmarkdown.rstudio.com/), [shiny](https://shiny.rstudio.com/), [quarto](https://quarto.org/)
 :::
+
 
 ## Quarto
 
@@ -909,4 +912,27 @@ Podemos hospedar gratuitamente as saídas do `Quarto` de forma on-line no GitHub
 [afnetworks](https://lddiv.shinyapps.io/shiny-atlantic-forest-networks)
 :::
 
-# Muito obrigado!
+## Muito obrigado!
+
+::: columns
+::: {.column width="50%"}
+**Agradecimentos**:
+
+- [Beatriz Milz](https://beatrizmilz.com/)
+
+![](img/fapesp.png){.absolute width=40% right=650 top=350}
+:::
+
+::: {.column width="50%"}
+**Contato**:
+
+[mauricio.vancine@gmail.com]()
+[mauriciovancine.github.io](https://mauriciovancine.github.io)
+
+![](img/gif_frogs.gif){.absolute width=40% right=90 top=260}
+:::
+:::
+
+:::footer
+Slides por [Maurício Vancine](https://mauriciovancine.github.io), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-git-github-rstudio).
+:::

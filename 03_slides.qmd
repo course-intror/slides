@@ -208,7 +208,11 @@ Abram o script
 
 <br><br><br><br>
 
-`03_script_r_introduction.R`
+`03_script_intror.R`
+
+::: footer
+[course-intror - scripts](https://github.com/course-intror/scripts)
+:::
 
 # tidyverse
 
@@ -498,13 +502,13 @@ library("writexl")
 
 ```{r eval=FALSE}
 # importar xlsx
-si <- readxl::read_excel("ATLANTIC_AMPHIBIANS_sites.xlsx")
+si <- readxl::read_excel("ATLANTIC_AMPHIBIANS_sites.xlsx", sheet = 1)
 si
 ```
 
 ```{r echo=FALSE}
 # importar xlsx
-si <- readxl::read_excel("data/ATLANTIC_AMPHIBIANS_sites.xlsx")
+si <- readxl::read_excel("data/ATLANTIC_AMPHIBIANS_sites.xlsx", sheet = 1)
 si
 ```
 
@@ -677,7 +681,7 @@ Reescreva cada uma das operações utilizando pipes `%>%`
 
 `sum(sqrt(abs(rnorm(100))))`
 
-`sum(log((sample(1:10, 10000, rep = TRUE)))`
+`sum(log(sample(1:10, 10000, rep = TRUE)))`
 
 ```{r echo=FALSE}
 countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30", font_size = "2em", play_sound = TRUE)
@@ -875,6 +879,63 @@ penguins_raw_colunas_na <- tidyr::drop_na(data = penguins_raw,
                                           any_of("Comments"))
 head(penguins_raw_colunas_na[, "Comments"])
 ```
+
+## Pivotar os dados
+
+**Dados long e dados wide**
+
+<center>
+<img src="img/tidyr_pivot_wider.png" style="width:75%"/>
+</center>
+
+. . .
+
+<center>
+<img src="img/tidyr_pivot_longer.png" style="width:75%"/>
+</center>
+
+## Pivotar os dados
+
+**Dados long e dados wide**
+
+![](img/tidyr_tb_pivot.png){.absolute width=700 height=500 right=520 top=150}
+![](img/gif_tidyr_pivot.gif){.absolute width=600 height=550 right=-120 top=100}
+
+## pivot_wider() 
+
+**Long para wide**
+
+::: {style="font-size: 70%;"}
+1. **names_from**: variável categórica que definirá os nomes das colunas
+2. **values_from**: variável numérica que preencherá os dados
+3. **values_fill**: valor para preencher os NAs
+
+```{r}
+# long para wide
+penguins_raw_pivot_wider <- tidyr::pivot_wider(data = penguins_raw[, c(2, 3, 13)], 
+                                               names_from = Species, 
+                                               values_from = `Body Mass (g)`)
+head(penguins_raw_pivot_wider)
+```
+:::
+
+## pivot_longer()
+
+**Wide para long**
+
+::: {style="font-size: 70%;"}
+1. **names_to**: nome da coluna que receberá os nomes
+2. **values_to**: nome da coluna que receberá os valores
+
+```{r}
+# wide para long
+penguins_raw_pivot_longer <- tidyr::pivot_longer(data = penguins_raw[, c(2, 3, 10:13)], 
+                                                 cols = `Culmen Length (mm)`:`Body Mass (g)`,
+                                                 names_to = "medidas", 
+                                                 values_to = "valores")
+head(penguins_raw_pivot_longer)
+```
+:::
 
 # 
 
@@ -1227,10 +1288,11 @@ penguins_summarise <- penguins %>%
 penguins_summarise
 ```
 
-## `bind_rows()` e `bind_cols()`
+## bind_rows() e bind_cols()
 
 Combina dados por linhas ou por colunas
 
+::: {style="font-size: 70%;"}
 ```{r}
 # selecionar as linhas para dois tibbles
 penguins_01 <- dplyr::slice(penguins, 1:5)
@@ -1239,8 +1301,9 @@ head(penguins_01)
 penguins_02 <- dplyr::slice(penguins, 51:55)
 head(penguins_02)
 ```
+:::
 
-## `bind_rows()` e `bind_cols()`
+## bind_rows() e bind_cols()
 
 Combina dados por linhas
 
@@ -1250,7 +1313,7 @@ penguins_bind_rows <- dplyr::bind_rows(penguins_01, penguins_02, .id = "id")
 head(penguins_bind_rows)
 ```
 
-## `bind_rows()` e `bind_cols()`
+## bind_rows() e bind_cols()
 
 Combina dados por colunas
 
@@ -1639,6 +1702,7 @@ lubridate::as_date(now())
 
 Funções para acessar e definir componentes individuais de datas e horários
 
+::: {style="font-size: 70%;"}
 - `year()`: acessa o ano
 - `month()`: acessa o mês
 - `day()`: acessa o dia
@@ -1648,6 +1712,7 @@ Funções para acessar e definir componentes individuais de datas e horários
 - `hour()`: acessa as horas
 - `minute()`: acessa os minutos
 - `second()`: acessa os segundos
+:::
 
 ## lubridate
 
@@ -1717,10 +1782,12 @@ for(i in 1:10){
 
 **Programação funcional**
 
+::: {style="font-size: 70%;"}
 ```{r}
 # loop for com map
 purrr::map(.x = 1:10, .f = print)
 ```
+:::
 
 ## purrr
 
@@ -1750,6 +1817,7 @@ purrr::map(x, sum)
 
 Diferentes funções retornam diferentes estruturas de dados
 
+::: {style="font-size: 70%;"}
 - `map()`: retorna uma lista
 - `map_chr()`: retorna um vetor de strings
 - `map_dbl()`: retorna um vetor numérico (double)
@@ -1757,6 +1825,7 @@ Diferentes funções retornam diferentes estruturas de dados
 - `map_lgl()`: retorna um vetor lógico
 - `map_dfr()`: retorna um data frame (por linhas)
 - `map_dfc()`: retorna um data frame (por colunas)
+:::
 
 ## purrr
 
@@ -1801,6 +1870,7 @@ penguins %>%
 
 Implementar rotinas de manipulação e análise de dados
 
+::: {style="font-size: 70%;"}
 ```{r}
 # analise dos dados
 penguins %>%
@@ -1809,6 +1879,7 @@ penguins %>%
   purrr::map(summary) %>% 
   purrr::map("r.squared")
 ```
+:::
 
 ## purrr
 

@@ -24,7 +24,7 @@ lang: pt-br
 
 ## Prática 1
 
-- Criar um repositório no seu GitHub chamado "teste"
+- Criar um repositório no seu GitHub chamado "teste-pra-valer"
 
 ![](img/github_criar_repositorio01.png){fig-align='center'}
 

@@ -39,25 +39,26 @@ lang: pt
 ::::::: columns
 :::: {.column width="50%"}
 ::: nonincremental
--   Contextualização
--   Principais pacotes
--   Gramática dos gráficos
--   Principais tipos de gráficos
--   Histograma e Densidade
--   Gráfico de setores
--   Gráfico de barras
+- Contextualização
+- Principais pacotes
+- Gramática dos gráficos
+- Paleta de cores
+- Principais tipos de gráficos
+- Histograma e Densidade
+- Gráfico de setores
+- Gráfico de barras
 :::
 ::::
 
 :::: {.column width="50%"}
 ::: nonincremental
--   Gráfico de caixas
--   Gráfico de dispersão
--   Gráfico pareado
--   Combinando gráficos
--   Gráficos animados
--   Gráficos interativos
--   Gráficos usando interface
+- Gráfico de caixas
+- Gráfico de dispersão
+- Gráfico pareado
+- Combinando gráficos
+- Gráficos animados
+- Gráficos interativos
+- Gráficos usando interface
 :::
 ::::
 :::::::
@@ -71,20 +72,25 @@ Abram o script
 
 `04_script_intror.R`
 
+::: footer
+[course-intror - scripts](https://github.com/course-intror/scripts)
+:::
+
 # Contextualização
 
 ## Contextualização
 
 ::: incremental
--   Melhor forma de apresentar, sintetizar, discutir e interpretar seus dados
+* **Melhor forma** de apresentar, sintetizar, discutir e interpretar seus **dados**
 
--   Necessário em quase todas as análises estatísticas
+* **Necessário** em quase todas as **análises estatísticas**
 
--   Necessário em quase todas as publicações, trabalhos de consultoria, TCC, dissertação, tese, etc.
+* **Necessário** em quase todas as publicações, trabalhos de consultoria, TCC, dissertação, tese, etc.
 
--   Existem vários tipos de gráficos para representar os padrões em seus dados para diferentes tipos de finalidades
+* Existem **vários tipos de gráficos** para representar os padrões em seus dados para diferentes tipos de finalidades
 
--   De forma simplificada, os gráficos são representações dos nossos dados tabulares
+* De forma simplificada, os gráficos são **representações** dos nossos **dados tabulares**
+
 :::
 
 ## Como mentir com estatística?
@@ -97,9 +103,10 @@ Abram o script
 
 # Principais pacotes
 
-## Principais pacotes {.smaller}
+## Principais pacotes
 
 ::: incremental
+::: {style="font-size: 65%;"}
 -   [graphics](http://search.r-project.org/R/library/graphics/html/00Index.html): simples e útil para visualizações rápidas
 
 - [lattice](https://lattice.r-forge.r-project.org/): integração a modelos estatísticos
@@ -121,9 +128,12 @@ Abram o script
 - [plotly](https://plotly.com/r/): gráficos interativos usando JavaScript (*plotly.js*)
 
 - [echarts4r](https://echarts4r.john-coene.com): gráficos interativos dentro do Shiny
+
+- [cols4all](https://cols4all.github.io/cols4all-R/index.html): escolha de paleta de cores
+:::
 :::
 
-## Pacotes apresentados
+## Pacotes que serão apresentados
 
 <br>
 
@@ -131,15 +141,17 @@ Abram o script
 
 - [ggplot2](https://ggplot2.tidyverse.org/)
 
+- [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
+
+- [cols4all](https://cols4all.github.io/cols4all-R/index.html)
+
 - [GGally](https://ggobi.github.io/ggally/)
 
 - [gganimate](https://gganimate.com/)
 
-- [esquisse](https://dreamrs.github.io/esquisse/)
-
-- [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-
 - [plotly](https://plotly.com/r/)
+
+- [esquisse](https://dreamrs.github.io/esquisse/)
 
 # 
 
@@ -244,7 +256,9 @@ ggplot(data = penguins) + aes(x = body_mass_g, y = flipper_length_mm) + geom_poi
 
 # 
 
-<center><img src="img/package_ggpubr.png" style="width:50%"/></center>
+<center>
+<img src="img/package_ggpubr.png" style="width:50%"/>
+</center>
 
 ::: footer
 [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
@@ -302,6 +316,73 @@ Wickham (2008) criou o pacote `ggplot2`, onde "gg" representa a contração de *
 
 ::: footer
 [Wickham (2008)](https://ggplot2-book.org/)
+:::
+
+# Paleta de cores
+
+# 
+
+<center>
+<img src="img/cols4all_logo.png" style="width:50%"/>
+</center>
+
+::: footer
+[cols4all](https://cols4all.github.io/cols4all-R/index.html)
+:::
+
+## Paleta de cores
+
+**Por que usar paletas de cores**
+
+::: {style="font-size: 70%;"}
+- A cor é fundamental para **comunicar padrões visuais** e **categorias**  
+- Escolhas inadequadas podem **distorcer interpretações**
+- Paletas bem definidas garantem **consistência e acessibilidade**
+:::
+
+<center>
+<img src="img/pallete_colors.png" style="width:45%"/>
+</center>
+
+::: footer
+[Types of color palettes: Definition, examples, + tips](https://www.figma.com/resource-library/types-of-color-palettes/)
+:::
+
+
+## Paleta de cores
+
+**Tipos de Paletas**
+
+::: {style="font-size: 55%;"}
+| Tipo | Uso                        | Exemplo             |
+|------|----------------------------|------------------------------|
+| **Categóricas** | Categorias sem ordem | `RColorBrewer::brewer.pal(3, "Set2")` |
+| **Sequenciais** | Dados ordenados (baixa → alta) | `viridis::viridis(10)` |
+| **Divergentes** | Valores centrados em um ponto médio | `RColorBrewer::brewer.pal(11, "RdBu")` |
+:::
+
+<center>
+<img src="img/palette-types-1.png" style="width:65%"/>
+</center>
+
+::: footer
+[Elegant and informative maps with tmap (2021)](https://r-tmap.github.io/tmap-book/visual-variables.html)
+:::
+
+## Paleta de cores
+
+**cols4all**
+
+```{r eval=FALSE}
+cols4all::c4a_gui()
+```
+
+<center>
+<img src="img/cols4all2.jpg" style="width:70%"/>
+</center>
+
+::: footer
+[cols4all](https://cols4all.github.io/cols4all-R/index.html)
 :::
 
 # Principais tipos de gráficos
@@ -696,7 +777,10 @@ polygon(density(na.omit(penguins$flipper_length_mm)),
 **Exportar**
 
 ```{r eval=FALSE}
-png("../data/plot_densidade.png"), wi = 15, he = 15, un = "cm", res = 300)
+# diretorio
+setwd("/home/mude/data/github/course-intror/data")
+
+png("plot_densidade.png"), wi = 15, he = 15, un = "cm", res = 300)
 ```
 
 <br>
@@ -1890,7 +1974,6 @@ penguins_flipper_length_mn_sd <- penguins %>%
   dplyr::group_by(species) %>% 
   dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
                    sd = sd(flipper_length_mm, na.rm = TRUE))
-penguins_flipper_length_mn_sd
 
 ggplot(data = penguins, 
        aes(x = species, y = flipper_length_mm, fill = species)) +
@@ -1918,7 +2001,6 @@ penguins_flipper_length_mn_sd <- penguins %>%
   dplyr::group_by(species) %>% 
   dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
                    sd = sd(flipper_length_mm, na.rm = TRUE))
-penguins_flipper_length_mn_sd
 
 ggplot(data = penguins, 
        aes(x = species, y = flipper_length_mm, fill = species)) +
@@ -1950,7 +2032,6 @@ penguins_flipper_length_mn_sd <- penguins %>%
   dplyr::group_by(species) %>% 
   dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
                    sd = sd(flipper_length_mm, na.rm = TRUE))
-penguins_flipper_length_mn_sd
 
 ggbarplot(penguins,
           x = "species",
@@ -1977,7 +2058,6 @@ penguins_flipper_length_mn_sd <- penguins %>%
   dplyr::group_by(species) %>% 
   dplyr::summarise(mean = mean(flipper_length_mm, na.rm = TRUE),
                    sd = sd(flipper_length_mm, na.rm = TRUE))
-penguins_flipper_length_mn_sd
 
 ggbarplot(penguins,
           x = "species",
@@ -3355,7 +3435,9 @@ ggplot_boxplot / ggplot_scatterplot
 
 # 
 
-<center><img src="img/package_gganimate.png" style="width:50%"/></center>
+<center>
+<img src="img/package_gganimate.png" style="width:50%"/>
+</center>
 
 ::: footer
 [gganimate](https://gganimate.com/)
@@ -3408,15 +3490,15 @@ gganimate::anim_save(filename = "plot_animate.gif",
                      animation = plot_animate, wi = 700, he = 500, un = "px")
 ```
 
-<br>
-
 <center><img src="img/plot_animate.gif" style="width:55%"/></center>
 
 # Gráficos interativos
 
 # 
 
-<center><img src="img/package_plotly.png" style="width:70%"/></center>
+<center>
+<img src="img/package_plotly.png" style="width:70%"/>
+</center>
 
 ::: footer
 [plotly](https://plotly.com/r/)
@@ -3584,7 +3666,8 @@ htmlwidgets::saveWidget(widget = plot_penguins_scatter_int,
 **esquisse**
 
 ::::: columns
-::: {.column width="40%"}
+::: {.column width="35%"}
+::: {style="font-size: 70%;"}
 ```{r}
 #| eval: false
 # pacote
@@ -3592,13 +3675,35 @@ htmlwidgets::saveWidget(widget = plot_penguins_scatter_int,
 library(esquisse)
 
 # iniciar
-esquisse::esquisser(na.omit(palmerpenguins::penguins))
+palmerpenguins::penguins %>% 
+  na.omit() %>% 
+  esquisse::esquisser()
 ```
 :::
+:::
 
-::: {.column width="60%"}
-<center><img src="img/esquisse.gif" style="width:100%"/></center>
+::: {.column width="65%"}
+<center>
+<img src="img/esquisse.gif" style="width:100%"/>
+</center>
 :::
 :::::
+
+::: footer
+[esquisse](https://dreamrs.github.io/esquisse/)
+:::
+
+## Gráficos usando interface
+
+**esquisse - Shiny**
+
+<center>
+<img src="img/esquisse_shiny_online.png" style="width:100%"/>
+</center>
+
+::: footer
+[esquisse - shiny](https://dreamrs.shinyapps.io/esquisse/)
+:::
+
 
 # Dúvidas?

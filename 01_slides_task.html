@@ -6,8 +6,8 @@
 <script src="01_slides_task_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="01_slides_task_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="01_slides_task_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01_slides_task_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.33">
+<link href="01_slides_task_files/libs/quarto-html/quarto-syntax-highlighting-c6982bbdd90c704a9b15aa23d87ad911.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.2">
 
   <meta name="author" content=" Maurício Vancine">
   <title>Controle de versão com git, GitHub e RStudio - Tarefas</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="01_slides_task_files/libs/revealjs/dist/theme/quarto-a0fad2ac012f0552d5ba52dbbe81fd60.css">
+  <link rel="stylesheet" href="01_slides_task_files/libs/revealjs/dist/theme/quarto-a7b54263231cec6bd3b4a6e8c0bdd44b.css">
   <link href="01_slides_task_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="01_slides_task_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="01_slides_task_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,7 +211,7 @@
 <section class="slide level2">
 <h2>Prática 1</h2>
 <ul>
-<li>Criar um repositório no seu GitHub chamado “teste”</li>
+<li>Criar um repositório no seu GitHub chamado “teste-pra-valer”</li>
 </ul>
 
 <img data-src="img/github_criar_repositorio01.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -235,9 +235,9 @@
 <li>Fazer um controle de versão usando o terminal:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>git add <span class="sc">-</span>Av</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>git add <span class="sc">-</span>Av</span>
 <span id="cb1-2"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">'add um script'</span></span>
-<span id="cb1-3"><a href=""></a>git push</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href=""></a>git push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -278,7 +278,7 @@
 <section class="slide level2">
 <h2>Prática 10</h2>
 <ul>
-<li>Fazer o push das modificações</li>
+<li>Fazer o push das modificações no repositório remoto</li>
 </ul>
 
 
@@ -475,7 +475,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -587,13 +587,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

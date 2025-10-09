@@ -191,10 +191,18 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 
 **atlanticr**
 
+::: {style="font-size: 70%;"}
 - Estes dados estão muito bagunçados
-- Gostaria de ajuda para organizar eles e pensar no pacote
+- Gostaria de ajuda para organizar eles e pensar no pacote `atlanticr`
 - Grupos, duplas ou individual
-- Baixar, organizar e formartar esses dados para uso no pacote
+- Baixar, organizar e formartar esses dados para uso no pacote atlanticr
+:::
+
+![](img/featured-hex-atlanticr.png){fig-align="center"}
+
+::: footer
+[atlanticr](https://mauriciovancine.github.io/atlanticr/)
+:::
 
 ## IMPORTANTE!!!
 

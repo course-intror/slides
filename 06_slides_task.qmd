@@ -24,24 +24,134 @@ lang: pt-br
 
 ## Prática 1
 
-- Crie um ambiente virtual do R com o pacote `renv`
+- Criar um novo projeto do RStudio
+
+![](img/rproject01.png){.absolute width="450" height="400" right="500" top="230"}
+![](img/rproject02.png){.absolute width="450" height="400" right="0" top="230"}
 
 ## Prática 2
 
-- Crie um ambiente virtual do R com o pacote `renv`
+- Criar um ambiente virtual do R com o pacote `renv`
+
+```{r eval=FALSE}
+renv::init()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
 
 ## Prática 3
 
-- Crie um ambiente virtual do R com o pacote `renv`
+- Instalar alguns pacotes no `renv`
+
+```{r eval=FALSE}
+renv::install()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
 
 ## Prática 4
 
-- Crie um ambiente virtual do R com o pacote `renv`
+- Registrar este ambiente virtual
+
+```{r eval=FALSE}
+renv::snapshot()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
 
 ## Prática 5
 
-- Crie um ambiente virtual do R com o pacote `renv`
+- Restaurar ambiente em outro diretório
+
+```{r eval=FALSE}
+renv::restore()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
 
 ## Prática 6
 
-- Crie um ambiente virtual do R com o pacote `renv`
+- Criar um documento html, word e PDF usando `quarto`
+
+::: {style="font-size: 55%;"}
+HTML
+
+```{bash eval=FALSE}
+---
+title: "Título"
+format: html
+editor: visual
+---
+```
+
+Word
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: docx
+editor: visual
+---
+```
+
+PDF 
+
+> Precisa instalar um pacote LaTeX
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: pdf
+editor: visual
+---
+```
+:::
+
+## Prática 7
+
+- Criar uma apresentação html usando `quarto`
+
+<br><br>
+<center>
+<img src="img/knitr-formats.png" style="width:100%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Prática 8
+
+- Criar um website html usando `quarto`
+
+<center>
+<img src="img/horst_qmd_render_schema.png" style="width:100%"/>
+</center>
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
