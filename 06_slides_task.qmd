@@ -22,31 +22,136 @@ editor: source
 lang: pt-br
 ---
 
-https://rdatatoolbox.github.io/
-https://rdatatoolbox.github.io/course-renv/#/
-https://rdatatoolbox.github.io/course-quarto/#/
+## Prática 1
 
-## Muito obrigado!
+- Criar um novo projeto do RStudio
 
-::: columns
-::: {.column width="50%"}
-**Agradecimentos**:
+![](img/rproject01.png){.absolute width="450" height="400" right="500" top="230"}
+![](img/rproject02.png){.absolute width="450" height="400" right="0" top="230"}
 
-- [Beatriz Milz](https://beatrizmilz.com/)
+## Prática 2
 
-![](img/fapesp.png){.absolute width=40% right=650 top=350}
+- Criar um ambiente virtual do R com o pacote `renv`
+
+```{r eval=FALSE}
+renv::init()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
 :::
 
-::: {.column width="50%"}
-**Contato**:
+## Prática 3
 
-[mauricio.vancine@gmail.com]()
-[mauriciovancine.github.io](https://mauriciovancine.github.io)
+- Instalar alguns pacotes no `renv`
 
-![](img/gif_frogs.gif){.absolute width=40% right=90 top=260}
+```{r eval=FALSE}
+renv::install()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
 :::
+
+## Prática 4
+
+- Registrar este ambiente virtual
+
+```{r eval=FALSE}
+renv::snapshot()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
 :::
 
-:::footer
-Slides por [Maurício Vancine](https://mauriciovancine.github.io), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-git-github-rstudio).
+## Prática 5
+
+- Restaurar ambiente em outro diretório
+
+```{r eval=FALSE}
+renv::restore()
+```
+
+<center>
+<img src="img/renv.png" style="width:70%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
+
+## Prática 6
+
+- Criar um documento html, word e PDF usando `quarto`
+
+::: {style="font-size: 55%;"}
+HTML
+
+```{bash eval=FALSE}
+---
+title: "Título"
+format: html
+editor: visual
+---
+```
+
+Word
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: docx
+editor: visual
+---
+```
+
+PDF 
+
+> Precisa instalar um pacote LaTeX
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: pdf
+editor: visual
+---
+```
+:::
+
+## Prática 7
+
+- Criar uma apresentação html usando `quarto`
+
+<br><br>
+<center>
+<img src="img/knitr-formats.png" style="width:100%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Prática 8
+
+- Criar um website html usando `quarto`
+
+<center>
+<img src="img/horst_qmd_render_schema.png" style="width:100%"/>
+</center>
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::

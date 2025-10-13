@@ -6,8 +6,8 @@
 <script src="01_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="01_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="01_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01_slides_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.33">
+<link href="01_slides_files/libs/quarto-html/quarto-syntax-highlighting-c6982bbdd90c704a9b15aa23d87ad911.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.2">
 
   <meta name="author" content=" Maurício Vancine">
   <title>Controle de versão com git, GitHub e RStudio</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="01_slides_files/libs/revealjs/dist/theme/quarto-a0fad2ac012f0552d5ba52dbbe81fd60.css">
+  <link rel="stylesheet" href="01_slides_files/libs/revealjs/dist/theme/quarto-a7b54263231cec6bd3b4a6e8c0bdd44b.css">
   <link href="01_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="01_slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="01_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -234,7 +234,7 @@
 <li>Remoto: <code>git remote</code>, <code>git push</code> e <code>git pull</code></li>
 <li>GitHub: <code>Pull request</code></li>
 <li>Conflitos</li>
-<li>Interface gráfica do RStudio<br>
+<li>Interface gráficas do RStudio<br>
 </li>
 <li>Mais informações</li>
 </ol>
@@ -264,14 +264,6 @@
 <p><strong>git (&gt;2.34.x)</strong><br>
 <a href="https://git-scm.com/">https://git-scm.com</a></p>
 <p><img data-src="img/r_logo.svg" class="absolute" style="top: 100px; right: 150px; width: 20%; "> <img data-src="img/rstudio_logo.svg" class="absolute" style="top: 300px; right: 50px; width: 35%; "> <img data-src="img/git_logo.png" class="absolute" style="top: 470px; right: 100px; width: 30%; "></p>
-</section>
-<section class="slide level2">
-<h2>1. Conferindo os computadores</h2>
-<p><strong>gitKraken</strong></p>
-
-<img data-src="img/gitkraken-logo.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
-<p><a href="https://www.gitkraken.com/">gitKraken</a></p>
-</div>
 </section></section>
 <section class="title-slide slide level1 center">
 <h1>2. Controle de versão</h1>
@@ -534,7 +526,7 @@
 <li>Licença</li>
 <li>Criar repositório</li>
 </ol>
-<p><img data-src="img/github_criar_repositorio02.png" class="absolute" style="top: 130px; right: -30px; width: 50%; "></p>
+<p><img data-src="img/github_criar_repositorio02.png" class="absolute" style="top: 120px; right: -30px; width: 60%; "></p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -586,8 +578,8 @@
 <section class="slide level2">
 <h2>6. Configurações</h2>
 <p><strong>RStudio</strong></p>
-<p><img data-src="img/rstudio.png">{fig-align=‘center’</p>
-</section>
+
+<img data-src="img/rstudio.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 <h2>6. Configurações</h2>
 <p><strong>RStudio</strong></p>
@@ -622,7 +614,7 @@
 <p>Chave SSH</p>
 <div style="font-size: 80%;">
 <ol type="1">
-<li>Create SSA key (ED25519)</li>
+<li>Create SSH key (ED25519) (talvez RSA?)</li>
 <li>View public key</li>
 <li>Copiar: Ctrl + C</li>
 </ol>
@@ -667,10 +659,10 @@
 </ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>list</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>list</span>
 <span id="cb1-2"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>global user.name <span class="st">"meu nome"</span></span>
 <span id="cb1-3"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>global user.email <span class="st">"email@dominio.com"</span></span>
-<span id="cb1-4"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>list</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>list</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_config.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
@@ -743,7 +735,23 @@
 <p><strong>Diretório local</strong></p>
 <ol type="1">
 <li>Abram o <code>Terminal</code> do RStudio</li>
-<li>No <code>Terminal</code>, rodem: <code>cd caminho/pasta</code></li>
+</ol>
+
+<img data-src="img/rstudio_terminal01.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>Prática 4</h2>
+<p><strong>Diretório local</strong></p>
+<ol type="1">
+<li>Abram o <code>Terminal</code> do RStudio</li>
+</ol>
+
+<img data-src="img/rstudio_terminal02.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>Prática 4</h2>
+<p><strong>Diretório local</strong></p>
+<ol type="1">
+<li>Abram o <code>Terminal</code> do RStudio</li>
+<li>No <code>Terminal</code>, rodem: <code>cd 'caminho/diretorio'</code></li>
 <li>No <code>Terminal</code>, rodem: <code>git init</code></li>
 <li>No <code>Terminal</code>, rodem: <code>git add -Av</code></li>
 <li>No <code>Terminal</code>, rodem: <code>git commit -m 'add script.R'</code></li>
@@ -776,21 +784,21 @@
 <h2>Prática 5</h2>
 <p><strong>Forkar um diretório remoto</strong></p>
 <ol type="1">
-<li>Forken o repositório “syllabus-text” da disciplina</li>
+<li>Forken o repositório <code>syllabus-text</code> da disciplina</li>
 </ol>
 
 <img data-src="img/github_fork_site.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
-<p><a href="https://github.com/mauriciovancine/workshop-git-github-rstudio">https://github.com/mauriciovancine/workshop-git-github-rstudio</a></p>
+<p><a href="https://github.com/course-intror/syllabus-text">https://github.com/course-intror/syllabus-text</a></p>
 </div>
 </section>
 <section class="slide level2">
 <h2>9. Iniciando remotamente</h2>
-<p>Agora o repositório do workshop, que estava no meu GitHub, foi copiado (“garfado”) para o GitHub de vocês</p>
+<p>Agora esse repositório, que estava no meu GitHub, foi copiado (“garfado”) para o GitHub de vocês</p>
 
 <img data-src="img/gif_fork.gif" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>Agora, abram o repositório “usuario/teste” que vocês criaram</h1>
+<h1>Agora, abram o repositório do GitHub <code>usuario/teste</code> que vocês criaram</h1>
 
 </section>
 <section class="slide level2">
@@ -811,10 +819,10 @@
 <p>Primeiro, vamos <strong>criar uma pasta</strong> chamada <code>github</code></p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="st">".                               # raiz"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="st">".                               # raiz"</span></span>
 <span id="cb2-2"><a href=""></a><span class="st">"    ├── home/                   # home"</span></span>
 <span id="cb2-3"><a href=""></a><span class="st">"        ├── data/               # dados"</span> </span>
-<span id="cb2-4"><a href=""></a><span class="st">"            ├── github/         # todos os repositorios"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href=""></a><span class="st">"            ├── github/         # todos os repositorios"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/diretorio.png" class="absolute" style="top: 400px; right: 30px; width: 100%; "></p>
 </section></section>
@@ -843,7 +851,7 @@
 <li>Usando o <strong>terminal</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="sc">$</span> git clone git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="sc">$</span> git clone git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 
@@ -857,25 +865,25 @@
 </section>
 <section class="slide level2">
 <h2>9. Iniciando remotamente</h2>
-<p>3.1 Criar um <strong>Projeto R</strong> com controle de versão</p>
+<p>Criar um <strong>Projeto R</strong> com controle de versão</p>
 <p><code>File &gt; New Project &gt; Version Control</code></p>
 <p><img data-src="img/rstudio_git_create01.png" class="absolute" style="top: 210px; right: 20px; width: 100%; "></p>
 </section>
 <section class="slide level2">
 <h2>9. Iniciando remotamente</h2>
-<p>3.2 Escolher <strong>clonar repositório</strong> do GitHub</p>
+<p>Escolher <strong>clonar repositório</strong> do GitHub</p>
 <p><code>Git</code></p>
 <p><img data-src="img/rstudio_git_create02.png" class="absolute" style="top: 210px; right: 20px; width: 100%; "></p>
 </section>
 <section class="slide level2">
 <h2>9. Iniciando remotamente</h2>
-<p>3.3 Preencher com dados do repositório do <strong>GitHub</strong></p>
+<p>Preencher com dados do repositório do <strong>GitHub</strong></p>
 <p><code>Repository URL</code></p>
 <p><img data-src="img/rstudio_git_create03.png" class="absolute" style="top: 210px; right: 20px; width: 100%; "></p>
 </section>
 <section class="slide level2">
 <h2>9. Iniciando remotamente</h2>
-<p>3.4 Preencher:</p>
+<p>Preencher:</p>
 <div style="font-size: 80%;">
 <ul>
 <li>Repository URL: <code>git@github.com:mauriciovancine/teste.git</code></li>
@@ -1010,7 +1018,7 @@
 
 <section>
 <section class="title-slide slide level1 center">
-<h1>Usando o RStudio e para o repositório “usuario/teste”</h1>
+<h1>Usando o RStudio e para o repositório <code>usuario/teste</code></h1>
 
 </section>
 <section class="slide level2">
@@ -1028,9 +1036,9 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb4-2"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb4-3"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
 <div class="footer">
@@ -1042,7 +1050,8 @@
 <p>Vamos criar um arquivo no diretório</p>
 <p>Usando a aba <strong>Terminal</strong> do RStudio</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> touch test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> touch teste.txt <span class="co"># windows</span></span>
+<span id="cb5-2"><a href=""></a><span class="sc">$</span> type nul <span class="sc">&gt;</span> teste.txt <span class="co"># linux</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1050,13 +1059,13 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb6-2"><a href=""></a><span class="co"># On branch master</span></span>
 <span id="cb6-3"><a href=""></a><span class="co"># Untracked files:</span></span>
 <span id="cb6-4"><a href=""></a><span class="co">#   (use "git add &lt;file&gt;..." to include in what will be committed)</span></span>
-<span id="cb6-5"><a href=""></a><span class="co">#   test.txt</span></span>
+<span id="cb6-5"><a href=""></a><span class="co">#   teste.txt</span></span>
 <span id="cb6-6"><a href=""></a><span class="co"># </span></span>
-<span id="cb6-7"><a href=""></a><span class="co"># nothing added to commit but untracked files present (use "git add" to track)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href=""></a><span class="co"># nothing added to commit but untracked files present (use "git add" to track)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
 <div class="footer">
@@ -1067,7 +1076,7 @@
 <h2>10. Versionamento</h2>
 <p><code>git add [file]</code>: adiciona mudanças após edições (<strong>staging area</strong>) [Index]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="sc">$</span> git add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="sc">$</span> git add teste.txt</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
 <div class="footer">
@@ -1078,8 +1087,8 @@
 <h2>10. Versionamento</h2>
 <p><code>git add -v [file]</code>: adiciona mudanças após edições (<strong>staging area</strong>) [Index]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="sc">$</span> git add test.txt <span class="sc">-</span>v</span>
-<span id="cb8-2"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="sc">$</span> git add teste.txt <span class="sc">-</span>v</span>
+<span id="cb8-2"><a href=""></a><span class="co"># add 'teste.txt'</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
 <div class="footer">
@@ -1090,8 +1099,8 @@
 <h2>10. Versionamento</h2>
 <p><code>git add -Av</code>: adiciona todas mudanças após edições (<strong>staging area</strong>) [Index]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
-<span id="cb9-2"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
+<span id="cb9-2"><a href=""></a><span class="co"># add 'teste.txt'</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
 <div class="footer">
@@ -1102,7 +1111,7 @@
 <h2>10. Versionamento</h2>
 <p><code>git add .</code>: adiciona todas mudanças após edições (<strong>staging area</strong>) [Index]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="sc">$</span> git add .</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="sc">$</span> git add .</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
 <div class="footer">
@@ -1113,11 +1122,11 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb11-2"><a href=""></a><span class="co"># On branch master</span></span>
 <span id="cb11-3"><a href=""></a><span class="co"># Changes to be committed:</span></span>
 <span id="cb11-4"><a href=""></a><span class="co">#   (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
-<span id="cb11-5"><a href=""></a><span class="co">#   new file:   test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href=""></a><span class="co">#   new file:   teste.txt</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_trees.png" class="absolute" style="top: 450px; right: 230px; width: 60%; "></p>
 <div class="footer">
@@ -1146,10 +1155,10 @@
 <h2>10. Versionamento</h2>
 <p><code>git commit -m "[mensagem]"</code>: registra as alterações da <strong>staging area</strong> no <strong>repository</strong> com uma mensagem [HEAD]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"add test.txt"</span></span>
-<span id="cb12-2"><a href=""></a><span class="co"># [master 5a164d5] add test.txt</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"add teste.txt"</span></span>
+<span id="cb12-2"><a href=""></a><span class="co"># [master 5a164d5] add teste.txt</span></span>
 <span id="cb12-3"><a href=""></a><span class="co"># 1 file changed, 0 insertions(+), 0 deletions(-)</span></span>
-<span id="cb12-4"><a href=""></a><span class="co"># create mode 100644 test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href=""></a><span class="co"># create mode 100644 teste.txt</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git-add-commit.png" class="absolute" style="top: 400px; right: 200px; width: 50%; "></p>
 <div class="footer">
@@ -1160,9 +1169,9 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb13-2"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb13-3"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
 <div class="footer">
@@ -1183,9 +1192,9 @@
 </section>
 <section class="slide level2">
 <h2>10. Versionamento</h2>
-<p>Usando a aba <strong>Files</strong> do RStudio, vamos abrir e editar o arquivo <strong>test.txt</strong></p>
+<p>Usando a aba <strong>Files</strong> do RStudio, vamos abrir e editar o arquivo <strong>teste.txt</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>Acabo de inserir uma edição ao meu arquivo</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>Acabo de inserir uma edição ao meu arquivo</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1193,13 +1202,13 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb15-2"><a href=""></a><span class="co"># On branch master</span></span>
 <span id="cb15-3"><a href=""></a><span class="co"># Changes not staged for commit:</span></span>
 <span id="cb15-4"><a href=""></a><span class="co">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></span>
 <span id="cb15-5"><a href=""></a><span class="co">#   (use "git restore &lt;file&gt;..." to discard changes in working directory)</span></span>
-<span id="cb15-6"><a href=""></a><span class="co">#   modified:   test.txt</span></span>
-<span id="cb15-7"><a href=""></a><span class="co"># no changes added to commit (use "git add" and/or "git commit -a")</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a href=""></a><span class="co">#   modified:   teste.txt</span></span>
+<span id="cb15-7"><a href=""></a><span class="co"># no changes added to commit (use "git add" and/or "git commit -a")</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
 <div class="footer">
@@ -1210,8 +1219,8 @@
 <h2>10. Versionamento</h2>
 <p><code>git add</code>: adiciona mudanças após edições na <strong>staging area</strong> [Index]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
-<span id="cb16-2"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
+<span id="cb16-2"><a href=""></a><span class="co"># add 'teste.txt'</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
 </section>
@@ -1219,11 +1228,11 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb17-2"><a href=""></a><span class="co"># On branch master</span></span>
 <span id="cb17-3"><a href=""></a><span class="co"># Changes to be committed:</span></span>
 <span id="cb17-4"><a href=""></a><span class="co">#   (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
-<span id="cb17-5"><a href=""></a><span class="co">#   modified:   test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-5"><a href=""></a><span class="co">#   modified:   teste.txt</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
 </section>
@@ -1231,9 +1240,9 @@
 <h2>10. Versionamento</h2>
 <p><code>git commit -m "[mensagem]"</code>: registra as alterações da <strong>staging area</strong> no <strong>repository</strong> com uma mensagem [HEAD]</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"mod test.txt"</span></span>
-<span id="cb18-2"><a href=""></a><span class="co"># [master f73fca3] modificação do test.txt</span></span>
-<span id="cb18-3"><a href=""></a><span class="co">#  1 file changed, 1 insertion(+)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"mod teste.txt"</span></span>
+<span id="cb18-2"><a href=""></a><span class="co"># [master f73fca3] modificação do teste.txt</span></span>
+<span id="cb18-3"><a href=""></a><span class="co">#  1 file changed, 1 insertion(+)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git-add-commit.png" class="absolute" style="top: 400px; right: 200px; width: 50%; "></p>
 </section>
@@ -1241,11 +1250,25 @@
 <h2>10. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="sc">$</span> git status</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb19-2"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb19-3"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
+</section>
+<section class="slide level2">
+<h2>10. Versionamento</h2>
+
+<img data-src="img/git_commit01.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Artwork by <a href="https://x.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>10. Versionamento</h2>
+
+<img data-src="img/git_commit02.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Artwork by <a href="https://x.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>10. Versionamento</h2>
@@ -1271,64 +1294,18 @@
 <section class="slide level2">
 <h2>10. Versionamento</h2>
 <p><strong>Corrigir mensagens de commit</strong></p>
+<div style="font-size: 70%;">
 <ul>
 <li>Corrigir mensagens de commit é <strong>complicado</strong></li>
 <li>Vou mostrar como corrigir apenas a <strong>última mensagem</strong></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="sc">$</span> git log</span>
-<span id="cb20-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb20-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb20-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb20-5"><a href=""></a></span>
-<span id="cb20-6"><a href=""></a><span class="co">#     modificação do test.txt</span></span>
-<span id="cb20-7"><a href=""></a></span>
-<span id="cb20-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb20-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb20-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb20-11"><a href=""></a></span>
-<span id="cb20-12"><a href=""></a><span class="co">#     add test.txt</span></span>
-<span id="cb20-13"><a href=""></a></span>
-<span id="cb20-14"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
-<span id="cb20-15"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb20-16"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span>
-<span id="cb20-17"><a href=""></a></span>
-<span id="cb20-18"><a href=""></a><span class="co">#     first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section class="slide level2">
-<h2>10. Versionamento</h2>
-<p><strong>Corrigir mensagens de commit</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="sc">$</span> git commit <span class="sc">--</span>amend <span class="sc">-</span>m <span class="st">"correcao do ultimo commit"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="sc">$</span> git commit <span class="sc">--</span>amend <span class="sc">-</span>m <span class="st">"correcao do ultimo commit"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_commit_amend.jpg" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
 <p><a href="https://gitfichas.com/projects/031">GitFichas - Jéssia Temporal</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>10. Versionamento</h2>
-<p><strong>Corrigir mensagens de commit</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="sc">$</span> git log</span>
-<span id="cb22-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb22-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb22-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb22-5"><a href=""></a></span>
-<span id="cb22-6"><a href=""></a><span class="co">#     correcao do ultimo commit</span></span>
-<span id="cb22-7"><a href=""></a></span>
-<span id="cb22-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb22-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb22-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb22-11"><a href=""></a></span>
-<span id="cb22-12"><a href=""></a><span class="co">#     add test.txt</span></span>
-<span id="cb22-13"><a href=""></a></span>
-<span id="cb22-14"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
-<span id="cb22-15"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb22-16"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span>
-<span id="cb22-17"><a href=""></a></span>
-<span id="cb22-18"><a href=""></a><span class="co">#     first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1345,7 +1322,15 @@
 </section>
 <section class="slide level2">
 <h2>10. Versionamento</h2>
-<p><strong>git</strong></p>
+<p><strong>Fluxo do versionamento</strong></p>
+
+<img data-src="img/git_fluxo.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Artwork by <a href="https://x.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>10. Versionamento</h2>
+<p><strong>git e commits</strong></p>
 <p align="center">
 <iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/6OokP-NE49k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
@@ -1389,21 +1374,22 @@
 <li>Criando um arquivo</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="sc">$</span> touch <span class="sc">~</span><span class="er">/</span>.gitignore</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="sc">$</span> type nul <span class="sc">&gt;</span> .gitignore <span class="co"># windows</span></span>
+<span id="cb21-2"><a href=""></a><span class="sc">$</span> touch <span class="sc">~</span><span class="er">/</span>.gitignore <span class="co"># linux</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Preenchendo com padrões</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="co"># ignorar arquivos</span></span>
-<span id="cb24-2"><a href=""></a>raster.tif</span>
-<span id="cb24-3"><a href=""></a></span>
-<span id="cb24-4"><a href=""></a><span class="co"># ignorar diretorios</span></span>
-<span id="cb24-5"><a href=""></a>temp<span class="sc">/</span></span>
-<span id="cb24-6"><a href=""></a></span>
-<span id="cb24-7"><a href=""></a><span class="co"># ignorar padrao </span></span>
-<span id="cb24-8"><a href=""></a><span class="er">*</span><span class="fu">.tif</span> (ignorar todos com .tif)</span>
-<span id="cb24-9"><a href=""></a><span class="sc">!</span><span class="fu">.tif</span> (nao ignorar todos com .tif)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="co"># ignorar arquivos</span></span>
+<span id="cb22-2"><a href=""></a>raster.tif</span>
+<span id="cb22-3"><a href=""></a></span>
+<span id="cb22-4"><a href=""></a><span class="co"># ignorar diretorios</span></span>
+<span id="cb22-5"><a href=""></a>temp<span class="sc">/</span></span>
+<span id="cb22-6"><a href=""></a></span>
+<span id="cb22-7"><a href=""></a><span class="co"># ignorar padrao </span></span>
+<span id="cb22-8"><a href=""></a><span class="er">*</span><span class="fu">.tif</span> (ignorar todos com .tif)</span>
+<span id="cb22-9"><a href=""></a><span class="sc">!</span><span class="fu">.tif</span> (nao ignorar todos com .tif)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -1465,119 +1451,119 @@
 <li>Quando você faz um git commit, o HEAD <strong>se move automaticamente</strong> para esse novo commit</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># * commit C (HEAD -&gt; main)</span></span>
-<span id="cb25-2"><a href=""></a><span class="co"># * commit B</span></span>
-<span id="cb25-3"><a href=""></a><span class="co"># * commit A</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="co"># * commit C (HEAD -&gt; main)</span></span>
+<span id="cb23-2"><a href=""></a><span class="co"># * commit B</span></span>
+<span id="cb23-3"><a href=""></a><span class="co"># * commit A</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git log</code>: histórico dos commits</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="sc">$</span> git log</span>
-<span id="cb26-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb26-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb26-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb26-5"><a href=""></a></span>
-<span id="cb26-6"><a href=""></a><span class="co">#     modificação do test.txt</span></span>
-<span id="cb26-7"><a href=""></a></span>
-<span id="cb26-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb26-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb26-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb26-11"><a href=""></a></span>
-<span id="cb26-12"><a href=""></a><span class="co">#     add test.txt</span></span>
-<span id="cb26-13"><a href=""></a></span>
-<span id="cb26-14"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
-<span id="cb26-15"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb26-16"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span>
-<span id="cb26-17"><a href=""></a></span>
-<span id="cb26-18"><a href=""></a><span class="co">#     first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="sc">$</span> git log</span>
+<span id="cb24-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
+<span id="cb24-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb24-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
+<span id="cb24-5"><a href=""></a></span>
+<span id="cb24-6"><a href=""></a><span class="co">#     modificação do teste.txt</span></span>
+<span id="cb24-7"><a href=""></a></span>
+<span id="cb24-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
+<span id="cb24-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb24-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
+<span id="cb24-11"><a href=""></a></span>
+<span id="cb24-12"><a href=""></a><span class="co">#     add teste.txt</span></span>
+<span id="cb24-13"><a href=""></a></span>
+<span id="cb24-14"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
+<span id="cb24-15"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb24-16"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span>
+<span id="cb24-17"><a href=""></a></span>
+<span id="cb24-18"><a href=""></a><span class="co">#     first commit</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git log [file]</code>: histórico dos commits para arquivos</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="sc">$</span> git log test.txt</span>
-<span id="cb27-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb27-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb27-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb27-5"><a href=""></a></span>
-<span id="cb27-6"><a href=""></a><span class="co">#     modificação do test.txt</span></span>
-<span id="cb27-7"><a href=""></a></span>
-<span id="cb27-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb27-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb27-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb27-11"><a href=""></a></span>
-<span id="cb27-12"><a href=""></a><span class="co">#     add test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="sc">$</span> git log teste.txt</span>
+<span id="cb25-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
+<span id="cb25-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb25-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
+<span id="cb25-5"><a href=""></a></span>
+<span id="cb25-6"><a href=""></a><span class="co">#     modificação do teste.txt</span></span>
+<span id="cb25-7"><a href=""></a></span>
+<span id="cb25-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
+<span id="cb25-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb25-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
+<span id="cb25-11"><a href=""></a></span>
+<span id="cb25-12"><a href=""></a><span class="co">#     add teste.txt</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git log --oneline</code>: histórico dos commits simplificado</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>oneline</span>
-<span id="cb28-2"><a href=""></a><span class="co"># dfefc85 (HEAD -&gt; master) modificação do test.txt</span></span>
-<span id="cb28-3"><a href=""></a><span class="co"># 5a164d5 add test.txt</span></span>
-<span id="cb28-4"><a href=""></a><span class="co"># 50c520f first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>oneline</span>
+<span id="cb26-2"><a href=""></a><span class="co"># dfefc85 (HEAD -&gt; master) modificação do teste.txt</span></span>
+<span id="cb26-3"><a href=""></a><span class="co"># 5a164d5 add teste.txt</span></span>
+<span id="cb26-4"><a href=""></a><span class="co"># 50c520f first commit</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git log --graph</code>: histórico dos commits em grafo</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>graph</span>
-<span id="cb29-2"><a href=""></a><span class="co"># * commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb29-3"><a href=""></a><span class="co"># | Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb29-4"><a href=""></a><span class="co"># | Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb29-5"><a href=""></a><span class="co"># | </span></span>
-<span id="cb29-6"><a href=""></a><span class="co"># |     modificação do test.txt</span></span>
-<span id="cb29-7"><a href=""></a><span class="co"># | </span></span>
-<span id="cb29-8"><a href=""></a><span class="co"># * commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb29-9"><a href=""></a><span class="co"># | Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb29-10"><a href=""></a><span class="co"># | Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb29-11"><a href=""></a><span class="co"># | </span></span>
-<span id="cb29-12"><a href=""></a><span class="co"># |     add test.txt</span></span>
-<span id="cb29-13"><a href=""></a><span class="co"># | </span></span>
-<span id="cb29-14"><a href=""></a><span class="co"># * commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
-<span id="cb29-15"><a href=""></a><span class="co">#   Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb29-16"><a href=""></a><span class="co">#   Date:   Thu May 29 09:34:13 2025 -0300</span></span>
-<span id="cb29-17"><a href=""></a><span class="co">#   </span></span>
-<span id="cb29-18"><a href=""></a><span class="co">#       first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>graph</span>
+<span id="cb27-2"><a href=""></a><span class="co"># * commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
+<span id="cb27-3"><a href=""></a><span class="co"># | Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb27-4"><a href=""></a><span class="co"># | Date:   Sat May 31 18:22:19 2025 -0300</span></span>
+<span id="cb27-5"><a href=""></a><span class="co"># | </span></span>
+<span id="cb27-6"><a href=""></a><span class="co"># |     modificação do teste.txt</span></span>
+<span id="cb27-7"><a href=""></a><span class="co"># | </span></span>
+<span id="cb27-8"><a href=""></a><span class="co"># * commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
+<span id="cb27-9"><a href=""></a><span class="co"># | Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb27-10"><a href=""></a><span class="co"># | Date:   Fri May 30 09:53:55 2025 -0300</span></span>
+<span id="cb27-11"><a href=""></a><span class="co"># | </span></span>
+<span id="cb27-12"><a href=""></a><span class="co"># |     add teste.txt</span></span>
+<span id="cb27-13"><a href=""></a><span class="co"># | </span></span>
+<span id="cb27-14"><a href=""></a><span class="co"># * commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
+<span id="cb27-15"><a href=""></a><span class="co">#   Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb27-16"><a href=""></a><span class="co">#   Date:   Thu May 29 09:34:13 2025 -0300</span></span>
+<span id="cb27-17"><a href=""></a><span class="co">#   </span></span>
+<span id="cb27-18"><a href=""></a><span class="co">#       first commit</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git log --grep</code>: faz uma busca no histórico dos commits</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>grep<span class="ot">=</span><span class="st">"first commit"</span></span>
-<span id="cb30-2"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
-<span id="cb30-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb30-4"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span>
-<span id="cb30-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb30-6"><a href=""></a><span class="co">#     first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>grep<span class="ot">=</span><span class="st">"first commit"</span></span>
+<span id="cb28-2"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
+<span id="cb28-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb28-4"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span>
+<span id="cb28-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb28-6"><a href=""></a><span class="co">#     first commit</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git log --author</code>: filtra o histórico dos commits por autor</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>author<span class="ot">=</span><span class="st">"mauricio"</span></span>
-<span id="cb31-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb31-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb31-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb31-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb31-6"><a href=""></a><span class="co">#     modificação do test.txt</span></span>
-<span id="cb31-7"><a href=""></a><span class="co"># </span></span>
-<span id="cb31-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb31-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb31-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb31-11"><a href=""></a><span class="co"># </span></span>
-<span id="cb31-12"><a href=""></a><span class="co">#     add test.txt</span></span>
-<span id="cb31-13"><a href=""></a><span class="co"># </span></span>
-<span id="cb31-14"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
-<span id="cb31-15"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb31-16"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>author<span class="ot">=</span><span class="st">"mauricio"</span></span>
+<span id="cb29-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
+<span id="cb29-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb29-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
+<span id="cb29-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb29-6"><a href=""></a><span class="co">#     modificação do teste.txt</span></span>
+<span id="cb29-7"><a href=""></a><span class="co"># </span></span>
+<span id="cb29-8"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
+<span id="cb29-9"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb29-10"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
+<span id="cb29-11"><a href=""></a><span class="co"># </span></span>
+<span id="cb29-12"><a href=""></a><span class="co">#     add teste.txt</span></span>
+<span id="cb29-13"><a href=""></a><span class="co"># </span></span>
+<span id="cb29-14"><a href=""></a><span class="co"># commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af</span></span>
+<span id="cb29-15"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb29-16"><a href=""></a><span class="co"># Date:   Thu May 29 09:34:13 2025 -0300</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1592,63 +1578,63 @@
 <h2>12. Histórico</h2>
 <p><code>git show</code>: detalhes de um commit</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="sc">$</span> git show</span>
-<span id="cb32-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb32-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb32-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb32-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb32-6"><a href=""></a><span class="co">#     modificação do test.txt</span></span>
-<span id="cb32-7"><a href=""></a><span class="co"># </span></span>
-<span id="cb32-8"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb32-9"><a href=""></a><span class="co"># index e69de29..f5201c0 100644</span></span>
-<span id="cb32-10"><a href=""></a><span class="co"># --- a/test.txt</span></span>
-<span id="cb32-11"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
-<span id="cb32-12"><a href=""></a><span class="co"># @@ -0,0 +1 @@</span></span>
-<span id="cb32-13"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb32-14"><a href=""></a><span class="co"># \ No newline at end of file</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="sc">$</span> git show</span>
+<span id="cb30-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
+<span id="cb30-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb30-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
+<span id="cb30-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb30-6"><a href=""></a><span class="co">#     modificação do teste.txt</span></span>
+<span id="cb30-7"><a href=""></a><span class="co"># </span></span>
+<span id="cb30-8"><a href=""></a><span class="co"># diff --git a/teste.txt b/teste.txt</span></span>
+<span id="cb30-9"><a href=""></a><span class="co"># index e69de29..f5201c0 100644</span></span>
+<span id="cb30-10"><a href=""></a><span class="co"># --- a/teste.txt</span></span>
+<span id="cb30-11"><a href=""></a><span class="co"># +++ b/teste.txt</span></span>
+<span id="cb30-12"><a href=""></a><span class="co"># @@ -0,0 +1 @@</span></span>
+<span id="cb30-13"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb30-14"><a href=""></a><span class="co"># \ No newline at end of file</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git show [hash]</code>: detalhes de um commit específico</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>oneline</span>
-<span id="cb33-2"><a href=""></a><span class="co"># dfefc85 (HEAD -&gt; master) modificação do test.txt</span></span>
-<span id="cb33-3"><a href=""></a><span class="co"># 5a164d5 add test.txt</span></span>
-<span id="cb33-4"><a href=""></a><span class="co"># 50c520f first commit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>oneline</span>
+<span id="cb31-2"><a href=""></a><span class="co"># dfefc85 (HEAD -&gt; master) modificação do teste.txt</span></span>
+<span id="cb31-3"><a href=""></a><span class="co"># 5a164d5 add teste.txt</span></span>
+<span id="cb31-4"><a href=""></a><span class="co"># 50c520f first commit</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="sc">$</span> git show <span class="dv">5</span>a164d5</span>
-<span id="cb34-2"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
-<span id="cb34-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb34-4"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
-<span id="cb34-5"><a href=""></a><span class="co">#</span></span>
-<span id="cb34-6"><a href=""></a><span class="co">#    add test.txt</span></span>
-<span id="cb34-7"><a href=""></a><span class="co">#</span></span>
-<span id="cb34-8"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb34-9"><a href=""></a><span class="co"># new file mode 100644</span></span>
-<span id="cb34-10"><a href=""></a><span class="co"># index 0000000..e69de29</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="sc">$</span> git show <span class="dv">5</span>a164d5</span>
+<span id="cb32-2"><a href=""></a><span class="co"># commit 5a164d55896d6251249a5142f6110e8e0b06a49b</span></span>
+<span id="cb32-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb32-4"><a href=""></a><span class="co"># Date:   Fri May 30 09:53:55 2025 -0300</span></span>
+<span id="cb32-5"><a href=""></a><span class="co">#</span></span>
+<span id="cb32-6"><a href=""></a><span class="co">#    add teste.txt</span></span>
+<span id="cb32-7"><a href=""></a><span class="co">#</span></span>
+<span id="cb32-8"><a href=""></a><span class="co"># diff --git a/teste.txt b/teste.txt</span></span>
+<span id="cb32-9"><a href=""></a><span class="co"># new file mode 100644</span></span>
+<span id="cb32-10"><a href=""></a><span class="co"># index 0000000..e69de29</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>12. Histórico</h2>
 <p><code>git show [file]</code>: detalhes de um arquivo específico</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="sc">$</span> git show test.txt</span>
-<span id="cb35-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
-<span id="cb35-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
-<span id="cb35-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
-<span id="cb35-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb35-6"><a href=""></a><span class="co">#     modificação do test.txt</span></span>
-<span id="cb35-7"><a href=""></a><span class="co"># </span></span>
-<span id="cb35-8"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb35-9"><a href=""></a><span class="co"># index e69de29..f5201c0 100644</span></span>
-<span id="cb35-10"><a href=""></a><span class="co"># --- a/test.txt</span></span>
-<span id="cb35-11"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
-<span id="cb35-12"><a href=""></a><span class="co"># @@ -0,0 +1 @@</span></span>
-<span id="cb35-13"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb35-14"><a href=""></a><span class="co"># \ No newline at end of file</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="sc">$</span> git show teste.txt</span>
+<span id="cb33-2"><a href=""></a><span class="co"># commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -&gt; master)</span></span>
+<span id="cb33-3"><a href=""></a><span class="co"># Author: mauriciovancine &lt;mauricio.vancine@gmail.com&gt;</span></span>
+<span id="cb33-4"><a href=""></a><span class="co"># Date:   Sat May 31 18:22:19 2025 -0300</span></span>
+<span id="cb33-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb33-6"><a href=""></a><span class="co">#     modificação do teste.txt</span></span>
+<span id="cb33-7"><a href=""></a><span class="co"># </span></span>
+<span id="cb33-8"><a href=""></a><span class="co"># diff --git a/teste.txt b/teste.txt</span></span>
+<span id="cb33-9"><a href=""></a><span class="co"># index e69de29..f5201c0 100644</span></span>
+<span id="cb33-10"><a href=""></a><span class="co"># --- a/teste.txt</span></span>
+<span id="cb33-11"><a href=""></a><span class="co"># +++ b/teste.txt</span></span>
+<span id="cb33-12"><a href=""></a><span class="co"># @@ -0,0 +1 @@</span></span>
+<span id="cb33-13"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb33-14"><a href=""></a><span class="co"># \ No newline at end of file</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1658,138 +1644,7 @@
 <img data-src="img/git_diff.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
 <p><a href="https://trailhead.salesforce.com/pt-BR/content/learn/modules/git-and-git-hub-basics/work-with-your-history-in-git">Work with Your History in Git</a></p>
 </div>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff</code>: diferenças entre <strong>working directory</strong> e <strong>staging area</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>git diff</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br> <strong>Observação</strong>: Não retornou nenhuma diferença, pois não editamos o arquivo</p>
-
-<img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff</code>: diferenças entre <strong>working directory</strong> e <strong>staging area</strong></p>
-<p><br> Vamos editar o arquivo “test.txt” usando o terminal</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>echo <span class="st">""</span> <span class="sc">&gt;</span><span class="er">&gt;</span> test.txt</span>
-<span id="cb37-2"><a href=""></a>echo <span class="st">"Nova linha de código"</span> <span class="sc">&gt;</span><span class="er">&gt;</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-
-<img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff</code>: diferenças entre <strong>working directory</strong> e <strong>staging area</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="sc">$</span> git diff</span>
-<span id="cb38-2"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb38-3"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
-<span id="cb38-4"><a href=""></a><span class="co"># --- a/test.txt</span></span>
-<span id="cb38-5"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
-<span id="cb38-6"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
-<span id="cb38-7"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb38-8"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
-<span id="cb38-9"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb38-10"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div style="font-size: 80%;">
-<ul>
-<li><code>diff --git a/test.txt b/test.txt</code>: que arquivo mudou</li>
-<li><code>@@...@@</code>: onde foi mudado</li>
-<li><code>-</code>: linhas removidas</li>
-<li><code>+</code>: linhas adicionadas</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff --staged</code>: diferenças entre <strong>staging area</strong> e <strong>repository</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="sc">$</span> git diff <span class="sc">--</span>staged</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Observação</strong>: Não retornou nenhuma diferença, pois não adicionamos ao staging area</p>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff --staged</code>: diferenças entre <strong>staging area</strong> e <strong>repository</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
-<span id="cb40-2"><a href=""></a><span class="co"># add 'test.txt'</span></span>
-<span id="cb40-3"><a href=""></a></span>
-<span id="cb40-4"><a href=""></a><span class="sc">$</span> git diff <span class="sc">--</span>staged</span>
-<span id="cb40-5"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb40-6"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
-<span id="cb40-7"><a href=""></a><span class="co"># --- a/test.txt</span></span>
-<span id="cb40-8"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
-<span id="cb40-9"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
-<span id="cb40-10"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb40-11"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
-<span id="cb40-12"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb40-13"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff HEAD</code>: diferenças entre <strong>working directory</strong> e <strong>repository</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a><span class="sc">$</span> git diff HEAD</span>
-<span id="cb41-2"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb41-3"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
-<span id="cb41-4"><a href=""></a><span class="co"># --- a/test.txt</span></span>
-<span id="cb41-5"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
-<span id="cb41-6"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
-<span id="cb41-7"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb41-8"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
-<span id="cb41-9"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb41-10"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff [file]</code>: diferenças entre versões do mesmo arquivo</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="sc">$</span> git diff test.txt</span>
-<span id="cb42-2"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb42-3"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
-<span id="cb42-4"><a href=""></a><span class="co"># --- a/test.txt</span></span>
-<span id="cb42-5"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
-<span id="cb42-6"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
-<span id="cb42-7"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb42-8"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
-<span id="cb42-9"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
-<span id="cb42-10"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff [hash1] [hash2]</code>: diferenças entre commits</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>oneline</span>
-<span id="cb43-2"><a href=""></a><span class="co"># dfefc85 (HEAD -&gt; master) modificação do test.txt</span></span>
-<span id="cb43-3"><a href=""></a><span class="co"># 5a164d5 add test.txt</span></span>
-<span id="cb43-4"><a href=""></a><span class="co"># 50c520f first commit</span></span>
-<span id="cb43-5"><a href=""></a></span>
-<span id="cb43-6"><a href=""></a><span class="sc">$</span> git diff <span class="dv">5</span>a164d5 <span class="dv">50</span>c520f</span>
-<span id="cb43-7"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
-<span id="cb43-8"><a href=""></a><span class="co"># deleted file mode 100644</span></span>
-<span id="cb43-9"><a href=""></a><span class="co"># index e69de29..0000000</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>13. Diferenças</h2>
-<p><code>git diff 5a164d5 50c520f --stat</code>: diferenças em resumo, sem mostrar o conteúdo alterado</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="sc">$</span> git diff <span class="dv">5</span>a164d5 <span class="dv">50</span>c520f <span class="sc">--</span>stat</span>
-<span id="cb44-2"><a href=""></a><span class="co">#  test.txt | 0</span></span>
-<span id="cb44-3"><a href=""></a><span class="co"># 1 file changed, 0 insertions(+), 0 deletions(-)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section></section>
-<section class="title-slide slide level1 center">
-<h1></h1>
-
-<img data-src="img/break-time02.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-
 <section class="title-slide slide level1 center">
 <h1>E como voltar no tempo?</h1>
 
@@ -1831,7 +1686,7 @@
 <section class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="img/break-time03.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/break-time02.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 
 <section class="title-slide slide level1 center">
 <h1></h1>
@@ -1878,7 +1733,7 @@
 </section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
-<p><code>git branch</code>: listar as branchs e verificar a branch de edição (<code>*</code>)</p>
+<p><code>git branch</code>: listar as branches e verificar a branch de edição (<code>*</code>)</p>
 <div style="font-size: 90%;">
 <ul>
 <li>Em 2020, adotou-se <code>main</code> para a <strong>branch principal</strong> para adotar uma linguagem mais <strong>inclusiva, clara e alinhada</strong> com os padrões de desenvolvimento</li>
@@ -1890,8 +1745,8 @@
 </ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb45-2"><a href=""></a><span class="co"># * master</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb34-2"><a href=""></a><span class="co"># * master</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div style="font-size: 90%;">
 <ul>
@@ -1899,19 +1754,19 @@
 </ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb46-2"><a href=""></a><span class="co"># * main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb35-2"><a href=""></a><span class="co"># * main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
 <p><code>git branch [nome-branch]</code>: criar uma branch</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a><span class="sc">$</span> git branch branch<span class="dv">-1</span></span>
-<span id="cb47-2"><a href=""></a></span>
-<span id="cb47-3"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb47-4"><a href=""></a><span class="co"># branch-1</span></span>
-<span id="cb47-5"><a href=""></a><span class="co"># * main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a><span class="sc">$</span> git branch branch<span class="dv">-1</span></span>
+<span id="cb36-2"><a href=""></a></span>
+<span id="cb36-3"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb36-4"><a href=""></a><span class="co"># branch-1</span></span>
+<span id="cb36-5"><a href=""></a><span class="co"># * main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1919,18 +1774,18 @@
 <h2>15. Ramificações</h2>
 <p><code>git switch [nome-branch]</code>: trocar a branch de edição</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="sc">$</span> git <span class="cf">switch</span> branch<span class="dv">-1</span></span>
-<span id="cb48-2"><a href=""></a><span class="co"># Switched to branch 'branch-1'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="sc">$</span> git <span class="cf">switch</span> branch<span class="dv">-1</span></span>
+<span id="cb37-2"><a href=""></a><span class="co"># Switched to branch 'branch-1'</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_checkout_switch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
-<p><code>git branch</code>: lista os branchs e verifica a branch de edição</p>
+<p><code>git branch</code>: lista os branches e verifica a branch de edição</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb49-2"><a href=""></a><span class="co"># * branch-1</span></span>
-<span id="cb49-3"><a href=""></a><span class="co"># main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb38-2"><a href=""></a><span class="co"># * branch-1</span></span>
+<span id="cb38-3"><a href=""></a><span class="co"># main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1938,19 +1793,19 @@
 <h2>15. Ramificações</h2>
 <p><code>git switch -c [nome-branch]</code>: criar e mudar para a nova branch</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="sc">$</span> git <span class="cf">switch</span> <span class="sc">-</span>c branch<span class="dv">-2</span></span>
-<span id="cb50-2"><a href=""></a><span class="co"># Switched to branch 'branch-2'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="sc">$</span> git <span class="cf">switch</span> <span class="sc">-</span>c branch<span class="dv">-2</span></span>
+<span id="cb39-2"><a href=""></a><span class="co"># Switched to branch 'branch-2'</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_checkout_switch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
-<p><code>git branch</code>: lista os branchs e verifica a branch de edição</p>
+<p><code>git branch</code>: lista os branches e verifica a branch de edição</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb51-2"><a href=""></a><span class="co"># branch-1</span></span>
-<span id="cb51-3"><a href=""></a><span class="co"># * branch-2</span></span>
-<span id="cb51-4"><a href=""></a><span class="co"># main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb40-2"><a href=""></a><span class="co"># branch-1</span></span>
+<span id="cb40-3"><a href=""></a><span class="co"># * branch-2</span></span>
+<span id="cb40-4"><a href=""></a><span class="co"># main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1958,12 +1813,12 @@
 <h2>15. Ramificações</h2>
 <p><code>git branch -m [novo-nome]</code>: renomear uma branch de edição</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="sc">$</span> git branch <span class="sc">-</span>m branch<span class="dv">-3</span></span>
-<span id="cb52-2"><a href=""></a></span>
-<span id="cb52-3"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb52-4"><a href=""></a><span class="co"># branch-1</span></span>
-<span id="cb52-5"><a href=""></a><span class="co"># * branch-3</span></span>
-<span id="cb52-6"><a href=""></a><span class="co"># main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a><span class="sc">$</span> git branch <span class="sc">-</span>m branch<span class="dv">-3</span></span>
+<span id="cb41-2"><a href=""></a></span>
+<span id="cb41-3"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb41-4"><a href=""></a><span class="co"># branch-1</span></span>
+<span id="cb41-5"><a href=""></a><span class="co"># * branch-3</span></span>
+<span id="cb41-6"><a href=""></a><span class="co"># main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1971,12 +1826,12 @@
 <h2>15. Ramificações</h2>
 <p><code>git branch -m [nome-antigo] [novo-nome]</code>: renomear uma branch</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="sc">$</span> git branch <span class="sc">-</span>m branch<span class="dv">-3</span> branch<span class="dv">-2</span></span>
-<span id="cb53-2"><a href=""></a></span>
-<span id="cb53-3"><a href=""></a><span class="sc">$</span> git branch</span>
-<span id="cb53-4"><a href=""></a><span class="co"># branch-1</span></span>
-<span id="cb53-5"><a href=""></a><span class="co"># * branch-2</span></span>
-<span id="cb53-6"><a href=""></a><span class="co"># main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="sc">$</span> git branch <span class="sc">-</span>m branch<span class="dv">-3</span> branch<span class="dv">-2</span></span>
+<span id="cb42-2"><a href=""></a></span>
+<span id="cb42-3"><a href=""></a><span class="sc">$</span> git branch</span>
+<span id="cb42-4"><a href=""></a><span class="co"># branch-1</span></span>
+<span id="cb42-5"><a href=""></a><span class="co"># * branch-2</span></span>
+<span id="cb42-6"><a href=""></a><span class="co"># main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1984,10 +1839,10 @@
 <h2>15. Ramificações</h2>
 <p><code>git branch -d [nome]</code>: deletar uma branch</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="sc">$</span> git branch <span class="sc">-</span>d branch<span class="dv">-1</span></span>
-<span id="cb54-2"><a href=""></a><span class="co"># branch-1</span></span>
-<span id="cb54-3"><a href=""></a><span class="co"># * branch-2</span></span>
-<span id="cb54-4"><a href=""></a><span class="co"># main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="sc">$</span> git branch <span class="sc">-</span>d branch<span class="dv">-1</span></span>
+<span id="cb43-2"><a href=""></a><span class="co"># branch-1</span></span>
+<span id="cb43-3"><a href=""></a><span class="co"># * branch-2</span></span>
+<span id="cb43-4"><a href=""></a><span class="co"># main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1995,9 +1850,10 @@
 <h2>15. Ramificações</h2>
 <p>Vamos criar um arquivo no diretório e na <strong>branch-2</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a><span class="sc">$</span> touch teste_branch2.txt</span>
-<span id="cb55-2"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
-<span id="cb55-3"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"add teste_branch2.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="sc">$</span> type nul <span class="sc">&gt;</span> teste_branch2.txt <span class="co"># windows</span></span>
+<span id="cb44-2"><a href=""></a><span class="sc">$</span> touch teste_branch2.txt <span class="co"># linux</span></span>
+<span id="cb44-3"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
+<span id="cb44-4"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"add teste_branch2.txt"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2005,7 +1861,7 @@
 <h2>15. Ramificações</h2>
 <p><code>git switch</code>: trocar a branch de edição</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="sc">$</span> git <span class="cf">switch</span> main</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="sc">$</span> git <span class="cf">switch</span> main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_branch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2024,31 +1880,31 @@
 </section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
-<p><code>git merge</code>: mescla as branchs em uma única branch</p>
+<p><code>git merge</code>: mescla as branches em uma única branch</p>
 
 <img data-src="img/git_merge.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
-<p><code>git merge</code>: mescla as branchs em uma única branch</p>
+<p><code>git merge</code>: mescla as branches em uma única branch</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a><span class="sc">$</span> git merge branch<span class="dv">-2</span></span>
-<span id="cb57-2"><a href=""></a><span class="co"># Updating c1c596e..9900ebb</span></span>
-<span id="cb57-3"><a href=""></a><span class="co"># Fast-forward</span></span>
-<span id="cb57-4"><a href=""></a><span class="co">#  teste_branch2.txt | 0</span></span>
-<span id="cb57-5"><a href=""></a><span class="co">#  1 file changed, 0 insertions(+), 0 deletions(-)</span></span>
-<span id="cb57-6"><a href=""></a><span class="co">#  create mode 100644 teste_branch2.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="sc">$</span> git merge branch<span class="dv">-2</span></span>
+<span id="cb46-2"><a href=""></a><span class="co"># Updating c1c596e..9900ebb</span></span>
+<span id="cb46-3"><a href=""></a><span class="co"># Fast-forward</span></span>
+<span id="cb46-4"><a href=""></a><span class="co">#  teste_branch2.txt | 0</span></span>
+<span id="cb46-5"><a href=""></a><span class="co">#  1 file changed, 0 insertions(+), 0 deletions(-)</span></span>
+<span id="cb46-6"><a href=""></a><span class="co">#  create mode 100644 teste_branch2.txt</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_merge.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
-<p><code>git merge</code>: mescla as branchs em uma única branch</p>
+<p><code>git merge</code>: mescla as branches em uma única branch</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a>git log <span class="sc">--</span>oneline</span>
-<span id="cb58-2"><a href=""></a><span class="co"># 7aeb06d (HEAD -&gt; master, branch-1) add teste_branch1.txt</span></span>
-<span id="cb58-3"><a href=""></a><span class="co"># f9f2e9c mod2 test.txt</span></span>
-<span id="cb58-4"><a href=""></a><span class="co"># dcbd894 mod test.txt</span></span>
-<span id="cb58-5"><a href=""></a><span class="co"># 8b33bc5 add test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>git log <span class="sc">--</span>oneline</span>
+<span id="cb47-2"><a href=""></a><span class="co"># 7aeb06d (HEAD -&gt; master, branch-1) add teste_branch1.txt</span></span>
+<span id="cb47-3"><a href=""></a><span class="co"># f9f2e9c mod2 teste.txt</span></span>
+<span id="cb47-4"><a href=""></a><span class="co"># dcbd894 mod teste.txt</span></span>
+<span id="cb47-5"><a href=""></a><span class="co"># 8b33bc5 add teste.txt</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_merge.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
@@ -2062,11 +1918,19 @@
 
 <img data-src="img/gif_git_merge.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 
-<section>
 <section class="title-slide slide level1 center">
 <h1></h1>
 
 <img data-src="img/git_merge_warning.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="img/git_merge_hug.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Artwork by <a href="https://x.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
+</div>
+</section>
 <section class="slide level2">
 <h2>15. Ramificações</h2>
 <p><strong>Git Branch Cheatsheet</strong></p>
@@ -2093,8 +1957,8 @@
 <h2>16. Remoto</h2>
 <p><code>git remote</code>: gerencia conexões com repositórios remotos (GitHub)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a><span class="sc">$</span> git remote</span>
-<span id="cb59-2"><a href=""></a><span class="co"># origin</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="sc">$</span> git remote</span>
+<span id="cb48-2"><a href=""></a><span class="co"># origin</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <ul>
@@ -2106,9 +1970,9 @@
 <h2>16. Remoto</h2>
 <p><code>git remote</code>: gerencia conexões com repositórios remotos (GitHub)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a><span class="sc">$</span> git remote <span class="sc">-</span>v</span>
-<span id="cb60-2"><a href=""></a><span class="co"># origin    git@github.com:mauriciovancine/teste.git (fetch)</span></span>
-<span id="cb60-3"><a href=""></a><span class="co"># origin    git@github.com:mauriciovancine/teste.git (push)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="sc">$</span> git remote <span class="sc">-</span>v</span>
+<span id="cb49-2"><a href=""></a><span class="co"># origin    git@github.com:mauriciovancine/teste.git (fetch)</span></span>
+<span id="cb49-3"><a href=""></a><span class="co"># origin    git@github.com:mauriciovancine/teste.git (push)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <div style="font-size: 80%;">
@@ -2127,7 +1991,7 @@
 <li><strong>Observação</strong>: usar o SSH para não precisar digitar a senha</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href=""></a><span class="sc">$</span> git remote add origin git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="sc">$</span> git remote add origin git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git_remote.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
@@ -2163,16 +2027,16 @@
 <h2>16. Remoto</h2>
 <p><code>git push</code>: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a><span class="sc">$</span> git push <span class="sc">-</span>u origin main</span>
-<span id="cb62-2"><a href=""></a><span class="co"># Enumerating objects: 41, done.</span></span>
-<span id="cb62-3"><a href=""></a><span class="co"># Counting objects: 100% (41/41), done.</span></span>
-<span id="cb62-4"><a href=""></a><span class="co"># Delta compression using up to 12 threads</span></span>
-<span id="cb62-5"><a href=""></a><span class="co"># Compressing objects: 100% (35/35), done.</span></span>
-<span id="cb62-6"><a href=""></a><span class="co"># Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.</span></span>
-<span id="cb62-7"><a href=""></a><span class="co"># Total 35 (delta 6), reused 0 (delta 0), pack-reused 0</span></span>
-<span id="cb62-8"><a href=""></a><span class="co"># remote: Resolving deltas: 100% (6/6), completed with 6 local objects.</span></span>
-<span id="cb62-9"><a href=""></a><span class="co"># To github.com:mauriciovancine/course-geospatial-data-r.git</span></span>
-<span id="cb62-10"><a href=""></a><span class="co">#    accc9db..8f70e96  master -&gt; master</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a><span class="sc">$</span> git push <span class="sc">-</span>u origin main</span>
+<span id="cb51-2"><a href=""></a><span class="co"># Enumerating objects: 41, done.</span></span>
+<span id="cb51-3"><a href=""></a><span class="co"># Counting objects: 100% (41/41), done.</span></span>
+<span id="cb51-4"><a href=""></a><span class="co"># Delta compression using up to 12 threads</span></span>
+<span id="cb51-5"><a href=""></a><span class="co"># Compressing objects: 100% (35/35), done.</span></span>
+<span id="cb51-6"><a href=""></a><span class="co"># Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.</span></span>
+<span id="cb51-7"><a href=""></a><span class="co"># Total 35 (delta 6), reused 0 (delta 0), pack-reused 0</span></span>
+<span id="cb51-8"><a href=""></a><span class="co"># remote: Resolving deltas: 100% (6/6), completed with 6 local objects.</span></span>
+<span id="cb51-9"><a href=""></a><span class="co"># To github.com:mauriciovancine/course-geospatial-data-r.git</span></span>
+<span id="cb51-10"><a href=""></a><span class="co">#    accc9db..8f70e96  master -&gt; master</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2236,14 +2100,14 @@
 <h2>16. Remoto</h2>
 <p><code>git fetch</code>: busca atualizações do <strong>repositório remoto</strong> e as traz para o <strong>repositório local</strong>, mas não <strong>altera</strong> a branch atual</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href=""></a><span class="sc">$</span> git fetch origin</span>
-<span id="cb63-2"><a href=""></a><span class="co"># remote: Enumerating objects: 4, done.</span></span>
-<span id="cb63-3"><a href=""></a><span class="co"># remote: Counting objects: 100% (4/4), done.</span></span>
-<span id="cb63-4"><a href=""></a><span class="co"># remote: Compressing objects: 100% (2/2), done.</span></span>
-<span id="cb63-5"><a href=""></a><span class="co"># remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)</span></span>
-<span id="cb63-6"><a href=""></a><span class="co"># Unpacking objects: 100% (3/3), 934 bytes | 934.00 KiB/s, done.</span></span>
-<span id="cb63-7"><a href=""></a><span class="co"># From github.com:mauriciovancine/teste</span></span>
-<span id="cb63-8"><a href=""></a><span class="co">#    4029d2c..dfb960b  main       -&gt; origin/main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="sc">$</span> git fetch origin</span>
+<span id="cb52-2"><a href=""></a><span class="co"># remote: Enumerating objects: 4, done.</span></span>
+<span id="cb52-3"><a href=""></a><span class="co"># remote: Counting objects: 100% (4/4), done.</span></span>
+<span id="cb52-4"><a href=""></a><span class="co"># remote: Compressing objects: 100% (2/2), done.</span></span>
+<span id="cb52-5"><a href=""></a><span class="co"># remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)</span></span>
+<span id="cb52-6"><a href=""></a><span class="co"># Unpacking objects: 100% (3/3), 934 bytes | 934.00 KiB/s, done.</span></span>
+<span id="cb52-7"><a href=""></a><span class="co"># From github.com:mauriciovancine/teste</span></span>
+<span id="cb52-8"><a href=""></a><span class="co">#    4029d2c..dfb960b  main       -&gt; origin/main</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git-fetch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2260,8 +2124,8 @@
 </ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href=""></a><span class="sc">$</span> git merge origin<span class="sc">/</span>main</span>
-<span id="cb64-2"><a href=""></a><span class="sc">$</span> git rebase origin<span class="sc">/</span>main</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="sc">$</span> git merge origin<span class="sc">/</span>main</span>
+<span id="cb53-2"><a href=""></a><span class="sc">$</span> git rebase origin<span class="sc">/</span>main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/git-fetch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2340,12 +2204,12 @@
 <h2>17. Pull request</h2>
 <p><code>Pull Request</code>: solicita que o repositório central (remoto) aceite (pull - ‘puxe’) as alterações realizadas do nosso fork</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href=""></a>git clone git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span>
-<span id="cb65-2"><a href=""></a>git branch branch<span class="dv">-1</span></span>
-<span id="cb65-3"><a href=""></a>git <span class="cf">switch</span> branch<span class="dv">-1</span></span>
-<span id="cb65-4"><a href=""></a>git add <span class="sc">-</span>Av</span>
-<span id="cb65-5"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">'mensagem'</span></span>
-<span id="cb65-6"><a href=""></a>git push origin branch<span class="dv">-1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a>git clone git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span>
+<span id="cb54-2"><a href=""></a>git branch branch<span class="dv">-1</span></span>
+<span id="cb54-3"><a href=""></a>git <span class="cf">switch</span> branch<span class="dv">-1</span></span>
+<span id="cb54-4"><a href=""></a>git add <span class="sc">-</span>Av</span>
+<span id="cb54-5"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">'mensagem'</span></span>
+<span id="cb54-6"><a href=""></a>git push origin branch<span class="dv">-1</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/github_pull_request.webp" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
@@ -2372,19 +2236,27 @@
 
 </section>
 
-<section>
 <section class="title-slide slide level1 center">
 <h1></h1>
 
 <img data-src="img/git_conflict.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="img/git_merge_hug.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Artwork by <a href="https://x.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
+</div>
+</section>
 <section class="slide level2">
 <h2>18.Conflitos</h2>
 <p><strong>Conflitos no repositório local</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="sc">$</span> git merge</span>
-<span id="cb66-2"><a href=""></a><span class="co"># Auto-merging arquivo.txt</span></span>
-<span id="cb66-3"><a href=""></a><span class="co"># CONFLICT (content): Merge conflict in arquivo.txt</span></span>
-<span id="cb66-4"><a href=""></a><span class="co"># Automatic merge failed; fix conflicts and then commit the result.</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a><span class="sc">$</span> git merge</span>
+<span id="cb55-2"><a href=""></a><span class="co"># Auto-merging arquivo.txt</span></span>
+<span id="cb55-3"><a href=""></a><span class="co"># CONFLICT (content): Merge conflict in arquivo.txt</span></span>
+<span id="cb55-4"><a href=""></a><span class="co"># Automatic merge failed; fix conflicts and then commit the result.</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/gif_git_merge.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2392,10 +2264,10 @@
 <h2>18.Conflitos</h2>
 <p><strong>Conflitos no rep. local vindos de um rep. remoto</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href=""></a><span class="sc">$</span> git pull</span>
-<span id="cb67-2"><a href=""></a><span class="co"># Auto-merging test.txt</span></span>
-<span id="cb67-3"><a href=""></a><span class="co"># CONFLICT (content): Merge conflict in test.txt</span></span>
-<span id="cb67-4"><a href=""></a><span class="co"># Automatic merge failed; fix conflicts and then commit the result.</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="sc">$</span> git pull</span>
+<span id="cb56-2"><a href=""></a><span class="co"># Auto-merging teste.txt</span></span>
+<span id="cb56-3"><a href=""></a><span class="co"># CONFLICT (content): Merge conflict in teste.txt</span></span>
+<span id="cb56-4"><a href=""></a><span class="co"># Automatic merge failed; fix conflicts and then commit the result.</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/gif_git_merge.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2452,11 +2324,11 @@
 <li>Quando há um conflito, o git modifica o arquivo inserindo marcações para que resolvido manualmente</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="co"># &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></span>
-<span id="cb68-2"><a href=""></a><span class="co"># Esta é a versão da branch atual</span></span>
-<span id="cb68-3"><a href=""></a><span class="co"># =======</span></span>
-<span id="cb68-4"><a href=""></a><span class="co"># Esta é a versão da branch que esta tentando mesclar</span></span>
-<span id="cb68-5"><a href=""></a><span class="co"># &gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href=""></a><span class="co"># &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></span>
+<span id="cb57-2"><a href=""></a><span class="co"># Esta é a versão da branch atual</span></span>
+<span id="cb57-3"><a href=""></a><span class="co"># =======</span></span>
+<span id="cb57-4"><a href=""></a><span class="co"># Esta é a versão da branch que esta tentando mesclar</span></span>
+<span id="cb57-5"><a href=""></a><span class="co"># &gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div style="font-size: 80%;">
 <ul>
@@ -2487,8 +2359,8 @@
 </ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href=""></a>git add <span class="sc">&lt;</span>arquivo<span class="sc">&gt;</span></span>
-<span id="cb69-2"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">"conflito resolvido"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a>git add <span class="sc">&lt;</span>arquivo<span class="sc">&gt;</span></span>
+<span id="cb58-2"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">"conflito resolvido"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -2586,8 +2458,8 @@
 <p><strong>usethis</strong></p>
 <p>Comandos direto no R para criar e versionar repositórios</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
-<span id="cb70-2"><a href=""></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/usethis"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
+<span id="cb59-2"><a href=""></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/usethis"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/package_usethis.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
@@ -2596,35 +2468,19 @@
 </section>
 <section class="slide level2">
 <h2>20. Mais informações</h2>
-<p><strong>Livros</strong></p>
-<ul>
-<li><a href="https://git-scm.com/book/en/v2">Pro Git</a> - Scott Chacon e Ben Straub</li>
-<li><a href="https://www.amazon.com.br/Beginning-Git-GitHub-Comprehensive-Management/dp/1484253124">Beginning Git and GitHub</a> - Mariot Tsitoara</li>
-<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> - Jenny Bryan</li>
-<li><a href="https://curso-r.github.io/zen-do-r/index.html">Zen do R</a> - Caio Lente + Curso-R</li>
-</ul>
+<p><strong>gitKraken</strong></p>
+
+<img data-src="img/gitkraken-logo.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://www.gitkraken.com/">gitKraken</a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>20. Mais informações</h2>
-<p><strong>Material</strong></p>
-<ul>
-<li><a href="https://beatrizmilz.github.io/RLadies-Git-RStudio-2019">Primeiros passos utilizando o Git e GitHub no RStudio</a> - Beatriz Milz</li>
-<li><a href="https://beatrizmilz.com/git_rstudio.html">Git e GitHub no RStudio</a> - Beatriz Milz</li>
-<li><a href="https://www.atlassian.com/br/git/tutorials">Torne-se um guru do git</a></li>
-<li><a href="https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/">RStudio e Github no dia a dia</a></li>
-<li><a href="https://gitfichas.com/">GitFichas - Jéssica Temporal</a></li>
-<li><a href="https://gabrielnakamura.github.io/USP_reproducibility_BIE5798/basics_git.html">Controle de versão</a> - Gabriel Nakamura</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>20. Mais informações</h2>
-<p><strong>Material</strong></p>
-<ul>
-<li><a href="https://ohshitgit.com/pt_BR">Oh Shit, Git!?!</a> - Katie Sylor-Miller</li>
-<li><a href="https://dangitgit.com/pt_BR">Dangit, Git!?!</a> - Katie Sylor-Miller</li>
-<li><a href="https://www.neonscience.org/resources/learning-hub/tutorials/version-control-github">Version Control with GitHub</a></li>
-<li><a href="https://www.freecodecamp.org/news/git-cheat-sheet/">Git Cheat Sheet – 50 Git Commands You Should Know</a></li>
-</ul>
+<p><strong>Sublime Merge</strong></p>
+
+<img data-src="img/sublime-merge-logo.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://www.sublimemerge.com">Sublime Merge</a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>20. Mais informações</h2>
@@ -2651,7 +2507,7 @@
 </p>
 </section></section>
 <section class="title-slide slide level1 center">
-<h1>Muito obrigado!</h1>
+<h1>Bora praticar!</h1>
 
 </section>
     </div>
@@ -2846,7 +2702,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2958,13 +2814,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

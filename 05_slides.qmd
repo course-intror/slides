@@ -30,9 +30,10 @@ penguins_sem_na <- na.omit(penguins)
 ## Conteúdo
 
 ::: panel-tabset
+
 ## Explorar dados
-- Dados brutos
-- Observações e variáveis
+
+- Análise exploratória de dados
 - Tabelas de frequência
 - Frequência absoluta e relativa
 - Função: `table`
@@ -40,66 +41,32 @@ penguins_sem_na <- na.omit(penguins)
 - Funções: `apply`, `lapply`, `sapply`, `tapply`...
 
 ## Programação
+
+::: columns
+::: {.column width="60%"}
 - Pseudocódigo
 - Controle de fluxo
 - Condicional: `if`, `else` e `else if`
 - Estruturas de repetição
 - Laços: `for`, `while` e `repeat`
 - Comandos: `break` e `next`
+:::
+
+::: {.column width="40%"}
 - Funções
 - Funções externas: `source`
 :::
-
-## Para apresentar os próximos conceitos e funções, vamos usar dados de pinguins
-
-<center>
-<img src="img/package_palmerpenguins.png" style="width:35%"/>
-</center>
-
-::: footer
-[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 :::
 
-## palmerpenguins {.smaller}
-
--   Dados de medidas de pinguins chamados `palmerpenguins`
-
--   Dados coletados e disponibilizados pela [Dra. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) e pela [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), membro da [Long Term Ecological Research Network](https://lternet.edu/)
-
--   Dois conjuntos de dados:
-
--   `penguins_raw` (dados brutos)
-
--   `penguins` (versão simplificada)
-
-![](img/lter_penguins.png){.absolute width="700" height="400" right="-50" top="300"}
-
-::: footer
-[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 :::
 
 ## palmerpenguins
 
-```{r eval=FALSE}
-# instalar 
-install.packages("palmerpenguins")
+Para apresentar os próximos conceitos e funções, vamos usar dados de pinguins
 
-# carregar
-library(palmerpenguins)
-
-# ajuda dos dados
-?penguins
-?penguins_raw
-
-# remover nas
-penguins_sem_na <- na.omit(penguins)
-```
-
-```{r echo=FALSE}
-library(palmerpenguins)
-```
-
-![](img/culmen_depth.png){.absolute width="430" height="300" right="-30" top="425"}
+<center>
+<img src="img/package_palmerpenguins.png" style="width:35%"/>
+</center>
 
 ::: footer
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
@@ -342,7 +309,8 @@ apply(m, 1, sum)
 
 ## Família apply
 
-- Aplicam uma **função** a elementos de estruturas de dados como vetores, listas, matrizes ou data frames **de forma eficiente**, evitando laços
+- Aplicam uma **função de forma eficiente** a elementos de dados como vetores, listas, matrizes ou data frames 
+- Evitam laços (*loops*)
 
 ```{r eval=FALSE}
 # familia apply
@@ -357,7 +325,7 @@ rapply(object, f, classes = "ANY", how = "replace")
 
 ## lapply
 
-- Aplica uma função a cada elemento de uma lista ou vetor, retornando sempre uma lista
+- Aplica uma função a cada elemento de uma lista ou vetor, retornando sempre uma **lista**
 
 - **Exemplos**
 
@@ -371,7 +339,7 @@ lapply(x, mean)  # media de cada lista - retorna lista
 
 ## sapply
 
-- Similar a `lapply`, retornando matriz, vetor ou lista (ele escolhe...)
+- Similar a `lapply`, retornando matriz, **vetor ou lista** (ele escolhe...)
 - **Exemplos**
 
 ```{r}
@@ -384,7 +352,7 @@ sapply(x, mean)  # media de cada lista - retorna o que quiser...
 
 ## vapply
 
-- Similar a sapply, mas permite definir o tipo de retorno
+- Similar a sapply, mas permite **definir o tipo de retorno**
 - **Exemplos**
 
 ```{r}
@@ -397,7 +365,7 @@ vapply(x, mean, numeric(1))  # media de cada lista - retorna escolha
 
 ## tapply
 
-- Aplica função sobre subconjuntos definido por fatores
+- Aplica função sobre subconjuntos definido por **fatores**
 - **Exemplos**
 
 ```{r}
@@ -411,7 +379,7 @@ tapply(df$x, df$f, sum)  # soma por grupo
 
 ## mapply
 
-- Aplica função a múltiplos vetores ou listas de forma paralela 
+- Aplica função a múltiplos vetores ou listas de **forma paralela**
 - **Exemplos**
 
 ```{r}
@@ -434,7 +402,7 @@ mapply(paste0, x, y) # combinacao de cada elemento
 
 ## rapply
 
-- Função recursiva usada para aplicar uma função a todos os elementos de uma lista (ou estrutura aninhada de listas)
+- Função **recursiva** usada para aplicar uma função a **todos os elementos de uma lista** (ou estrutura aninhada de listas)
 - **Exemplos**
 
 ```{r}
@@ -445,7 +413,7 @@ l
 
 ## rapply
 
-- Função recursiva usada para aplicar uma função a todos os elementos de uma lista (ou estrutura aninhada de listas)
+- Função **recursiva** usada para aplicar uma função a **todos os elementos de uma lista** (ou estrutura aninhada de listas)
 - **Exemplos**
 
 ```{r}
@@ -455,7 +423,7 @@ rapply(l, sqrt, classes = "numeric", how = "replace")
 
 ## rapply
 
-- Função recursiva usada para aplicar uma função a todos os elementos de uma lista (ou estrutura aninhada de listas)
+- Função **recursiva** usada para aplicar uma função a **todos os elementos de uma lista** (ou estrutura aninhada de listas)
 - **Exemplos**
 
 ```{r}
@@ -789,7 +757,6 @@ if(x > 10){
 
 - **Executa** um bloco de código **`para`** uma **sequência de valores** (vetores ou listas) [*iteração*]
 
-<br> 
 ```{r}
 # for
 for(i in 1:10){
@@ -803,7 +770,6 @@ for(i in 1:10){
 
 - **Executa** um bloco de código **`para`** uma **sequência de valores** (vetores ou listas) [*iteração*]
 
-<br> 
 ```{r}
 # for
 prog <- c("R", "python", "julia", "Fortran")
@@ -896,6 +862,7 @@ for(i in 1:10){
 
 ### while
 
+::: {style="font-size: 90%;"}
 ```{r}
 # while e if/else
 x <- 1
@@ -909,6 +876,7 @@ while(x <= 10){
     x <- x + 1
 }
 ```
+:::
 
 ## Usos avançados do for
 
@@ -1181,6 +1149,36 @@ res_multi <- multiplicacao(3, 5)
 res_multi
 ```
 
-# Dúvidas?
+# Desafio
 
-# Muito obrigado!
+## Desafio
+
+Criar uma função para jogar um dado múltiplas vezes com número de lados definíveis
+
+<center>
+<img src="img/dice.jpeg" style="width:35%"/>
+</center>
+
+::: footer
+[memebase](https://memebase.cheezburger.com/tag/dice)
+:::
+
+## Desafio
+
+**Solução**
+
+```{r}
+jogar_dados <- function(jogadas, lados){
+    
+    ret <- NULL
+    for(i in 1:jogadas){
+        ret <- c(ret, sample(1:lados, 1))
+    }
+        
+    return(ret)
+        
+}
+```
+
+
+# Dúvidas?

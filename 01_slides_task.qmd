@@ -24,15 +24,21 @@ lang: pt-br
 
 ## Prática 1
 
-- Criar um repositório no seu GitHub chamado "teste"
+- Criar um repositório no seu GitHub chamado "teste-pra-valer"
+
+![](img/github_criar_repositorio01.png){fig-align='center'}
 
 ## Prática 2
 
 - Clonar esse repositório no seu computador usando o RStudio
 
+![](img/rstudio_git_create01.png){.absolute width=100% right=20 top=210}
+
 ## Prática 3
 
 - Adicionar um script chamado "script.R" com algum código 
+
+![](img/general_bloco_notas.png){fig-align='center'}
 
 ## Prática 4
 
@@ -54,7 +60,29 @@ git push
 
 - Criar uma ramificação chamada "branch-1"
 
+![](img/git_branches.png){fig-align='center'}
+
 ## Prática 7
 
-- Adicionar um script chamado "script2.R" com algum código 
+- Adicionar um script chamado "script2.R" com algum código nesta ramificação
+
+![](img/general_bloco_notas.png){fig-align='center'}
+
+## Prática 8
+
+- Fazer um merge entre as branches
+
+![](img/git_merge.png){fig-align='center'}
+
+## Prática 9
+
+- Fazer o controle de versão usando a aba fo git do RStudio:
+
+![](img/rstudio_git_pane02.png){fig-align='center'}
+
+## Prática 10
+
+- Fazer o push das modificações no repositório remoto
+
+![](img/git_pull.png){fig-align='center'}
 

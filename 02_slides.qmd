@@ -26,7 +26,9 @@ lang: pt
 
 # 
 
-<center><img src="img/r_logo.svg" style="width:70%"/></center>
+<center>
+<img src="img/r_logo.svg" style="width:70%"/>
+</center>
 
 ::: footer
 [r-project](https://www.r-project.org/)
@@ -82,7 +84,7 @@ lang: pt
 
 - 2012-2013: Estudei R sozinho por muito tempo...
 - 2013-2015: Iniciação científica com SDM e Ecologia da Paisagem (Fapesp)
-- 2015: Assistente de Pesquisa no LEEC (Prof. Miltinho)
+- 2015-2016: Assistente de Pesquisa no LEEC (Prof. Miltinho)
 - 2016-2018: Mestrado em SDM
 - 2020-2024: Doutorado em métricas de paisagem
 - 2025-2027: Pós-Doutorado em ecologia espacial
@@ -119,7 +121,9 @@ Maria (UFSM)
 
 ::::: columns
 ::: {.column width="40%"}
-<center><img src="img/aer.jpeg" href="https://analises-ecologicas.com/" style="width:90%"/></center>
+<center>
+<img src="img/aer.jpeg" href="https://analises-ecologicas.com/" style="width:90%"/>
+</center>
 :::
 
 ::: {.column width="60%"}
@@ -179,10 +183,10 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 
 -   Modelagem de Distribuição de Espécies
 
-**2018-2022: Seleção Natural - Piracicaba, SP, Brasil**
+**2018-2025: Seleção Natural - Piracicaba, SP, Brasil**
 
 -   Analista de dados ecológicos
--   Métricas da paisagem e Corredores ecológicos
+-   Métricas da paisagem e dorredores ecológicos
 -   Modelagem de Distribuição de Espécies
 
 ## Resumindo
@@ -199,7 +203,9 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 
 ## Mas não foi fácil... E ainda não é...
 
-<center><img src="img/general_code_meme.jpg" style="width:100%"/></center>
+<center>
+<img src="img/general_code_meme.jpg" style="width:100%"/>
+</center>
 
 # Linguagem R
 
@@ -207,7 +213,9 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 
 O R é uma **linguagem de programação livre** (*open source*), direcionada à **manejo, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos**
 
-<center><img src="img/r_logo.svg" style="width:40%"/></center>
+<center>
+<img src="img/r_logo.svg" style="width:40%"/>
+</center>
 
 ::: footer
 [R](https://www.r-project.org/)
@@ -219,11 +227,12 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 
 <br>
 
-**Versões**
+**Versões de Progração Orientada a Objetos**
 
--   Old S (1976-1987)
--   New S (1988-1997)
--   S4 (1998)
+- Old S (1976-1987)
+- New S (1988-1997)
+- S4 (1998)
+- R6 (2014)
 
 **IDE (*Integrated Development Environment*)**
 
@@ -257,6 +266,7 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 ![](img/person_gentleman_ihaka.jpg){.absolute width="550" height="400" right="-50" top="200"}
 
 ::: footer
+[Ihaka & Gentleman (1996)](https://doi.org/10.2307/1390807),
 [Wickham (2013)](http://vita.had.co.nz/papers/r-s.pdf)
 :::
 
@@ -265,13 +275,17 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 ::::::: columns
 :::: {.column width="50%"}
 ::: nonincremental
-<center><img src="img/r_history.png" style="width:75%"/></center>
+<center>
+<img src="img/r_history.png" style="width:75%"/>
+</center>
 :::
 ::::
 
 :::: {.column width="50%"}
 ::: nonincremental
-<center><img src="img/r_history_plot.png" style="width:100%"/></center>
+<center>
+<img src="img/r_history_plot.png" style="width:100%"/>
+</center>
 :::
 ::::
 :::::::
@@ -311,7 +325,9 @@ Ambiente de Desenvolvimento Integrado (*Integrated Development Environment*)
 
 <br><br>
 
-<center><img src="img/rstudio_logo.svg" style="width:80%"/></center>
+<center>
+<img src="img/rstudio_logo.svg" style="width:80%"/>
+</center>
 
 ::: footer
 [RStudio](https://posit.co/downloads/)
@@ -331,15 +347,33 @@ Ambiente de Desenvolvimento Integrado (*Integrated Development Environment*)
 
 Mudanças na empresa RStudio...
 
-<center><img src="img/posit.png" style="width:85%"/></center>
+<center>
+<img src="img/posit.png" style="width:85%"/>
+</center>
 
 ::: footer
 [posit](https://posit.co/)
 :::
 
+## Positron
+
+- IDE multiplataforma voltada para R, Python, Quarto
+- Baseado no [Visual Studio Code](https://code.visualstudio.com)
+
+![](img/positron-pane.png){.absolute width=70% right=150 top=220}
+![](img/positron-logo.svg){.absolute width=25% right=190 top=600}
+
+::: footer
+[Positron](https://posit.co/products/ide/positron/)
+:::
+
+# Voltando para o RStudio
+
 ## Interface
 
-<center><img src="img/rstudio.png" style="width:100%"/></center>
+<center>
+<img src="img/rstudio.png" style="width:100%"/>
+</center>
 
 ::: footer
 [RStudio](https://www.rstudio.com/)
@@ -406,13 +440,17 @@ Mudanças na empresa RStudio...
 
 # 
 
-<center><img src="img/code.png" style="width:45%"/></center>
+<center>
+<img src="img/code.png" style="width:45%"/>
+</center>
 
 ## Projeto R (.Rproj)
 
 Abram o RStudio e criem um projeto dentro de "course-intror"
 
-<center><img src="img/proj_rmd.gif" style="width:100%"/></center>
+<center>
+<img src="img/proj_rmd.gif" style="width:90%"/>
+</center>
 
 # Console
 
@@ -420,7 +458,9 @@ Abram o RStudio e criem um projeto dentro de "course-intror"
 
 O console é onde a linguagem R instalada é carregada para executar os códigos
 
-<center><img src="img/rstudio_script.png" style="width:55%"/></center>
+<center>
+<img src="img/rstudio_script.png" style="width:55%"/>
+</center>
 
 ::: footer
 [RStudio](https://www.rstudio.com/)
@@ -458,7 +498,9 @@ Onde os códigos são escritos e salvos no formato .R
 
 -   Atalho: `ctrl + shift + N`
 
-<center><img src="img/rstudio_script.jpg" style="width:80%"/></center>
+<center>
+<img src="img/rstudio_script.jpg" style="width:80%"/>
+</center>
 
 ## Script
 
@@ -484,13 +526,15 @@ Onde os códigos são escritos e salvos no formato .R
 
 -   Atalho: `ctrl + S`
 
-<center><img src="img/rstudio_script.png" style="width:50%"/></center>
+<center>
+<img src="img/rstudio_script.png" style="width:50%"/>
+</center>
 
 ## Script
 
 **Salvar um script**
 
--   Diretório: `~/02_scripts/`
+-   Diretório: `course-intror/02_scripts/`
 
 00_plano_ensino\
 01_slides\
@@ -624,7 +668,9 @@ eco <- 10
 
 # 
 
-<center><img src="img/gif_where.gif" style="width:100%"/></center>
+<center>
+<img src="img/gif_where.gif" style="width:100%"/>
+</center>
 
 ## Objetos
 
@@ -684,7 +730,9 @@ for <- 1
 
 Os objetos podem ser visualizados no painel *Environment*
 
-<center><img src="img/rstudio_script.png" style="width:50%"/></center>
+<center>
+<img src="img/rstudio_script.png" style="width:50%"/>
+</center>
 
 ## Objetos
 
@@ -727,7 +775,7 @@ div
 
 # Funções
 
-## Funções {.smaller}
+## Funções
 
 Códigos que realizam operações em argumentos
 
@@ -735,14 +783,14 @@ Códigos que realizam operações em argumentos
 
 `nome_da_funcao(argumento1, argumento2)`
 
+::: {style="font-size: 70%;"}
 1.  **Nome da função**: remete ao que ela faz (inglês)
 2.  **Parênteses**: limitam a função
 3.  **Argumentos**: onde a função atuará
 4.  **Vírgulas**: separam os argumentos
+:::
 
 ![](img/code_function_annotated.png){.absolute width="600" height="300" right="-100" top="350"}
-
-------------------------------------------------------------------------
 
 ## Funções
 
@@ -1272,10 +1320,12 @@ colSums(dune)
 
 **Cases**
 
-<center><img src="img/code_coding_cases.png" style="width:70%"/></center>
+<center>
+<img src="img/code_coding_cases.png" style="width:70%"/>
+</center>
 
 ::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
+Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
 # Dúvidas?
@@ -1288,6 +1338,10 @@ Abram o script e instalem todos os pacotes que usaremos nas próximas aulas
 
 `00_script_intror.R`
 
+::: footer
+[course-intror - scripts](https://github.com/course-intror/scripts)
+:::
+
 ## Script
 
 Abram o script para seguir a aula
@@ -1295,6 +1349,10 @@ Abram o script para seguir a aula
 <br><br><br><br>
 
 `02_script_intror.R`
+
+::: footer
+[course-intror - scripts](https://github.com/course-intror/scripts)
+:::
 
 # Atributos de objetos
 
@@ -1382,7 +1440,8 @@ c("amostra1", "amostra2", "amostra3")
 seq(1, 10, 2)
 
 # repetir
-rep(42, 5)
+rep(c(23, 42), times = 2)
+rep(c(23, 42), each = 2)
 
 # combinar
 paste("amostra", 1:3)
@@ -2120,6 +2179,8 @@ São **valores reservados** que representam *dados faltantes*, *indefinições m
 **3. Inf (Infinito)**\
 **4. NULL**
 
+> Nenhum deles é entre aspas!
+
 ## Valores faltantes e especiais
 
 **1. NA (Not Available)**
@@ -2277,17 +2338,13 @@ Endereço da pasta onde o R irá **importar e exportar** os dados
 setwd("/home/mude/data/github/course-intror/data")
 ```
 
-<br>
+**Conferir diretório**
 
 ```{r eval=FALSE}
-# verificar o diretorio
+# conferir diretorio
 getwd()
-```
 
-<br>
-
-```{r eval=FALSE}
-# listar os arquivos
+# listar arquivos
 dir()
 ```
 
@@ -2295,7 +2352,9 @@ dir()
 
 #
 
-<center><img src="img/general_real_data.jpg" style="width:60%"/></center>
+<center>
+<img src="img/general_real_data.jpg" style="width:60%"/>
+</center>
 
 ## Importar dados
 
@@ -2571,5 +2630,7 @@ Exportar uma tabela de dados na pasta do diretório
 openxlsx::write.xlsx(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx", 
                      row.names = FALSE, quote = FALSE)
 ```
+
+# Dúvidas?
 
 # Bora para tidyverse!

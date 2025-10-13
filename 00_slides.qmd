@@ -191,10 +191,18 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 
 **atlanticr**
 
-- Esses dados estão muito bagunçados
-- Gostaria de ajuda para organizar eles e pensar no pacote
+::: {style="font-size: 70%;"}
+- Estes dados estão muito bagunçados
+- Gostaria de ajuda para organizar eles e pensar no pacote `atlanticr`
 - Grupos, duplas ou individual
-- Baixar, organizar e formartar esses dados para uso no pacote
+- Baixar, organizar e formartar esses dados para uso no pacote atlanticr
+:::
+
+![](img/featured-hex-atlanticr.png){fig-align="center"}
+
+::: footer
+[atlanticr](https://mauriciovancine.github.io/atlanticr/)
+:::
 
 ## IMPORTANTE!!!
 
@@ -207,7 +215,21 @@ Este é um [link](https://github.com/mauriciovancine/workshop-r-landscapemetrics
 </center>
 
 ::: footer
-[\@allison_horst](https://twitter.com/allison_horst)
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+# Diretórios e nomes de arquivos
+
+## Diretórios e nomes de arquivos
+
+**Organização diretórios e nomes de arquivos de um projeto**
+
+<center>
+<img src="img/directory_template_general.png" style="width:100%"/>
+</center>
+
+::: footer
+[Boas Práticas e Ferramentas da Ciência Aberta na Ecologia - BIE5798](https://gabrielnakamura.github.io/USP_reproducibility_BIE5798/index.html)
 :::
 
 ## Diretório da disciplina
