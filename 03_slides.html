@@ -6,8 +6,8 @@
 <script src="03_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="03_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="03_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="03_slides_files/libs/quarto-html/quarto-syntax-highlighting-c6982bbdd90c704a9b15aa23d87ad911.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.2">
+<link href="03_slides_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Maurício Vancine">
   <title>Introdução à programação em R (tidyverse)</title>
@@ -190,7 +190,9 @@
     }
   </style>
   <link href="03_slides_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+
   <script src="03_slides_files/libs/countdown-0.4.0/countdown.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -383,7 +385,10 @@
 <h2>Script</h2>
 <p>Abram o script</p>
 <p><br><br><br><br></p>
-<p><code>03_script_r_introduction.R</code></p>
+<p><code>03_script_intror.R</code></p>
+<div class="footer">
+<p><a href="https://github.com/course-intror/scripts">course-intror - scripts</a></p>
+</div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -485,7 +490,7 @@
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ forcats   1.0.0     ✔ stringr   1.5.1
 ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ✔ purrr     1.1.0     
@@ -691,7 +696,7 @@
 <p><strong>Formato .xlsx</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># importar xlsx</span></span>
-<span id="cb13-2"><a href=""></a>si <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.xlsx"</span>)</span>
+<span id="cb13-2"><a href=""></a>si <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"ATLANTIC_AMPHIBIANS_sites.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
 <span id="cb13-3"><a href=""></a>si</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
@@ -917,10 +922,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <p>Reescreva cada uma das operações utilizando pipes <code>%&gt;%</code></p>
 <p><code>log10(cumsum(1:100))</code></p>
 <p><code>sum(sqrt(abs(rnorm(100))))</code></p>
-<p><code>sum(log((sample(1:10, 10000, rep = TRUE)))</code></p>
+<p><code>sum(log(sample(1:10, 10000, rep = TRUE)))</code></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c4ca565d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_92c772ef" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1161,6 +1166,83 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 6 No blood sample obtained for sexing. </code></pre>
 </div>
 </div>
+</section>
+<section class="slide level2">
+<h2>Pivotar os dados</h2>
+<p><strong>Dados long e dados wide</strong></p>
+<center>
+<img src="img/tidyr_pivot_wider.png" style="width:75%">
+</center>
+<div class="fragment">
+<center>
+<img src="img/tidyr_pivot_longer.png" style="width:75%">
+</center>
+</div>
+</section>
+<section class="slide level2">
+<h2>Pivotar os dados</h2>
+<p><strong>Dados long e dados wide</strong></p>
+<p><img data-src="img/tidyr_tb_pivot.png" class="absolute" style="top: 150px; right: 520px; width: 700px; height: 500px; "> <img data-src="img/gif_tidyr_pivot.gif" class="absolute" style="top: 100px; right: -120px; width: 600px; height: 550px; "></p>
+</section>
+<section class="slide level2">
+<h2>pivot_wider()</h2>
+<p><strong>Long para wide</strong></p>
+<div style="font-size: 70%;">
+<ol type="1">
+<li><strong>names_from</strong>: variável categórica que definirá os nomes das colunas</li>
+<li><strong>values_from</strong>: variável numérica que preencherá os dados</li>
+<li><strong>values_fill</strong>: valor para preencher os NAs</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="co"># long para wide</span></span>
+<span id="cb43-2"><a href=""></a>penguins_raw_pivot_wider <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">data =</span> penguins_raw[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">13</span>)], </span>
+<span id="cb43-3"><a href=""></a>                                               <span class="at">names_from =</span> Species, </span>
+<span id="cb43-4"><a href=""></a>                                               <span class="at">values_from =</span> <span class="st">`</span><span class="at">Body Mass (g)</span><span class="st">`</span>)</span>
+<span id="cb43-5"><a href=""></a><span class="fu">head</span>(penguins_raw_pivot_wider)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  `Sample Number` `Adelie Penguin (Pygoscelis adeliae)` Gentoo penguin (Pygosc…¹
+            &lt;dbl&gt;                                 &lt;dbl&gt;                    &lt;dbl&gt;
+1               1                                  3750                     4500
+2               2                                  3800                     5700
+3               3                                  3250                     4450
+4               4                                    NA                     5700
+5               5                                  3450                     5400
+6               6                                  3650                     4550
+# ℹ abbreviated name: ¹​`Gentoo penguin (Pygoscelis papua)`
+# ℹ 1 more variable: `Chinstrap penguin (Pygoscelis antarctica)` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>pivot_longer()</h2>
+<p><strong>Wide para long</strong></p>
+<div style="font-size: 70%;">
+<ol type="1">
+<li><strong>names_to</strong>: nome da coluna que receberá os nomes</li>
+<li><strong>values_to</strong>: nome da coluna que receberá os valores</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="co"># wide para long</span></span>
+<span id="cb45-2"><a href=""></a>penguins_raw_pivot_longer <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">data =</span> penguins_raw[, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">10</span><span class="sc">:</span><span class="dv">13</span>)], </span>
+<span id="cb45-3"><a href=""></a>                                                 <span class="at">cols =</span> <span class="st">`</span><span class="at">Culmen Length (mm)</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">Body Mass (g)</span><span class="st">`</span>,</span>
+<span id="cb45-4"><a href=""></a>                                                 <span class="at">names_to =</span> <span class="st">"medidas"</span>, </span>
+<span id="cb45-5"><a href=""></a>                                                 <span class="at">values_to =</span> <span class="st">"valores"</span>)</span>
+<span id="cb45-6"><a href=""></a><span class="fu">head</span>(penguins_raw_pivot_longer)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  `Sample Number` Species                             medidas            valores
+            &lt;dbl&gt; &lt;chr&gt;                               &lt;chr&gt;                &lt;dbl&gt;
+1               1 Adelie Penguin (Pygoscelis adeliae) Culmen Length (mm)    39.1
+2               1 Adelie Penguin (Pygoscelis adeliae) Culmen Depth (mm)     18.7
+3               1 Adelie Penguin (Pygoscelis adeliae) Flipper Length (m…   181  
+4               1 Adelie Penguin (Pygoscelis adeliae) Body Mass (g)       3750  
+5               2 Adelie Penguin (Pygoscelis adeliae) Culmen Length (mm)    39.5
+6               2 Adelie Penguin (Pygoscelis adeliae) Culmen Depth (mm)     17.4</code></pre>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1223,21 +1305,21 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 </ol>
 <p>As funções verbais não modificam o tibble original</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="co"># sintaxe</span></span>
-<span id="cb43-2"><a href=""></a>tb_dplyr <span class="ot">&lt;-</span> tb <span class="sc">%&gt;%</span> </span>
-<span id="cb43-3"><a href=""></a>  <span class="fu">funcao_verbal1</span>(argumento1, argumento2, ...) <span class="sc">%&gt;%</span> </span>
-<span id="cb43-4"><a href=""></a>  <span class="fu">funcao_verbal2</span>(argumento1, argumento2, ...) <span class="sc">%&gt;%</span> </span>
-<span id="cb43-5"><a href=""></a>  <span class="fu">funcao_verbal3</span>(argumento1, argumento2, ...)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a><span class="co"># sintaxe</span></span>
+<span id="cb47-2"><a href=""></a>tb_dplyr <span class="ot">&lt;-</span> tb <span class="sc">%&gt;%</span> </span>
+<span id="cb47-3"><a href=""></a>  <span class="fu">funcao_verbal1</span>(argumento1, argumento2, ...) <span class="sc">%&gt;%</span> </span>
+<span id="cb47-4"><a href=""></a>  <span class="fu">funcao_verbal2</span>(argumento1, argumento2, ...) <span class="sc">%&gt;%</span> </span>
+<span id="cb47-5"><a href=""></a>  <span class="fu">funcao_verbal3</span>(argumento1, argumento2, ...)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>relocate</h2>
 <p>Reordena colunas por nome ou posição</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="co"># reordenar colunas - nome</span></span>
-<span id="cb44-2"><a href=""></a>penguins_relocate_col <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb44-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(sex, year, <span class="at">.after =</span> island)</span>
-<span id="cb44-4"><a href=""></a><span class="fu">head</span>(penguins_relocate_col)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="co"># reordenar colunas - nome</span></span>
+<span id="cb48-2"><a href=""></a>penguins_relocate_col <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(sex, year, <span class="at">.after =</span> island)</span>
+<span id="cb48-4"><a href=""></a><span class="fu">head</span>(penguins_relocate_col)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
@@ -1256,10 +1338,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>relocate</h2>
 <p>Reordena colunas por nome ou posição</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="co"># reordenar colunas - posicao</span></span>
-<span id="cb46-2"><a href=""></a>penguins_relocate_ncol <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb46-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(sex, year, <span class="at">.after =</span> <span class="dv">2</span>)</span>
-<span id="cb46-4"><a href=""></a><span class="fu">head</span>(penguins_relocate_ncol)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="co"># reordenar colunas - posicao</span></span>
+<span id="cb50-2"><a href=""></a>penguins_relocate_ncol <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(sex, year, <span class="at">.after =</span> <span class="dv">2</span>)</span>
+<span id="cb50-4"><a href=""></a><span class="fu">head</span>(penguins_relocate_ncol)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
@@ -1278,13 +1360,13 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>rename</h2>
 <p>Renomeia colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="co"># renomear colunas</span></span>
-<span id="cb48-2"><a href=""></a>penguins_rename <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb48-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">bill_length =</span> bill_length_mm,</span>
-<span id="cb48-4"><a href=""></a>                <span class="at">bill_depth =</span> bill_depth_mm,</span>
-<span id="cb48-5"><a href=""></a>                <span class="at">flipper_length =</span> flipper_length_mm,</span>
-<span id="cb48-6"><a href=""></a>                <span class="at">body_mass =</span> body_mass_g)</span>
-<span id="cb48-7"><a href=""></a><span class="fu">head</span>(penguins_rename)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="co"># renomear colunas</span></span>
+<span id="cb52-2"><a href=""></a>penguins_rename <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">bill_length =</span> bill_length_mm,</span>
+<span id="cb52-4"><a href=""></a>                <span class="at">bill_depth =</span> bill_depth_mm,</span>
+<span id="cb52-5"><a href=""></a>                <span class="at">flipper_length =</span> flipper_length_mm,</span>
+<span id="cb52-6"><a href=""></a>                <span class="at">body_mass =</span> body_mass_g)</span>
+<span id="cb52-7"><a href=""></a><span class="fu">head</span>(penguins_rename)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length bill_depth flipper_length body_mass sex     year
@@ -1302,10 +1384,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>select</h2>
 <p>Seleciona colunas pela posição ou nome</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a><span class="co"># selecionar colunas por posicao</span></span>
-<span id="cb50-2"><a href=""></a>penguins_select_position <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb50-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb50-4"><a href=""></a><span class="fu">head</span>(penguins_select_position)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="co"># selecionar colunas por posicao</span></span>
+<span id="cb54-2"><a href=""></a>penguins_select_position <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb54-4"><a href=""></a><span class="fu">head</span>(penguins_select_position)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1323,10 +1405,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>select</h2>
 <p>Seleciona colunas pela posição ou nome</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="co"># selecionar colunas por nomes</span></span>
-<span id="cb52-2"><a href=""></a>penguins_select_names <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb52-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(bill_length_mm<span class="sc">:</span>body_mass_g)</span>
-<span id="cb52-4"><a href=""></a><span class="fu">head</span>(penguins_select_names)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="co"># selecionar colunas por nomes</span></span>
+<span id="cb56-2"><a href=""></a>penguins_select_names <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb56-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(bill_length_mm<span class="sc">:</span>body_mass_g)</span>
+<span id="cb56-4"><a href=""></a><span class="fu">head</span>(penguins_select_names)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1344,10 +1426,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>select</h2>
 <p>Remove colunas pela posição ou nome</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a><span class="co"># remover colunas pelo nome</span></span>
-<span id="cb54-2"><a href=""></a>penguins_select_names_remove <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb54-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>(bill_length_mm<span class="sc">:</span>body_mass_g))</span>
-<span id="cb54-4"><a href=""></a><span class="fu">head</span>(penguins_select_names_remove)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a><span class="co"># remover colunas pelo nome</span></span>
+<span id="cb58-2"><a href=""></a>penguins_select_names_remove <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb58-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>(bill_length_mm<span class="sc">:</span>body_mass_g))</span>
+<span id="cb58-4"><a href=""></a><span class="fu">head</span>(penguins_select_names_remove)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   species island    sex     year
@@ -1365,10 +1447,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>select</h2>
 <p>Seleciona ou remove colunas por um padrão nos nomes</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a><span class="co"># selecionar colunas por padrao - starts_with(), ends_with() e contains()</span></span>
-<span id="cb56-2"><a href=""></a>penguins_select_contains <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb56-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"_mm"</span>))</span>
-<span id="cb56-4"><a href=""></a><span class="fu">head</span>(penguins_select_contains)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a><span class="co"># selecionar colunas por padrao - starts_with(), ends_with() e contains()</span></span>
+<span id="cb60-2"><a href=""></a>penguins_select_contains <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb60-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"_mm"</span>))</span>
+<span id="cb60-4"><a href=""></a><span class="fu">head</span>(penguins_select_contains)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   bill_length_mm bill_depth_mm flipper_length_mm
@@ -1386,10 +1468,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>pull</h2>
 <p>Seleciona uma coluna como vetor</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href=""></a><span class="co"># coluna para vetor</span></span>
-<span id="cb58-2"><a href=""></a>penguins_select_pull <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb58-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(bill_length_mm)</span>
-<span id="cb58-4"><a href=""></a><span class="fu">head</span>(penguins_select_pull, <span class="dv">15</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a><span class="co"># coluna para vetor</span></span>
+<span id="cb62-2"><a href=""></a>penguins_select_pull <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb62-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(bill_length_mm)</span>
+<span id="cb62-4"><a href=""></a><span class="fu">head</span>(penguins_select_pull, <span class="dv">15</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 39.1 39.5 40.3   NA 36.7 39.3 38.9 39.2 34.1 42.0 37.8 37.8 41.1 38.6 34.6</code></pre>
 </div>
@@ -1399,10 +1481,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>mutate</h2>
 <p>Adiciona colunas novas ou advindas de operações</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href=""></a><span class="co"># adicionar colunas</span></span>
-<span id="cb60-2"><a href=""></a>penguins_mutate <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb60-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">body_mass_kg =</span> body_mass_g<span class="sc">/</span><span class="fl">1e3</span>, <span class="at">.before =</span> sex)</span>
-<span id="cb60-4"><a href=""></a><span class="fu">head</span>(penguins_mutate)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href=""></a><span class="co"># adicionar colunas</span></span>
+<span id="cb64-2"><a href=""></a>penguins_mutate <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb64-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">body_mass_kg =</span> body_mass_g<span class="sc">/</span><span class="fl">1e3</span>, <span class="at">.before =</span> sex)</span>
+<span id="cb64-4"><a href=""></a><span class="fu">head</span>(penguins_mutate)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 9
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1421,10 +1503,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>arrange</h2>
 <p>Reordena linhas de forma crescente pelos valores de uma coluna</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a><span class="co"># reordenar os valores por ordem crescente</span></span>
-<span id="cb62-2"><a href=""></a>penguins_arrange <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb62-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(body_mass_g)</span>
-<span id="cb62-4"><a href=""></a><span class="fu">head</span>(penguins_arrange)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="co"># reordenar os valores por ordem crescente</span></span>
+<span id="cb66-2"><a href=""></a>penguins_arrange <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb66-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(body_mass_g)</span>
+<span id="cb66-4"><a href=""></a><span class="fu">head</span>(penguins_arrange)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1443,10 +1525,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>arrange</h2>
 <p>Reordena linhas de forma decrescente pelos valores de uma coluna</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href=""></a><span class="co"># reordenar os valores por ordem decrescente</span></span>
-<span id="cb64-2"><a href=""></a>penguins_arrange_desc <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb64-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="fu">desc</span>(body_mass_g))</span>
-<span id="cb64-4"><a href=""></a><span class="fu">head</span>(penguins_arrange_desc)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="co"># reordenar os valores por ordem decrescente</span></span>
+<span id="cb68-2"><a href=""></a>penguins_arrange_desc <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb68-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="fu">desc</span>(body_mass_g))</span>
+<span id="cb68-4"><a href=""></a><span class="fu">head</span>(penguins_arrange_desc)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1465,10 +1547,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>arrange</h2>
 <p>Reordena linhas de forma decrescente pelos valores de uma coluna</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="co"># reordenar os valores por ordem decrescente</span></span>
-<span id="cb66-2"><a href=""></a>penguins_arrange_desc_m <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb66-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="sc">-</span>body_mass_g)</span>
-<span id="cb66-4"><a href=""></a><span class="fu">head</span>(penguins_arrange_desc_m)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href=""></a><span class="co"># reordenar os valores por ordem decrescente</span></span>
+<span id="cb70-2"><a href=""></a>penguins_arrange_desc_m <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb70-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="sc">-</span>body_mass_g)</span>
+<span id="cb70-4"><a href=""></a><span class="fu">head</span>(penguins_arrange_desc_m)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1487,10 +1569,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>filter</h2>
 <p>Filtra linhas por valores de uma coluna</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="co"># filtrar linhas por valores de uma coluna</span></span>
-<span id="cb68-2"><a href=""></a>penguins_filter <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb68-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>)</span>
-<span id="cb68-4"><a href=""></a><span class="fu">head</span>(penguins_filter)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href=""></a><span class="co"># filtrar linhas por valores de uma coluna</span></span>
+<span id="cb72-2"><a href=""></a>penguins_filter <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb72-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>)</span>
+<span id="cb72-4"><a href=""></a><span class="fu">head</span>(penguins_filter)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1509,10 +1591,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>filter</h2>
 <p>Filtra linhas por valores de várias colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href=""></a><span class="co"># filtrar linhas por valores de duas colunas</span></span>
-<span id="cb70-2"><a href=""></a>penguins_filter_two <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb70-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
-<span id="cb70-4"><a href=""></a><span class="fu">head</span>(penguins_filter_two)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href=""></a><span class="co"># filtrar linhas por valores de duas colunas</span></span>
+<span id="cb74-2"><a href=""></a>penguins_filter_two <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb74-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb74-4"><a href=""></a><span class="fu">head</span>(penguins_filter_two)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1531,11 +1613,11 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>filter</h2>
 <p>Filtra linhas por vários valores de várias colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href=""></a><span class="co"># filtrar linhas por mais de um valor e mais de uma coluna</span></span>
-<span id="cb72-2"><a href=""></a>penguins_filter_in <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb72-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>),</span>
-<span id="cb72-4"><a href=""></a>                sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
-<span id="cb72-5"><a href=""></a><span class="fu">head</span>(penguins_filter_in)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href=""></a><span class="co"># filtrar linhas por mais de um valor e mais de uma coluna</span></span>
+<span id="cb76-2"><a href=""></a>penguins_filter_in <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb76-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>),</span>
+<span id="cb76-4"><a href=""></a>                sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb76-5"><a href=""></a><span class="fu">head</span>(penguins_filter_in)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1554,10 +1636,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>slice</h2>
 <p>Seleciona linhas por intervalos, indicando quais linhas desejamos</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href=""></a><span class="co"># selecionar linhas por intervalos</span></span>
-<span id="cb74-2"><a href=""></a>penguins_slice <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb74-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">300</span><span class="sc">:</span><span class="fu">n</span>()))</span>
-<span id="cb74-4"><a href=""></a><span class="fu">head</span>(penguins_slice)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href=""></a><span class="co"># selecionar linhas por intervalos</span></span>
+<span id="cb78-2"><a href=""></a>penguins_slice <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb78-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">300</span><span class="sc">:</span><span class="fu">n</span>()))</span>
+<span id="cb78-4"><a href=""></a><span class="fu">head</span>(penguins_slice)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1576,10 +1658,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>slice</h2>
 <p>Seleciona linhas iniciais</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href=""></a><span class="co"># selecionar linhas iniciais</span></span>
-<span id="cb76-2"><a href=""></a>penguins_slice_head <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb76-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
-<span id="cb76-4"><a href=""></a><span class="fu">head</span>(penguins_slice_head)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a><span class="co"># selecionar linhas iniciais</span></span>
+<span id="cb80-2"><a href=""></a>penguins_slice_head <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb80-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb80-4"><a href=""></a><span class="fu">head</span>(penguins_slice_head)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1597,10 +1679,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>slice</h2>
 <p>Seleciona linhas aleatoriamente, com e sem reposição</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href=""></a><span class="co"># selecionar linhas aleatoriamente</span></span>
-<span id="cb78-2"><a href=""></a>penguins_slice_sample <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb78-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb78-4"><a href=""></a><span class="fu">head</span>(penguins_slice_sample)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a><span class="co"># selecionar linhas aleatoriamente</span></span>
+<span id="cb82-2"><a href=""></a>penguins_slice_sample <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb82-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb82-4"><a href=""></a><span class="fu">head</span>(penguins_slice_sample)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1619,10 +1701,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>distinct</h2>
 <p>Retira linhas com valores duplicados com base nos valores de colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a><span class="co"># retirar linhas com valores duplicados</span></span>
-<span id="cb80-2"><a href=""></a>penguins_distinct <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb80-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>(body_mass_g)</span>
-<span id="cb80-4"><a href=""></a><span class="fu">head</span>(penguins_distinct)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a><span class="co"># retirar linhas com valores duplicados</span></span>
+<span id="cb84-2"><a href=""></a>penguins_distinct <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb84-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>(body_mass_g)</span>
+<span id="cb84-4"><a href=""></a><span class="fu">head</span>(penguins_distinct)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 1
   body_mass_g
@@ -1640,10 +1722,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>distinct</h2>
 <p>Retira linhas com valores duplicados com base nos valores de colunas, mas mantendo as colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a><span class="co"># retirar linhas com valores duplicados e manter colunas</span></span>
-<span id="cb82-2"><a href=""></a>penguins_distinct_keep_all <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb82-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>(body_mass_g, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb82-4"><a href=""></a><span class="fu">head</span>(penguins_distinct_keep_all)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="co"># retirar linhas com valores duplicados e manter colunas</span></span>
+<span id="cb86-2"><a href=""></a>penguins_distinct_keep_all <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb86-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>(body_mass_g, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb86-4"><a href=""></a><span class="fu">head</span>(penguins_distinct_keep_all)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1662,10 +1744,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>count</h2>
 <p>Conta valores de uma ou mais colunas (variáveis categóricas)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a><span class="co"># contagens de valores para uma coluna</span></span>
-<span id="cb84-2"><a href=""></a>penguins_count <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb84-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(species)</span>
-<span id="cb84-4"><a href=""></a>penguins_count</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="co"># contagens de valores para uma coluna</span></span>
+<span id="cb88-2"><a href=""></a>penguins_count <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb88-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(species)</span>
+<span id="cb88-4"><a href=""></a>penguins_count</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   species       n
@@ -1680,10 +1762,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>count</h2>
 <p>Conta valores de uma ou mais colunas (variáveis categóricas)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="co"># contagens de valores para mais de uma coluna</span></span>
-<span id="cb86-2"><a href=""></a>penguins_count_two <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb86-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(species, island)</span>
-<span id="cb86-4"><a href=""></a>penguins_count_two</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href=""></a><span class="co"># contagens de valores para mais de uma coluna</span></span>
+<span id="cb90-2"><a href=""></a>penguins_count_two <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb90-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(species, island)</span>
+<span id="cb90-4"><a href=""></a>penguins_count_two</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   species   island        n
@@ -1700,10 +1782,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>count</h2>
 <p>Conta valores de uma ou mais colunas (variáveis categóricas) ordenando a contagem</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="co"># contagens de valores para mais de uma coluna</span></span>
-<span id="cb88-2"><a href=""></a>penguins_count_two_sort <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb88-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(species, island, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb88-4"><a href=""></a>penguins_count_two_sort</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a><span class="co"># contagens de valores para mais de uma coluna</span></span>
+<span id="cb92-2"><a href=""></a>penguins_count_two_sort <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb92-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(species, island, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-4"><a href=""></a>penguins_count_two_sort</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   species   island        n
@@ -1720,10 +1802,10 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>group_by</h2>
 <p>Transforma um <code>tibble</code> em um <code>tibble agrupado</code>, onde as operações são realizadas “por grupo”</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href=""></a><span class="co"># agrupamento</span></span>
-<span id="cb90-2"><a href=""></a>penguins_group_by <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb90-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(species)</span>
-<span id="cb90-4"><a href=""></a><span class="fu">head</span>(penguins_group_by)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href=""></a><span class="co"># agrupamento</span></span>
+<span id="cb94-2"><a href=""></a>penguins_group_by <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb94-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(species)</span>
+<span id="cb94-4"><a href=""></a><span class="fu">head</span>(penguins_group_by)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
 # Groups:   species [1]
@@ -1743,12 +1825,12 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>summarise</h2>
 <p>Agrega ou resume dados através de funções síntese</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a><span class="co"># resumo</span></span>
-<span id="cb92-2"><a href=""></a>penguins_summarise <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb92-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> </span>
-<span id="cb92-4"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">body_mass_g_mean =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb92-5"><a href=""></a>                   <span class="at">body_mass_g_sd =</span> <span class="fu">sd</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb92-6"><a href=""></a>penguins_summarise</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a><span class="co"># resumo</span></span>
+<span id="cb96-2"><a href=""></a>penguins_summarise <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb96-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-4"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">body_mass_g_mean =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb96-5"><a href=""></a>                   <span class="at">body_mass_g_sd =</span> <span class="fu">sd</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb96-6"><a href=""></a>penguins_summarise</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   species   body_mass_g_mean body_mass_g_sd
@@ -1760,12 +1842,13 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 </div>
 </section>
 <section class="slide level2">
-<h2><code>bind_rows()</code> e <code>bind_cols()</code></h2>
+<h2>bind_rows() e bind_cols()</h2>
 <p>Combina dados por linhas ou por colunas</p>
+<div style="font-size: 70%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href=""></a><span class="co"># selecionar as linhas para dois tibbles</span></span>
-<span id="cb94-2"><a href=""></a>penguins_01 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">slice</span>(penguins, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
-<span id="cb94-3"><a href=""></a><span class="fu">head</span>(penguins_01)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a><span class="co"># selecionar as linhas para dois tibbles</span></span>
+<span id="cb98-2"><a href=""></a>penguins_01 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">slice</span>(penguins, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb98-3"><a href=""></a><span class="fu">head</span>(penguins_01)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1777,8 +1860,8 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 5 Adelie  Torgersen           36.7          19.3               193        3450
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a>penguins_02 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">slice</span>(penguins, <span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>)</span>
-<span id="cb96-2"><a href=""></a><span class="fu">head</span>(penguins_02)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a>penguins_02 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">slice</span>(penguins, <span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>)</span>
+<span id="cb100-2"><a href=""></a><span class="fu">head</span>(penguins_02)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 8
   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1791,14 +1874,15 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
+</div>
 </section>
 <section class="slide level2">
-<h2><code>bind_rows()</code> e <code>bind_cols()</code></h2>
+<h2>bind_rows() e bind_cols()</h2>
 <p>Combina dados por linhas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a><span class="co"># combinar as linhas</span></span>
-<span id="cb98-2"><a href=""></a>penguins_bind_rows <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(penguins_01, penguins_02, <span class="at">.id =</span> <span class="st">"id"</span>)</span>
-<span id="cb98-3"><a href=""></a><span class="fu">head</span>(penguins_bind_rows)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="co"># combinar as linhas</span></span>
+<span id="cb102-2"><a href=""></a>penguins_bind_rows <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(penguins_01, penguins_02, <span class="at">.id =</span> <span class="st">"id"</span>)</span>
+<span id="cb102-3"><a href=""></a><span class="fu">head</span>(penguins_bind_rows)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 9
   id    species island    bill_length_mm bill_depth_mm flipper_length_mm
@@ -1814,12 +1898,12 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 </div>
 </section>
 <section class="slide level2">
-<h2><code>bind_rows()</code> e <code>bind_cols()</code></h2>
+<h2>bind_rows() e bind_cols()</h2>
 <p>Combina dados por colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a><span class="do">## combinar as colunas</span></span>
-<span id="cb100-2"><a href=""></a>penguins_bind_cols <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_cols</span>(penguins_01, penguins_02, <span class="at">.name_repair =</span> <span class="st">"unique"</span>)</span>
-<span id="cb100-3"><a href=""></a><span class="fu">head</span>(penguins_bind_cols)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a><span class="do">## combinar as colunas</span></span>
+<span id="cb104-2"><a href=""></a>penguins_bind_cols <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_cols</span>(penguins_01, penguins_02, <span class="at">.name_repair =</span> <span class="st">"unique"</span>)</span>
+<span id="cb104-3"><a href=""></a><span class="fu">head</span>(penguins_bind_cols)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 16
   species...1 island...2 bill_length_mm...3 bill_depth_mm...4
@@ -1860,24 +1944,24 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Comprimento</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="co"># comprimento</span></span>
-<span id="cb102-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_length</span>(<span class="at">string =</span> <span class="st">"penguins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href=""></a><span class="co"># comprimento</span></span>
+<span id="cb106-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_length</span>(<span class="at">string =</span> <span class="st">"penguins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
 </div>
 <p>Substituir</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a><span class="co"># substituir</span></span>
-<span id="cb104-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_replace</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">pattern =</span> <span class="st">"i"</span>, <span class="at">replacement =</span> <span class="st">"y"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href=""></a><span class="co"># substituir</span></span>
+<span id="cb108-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_replace</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">pattern =</span> <span class="st">"i"</span>, <span class="at">replacement =</span> <span class="st">"y"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "penguyns"</code></pre>
 </div>
 </div>
 <p>Separar</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href=""></a><span class="co"># separar</span></span>
-<span id="cb106-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="at">string =</span> <span class="st">"p-e-n-g-u-i-n-s"</span>, <span class="at">pattern =</span> <span class="st">"-"</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href=""></a><span class="co"># separar</span></span>
+<span id="cb110-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="at">string =</span> <span class="st">"p-e-n-g-u-i-n-s"</span>, <span class="at">pattern =</span> <span class="st">"-"</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 [1,] "p"  "e"  "n"  "g"  "u"  "i"  "n"  "s" </code></pre>
@@ -1888,16 +1972,16 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Extrair pela posição</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href=""></a><span class="co"># extrair pela posicao</span></span>
-<span id="cb108-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_sub</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">end =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href=""></a><span class="co"># extrair pela posicao</span></span>
+<span id="cb112-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_sub</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">end =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "pen"</code></pre>
 </div>
 </div>
 <p>Extrair por padrão</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href=""></a><span class="co"># extrair por padrao</span></span>
-<span id="cb110-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_extract</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">pattern =</span> <span class="st">"p"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href=""></a><span class="co"># extrair por padrao</span></span>
+<span id="cb114-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_extract</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">pattern =</span> <span class="st">"p"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "p"</code></pre>
 </div>
@@ -1907,18 +1991,18 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Inserir espacos em branco</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href=""></a><span class="co"># inserir espaco em branco - esquerda</span></span>
-<span id="cb112-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">side =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href=""></a><span class="co"># inserir espaco em branco - esquerda</span></span>
+<span id="cb116-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">side =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "  penguins"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href=""></a><span class="co"># inserir espaco em branco - direita</span></span>
-<span id="cb114-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">side =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href=""></a><span class="co"># inserir espaco em branco - direita</span></span>
+<span id="cb118-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">side =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "penguins  "</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href=""></a><span class="co"># inserir espaco em branco - ambos</span></span>
-<span id="cb116-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">side =</span> <span class="st">"both"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href=""></a><span class="co"># inserir espaco em branco - ambos</span></span>
+<span id="cb120-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">"penguins"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">side =</span> <span class="st">"both"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] " penguins "</code></pre>
 </div>
@@ -1928,18 +2012,18 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Remover espaços em branco</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href=""></a><span class="co"># remover espacos em branco - esquerda</span></span>
-<span id="cb118-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_trim</span>(<span class="at">string =</span> <span class="st">" penguins "</span>, <span class="at">side =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href=""></a><span class="co"># remover espacos em branco - esquerda</span></span>
+<span id="cb122-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_trim</span>(<span class="at">string =</span> <span class="st">" penguins "</span>, <span class="at">side =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "penguins "</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href=""></a><span class="co"># remover espacos em branco - direta</span></span>
-<span id="cb120-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_trim</span>(<span class="at">string =</span> <span class="st">" penguins "</span>, <span class="at">side =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href=""></a><span class="co"># remover espacos em branco - direta</span></span>
+<span id="cb124-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_trim</span>(<span class="at">string =</span> <span class="st">" penguins "</span>, <span class="at">side =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] " penguins"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href=""></a><span class="co"># remover espacos em branco - ambos</span></span>
-<span id="cb122-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_trim</span>(<span class="at">string =</span> <span class="st">" penguins "</span>, <span class="at">side =</span> <span class="st">"both"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href=""></a><span class="co"># remover espacos em branco - ambos</span></span>
+<span id="cb126-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_trim</span>(<span class="at">string =</span> <span class="st">" penguins "</span>, <span class="at">side =</span> <span class="st">"both"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "penguins"</code></pre>
 </div>
@@ -1949,23 +2033,23 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Alterar minúsculas e maiúsculas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href=""></a><span class="co"># minusculas</span></span>
-<span id="cb124-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_lower</span>(<span class="at">string =</span> <span class="st">"Penguins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href=""></a><span class="co"># minusculas</span></span>
+<span id="cb128-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_lower</span>(<span class="at">string =</span> <span class="st">"Penguins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "penguins"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href=""></a><span class="co"># maiusculas</span></span>
-<span id="cb126-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_upper</span>(<span class="at">string =</span> <span class="st">"penguins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href=""></a><span class="co"># maiusculas</span></span>
+<span id="cb130-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_upper</span>(<span class="at">string =</span> <span class="st">"penguins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "PENGUINS"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href=""></a><span class="co"># primeiro caracter maiusculo da primeira palavra</span></span>
-<span id="cb128-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_sentence</span>(<span class="at">string =</span> <span class="st">"palmer penGuins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href=""></a><span class="co"># primeiro caracter maiusculo da primeira palavra</span></span>
+<span id="cb132-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_sentence</span>(<span class="at">string =</span> <span class="st">"palmer penGuins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Palmer penguins"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href=""></a><span class="co"># primeiro caracter maiusculo de cada palavra</span></span>
-<span id="cb130-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_title</span>(<span class="at">string =</span> <span class="st">"palmer penGuins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href=""></a><span class="co"># primeiro caracter maiusculo de cada palavra</span></span>
+<span id="cb134-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_to_title</span>(<span class="at">string =</span> <span class="st">"palmer penGuins"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Palmer Penguins"</code></pre>
 </div>
@@ -1975,14 +2059,14 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Ordenar</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href=""></a><span class="co"># ordenar - crescente</span></span>
-<span id="cb132-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_sort</span>(<span class="at">x =</span> letters)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href=""></a><span class="co"># ordenar - crescente</span></span>
+<span id="cb136-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_sort</span>(<span class="at">x =</span> letters)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
 [20] "t" "u" "v" "w" "x" "y" "z"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href=""></a><span class="co"># ordenar - decrescente</span></span>
-<span id="cb134-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_sort</span>(<span class="at">x =</span> letters, <span class="at">dec =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href=""></a><span class="co"># ordenar - decrescente</span></span>
+<span id="cb138-2"><a href=""></a>stringr<span class="sc">::</span><span class="fu">str_sort</span>(<span class="at">x =</span> letters, <span class="at">dec =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j" "i" "h"
 [20] "g" "f" "e" "d" "c" "b" "a"</code></pre>
@@ -1993,15 +2077,15 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>stringr</h2>
 <p>Alterar valores das colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href=""></a><span class="co"># alterar valores das colunas</span></span>
-<span id="cb136-2"><a href=""></a>penguins_stringr_valores <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb136-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">species =</span> stringr<span class="sc">::</span><span class="fu">str_to_lower</span>(species))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href=""></a><span class="co"># alterar valores das colunas</span></span>
+<span id="cb140-2"><a href=""></a>penguins_stringr_valores <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb140-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">species =</span> stringr<span class="sc">::</span><span class="fu">str_to_lower</span>(species))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Alterar nome das colunas</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href=""></a><span class="co"># alterar nome das colunas</span></span>
-<span id="cb137-2"><a href=""></a>penguins_stringr_nomes <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb137-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">rename_with</span>(stringr<span class="sc">::</span>str_to_title)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href=""></a><span class="co"># alterar nome das colunas</span></span>
+<span id="cb141-2"><a href=""></a>penguins_stringr_nomes <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb141-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">rename_with</span>(stringr<span class="sc">::</span>str_to_title)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -2026,8 +2110,8 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 <h2>forcats</h2>
 <p>Converter dados de <code>string</code> para <code>factor</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href=""></a><span class="co"># converter dados de string para factor</span></span>
-<span id="cb138-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">as_factor</span>(penguins_raw<span class="sc">$</span>Species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href=""></a><span class="co"># converter dados de string para factor</span></span>
+<span id="cb142-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">as_factor</span>(penguins_raw<span class="sc">$</span>Species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Adelie Penguin (Pygoscelis adeliae) Adelie Penguin (Pygoscelis adeliae)
 [3] Adelie Penguin (Pygoscelis adeliae) Adelie Penguin (Pygoscelis adeliae)
@@ -2037,8 +2121,8 @@ $ precipitation         &lt;chr&gt; "853", "1318", "1248", "1376", "1689", "1249
 </div>
 <p>Mudar o nome dos níveis</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href=""></a><span class="co"># mudar o nome dos niveis</span></span>
-<span id="cb140-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_recode</span>(penguins<span class="sc">$</span>species, <span class="at">a =</span> <span class="st">"Adelie"</span>, <span class="at">c =</span> <span class="st">"Chinstrap"</span>, <span class="at">g =</span> <span class="st">"Gentoo"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href=""></a><span class="co"># mudar o nome dos niveis</span></span>
+<span id="cb144-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_recode</span>(penguins<span class="sc">$</span>species, <span class="at">a =</span> <span class="st">"Adelie"</span>, <span class="at">c =</span> <span class="st">"Chinstrap"</span>, <span class="at">g =</span> <span class="st">"Gentoo"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] a a a a a a
 Levels: a c g</code></pre>
@@ -2049,8 +2133,8 @@ Levels: a c g</code></pre>
 <h2>forcats</h2>
 <p>Inverter os níveis</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href=""></a><span class="co"># inverter os niveis</span></span>
-<span id="cb142-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_rev</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb146"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href=""></a><span class="co"># inverter os niveis</span></span>
+<span id="cb146-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_rev</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Adelie Adelie Adelie Adelie Adelie Adelie
 Levels: Gentoo Chinstrap Adelie</code></pre>
@@ -2058,8 +2142,8 @@ Levels: Gentoo Chinstrap Adelie</code></pre>
 </div>
 <p>Especificar a ordem dos níveis</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href=""></a><span class="co"># especificar a ordem dos niveis</span></span>
-<span id="cb144-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(penguins<span class="sc">$</span>species, <span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span>, <span class="st">"Adelie"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb148"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href=""></a><span class="co"># especificar a ordem dos niveis</span></span>
+<span id="cb148-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(penguins<span class="sc">$</span>species, <span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span>, <span class="st">"Adelie"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Adelie Adelie Adelie Adelie Adelie Adelie
 Levels: Chinstrap Gentoo Adelie</code></pre>
@@ -2070,8 +2154,8 @@ Levels: Chinstrap Gentoo Adelie</code></pre>
 <h2>forcats</h2>
 <p>Níveis pela ordem em que aparecem</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb146"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href=""></a><span class="co"># niveis pela ordem em que aparecem</span></span>
-<span id="cb146-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb150"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href=""></a><span class="co"># niveis pela ordem em que aparecem</span></span>
+<span id="cb150-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Adelie Adelie Adelie Adelie Adelie Adelie
 Levels: Adelie Gentoo Chinstrap</code></pre>
@@ -2079,8 +2163,8 @@ Levels: Adelie Gentoo Chinstrap</code></pre>
 </div>
 <p>Ordem (decrescente) de frequência</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb148"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href=""></a><span class="co"># ordem (decrescente) de frequecia</span></span>
-<span id="cb148-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb152"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href=""></a><span class="co"># ordem (decrescente) de frequecia</span></span>
+<span id="cb152-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Adelie Adelie Adelie Adelie Adelie Adelie
 Levels: Adelie Gentoo Chinstrap</code></pre>
@@ -2091,8 +2175,8 @@ Levels: Adelie Gentoo Chinstrap</code></pre>
 <h2>forcats</h2>
 <p>Agregação de níveis raros em um nível</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb150"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href=""></a><span class="co"># agregacao de niveis raros em um nivel</span></span>
-<span id="cb150-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_lump</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href=""></a><span class="co"># agregacao de niveis raros em um nivel</span></span>
+<span id="cb154-2"><a href=""></a>forcats<span class="sc">::</span><span class="fu">fct_lump</span>(penguins<span class="sc">$</span>species) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Adelie Adelie Adelie Adelie Adelie Adelie
 Levels: Adelie Gentoo Other</code></pre>
@@ -2100,9 +2184,9 @@ Levels: Adelie Gentoo Other</code></pre>
 </div>
 <p>Transformar várias colunas em fator</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb152"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href=""></a><span class="co"># transformar varias colunas em fator</span></span>
-<span id="cb152-2"><a href=""></a>penguins_raw_multi_factor <span class="ot">&lt;-</span> penguins_raw <span class="sc">%&gt;%</span> </span>
-<span id="cb152-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), forcats<span class="sc">::</span>as_factor))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href=""></a><span class="co"># transformar varias colunas em fator</span></span>
+<span id="cb156-2"><a href=""></a>penguins_raw_multi_factor <span class="ot">&lt;-</span> penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb156-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), forcats<span class="sc">::</span>as_factor))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section class="title-slide slide level1 center">
@@ -2132,8 +2216,8 @@ Levels: Adelie Gentoo Other</code></pre>
 <li>Carregar sempre que for utilizar</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href=""></a><span class="co"># carregar</span></span>
-<span id="cb153-2"><a href=""></a><span class="fu">library</span>(lubridate)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href=""></a><span class="co"># carregar</span></span>
+<span id="cb157-2"><a href=""></a><span class="fu">library</span>(lubridate)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2172,18 +2256,18 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>lubridate</h2>
 <p>Data e horários atuais</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href=""></a><span class="co"># extrair a data nesse instante</span></span>
-<span id="cb154-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">today</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href=""></a><span class="co"># extrair a data nesse instante</span></span>
+<span id="cb158-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">today</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-10-09"</code></pre>
+<pre><code>[1] "2025-10-13"</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href=""></a><span class="co"># extrair a data e tempo nesse instante</span></span>
-<span id="cb156-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">now</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href=""></a><span class="co"># extrair a data e tempo nesse instante</span></span>
+<span id="cb160-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">now</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-10-09 09:38:24 -03"</code></pre>
+<pre><code>[1] "2025-10-13 16:06:03 -03"</code></pre>
 </div>
 </div>
 </section>
@@ -2204,8 +2288,8 @@ Levels: Adelie Gentoo Other</code></pre>
 <li>Podemos transformar os dados especificando a ordem dos seus componentes usando as letras <code>y</code> (ano), <code>m</code> (mês) e <code>d</code> (dia)</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href=""></a><span class="co"># strings e numeros para datas</span></span>
-<span id="cb158-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03-03-2021"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href=""></a><span class="co"># strings e numeros para datas</span></span>
+<span id="cb162-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03-03-2021"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2021-03-03"</code></pre>
 </div>
@@ -2216,12 +2300,12 @@ Levels: Adelie Gentoo Other</code></pre>
 <p><strong>1. String ou caracter </strong></p>
 <p>Essas funções também aceitam números sem aspas, além funcionarem em outros diversos formatos</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href=""></a><span class="co"># strings e numeros para datas</span></span>
-<span id="cb160-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03-Mar-2021"</span>)</span>
-<span id="cb160-3"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="dv">03032021</span>)</span>
-<span id="cb160-4"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03032021"</span>)</span>
-<span id="cb160-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03/03/2021"</span>)</span>
-<span id="cb160-6"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03.03.2021"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href=""></a><span class="co"># strings e numeros para datas</span></span>
+<span id="cb164-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03-Mar-2021"</span>)</span>
+<span id="cb164-3"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="dv">03032021</span>)</span>
+<span id="cb164-4"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03032021"</span>)</span>
+<span id="cb164-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03/03/2021"</span>)</span>
+<span id="cb164-6"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy</span>(<span class="st">"03.03.2021"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2229,25 +2313,25 @@ Levels: Adelie Gentoo Other</code></pre>
 <p><strong>1. String ou caracter </strong></p>
 <p>Especificar horários e Fusos horários</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href=""></a><span class="co"># especificar horarios e fuso horario</span></span>
-<span id="cb161-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_h</span>(<span class="st">"03-03-2021 13"</span>)</span>
-<span id="cb161-3"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_hm</span>(<span class="st">"03-03-2021 13:32"</span>)</span>
-<span id="cb161-4"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_hms</span>(<span class="st">"03-03-2021 13:32:01"</span>)</span>
-<span id="cb161-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_hms</span>(<span class="st">"03-03-2021 13:32:01"</span>, <span class="at">tz =</span> <span class="st">"America/Sao_Paulo"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href=""></a><span class="co"># especificar horarios e fuso horario</span></span>
+<span id="cb165-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_h</span>(<span class="st">"03-03-2021 13"</span>)</span>
+<span id="cb165-3"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_hm</span>(<span class="st">"03-03-2021 13:32"</span>)</span>
+<span id="cb165-4"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_hms</span>(<span class="st">"03-03-2021 13:32:01"</span>)</span>
+<span id="cb165-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">dmy_hms</span>(<span class="st">"03-03-2021 13:32:01"</span>, <span class="at">tz =</span> <span class="st">"America/Sao_Paulo"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>lubridate</h2>
 <p><strong>2. Componentes individuais de data e horário</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href=""></a><span class="co"># dados com componentes individuais</span></span>
-<span id="cb162-2"><a href=""></a>dados <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb162-3"><a href=""></a>  <span class="at">ano =</span> <span class="fu">c</span>(<span class="dv">2021</span>, <span class="dv">2021</span>, <span class="dv">2021</span>),</span>
-<span id="cb162-4"><a href=""></a>  <span class="at">mes =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
-<span id="cb162-5"><a href=""></a>  <span class="at">dia =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">20</span>, <span class="dv">31</span>),</span>
-<span id="cb162-6"><a href=""></a>  <span class="at">hora =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">14</span>, <span class="dv">18</span>), </span>
-<span id="cb162-7"><a href=""></a>  <span class="at">minuto =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">44</span>, <span class="dv">55</span>))</span>
-<span id="cb162-8"><a href=""></a>dados</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href=""></a><span class="co"># dados com componentes individuais</span></span>
+<span id="cb166-2"><a href=""></a>dados <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb166-3"><a href=""></a>  <span class="at">ano =</span> <span class="fu">c</span>(<span class="dv">2021</span>, <span class="dv">2021</span>, <span class="dv">2021</span>),</span>
+<span id="cb166-4"><a href=""></a>  <span class="at">mes =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb166-5"><a href=""></a>  <span class="at">dia =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">20</span>, <span class="dv">31</span>),</span>
+<span id="cb166-6"><a href=""></a>  <span class="at">hora =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">14</span>, <span class="dv">18</span>), </span>
+<span id="cb166-7"><a href=""></a>  <span class="at">minuto =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">44</span>, <span class="dv">55</span>))</span>
+<span id="cb166-8"><a href=""></a>dados</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
     ano   mes   dia  hora minuto
@@ -2262,9 +2346,9 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>lubridate</h2>
 <p><strong>2. Componentes individuais de data e horário</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href=""></a><span class="co"># dados com componentes individuais</span></span>
-<span id="cb164-2"><a href=""></a>dados <span class="sc">%&gt;%</span> </span>
-<span id="cb164-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">data =</span> lubridate<span class="sc">::</span><span class="fu">make_datetime</span>(ano, mes, dia, hora, minuto))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href=""></a><span class="co"># dados com componentes individuais</span></span>
+<span id="cb168-2"><a href=""></a>dados <span class="sc">%&gt;%</span> </span>
+<span id="cb168-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">data =</span> lubridate<span class="sc">::</span><span class="fu">make_datetime</span>(ano, mes, dia, hora, minuto))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 6
     ano   mes   dia  hora minuto data               
@@ -2279,21 +2363,22 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>lubridate</h2>
 <p><strong>3. Objeto de data/horário existente</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href=""></a><span class="co"># data para data-horario</span></span>
-<span id="cb166-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">as_datetime</span>(<span class="fu">today</span>())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href=""></a><span class="co"># data para data-horario</span></span>
+<span id="cb170-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">as_datetime</span>(<span class="fu">today</span>())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-10-09 UTC"</code></pre>
+<pre><code>[1] "2025-10-13 UTC"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href=""></a><span class="co"># data-horario para data</span></span>
-<span id="cb168-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">as_date</span>(<span class="fu">now</span>())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href=""></a><span class="co"># data-horario para data</span></span>
+<span id="cb172-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">as_date</span>(<span class="fu">now</span>())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-10-09"</code></pre>
+<pre><code>[1] "2025-10-13"</code></pre>
 </div>
 </div>
 </section>
 <section class="slide level2">
 <h2>lubridate</h2>
 <p>Funções para acessar e definir componentes individuais de datas e horários</p>
+<div style="font-size: 70%;">
 <ul>
 <li><code>year()</code>: acessa o ano</li>
 <li><code>month()</code>: acessa o mês</li>
@@ -2305,37 +2390,38 @@ Levels: Adelie Gentoo Other</code></pre>
 <li><code>minute()</code>: acessa os minutos</li>
 <li><code>second()</code>: acessa os segundos</li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
 <h2>lubridate</h2>
 <p>Funções para acessar e definir componentes individuais de datas e horários</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href=""></a><span class="co"># extrair</span></span>
-<span id="cb170-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">year</span>(<span class="fu">now</span>())</span>
-<span id="cb170-3"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">month</span>(<span class="fu">now</span>())</span>
-<span id="cb170-4"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">month</span>(<span class="fu">now</span>(), <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb170-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">day</span>(<span class="fu">now</span>())</span>
-<span id="cb170-6"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">wday</span>(<span class="fu">now</span>())</span>
-<span id="cb170-7"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">wday</span>(<span class="fu">now</span>(), <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb170-8"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">second</span>(<span class="fu">now</span>())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href=""></a><span class="co"># extrair</span></span>
+<span id="cb174-2"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">year</span>(<span class="fu">now</span>())</span>
+<span id="cb174-3"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">month</span>(<span class="fu">now</span>())</span>
+<span id="cb174-4"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">month</span>(<span class="fu">now</span>(), <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb174-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">day</span>(<span class="fu">now</span>())</span>
+<span id="cb174-6"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">wday</span>(<span class="fu">now</span>())</span>
+<span id="cb174-7"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">wday</span>(<span class="fu">now</span>(), <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb174-8"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">second</span>(<span class="fu">now</span>())</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>lubridate</h2>
 <p>Inclusão de informações de datas e horários</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href=""></a><span class="co"># data</span></span>
-<span id="cb171-2"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">dmy_hms</span>(<span class="st">"04-03-2021 01:04:56"</span>)</span>
-<span id="cb171-3"><a href=""></a></span>
-<span id="cb171-4"><a href=""></a><span class="co"># incluir</span></span>
-<span id="cb171-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">year</span>(data) <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
-<span id="cb171-6"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">month</span>(data) <span class="ot">&lt;-</span> <span class="dv">01</span></span>
-<span id="cb171-7"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">hour</span>(data) <span class="ot">&lt;-</span> <span class="dv">13</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href=""></a><span class="co"># data</span></span>
+<span id="cb175-2"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">dmy_hms</span>(<span class="st">"04-03-2021 01:04:56"</span>)</span>
+<span id="cb175-3"><a href=""></a></span>
+<span id="cb175-4"><a href=""></a><span class="co"># incluir</span></span>
+<span id="cb175-5"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">year</span>(data) <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
+<span id="cb175-6"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">month</span>(data) <span class="ot">&lt;-</span> <span class="dv">01</span></span>
+<span id="cb175-7"><a href=""></a>lubridate<span class="sc">::</span><span class="fu">hour</span>(data) <span class="ot">&lt;-</span> <span class="dv">13</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href=""></a><span class="co"># incluir varios valores</span></span>
-<span id="cb172-2"><a href=""></a><span class="fu">update</span>(data, <span class="at">year =</span> <span class="dv">2020</span>, <span class="at">month =</span> <span class="dv">1</span>, <span class="at">mday =</span> <span class="dv">1</span>, <span class="at">hour =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href=""></a><span class="co"># incluir varios valores</span></span>
+<span id="cb176-2"><a href=""></a><span class="fu">update</span>(data, <span class="at">year =</span> <span class="dv">2020</span>, <span class="at">month =</span> <span class="dv">1</span>, <span class="at">mday =</span> <span class="dv">1</span>, <span class="at">hour =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2020-01-01 01:04:56 UTC"</code></pre>
 </div>
@@ -2366,10 +2452,10 @@ Levels: Adelie Gentoo Other</code></pre>
 <p><em>Loop</em></p>
 <p>Um <em>loop for</em> é uma iteração: um bloco de código é repetido mudando um contador de uma lista</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href=""></a><span class="co"># loop for</span></span>
-<span id="cb174-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb174-3"><a href=""></a>  <span class="fu">print</span>(i)</span>
-<span id="cb174-4"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href=""></a><span class="co"># loop for</span></span>
+<span id="cb178-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb178-3"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb178-4"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -2387,9 +2473,10 @@ Levels: Adelie Gentoo Other</code></pre>
 <section class="slide level2">
 <h2>purrr</h2>
 <p><strong>Programação funcional</strong></p>
+<div style="font-size: 70%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href=""></a><span class="co"># loop for com map</span></span>
-<span id="cb176-2"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="at">.x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.f =</span> print)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href=""></a><span class="co"># loop for com map</span></span>
+<span id="cb180-2"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map</span>(<span class="at">.x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.f =</span> print)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -2434,6 +2521,7 @@ Levels: Adelie Gentoo Other</code></pre>
 [1] 10</code></pre>
 </div>
 </div>
+</div>
 </section>
 <section class="slide level2">
 <h2>purrr</h2>
@@ -2451,11 +2539,11 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>purrr</h2>
 <p>Exemplo: aplicar a função <code>sum()</code> para somar os valores de vários elementos de uma lista</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href=""></a><span class="co"># lista</span></span>
-<span id="cb179-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb179-3"><a href=""></a></span>
-<span id="cb179-4"><a href=""></a><span class="co"># funcao map</span></span>
-<span id="cb179-5"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map</span>(x, sum)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href=""></a><span class="co"># lista</span></span>
+<span id="cb183-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb183-3"><a href=""></a></span>
+<span id="cb183-4"><a href=""></a><span class="co"># funcao map</span></span>
+<span id="cb183-5"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map</span>(x, sum)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 15
@@ -2475,6 +2563,7 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>purrr</h2>
 <p><strong>Tipos de retorno</strong></p>
 <p>Diferentes funções retornam diferentes estruturas de dados</p>
+<div style="font-size: 70%;">
 <ul>
 <li><code>map()</code>: retorna uma lista</li>
 <li><code>map_chr()</code>: retorna um vetor de strings</li>
@@ -2484,17 +2573,18 @@ Levels: Adelie Gentoo Other</code></pre>
 <li><code>map_dfr()</code>: retorna um data frame (por linhas)</li>
 <li><code>map_dfc()</code>: retorna um data frame (por colunas)</li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
 <h2>purrr</h2>
 <p><strong>Tipos de retorno</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href=""></a><span class="co"># variacoes da funcao map</span></span>
-<span id="cb181-2"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map_dbl</span>(x, sum)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href=""></a><span class="co"># variacoes da funcao map</span></span>
+<span id="cb185-2"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map_dbl</span>(x, sum)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15 16  3 10</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map_chr</span>(x, paste, <span class="at">collapse =</span> <span class="st">" "</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb187"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map_chr</span>(x, paste, <span class="at">collapse =</span> <span class="st">" "</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1 2 3 4 5" "4 5 7"     "1 1 1"     "2 2 2 2 2"</code></pre>
 </div>
@@ -2504,18 +2594,18 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>purrr</h2>
 <p><strong>Duas ou mais listas em paralelo</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href=""></a><span class="co"># listas</span></span>
-<span id="cb185-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb185-3"><a href=""></a>y <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb185-4"><a href=""></a>z <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb185-5"><a href=""></a></span>
-<span id="cb185-6"><a href=""></a><span class="co"># map2* duas litas</span></span>
-<span id="cb185-7"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(x, y, prod)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb189"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href=""></a><span class="co"># listas</span></span>
+<span id="cb189-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb189-3"><a href=""></a>y <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb189-4"><a href=""></a>z <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb189-5"><a href=""></a></span>
+<span id="cb189-6"><a href=""></a><span class="co"># map2* duas litas</span></span>
+<span id="cb189-7"><a href=""></a>purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(x, y, prod)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  9 25  0  1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb187"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href=""></a><span class="co"># pmap muitas listas</span></span>
-<span id="cb187-2"><a href=""></a>purrr<span class="sc">::</span><span class="fu">pmap_dbl</span>(<span class="fu">list</span>(x, y, z), prod)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb191"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href=""></a><span class="co"># pmap muitas listas</span></span>
+<span id="cb191-2"><a href=""></a>purrr<span class="sc">::</span><span class="fu">pmap_dbl</span>(<span class="fu">list</span>(x, y, z), prod)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  27 125   0   1</code></pre>
 </div>
@@ -2525,11 +2615,11 @@ Levels: Adelie Gentoo Other</code></pre>
 <h2>purrr</h2>
 <p>Implementar rotinas de manipulação e análise de dados</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb189"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href=""></a><span class="co"># resumo dos dados</span></span>
-<span id="cb189-2"><a href=""></a>penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb189-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
-<span id="cb189-4"><a href=""></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb189-5"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map_dbl</span>(mean)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb193"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb193-1"><a href=""></a><span class="co"># resumo dos dados</span></span>
+<span id="cb193-2"><a href=""></a>penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb193-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
+<span id="cb193-4"><a href=""></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb193-5"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map_dbl</span>(mean)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   bill_length_mm     bill_depth_mm flipper_length_mm       body_mass_g 
          43.92193          17.15117         200.91520        4201.75439 
@@ -2541,13 +2631,14 @@ Levels: Adelie Gentoo Other</code></pre>
 <section class="slide level2">
 <h2>purrr</h2>
 <p>Implementar rotinas de manipulação e análise de dados</p>
+<div style="font-size: 70%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb191"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href=""></a><span class="co"># analise dos dados</span></span>
-<span id="cb191-2"><a href=""></a>penguins <span class="sc">%&gt;%</span></span>
-<span id="cb191-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">group_split</span>(island, species) <span class="sc">%&gt;%</span> </span>
-<span id="cb191-4"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map</span>(<span class="sc">~</span> <span class="fu">lm</span>(bill_depth_mm <span class="sc">~</span> bill_length_mm, <span class="at">data =</span> .x)) <span class="sc">%&gt;%</span> </span>
-<span id="cb191-5"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map</span>(summary) <span class="sc">%&gt;%</span> </span>
-<span id="cb191-6"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map</span>(<span class="st">"r.squared"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb195"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb195-1"><a href=""></a><span class="co"># analise dos dados</span></span>
+<span id="cb195-2"><a href=""></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb195-3"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">group_split</span>(island, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb195-4"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map</span>(<span class="sc">~</span> <span class="fu">lm</span>(bill_depth_mm <span class="sc">~</span> bill_length_mm, <span class="at">data =</span> .x)) <span class="sc">%&gt;%</span> </span>
+<span id="cb195-5"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map</span>(summary) <span class="sc">%&gt;%</span> </span>
+<span id="cb195-6"><a href=""></a>  purrr<span class="sc">::</span><span class="fu">map</span>(<span class="st">"r.squared"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 0.2192052
@@ -2563,6 +2654,7 @@ Levels: Adelie Gentoo Other</code></pre>
 
 [[5]]
 [1] 0.06198376</code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -2593,13 +2685,13 @@ Levels: Adelie Gentoo Other</code></pre>
 <p><strong>furrr: programação funcional paralelizada</strong></p>
 <p>Número de <em>cores</em> do seu computador</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb193"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb193-1"><a href=""></a><span class="co"># carregar</span></span>
-<span id="cb193-2"><a href=""></a><span class="fu">library</span>(parallel)</span>
-<span id="cb193-3"><a href=""></a></span>
-<span id="cb193-4"><a href=""></a><span class="co"># numero de cores</span></span>
-<span id="cb193-5"><a href=""></a>parallel<span class="sc">::</span><span class="fu">detectCores</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb197"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb197-1"><a href=""></a><span class="co"># carregar</span></span>
+<span id="cb197-2"><a href=""></a><span class="fu">library</span>(parallel)</span>
+<span id="cb197-3"><a href=""></a></span>
+<span id="cb197-4"><a href=""></a><span class="co"># numero de cores</span></span>
+<span id="cb197-5"><a href=""></a>parallel<span class="sc">::</span><span class="fu">detectCores</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
+<pre><code>[1] 8</code></pre>
 </div>
 </div>
 <p><img data-src="img/core01.png" class="absolute" style="top: 410px; right: 500px; width: 400px; height: 250px; "> <img data-src="img/core02.png" class="absolute" style="top: 410px; right: 200px; width: 250px; height: 250px; "></p>
@@ -2838,42 +2930,80 @@ Levels: Adelie Gentoo Other</code></pre>
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
