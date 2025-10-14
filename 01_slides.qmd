@@ -899,8 +899,8 @@ Vamos criar um arquivo no diretório
 Usando a aba **Terminal** do RStudio
 
 ```{r eval=FALSE}
-$ touch teste.txt # windows
-$ type nul > teste.txt # linux
+$ type nul > teste.txt # windows
+$ touch teste.txt # linux
 ```
 
 ![](img/general_bloco_notas.png){fig-align='center'}
@@ -1756,6 +1756,7 @@ Vamos criar um arquivo no diretório e na **branch-2**
 ```{r eval=FALSE}
 $ type nul > teste_branch2.txt # windows
 $ touch teste_branch2.txt # linux
+
 $ git add -Av
 $ git commit -m "add teste_branch2.txt"
 ```

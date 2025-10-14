@@ -6,8 +6,8 @@
 <script src="01_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="01_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="01_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01_slides_files/libs/quarto-html/quarto-syntax-highlighting-c6982bbdd90c704a9b15aa23d87ad911.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.2">
+<link href="01_slides_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content=" Maurício Vancine">
   <title>Controle de versão com git, GitHub e RStudio</title>
@@ -1050,8 +1050,8 @@
 <p>Vamos criar um arquivo no diretório</p>
 <p>Usando a aba <strong>Terminal</strong> do RStudio</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> touch teste.txt <span class="co"># windows</span></span>
-<span id="cb5-2"><a href=""></a><span class="sc">$</span> type nul <span class="sc">&gt;</span> teste.txt <span class="co"># linux</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> type nul <span class="sc">&gt;</span> teste.txt <span class="co"># windows</span></span>
+<span id="cb5-2"><a href=""></a><span class="sc">$</span> touch teste.txt <span class="co"># linux</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1852,8 +1852,9 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="sc">$</span> type nul <span class="sc">&gt;</span> teste_branch2.txt <span class="co"># windows</span></span>
 <span id="cb44-2"><a href=""></a><span class="sc">$</span> touch teste_branch2.txt <span class="co"># linux</span></span>
-<span id="cb44-3"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
-<span id="cb44-4"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"add teste_branch2.txt"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb44-3"><a href=""></a></span>
+<span id="cb44-4"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
+<span id="cb44-5"><a href=""></a><span class="sc">$</span> git commit <span class="sc">-</span>m <span class="st">"add teste_branch2.txt"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -2729,42 +2730,80 @@
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
